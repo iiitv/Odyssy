@@ -38,6 +38,7 @@ DEBUG = not ON_OPENSHIFT
 ALLOWED_HOSTS = [
     gethostname(),
     os.environ.get('OPENSHIFT_APP_DNS'),
+    'odyssy.singhpratyush.in',
 ]
 
 
