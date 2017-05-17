@@ -6,8 +6,8 @@
 
 #### Set up Database
 
-* Install PostgreSQL
-* Log in to Postgres user
+* Install PostgreSQL (`>=9.2`)
+* Log in to `postgres` user
     ```sh
     $ sudo su - postgres
     ```
@@ -23,18 +23,18 @@
     ```
 * Exit to root console
 
-### Clone project
+#### Clone project
 ```sh
 $ git clone git@github.com:iiitv/Odyssy.git
 ```
 
-### Install requirements
+#### Install requirements
 ```sh
 $ cd Odyssy
 $ sudo -H pip install -r requirements.txt
 ```
 
-### Migrate Database and Run
+#### Migrate Database and Run
 ```sh
 $ cd wsgy/odyssy
 $ python manage.py migrate
