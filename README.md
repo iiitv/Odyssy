@@ -36,7 +36,7 @@ $ sudo -H pip install -r requirements.txt
 
 #### Migrate Database and Run
 ```sh
-$ cd wsgy/odyssy
+$ cd wsgi/odyssy
 $ python manage.py migrate
 $ python manage.py runserver
 ```
