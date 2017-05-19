@@ -36,6 +36,7 @@ SECRET_KEY = SECRETS['secret_key']
 DEBUG = not ON_OPENSHIFT
 
 ALLOWED_HOSTS = [
+    '127.0.0.1',
     gethostname(),
     os.environ.get('OPENSHIFT_APP_DNS'),
     'odyssy.singhpratyush.in',
