@@ -114,3 +114,17 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(WSGI_DIR, 'static')
+
+
+# This will allow cookies  to be sent only via HTTPS connections.
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+
+
+# Terminates the session as soon as browser closes.
+SESSION_EXPIRE_AT_BROWSER_CLOSE = True
+
+
+# Redirects HTTP requests to HTTPS.
+# However, it is suggested to write a rewrite rule for this action.
+SECURE_SSL_REDIRECT = True
