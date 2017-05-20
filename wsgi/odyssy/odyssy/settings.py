@@ -124,10 +124,6 @@ SESSION_COOKIE_SECURE = True
 CSRF_COOKIE_SECURE = True
 
 
-# Terminates the session as soon as browser closes.
-SESSION_EXPIRE_AT_BROWSER_CLOSE = True
-
-
 # Redirects HTTP requests to HTTPS.
 # However, it is suggested to write a rewrite rule for this action.
 SECURE_SSL_REDIRECT = True
