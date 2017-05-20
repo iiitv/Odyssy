@@ -35,12 +35,14 @@ SECRET_KEY = SECRETS['secret_key']
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = not ON_OPENSHIFT
 
-ALLOWED_HOSTS = [
-    '127.0.0.1',
+if DEBUG:
+    ALLOWED_HOSTS = ['*']
+else:
+    ALLOWED_HOSTS = [
     gethostname(),
     os.environ.get('OPENSHIFT_APP_DNS'),
     'odyssy.singhpratyush.in',
-]
+    ]
 
 
 # Application definition
