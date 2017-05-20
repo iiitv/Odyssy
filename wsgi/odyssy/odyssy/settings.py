@@ -39,9 +39,9 @@ if DEBUG:
     ALLOWED_HOSTS = ['*']
 else:
     ALLOWED_HOSTS = [
-    gethostname(),
-    os.environ.get('OPENSHIFT_APP_DNS'),
-    'odyssy.singhpratyush.in',
+        gethostname(),
+        os.environ.get('OPENSHIFT_APP_DNS'),
+        'odyssy.singhpratyush.in',
     ]
 
 
