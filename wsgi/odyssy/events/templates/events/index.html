@@ -1,0 +1,17 @@
+<body>
+    {% for event in events %}
+   <li><a href="{% url 'event-view-single' event.id %}">{{ event }}</a></li>
+    {% endfor %}
+
+    <div id="events-list-pagination">
+        <span class="step-links">
+            {% if events.has_previous %}
+                <a href="?page={{ events.previous_page_number }}">Previous</a>
+            {% endif %}
+
+            {% if events.has_next %}
+                <a href="?page={{ events.next_page_number }}">Next</a>
+            {% endif %}
+        </span>
+    </div>
+</body>
