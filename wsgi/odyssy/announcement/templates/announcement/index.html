@@ -1,0 +1,12 @@
+<body>
+  <h1>Announcement Page</h1>
+  {% if announcement_list %}
+  <ul>
+    {% for announcement in announcement_list %}
+    <li><a href="/announcement/{{ announcement.key }}/">{{ announcement.title }}</a></li>
+    {% endfor %}
+  </ul>
+  {% else %}
+  <p>No announcement</p>
+  {% endif %}
+</body>

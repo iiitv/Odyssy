@@ -1,5 +1,10 @@
 from django.shortcuts import render
 
+from announcement.models import Announcement
 
 def index(request):
-    return render(request, 'basic/index.html')
+    latest_announcement = Announcement.objects.order_by('initDate')[:5]
+    context = {
+        'latest_announcement': latest_announcement,
+    }
+    return render(request, 'basic/index.html', context)
