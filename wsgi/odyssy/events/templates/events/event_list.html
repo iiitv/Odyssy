@@ -3,15 +3,17 @@
    <li><a href="{% url 'event-view-single' event.id %}">{{ event }}</a></li>
     {% endfor %}
 
-    <div id="events-list-pagination">
-        <span class="step-links">
-            {% if events.has_previous %}
-                <a href="?page={{ events.previous_page_number }}">Previous</a>
-            {% endif %}
+    {% if events.has_previous %}
+        <a href="?page={{ events.previous_page_number }}&num_items={{num_items}}">Previous</a>
+    {% endif %}
 
-            {% if events.has_next %}
-                <a href="?page={{ events.next_page_number }}">Next</a>
-            {% endif %}
-        </span>
-    </div>
+    {% if events.has_next %}
+        <a href="?page={{ events.next_page_number }}&num_items={{num_items}}">Next</a>
+    {% endif %}
+
+    <a href="?num_items=4&page=1">4</a>
+    <a href="?num_items=6&page=1">6</a>
+    <a href="?num_items=8&page=1">8</a>
+    <a href="?num_items=10&page=1">10</a>
+    <a href="?num_items=20&page=1">20</a>
 </body>
