@@ -1,8 +1,4 @@
-import os
-
-from django.contrib.admin.templatetags.admin_list import pagination
-from django.db.models import Model
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import get_object_or_404
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.shortcuts import render
 from .models import Event
