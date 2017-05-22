@@ -1,3 +1,4 @@
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.shortcuts import render
 
 from .models import Announcement
@@ -5,6 +6,15 @@ from .models import Announcement
 # Create your views here.
 def index(request):
     announcements = Announcement.objects.all()
+    paginator = Paginator(announcements, 10)
+
+    page = request.GET.get('page')
+    try:
+        announcements = paginator.page(page)
+    except PageNotAnInteger:
+        announcements = paginator.page(1)
+    except EmptyPage:
+        announcements = paginator.page(paginator.num_pages)
     context = {
         'announcement_list': announcements,
         }
