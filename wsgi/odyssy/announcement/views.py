@@ -1,7 +1,9 @@
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.shortcuts import render
+from django.db.models import Q
 
 from .models import Announcement
+import datetime
 
 # Create your views here.
 def index(request):
@@ -31,3 +33,10 @@ def open_view(request, announcement_id):
         'info': announcement,
         }
     return render(request, 'announcement/info.html', context)
+
+def latest_announcement(cnt):
+    announcements = Announcement.objects.filter(
+        Q(initDate__gte=datetime.date.today())|
+        Q(finDate__gte=datetime.date.today())
+    ).order_by('initDate')[:cnt]
+    return announcements

@@ -1,14 +1,10 @@
-from django.db.models import Q
 from django.shortcuts import render
 
-from announcement.models import Announcement
-import datetime
+from announcement import views as announcement_view
 
 def index(request):
-    latest_announcement = Announcement.objects.filter(
-        Q(initDate__gte=datetime.date.today())|
-        Q(finDate__gte=datetime.date.today())
-    ).order_by('initDate')[:5]
+    """ Index page of the Website """
+    latest_announcement = announcement_view.latest_announcement(5)
     context = {
         'latest_announcement': latest_announcement,
     }
