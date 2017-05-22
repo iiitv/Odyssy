@@ -1,8 +1,8 @@
 <body>
     Welcome to IIIT Vadodara.
     {% for event in events %}
-    <div class="day">{{ event }}
-        <a href=""></a>
+    <div class="day">
+        <li><a href="/events/{{event.id}}">{{ event.description }}</a></li>
     </div>
     {% endfor %}
 </body>
