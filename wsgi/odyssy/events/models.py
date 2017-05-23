@@ -15,12 +15,12 @@ class Event(models.Model):
     place = models.CharField(max_length=50, null=True, default=None, blank=True)
 
     def __str__(self):
-        s = self.name  + " on " + str(self.start_time.day) + \
+        event_str = self.name  + " on " + str(self.start_time.day) + \
             " - " + calendar.month_abbr[self.start_time.month] + \
             " - " + str(self.start_time.year)
         if self.place is not None:
-            s = s + self.place
-        return s
+            event_str = event_str + self.place
+        return event_str
 
     def clean(self):
         if self.start_time > self.end_time:
