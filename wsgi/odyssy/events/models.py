@@ -4,6 +4,7 @@ import datetime
 
 from django.core.exceptions import ValidationError
 from django.db import models
+from django.shortcuts import get_object_or_404
 
 
 class Event(models.Model):
@@ -21,3 +22,18 @@ class Event(models.Model):
     def clean(self):
         if self.start_time > self.end_time:
             raise ValidationError("Start Date should be before end date")
+
+    @staticmethod
+    def get_all_events():
+        return Event.objects.order_by('-start_time')
+
+    @staticmethod
+    def get_latest_events(num_items):
+        events_list = Event.get_all_events()[:num_items]
+        return events_list
+
+    @staticmethod
+    def get_single_event_detail(event_id):
+            single_event = get_object_or_404(Event, pk=event_id)
+            return single_event
+
