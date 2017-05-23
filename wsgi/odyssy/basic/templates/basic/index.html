@@ -1,3 +1,6 @@
 <body>
     Welcome to IIIT Vadodara.
+    {% for event in events %}
+        <li><a href="{% url 'event-view-single' event.id %}">{{ event }}</a></li>
+    {% endfor %}
 </body>
