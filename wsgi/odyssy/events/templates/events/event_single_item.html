@@ -1,6 +1,9 @@
 <body>
         <br>{{ event.name }}
-        <br>{{ event.description }}
-        <br>{{ event.place }}
+        <br>{{ event.description|safe }}
+        <br>
+        {% if event.place is not None %}
+            {{ event.place }}
+        {%endif%}
         <br>{{ event.start_time }}
 </body>

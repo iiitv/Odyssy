@@ -1,6 +1,6 @@
 <body>
     {% for event in events %}
-   <li><a href="{% url 'event-view-single' event.id %}">{{ event }}</a></li>
+   <li><a href="{% url 'event-view-single' event.id %}">{{ event.name }}</a></li>
     {% endfor %}
 
     {% if events.has_previous %}

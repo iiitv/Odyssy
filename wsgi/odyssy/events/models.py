@@ -12,12 +12,15 @@ class Event(models.Model):
     start_time = models.DateTimeField(default=datetime.datetime.now())
     end_time = models.DateTimeField(default=datetime.datetime.now())
     description = models.TextField(max_length=300)
-    place = models.CharField(max_length=50)
+    place = models.CharField(max_length=50, null=True, default=None, blank=True)
 
     def __str__(self):
-        return self.name + " at " + self.place + " on " + \
-               str(self.start_time.day) + " - " + calendar.month_abbr[self.start_time.month] + \
-               " - " + str(self.start_time.year)
+        s = self.name  + " on " + str(self.start_time.day) + \
+            " - " + calendar.month_abbr[self.start_time.month] + \
+            " - " + str(self.start_time.year)
+        if self.place is not None:
+            s = s + self.place
+        return s
 
     def clean(self):
         if self.start_time > self.end_time:
