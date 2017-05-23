@@ -7,7 +7,7 @@ import datetime
 
 # Create your views here.
 def index(request):
-    announcements = Announcement.objects.all().order_by('initDate')
+    announcements = Announcement.objects.all().order_by('-initDate')
     paginator = Paginator(announcements, 10)
 
     page = request.GET.get('page')
@@ -38,5 +38,5 @@ def latest_announcement(cnt):
     announcements = Announcement.objects.filter(
         Q(initDate__gte=datetime.date.today())|
         Q(finDate__gte=datetime.date.today())
-    ).order_by('initDate')[:cnt]
+    ).order_by('-initDate')[:cnt]
     return announcements
