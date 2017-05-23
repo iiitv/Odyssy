@@ -1,4 +1,4 @@
-from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from django.core.paginator import Paginator, EmptyPage
 from django.shortcuts import render
 from django.db.models import Q
 
@@ -10,11 +10,9 @@ def index(request):
     announcements = Announcement.objects.all().order_by('-initDate')
     paginator = Paginator(announcements, 10)
 
-    page = request.GET.get('page')
+    page = request.GET.get('page', default=1)
     try:
         announcements = paginator.page(page)
-    except PageNotAnInteger:
-        announcements = paginator.page(1)
     except EmptyPage:
         announcements = paginator.page(paginator.num_pages)
     context = {

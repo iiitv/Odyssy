@@ -16,12 +16,9 @@ class Announcement(models.Model):
     def __str__(self):
         return "#" + str(self.key) + " " + self.title
 
-    def save(self, force_insert=False, force_update=False, using=None,
-             update_fields=None):
-        if self.finDate > self.initDate:
-            super(Announcement, self).save()
-        else:
-            raise ValidationError("Final Date is smaller than initial Date")
+    def clean(self):
+        if self.initDate > self.finDate:
+            raise ValidationError('Start date is after end date')
 
     key = models.AutoField(primary_key=True)
     initDate = models.DateTimeField()
