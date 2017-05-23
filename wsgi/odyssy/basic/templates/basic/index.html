@@ -9,4 +9,7 @@
     {% else %}
         <p> No latest News </p>
     {% endif %}
+    {% for event in events %}
+        <li><a href="{% url 'event-view-single' event.id %}">{{ event }}</a></li>
+    {% endfor %}
 </body>
