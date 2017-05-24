@@ -1,9 +1,10 @@
 from __future__ import unicode_literals
 
+import datetime
+
 from django.db import models
 from django.core.exceptions import ValidationError
 from django.db.models import Q
-import datetime
 
 
 class Announcement(models.Model):
