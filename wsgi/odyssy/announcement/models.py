@@ -2,8 +2,10 @@ from __future__ import unicode_literals
 
 from django.db import models
 from django.core.exceptions import ValidationError
+from django.db.models import Q
+import datetime
 
-# Create your models here.
+
 class Announcement(models.Model):
     """ Model for Announcement
     key         -- Primary Key
@@ -19,6 +21,22 @@ class Announcement(models.Model):
     def clean(self):
         if self.initDate > self.finDate:
             raise ValidationError('Start date is after end date')
+
+    @staticmethod
+    def get_all_announcement():
+        return Announcement.objects.all().order_by('-initDate')
+
+    @staticmethod
+    def get_single_announcement(announcement_id):
+        return Announcement.objects.filter(key=announcement_id)
+
+    @staticmethod
+    def get_latest_announcements(cnt):
+        return Announcement.objects.filter(
+            Q(initDate__gte=datetime.date.today())|
+            Q(finDate__gte=datetime.date.today())
+            ).order_by('-initDate')[:cnt]
+
 
     key = models.AutoField(primary_key=True)
     initDate = models.DateTimeField()
