@@ -9,13 +9,13 @@ from django.shortcuts import get_object_or_404
 
 class Event(models.Model):
     name = models.CharField(max_length=30, default="Sample Name")
-    start_time = models.DateTimeField(default=datetime.datetime.now())
-    end_time = models.DateTimeField(default=datetime.datetime.now())
+    start_time = models.DateTimeField(default=datetime.datetime.now)
+    end_time = models.DateTimeField(default=datetime.datetime.now)
     description = models.TextField(max_length=300)
     place = models.CharField(max_length=50, null=True, default=None, blank=True)
 
     def __str__(self):
-        event_str = self.name  + " on " + str(self.start_time.day) + \
+        event_str = self.name + " on " + str(self.start_time.day) + \
             " - " + calendar.month_abbr[self.start_time.month] + \
             " - " + str(self.start_time.year)
         if self.place is not None:
@@ -25,6 +25,10 @@ class Event(models.Model):
     def clean(self):
         if self.start_time > self.end_time:
             raise ValidationError("Start Date should be before end date")
+        if self.place is not None:
+            self.place = self.place.strip()
+            if self.place == "":
+                self.place = None
 
     @staticmethod
     def get_all_events():
@@ -39,4 +43,3 @@ class Event(models.Model):
     def get_single_event_detail(event_id):
             single_event = get_object_or_404(Event, pk=event_id)
             return single_event
-
