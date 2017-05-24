@@ -19,7 +19,7 @@ class Event(models.Model):
             " - " + calendar.month_abbr[self.start_time.month] + \
             " - " + str(self.start_time.year)
         if self.place is not None:
-            event_str = event_str + self.place
+            event_str = event_str + " at " + self.place
         return event_str
 
     def clean(self):
