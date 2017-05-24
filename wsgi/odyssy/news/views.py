@@ -4,6 +4,8 @@ from .models import News
 
 
 # Create your views here.
+
+@staticmethod
 def open_all_news(request):
     news = News.objects.order_by('-start_date')
     num_items = request.GET.get('num_items', default=10)
@@ -20,6 +22,7 @@ def open_all_news(request):
     return render(request, 'news/news_list.html', context)
 
 
+@staticmethod
 def open_single_news(request, news_id):
     news = News.objects.filter(pk=news_id)
     if news:
@@ -32,6 +35,7 @@ def open_single_news(request, news_id):
     return render(request, 'news/single_news.html', context)
 
 
+@staticmethod
 def latest_news(num_items):
     news_list = News.objects.order_by('-start_date')[:num_items]
     return news_list
