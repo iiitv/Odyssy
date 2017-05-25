@@ -3,39 +3,25 @@ from django.shortcuts import render
 from .models import News
 
 
-# Create your views here.
-
-@staticmethod
-def open_all_news(request):
-    news = News.objects.order_by('-start_date')
+def news(request):
+    news_list = News.get_all_news()
     num_items = request.GET.get('num_items', default=10)
-    paginator = Paginator(news, num_items)
+    paginator = Paginator(news_list, num_items)
     page = request.GET.get('page', default=1)
     try:
-        news = paginator.page(page)
+        news_context = paginator.page(page)
     except EmptyPage:
-        news = paginator.page(paginator.num_pages)
+        news_context = paginator.page(paginator.num_pages)
     context = {
-        'news_list': news,
-        'num_items': num_items,
+        'news_list': news_context,
+        'num_items': num_items
     }
-    return render(request, 'news/news_list.html', context)
+    return render(request, 'news/news_list.html', context=context)
 
 
-@staticmethod
-def open_single_news(request, news_id):
-    news = News.objects.filter(pk=news_id)
-    if news:
-        news = news.get()
-    else:
-        news = None
+def news_detail(request, news_id):
+    single_news = News.get_single_news_detail(news_id)
     context = {
-        'info': news,
+        'info': single_news
     }
-    return render(request, 'news/single_news.html', context)
-
-
-@staticmethod
-def latest_news(num_items):
-    news_list = News.objects.order_by('-start_date')[:num_items]
-    return news_list
+    return render(request, 'news/single_news.html', context=context)

@@ -50,6 +50,7 @@ else:
 
 INSTALLED_APPS = (
     'events.apps.EventConfig',
+    'news.apps.NewsConfig',
     'basic.apps.BasicConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -57,7 +58,6 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'news.apps.NewsConfig',
 )
 
 MIDDLEWARE_CLASSES = (
