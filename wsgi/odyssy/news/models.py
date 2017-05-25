@@ -1,5 +1,3 @@
-import calendar
-
 import datetime
 
 from django.core.exceptions import ValidationError
