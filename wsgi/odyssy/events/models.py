@@ -27,7 +27,7 @@ class Event(models.Model):
             raise ValidationError("Start Date should be before end date")
         if self.place:
             self.place = self.place.strip()
-            
+
     @staticmethod
     def get_all_events():
         return Event.objects.order_by('-start_time')
