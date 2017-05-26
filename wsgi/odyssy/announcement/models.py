@@ -43,7 +43,7 @@ class Announcement(models.Model):
 
 
     key = models.AutoField(primary_key=True)
-    initDate = models.DateTimeField(default=datetime.datetime.now())
+    initDate = models.DateTimeField(default=datetime.datetime.now)
     finDate = models.DateTimeField()
     title = models.CharField(max_length=50)
     description = models.TextField(max_length=500)
