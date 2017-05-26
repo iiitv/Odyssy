@@ -1,8 +1,10 @@
 <body>
   {% if info %}
-  <h1>{{ info.title }}</h1><br>
-  <p>{{ info.description }}</p>
+    <h1>{{ info.title }}</h1><br>
+    {% if info.description is not None %}
+      <p>{{ info.description }}</p>
+    {% endif %}
   {% else %}
-  <h1> No such Announcement </h1>
+    <h1> No such Announcement </h1>
   {% endif %}
 </body>

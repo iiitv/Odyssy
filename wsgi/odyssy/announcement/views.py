@@ -29,8 +29,3 @@ def open_view(request, announcement_id):
         'info': announcement,
         }
     return render(request, 'announcement/info.html', context)
-
-
-def latest_announcement(cnt):
-    announcements = Announcement.get_latest_announcements(cnt)
-    return announcements
