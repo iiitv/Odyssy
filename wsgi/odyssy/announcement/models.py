@@ -37,8 +37,8 @@ class Announcement(models.Model):
     def get_latest_announcements(cnt):
         """ get latest announcement """
         return Announcement.objects.filter(
-            Q(initDate__gte=datetime.date.today())|
-            Q(finDate__gte=datetime.date.today())
+            Q(initDate__gte=datetime.datetime.today())|
+            Q(finDate__gte=datetime.datetime.today())
             ).order_by('-initDate')[:cnt]
 
 
