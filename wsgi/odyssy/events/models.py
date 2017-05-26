@@ -19,14 +19,14 @@ class Event(models.Model):
             " - " + calendar.month_abbr[self.start_time.month] + \
             " - " + str(self.start_time.year)
         if self.place:
-            event_str = event_str + " at " + self.place
+            event_str += " at " + self.place
         return event_str
 
     def clean(self):
         if self.start_time > self.end_time:
             raise ValidationError("Start Date should be before end date")
         if self.place:
-            self.place = self.place.strip()
+            self.place = self.place.strip(' \t\n')
 
     @staticmethod
     def get_all_events():
