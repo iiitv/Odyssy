@@ -51,6 +51,7 @@ else:
 INSTALLED_APPS = (
     'events.apps.EventConfig',
     'basic.apps.BasicConfig',
+    'announcement.apps.AnnouncementConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

@@ -1,6 +1,15 @@
 <body>
-    Welcome to IIIT Vadodara.
-    {% for event in events %}
+  Welcome to IIIT Vadodara.
+  {% if latest_announcement %}
+  <ul>
+    {% for announcement in latest_announcement %}
+    <li><a href='/announcement/{{ announcement.key }}'> {{ announcement.title }}</a></li>
+    {% endfor %}
+  </ul>
+  {% else %}
+  <p> No latest announcement </p>
+  {% endif %}
+  {% for event in events %}
         <li><a href="{% url 'event-view-single' event.id %}">{{ event }}</a></li>
     {% endfor %}
 </body>
