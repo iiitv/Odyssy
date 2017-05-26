@@ -1,21 +1,19 @@
-import datetime
-
+from django.utils import timezone
 from django.core.exceptions import ValidationError
 from django.db import models
 from django.shortcuts import get_object_or_404
 
-# Create your models here.
-
 
 class News(models.Model):
-    """ Model of News app
-    start_date - Start Date of News
-    end_date - End Date of News
-    title - Title for News
-    description - Description of News
+    """ Model of News app.
+    
+    start_date -- Start Date of News
+    end_date -- End Date of News
+    title -- Title for News
+    description -- Description of News
     """
-    start_date = models.DateTimeField(default=datetime.datetime.now())
-    end_date = models.DateTimeField(default=datetime.datetime.now())
+    start_date = models.DateTimeField(default=timezone.now)
+    end_date = models.DateTimeField(default=timezone.now)
     title = models.CharField(max_length=50)
     description = models.CharField(max_length=500)
 
