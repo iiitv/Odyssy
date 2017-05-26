@@ -18,18 +18,16 @@ class Event(models.Model):
         event_str = self.name + " on " + str(self.start_time.day) + \
             " - " + calendar.month_abbr[self.start_time.month] + \
             " - " + str(self.start_time.year)
-        if self.place is not None:
+        if self.place:
             event_str = event_str + " at " + self.place
         return event_str
 
     def clean(self):
         if self.start_time > self.end_time:
             raise ValidationError("Start Date should be before end date")
-        if self.place is not None:
+        if self.place:
             self.place = self.place.strip()
-            if self.place == "":
-                self.place = None
-
+            
     @staticmethod
     def get_all_events():
         return Event.objects.order_by('-start_time')
