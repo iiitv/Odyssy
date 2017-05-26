@@ -1,24 +1,26 @@
 <body>
-    Welcome to IIIT Vadodara.
-    {% if latest_news %}
-        <ul>
-            {% for news in latest_news %}
-                <li><a href="{% url 'news-single' news.id %}"> {{ news.title }}</a></li>
-            {% endfor %}
-        </ul>
-    {% else %}
-        <p> No latest News </p>
-    {% endif %}
-    {% if latest_announcement %}
-    <ul>
-        {% for announcement in latest_announcement %}
-            <li><a href='/announcement/{{ announcement.key }}'> {{ announcement.title }}</a></li>
-        {% endfor %}
-    </ul>
-    {% else %}
-    <p> No latest announcement </p>
-    {% endif %}
-    {% for event in events %}
-        <li><a href="{% url 'event-view-single' event.id %}">{{ event }}</a></li>
+  Welcome to IIIT Vadodara.
+  {% if latest_news %}
+  <ul>
+    {% for news in latest_news %}
+    <li><a href="{% url 'news-single' news.id %}"> {{ news.title }}</a></li>
     {% endfor %}
+  </ul>
+  {% else %}
+  <p> No latest News </p>
+  {% endif %}
+
+  {% if latest_announcement %}
+  <ul>
+    {% for announcement in latest_announcement %}
+    <li><a href='/announcement/{{ announcement.key }}'> {{ announcement.title }}</a></li>
+    {% endfor %}
+  </ul>
+  {% else %}
+  <p> No latest announcement </p>
+  {% endif %}
+  
+  {% for event in events %}
+  <li><a href="{% url 'event-view-single' event.id %}">{{ event }}</a></li>
+  {% endfor %}
 </body>
