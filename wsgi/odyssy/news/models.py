@@ -2,6 +2,7 @@ from django.utils import timezone
 from django.core.exceptions import ValidationError
 from django.db import models
 from django.shortcuts import get_object_or_404
+from django.db.models import Q
 
 
 class News(models.Model):
@@ -30,8 +31,10 @@ class News(models.Model):
 
     @staticmethod
     def get_latest_news(num_items):
-        news_list = News.get_all_news()[:num_items]
-        return news_list
+        return News.objects.filter(
+            Q(start_date__gte=timezone.now()) |
+            Q(end_date__gte=timezone.now())
+        ).order_by('-start_date')[:num_items]
 
     @staticmethod
     def get_single_news_detail(event_id):
