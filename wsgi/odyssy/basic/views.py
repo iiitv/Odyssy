@@ -7,7 +7,7 @@ from events.models import Event
 
 def index(request):
     """ Index page of the Website.
-    
+
     """
     latest_news = News.get_latest_news(3)
     latest_announcement = Announcement.get_latest_announcements(5)

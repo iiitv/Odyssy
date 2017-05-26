@@ -6,7 +6,7 @@ from django.shortcuts import get_object_or_404
 
 class News(models.Model):
     """ Model of News app.
-    
+
     start_date -- Start Date of News
     end_date -- End Date of News
     title -- Title for News
