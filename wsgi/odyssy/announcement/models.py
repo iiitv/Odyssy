@@ -25,14 +25,17 @@ class Announcement(models.Model):
 
     @staticmethod
     def get_all_announcement():
+        """ Get all the announcements """
         return Announcement.objects.all().order_by('-initDate')
 
     @staticmethod
     def get_single_announcement(announcement_id):
+        """ get a single announcement by announcement_id """
         return Announcement.objects.filter(key=announcement_id)
 
     @staticmethod
     def get_latest_announcements(cnt):
+        """ get latest announcement """
         return Announcement.objects.filter(
             Q(initDate__gte=datetime.date.today())|
             Q(finDate__gte=datetime.date.today())
@@ -40,7 +43,7 @@ class Announcement(models.Model):
 
 
     key = models.AutoField(primary_key=True)
-    initDate = models.DateTimeField()
+    initDate = models.DateTimeField(default=datetime.datetime.now())
     finDate = models.DateTimeField()
     title = models.CharField(max_length=50)
-    description = models.CharField(max_length=500)
+    description = models.TextField(max_length=500)
