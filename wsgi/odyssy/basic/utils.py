@@ -17,5 +17,4 @@ def get_today_start():
 
 def get_today_end():
     """ set end as undefined date """
-    return datetime.combine(datetime.max, time.max)
-
+    return datetime.combine(datetime.today(), time.max)
