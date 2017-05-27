@@ -1,17 +1,7 @@
 from basic import utils
-from datetime import datetime, time
 
 from django.db import models
 from django.core.exceptions import ValidationError
-
-
-def get_current_date():
-    """ set default as start of date """
-    return datetime.combine(datetime.today(), time.min)
-
-def get_final_date():
-    """ set end as undefined date """
-    return datetime.combine(datetime.max, time.max)
 
 
 class Announcement(models.Model):
@@ -48,7 +38,7 @@ class Announcement(models.Model):
             ).order_by('-start_date')[:cnt]
 
     key = models.AutoField(primary_key=True)
-    start_date = models.DateTimeField(default=get_current_date)
-    end_date = models.DateTimeField(default=get_final_date)
+    start_date = models.DateTimeField(default=utils.get_today_start)
+    end_date = models.DateTimeField(default=utils.get_today_end)
     title = models.CharField(max_length=50)
     description = models.TextField(max_length=500)
