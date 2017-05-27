@@ -1,5 +1,6 @@
 from __future__ import unicode_literals
 
+from basic.utils import get_active_filter
 from datetime import datetime, time
 
 from django.db import models
@@ -37,8 +38,7 @@ class Announcement(models.Model):
     def get_latest_announcements(cnt):
         """ get latest announcement """
         return Announcement.objects.filter(
-            Q(initDate__gte=datetime.today()) |
-            Q(finDate__gte=datetime.today())
+            get_active_filter()
             ).order_by('-initDate')[:cnt]
 
     @staticmethod
