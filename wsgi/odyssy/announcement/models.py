@@ -1,6 +1,7 @@
 from __future__ import unicode_literals
 
-import datetime
+import basic
+from datetime import datetime, time
 
 from django.db import models
 from django.core.exceptions import ValidationError
@@ -37,13 +38,21 @@ class Announcement(models.Model):
     def get_latest_announcements(cnt):
         """ get latest announcement """
         return Announcement.objects.filter(
-            Q(initDate__gte=datetime.datetime.today())|
-            Q(finDate__gte=datetime.datetime.today())
-            ).order_by('-initDate')[:cnt]
+            basic.utils.get_active_filter()
+           ).order_by('-initDate')[:cnt]
 
+    @staticmethod
+    def get_current_date():
+        """ set default as start of date """
+        return datetime.combine(datetime.today(), time.min)
+
+    @staticmethod
+    def get_final_date():
+        """ set end as undefined date """
+        return datetime.combine(datetime.max, time.max)
 
     key = models.AutoField(primary_key=True)
-    initDate = models.DateTimeField(default=datetime.datetime.now)
-    finDate = models.DateTimeField()
+    initDate = models.DateTimeField(default=get_current_date)
+    finDate = models.DateTimeField(default=get_final_date)
     title = models.CharField(max_length=50)
     description = models.TextField(max_length=500)
