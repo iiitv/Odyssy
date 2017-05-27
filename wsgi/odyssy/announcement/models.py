@@ -1,18 +1,14 @@
-from __future__ import unicode_literals
-
-import basic
-from datetime import datetime, time
+from basic import utils
 
 from django.db import models
 from django.core.exceptions import ValidationError
-from django.db.models import Q
 
 
 class Announcement(models.Model):
     """ Model for Announcement
     key         -- Primary Key
-    initDate    -- Initialization Date
-    finDate     -- Final Date
+    start_date    -- Initialization Date
+    end_date     -- Final Date
     title       -- Title of the Announcement
     description -- Description of the Announcement
     """
@@ -21,13 +17,13 @@ class Announcement(models.Model):
         return "#" + str(self.key) + " " + self.title
 
     def clean(self):
-        if self.initDate > self.finDate:
+        if self.start_date > self.end_date:
             raise ValidationError('Start date is after end date')
 
     @staticmethod
     def get_all_announcement():
         """ Get all the announcements """
-        return Announcement.objects.all().order_by('-initDate')
+        return Announcement.objects.all().order_by('-start_date')
 
     @staticmethod
     def get_single_announcement(announcement_id):
@@ -38,21 +34,11 @@ class Announcement(models.Model):
     def get_latest_announcements(cnt):
         """ get latest announcement """
         return Announcement.objects.filter(
-            basic.utils.get_active_filter()
-           ).order_by('-initDate')[:cnt]
-
-    @staticmethod
-    def get_current_date():
-        """ set default as start of date """
-        return datetime.combine(datetime.today(), time.min)
-
-    @staticmethod
-    def get_final_date():
-        """ set end as undefined date """
-        return datetime.combine(datetime.max, time.max)
+            utils.get_active_filter()
+            ).order_by('-start_date')[:cnt]
 
     key = models.AutoField(primary_key=True)
-    initDate = models.DateTimeField(default=get_current_date)
-    finDate = models.DateTimeField(default=get_final_date)
+    start_date = models.DateTimeField(default=utils.get_today_start)
+    end_date = models.DateTimeField(default=utils.get_today_end)
     title = models.CharField(max_length=50)
     description = models.TextField(max_length=500)
