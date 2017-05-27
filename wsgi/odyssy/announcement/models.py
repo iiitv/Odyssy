@@ -39,7 +39,7 @@ class Announcement(models.Model):
         """ get latest announcement """
         return Announcement.objects.filter(
             get_active_filter()
-            ).order_by('-initDate')[:cnt]
+           ).order_by('-initDate')[:cnt]
 
     @staticmethod
     def get_current_date():
