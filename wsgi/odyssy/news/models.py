@@ -1,4 +1,4 @@
-from basic.utils import get_active_filter
+import basic
 
 from django.utils import timezone
 from django.core.exceptions import ValidationError
@@ -34,7 +34,7 @@ class News(models.Model):
     @staticmethod
     def get_latest_news(num_items):
         return News.objects.filter(
-            get_active_filter()
+            basic.utils.get_active_filter()
         ).order_by('-start_date')[:num_items]
 
     @staticmethod
