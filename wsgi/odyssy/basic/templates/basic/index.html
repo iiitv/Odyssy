@@ -23,4 +23,9 @@
   {% for event in events %}
   <li><a href="{% url 'event-view-single' event.id %}">{{ event }}</a></li>
   {% endfor %}
+
+  Active Carousel images
+  {% for image in carousel %}
+  <li><img src=" media/{{image.image}}" alt="My image"/></li>
+  {% endfor %}
 </body>
