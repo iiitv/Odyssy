@@ -80,7 +80,7 @@ MIDDLEWARE_CLASSES = (
 ROOT_URLCONF = 'odyssy.urls'
 
 STATICFILES_DIRS = [
-    WSGI_DIR+"/media",
+    WSGI_DIR + "/media",
 ]
 
 TEMPLATES = [
