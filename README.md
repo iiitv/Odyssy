@@ -2,6 +2,7 @@
 
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/2ee2f1779b2f4cacaf8ff1d7b278e10c)](https://www.codacy.com/app/singhpratyush/Odyssy?utm_source=github.com&utm_medium=referral&utm_content=iiitv/Odyssy&utm_campaign=badger)
 [![Gitter](https://badges.gitter.im/iiitv/Odyssy.svg)](https://gitter.im/iiitv/Odyssy?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+[![Build Status](https://travis-ci.org/iiitv/Odyssy.svg?branch=master)](https://travis-ci.org/iiitv/Odyssy.svg?branch=master)
 
 ### Running Locally
 

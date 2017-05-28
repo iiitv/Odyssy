@@ -1,0 +1,20 @@
+language: python
+python:
+  - 2.7
+services:
+  - postgresql
+env:
+  -DJANGO=1.10 DB=postgresql
+install:
+  - pip install -r requirements.txt
+before_script:
+  - psql -c "CREATE USER odyssy WITH CREATEUSER PASSWORD 'odyssy';" -U postgres
+  - psql -c "ALTER USER odyssy CREATEDB;" -U postgres
+  - psql -c "CREATE DATABASE odyssy;" -U postgres
+  - psql -c "GRANT ALL ON DATABASE odyssy TO odyssy;" -U postgres
+
+script:
+  - cd wsgi/odyssy
+  - python manage.py makemigrations
+  - python manage.py migrate
+  - python manage.py test
