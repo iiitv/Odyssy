@@ -49,11 +49,15 @@ else:
 # Application definition
 
 INSTALLED_APPS = (
+    'photologue',
+    'sortedm2m',
     'events.apps.EventConfig',
     'news.apps.NewsConfig',
     'basic.apps.BasicConfig',
     'tags.apps.TagsConfig',
     'announcement.apps.AnnouncementConfig',
+    'django.contrib.sites',
+    'django.contrib.sitemaps',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -61,6 +65,8 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
 )
+
+SITE_ID = 1
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -73,6 +79,10 @@ MIDDLEWARE_CLASSES = (
 )
 
 ROOT_URLCONF = 'odyssy.urls'
+
+STATICFILES_DIRS = [
+    WSGI_DIR + "/media",
+]
 
 TEMPLATES = [
     {
@@ -122,6 +132,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(WSGI_DIR, 'static')
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(WSGI_DIR, 'media')
 
 
 # Redirects HTTP requests to HTTPS.

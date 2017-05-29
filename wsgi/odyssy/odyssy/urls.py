@@ -13,8 +13,16 @@ Including another URLconf
     1. Add an import:  from blog import urls as blog_urls
     2. Add a URL to urlpatterns:  url(r'^blog/', include(blog_urls))
 """
+from django.conf import settings
 from django.conf.urls import include, url
+from django.conf.urls.static import static
 from django.contrib import admin
+from photologue.sitemaps import GallerySitemap, PhotoSitemap
+
+sitemaps = {
+            'photologue_galleries': GallerySitemap,
+            'photologue_photos': PhotoSitemap,
+            }
 
 urlpatterns = [
     url(r'^admin/?', include(admin.site.urls)),
@@ -22,5 +30,6 @@ urlpatterns = [
     url(r'^news/', include('news.urls')),
     url(r'^tag/', include('tags.urls')),
     url(r'^announcement/', include('announcement.urls')),
+    url(r'^photologue/', include('photologue.urls', namespace='photologue')),
     url(r'^', include('basic.urls')),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
