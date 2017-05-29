@@ -17,11 +17,8 @@ DJ_PROJECT_DIR = os.path.dirname(__file__)
 BASE_DIR = os.path.dirname(DJ_PROJECT_DIR)
 WSGI_DIR = os.path.dirname(BASE_DIR)
 REPO_DIR = os.path.dirname(WSGI_DIR)
-DATA_DIR = os.environ.get('OPENSHIFT_DATA_DIR', BASE_DIR)
+DATA_DIR = BASE_DIR
 
-ON_OPENSHIFT = 'OPENSHIFT_PYTHON_IP' in os.environ
-
-sys.path.append(os.path.join(REPO_DIR, 'libs'))
 SECRETS = secrets.getter(os.path.join(DATA_DIR, 'secrets.json'))
 
 # Quick-start development settings - unsuitable for production
@@ -31,17 +28,18 @@ SECRETS = secrets.getter(os.path.join(DATA_DIR, 'secrets.json'))
 SECRET_KEY = SECRETS['secret_key']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = not ON_OPENSHIFT
+
+DEBUG = os.environ.get('ODYSSY_DEBUG', 'true').lower() == 'true'
 
 if DEBUG:
     ALLOWED_HOSTS = ['*']
 else:
     ALLOWED_HOSTS = [
         gethostname(),
-        os.environ.get('OPENSHIFT_APP_DNS'),
+        '127.0.0.1',
         'odyssy.singhpratyush.in',
     ]
-    # This will allow cookies  to be sent only via HTTPS connections.
+    # This will allow cookies to be sent only via HTTPS connections.
     SESSION_COOKIE_SECURE = True
     CSRF_COOKIE_SECURE = True
 
@@ -99,18 +97,15 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'odyssy.wsgi.application'
-
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': os.environ.get('OPENSHIFT_POSTGRESQL_DB_NAME', 'odyssy'),
-        'USER': os.environ.get('OPENSHIFT_POSTGRESQL_DB_USERNAME', 'odyssy'),
-        'PASSWORD': os.environ.get('OPENSHIFT_POSTGRESQL_DB_PASSWORD',
+        'NAME': os.environ.get('ODYSSY_POSTGRESQL_DB_NAME', 'odyssy'),
+        'USER': os.environ.get('ODYSSY_POSTGRESQL_DB_USERNAME', 'odyssy'),
+        'PASSWORD': os.environ.get('ODYSSY_POSTGRESQL_DB_PASSWORD',
                                    'odyssy'),
-        'HOST': os.environ.get('OPENSHIFT_POSTGRESQL_DB_HOST', '127.0.0.1'),
-        'PORT': os.environ.get('OPENSHIFT_POSTGRESQL_DB_PORT', '5432'),
+        'HOST': os.environ.get('ODYSSY_POSTGRESQL_DB_HOST', '127.0.0.1'),
+        'PORT': os.environ.get('ODYSSY_POSTGRESQL_DB_PORT', '5432'),
     }
 }
 

@@ -36,9 +36,18 @@ $ cd Odyssy
 $ sudo -H pip install -r requirements.txt
 ```
 
-#### Migrate Database and Run
+#### Migrate Database
 ```sh
-$ cd wsgi/odyssy
+$ python manage.py makemigrations
 $ python manage.py migrate
-$ python manage.py runserver
+```
+
+#### Run
+```sh
+$ ./start.sh
+```
+
+### Stop
+```sh
+$ ./stop.sh
 ```

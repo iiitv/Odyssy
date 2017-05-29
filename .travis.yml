@@ -14,7 +14,6 @@ before_script:
   - psql -c "GRANT ALL ON DATABASE odyssy TO odyssy;" -U postgres
 
 script:
-  - cd wsgi/odyssy
   - python manage.py makemigrations
   - python manage.py migrate
   - python manage.py test

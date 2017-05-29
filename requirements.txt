@@ -1,3 +1,4 @@
 django==1.10
 psycopg2
 django-photologue
+gunicorn
