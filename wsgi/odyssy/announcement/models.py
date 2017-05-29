@@ -1,4 +1,5 @@
 from basic import utils
+from tags.models import Tags
 
 from django.db import models
 from django.core.exceptions import ValidationError
@@ -37,8 +38,14 @@ class Announcement(models.Model):
             utils.get_active_filter()
             ).order_by('-start_date')[:cnt]
 
+    @staticmethod
+    def get_announcement_tag(tag_name):
+        """ Fetches all announcements with tag """
+        return Announcement.objects.filter(tags__tag_name=tag_name)
+
     key = models.AutoField(primary_key=True)
     start_date = models.DateTimeField(default=utils.get_today_start)
     end_date = models.DateTimeField(default=utils.get_today_end)
+    tags = models.ManyToManyField(Tags)
     title = models.CharField(max_length=50)
     description = models.TextField(max_length=500)

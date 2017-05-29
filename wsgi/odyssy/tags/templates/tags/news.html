@@ -1,0 +1,18 @@
+<body>
+	{% if news %}
+	<ul>
+		{% for news_indiv in news %}
+		<li><a href="{% url 'news-single' news_indiv.key %}">{{ news_indiv.title }}</a></li>
+		{% endfor %}
+	</ul>
+	{% if news.has_previous %}
+		<a href="?page_news={{ news.previous_page_number }}">Previous</a>
+	{% endif %}
+
+	{% if news.has_next %}
+		<a href="?page_news={{ news.next_page_number }}">Next</a>
+	{% endif %}
+	{% else %}
+		<h1>No news found by tag</h1>
+	{% endif %}
+</body>

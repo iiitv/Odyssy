@@ -1,0 +1,18 @@
+<body>
+	{% if announcements %}
+	<ul>
+		{% for announcement in announcements %}
+		<li><a href="{% url 'open-view' announcement.key %}">{{ announcement.title }}</a></li>
+		{% endfor %}
+	</ul>
+	{% if announcements.has_previous %}
+		<a href="?page_announcement={{ announcements.previous_page_number }}">Previous</a>
+	{% endif %}
+
+	{% if announcements.has_next %}
+		<a href="?page_announcement={{ announcements.next_page_number }}">Next</a>
+	{% endif %}
+	{% else %}
+		<h1>No announcements found by tag</h1>
+	{% endif %}
+</body>
