@@ -1,4 +1,5 @@
 from basic import utils
+from taggit.managers import TaggableManager
 
 from django.utils import timezone
 from django.core.exceptions import ValidationError
@@ -18,6 +19,7 @@ class News(models.Model):
     start_date = models.DateTimeField(default=timezone.now)
     end_date = models.DateTimeField(default=timezone.now)
     title = models.CharField(max_length=50)
+    tags = TaggableManager()
     description = models.CharField(max_length=500)
 
     def __str__(self):
@@ -41,3 +43,13 @@ class News(models.Model):
     def get_single_news_detail(event_id):
         single_news = get_object_or_404(News, pk=event_id)
         return single_news
+
+    @staticmethod
+    def get_news_tag(tag_name):
+        return News.objects.filter(tags__name=tag_name).order_by('-start_date')
+
+    @staticmethod
+    def get_latest_news_tag(tag_name, cnt):
+        return News.objects.filter(
+            utils.get_active_filter()
+        ).filter(tags__name=tag_name).order_by('-start_date')[:cnt]

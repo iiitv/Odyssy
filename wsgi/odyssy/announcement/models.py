@@ -1,4 +1,5 @@
 from basic import utils
+from taggit.managers import TaggableManager
 
 from django.db import models
 from django.core.exceptions import ValidationError
@@ -37,8 +38,19 @@ class Announcement(models.Model):
             utils.get_active_filter()
             ).order_by('-start_date')[:cnt]
 
+    @staticmethod
+    def get_announcement_tag(tag_name):
+        return Announcement.objects.filter(tags__name=tag_name).order_by('-start_date')
+
+    @staticmethod
+    def get_latest_announcement_tag(tag_name, cnt):
+        return Announcement.objects.filter(
+            utils.get_active_filter()
+            ).filter(tags__name=tag_name).order_by('-start_date')[:cnt]
+
     key = models.AutoField(primary_key=True)
     start_date = models.DateTimeField(default=utils.get_today_start)
     end_date = models.DateTimeField(default=utils.get_today_end)
+    tags = TaggableManager()
     title = models.CharField(max_length=50)
     description = models.TextField(max_length=500)

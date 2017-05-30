@@ -28,6 +28,7 @@ urlpatterns = [
     url(r'^admin/?', include(admin.site.urls)),
     url(r'^events/', include('events.urls')),
     url(r'^news/', include('news.urls')),
+    url(r'^tag/', include('tag.urls')),
     url(r'^announcement/', include('announcement.urls')),
     url(r'^photologue/', include('photologue.urls', namespace='photologue')),
     url(r'^', include('basic.urls')),

@@ -1,0 +1,29 @@
+<body>
+  {% if latest_announcement %}
+  <ul>
+    {% for announce in latest_announcement %}
+    <li><a href="{% url 'open-view' announce.key %}">{{ announce.title }}</a></li>
+    {% endfor %}
+  </ul>
+  {% else %}
+  <p>No latest announcement</p>
+  {% endif %}
+  {% if latest_news %}
+  <ul>
+    {% for news_item in latest_news %}
+    <li><a href="{% url 'news-single' news_item.id %}">{{ news_item.title }}</a></li>
+    {% endfor %}
+  </ul>
+  {% else %}
+  <p>No latest news</p>
+  {% endif %}
+  {% if latest_images %}
+  <ul>
+    {% for image in latest_images %}
+    <li><a href="{% url 'index-view' %}media/{{ image.photo.image }}">{{ image.photo.title }}</a></li>
+    {% endfor %}
+  </ul>
+  {% else %}
+  <p>No latest image exists</p>
+  {% endif %}
+</body>

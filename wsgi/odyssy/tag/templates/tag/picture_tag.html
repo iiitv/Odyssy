@@ -1,0 +1,18 @@
+<body>
+  {% if images %}
+  <ul>
+    {% for image in images %}
+    <li><a href="{% url 'index-view'%}media/{{ image.photo.image }}">{{ image.photo.title }}</a></li>
+    {% endfor %}
+  </ul>
+  {% if images.has_previous %}
+  <a href="?page={{ images.previous_page_number }}&num_items={{num_items}}">Previous</a>
+  {% endif %}
+
+  {% if images.has_next %}
+  <a href="?page={{ images.next_page_number }}&num_items={{num_items}}">Next</a>
+  {% endif %}
+  {% else %}
+  <p> No such tag found </p>
+  {% endif %}
+</body>
