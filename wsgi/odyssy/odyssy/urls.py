@@ -28,6 +28,7 @@ urlpatterns = [
     url(r'^admin/?', include(admin.site.urls)),
     url(r'^events/', include('events.urls')),
     url(r'^news/', include('news.urls')),
+    url(r'^tag/', include('tags.urls')),
     url(r'^announcement/', include('announcement.urls')),
     url(r'^', include('basic.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
