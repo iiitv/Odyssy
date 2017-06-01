@@ -1,4 +1,5 @@
-from django.core.paginator import Paginator, EmptyPage
+from basic import utils
+
 from django.shortcuts import render
 
 from .models import Announcement
@@ -6,13 +7,7 @@ from .models import Announcement
 
 def index(request):
     announcements = Announcement.get_all_announcement()
-    paginator = Paginator(announcements, 10)
-
-    page = request.GET.get('page', default=1)
-    try:
-        announcements = paginator.page(page)
-    except EmptyPage:
-        announcements = paginator.page(paginator.num_pages)
+    announcements = utils.paginate_view(request, announcements, 10)
     context = {
         'announcement_list': announcements,
         }
