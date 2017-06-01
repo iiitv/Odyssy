@@ -19,16 +19,21 @@ def simple_tag(request, tag_name):
     return render(request, 'tag/simple_tag.html', args)
 
 
+def paginate_view(request, query_set, num_items):
+    """ Paginates view from queryset """
+    paginator = Paginator(query_set, num_items)
+    page = request.GET.get('page', default=1)
+    try:
+        data_set = paginator.page(page)
+    except EmptyPage:
+        data_set = paginator.page(paginator.num_pages)
+    return data_set
+
+
 def announcement_tag(request, tag_name):
     """ View for announcement tag listing """
     announcements = Announcement.get_announcement_tag(tag_name)
-    paginator = Paginator(announcements, 10)
-
-    page = request.GET.get('page', default=1)
-    try:
-        announcements = paginator.page(page)
-    except EmptyPage:
-        announcements = paginator.page(paginator.num_pages)
+    announcements = paginate_view(request, announcements, 10)
     args = {'announcements': announcements}
     return render(request, 'tag/announcement_tag.html', args)
 
@@ -36,13 +41,7 @@ def announcement_tag(request, tag_name):
 def news_tag(request, tag_name):
     """ View for news tag listing """
     news = News.get_news_tag(tag_name)
-    paginator = Paginator(news, 10)
-
-    page = request.GET.get('page', default=1)
-    try:
-        news = paginator.page(page)
-    except EmptyPage:
-        news = paginator.page(paginator.num_pages)
+    news = paginate_view(request, news, 10)
     args = {'news': news}
     return render(request, 'tag/news_tag.html', args)
 
@@ -50,12 +49,6 @@ def news_tag(request, tag_name):
 def picture_tag(request, tag_name):
     """ View for picture tag listing """
     images = PhotoExtended.get_photo_tag(tag_name)
-    paginator = Paginator(images, 10)
-
-    page = request.GET.get('page', default=1)
-    try:
-        images = paginator.page(page)
-    except EmptyPage:
-        images = paginator.page(paginator.num_pages)
+    images = paginate_view(request, images, 10)
     args = {'images': images}
     return render(request, 'tag/picture_tag.html', args)
