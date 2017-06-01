@@ -6,8 +6,7 @@ from .models import News
 
 def news(request):
     news_list = News.get_all_news()
-    num_items = request.GET.get('num_items', default=10)
-    news_context = utils.paginate_view(request, news_list, num_items)
+    news_context, num_items = utils.paginate_view(request, news_list)
     context = {
         'news_list': news_context,
         'num_items': num_items

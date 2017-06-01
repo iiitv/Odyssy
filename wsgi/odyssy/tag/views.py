@@ -22,22 +22,22 @@ def simple_tag(request, tag_name):
 def announcement_tag(request, tag_name):
     """ View for announcement tag listing """
     announcements = Announcement.get_announcement_tag(tag_name)
-    announcements = utils.paginate_view(request, announcements, 10)
-    args = {'announcements': announcements}
+    announcements, num_items = utils.paginate_view(request, announcements)
+    args = {'announcements': announcements, 'num_items': num_items,}
     return render(request, 'tag/announcement_tag.html', args)
 
 
 def news_tag(request, tag_name):
     """ View for news tag listing """
     news = News.get_news_tag(tag_name)
-    news = utils.paginate_view(request, news, 10)
-    args = {'news': news}
+    news, num_items = utils.paginate_view(request, news)
+    args = {'news': news, 'num_items': num_items,}
     return render(request, 'tag/news_tag.html', args)
 
 
 def picture_tag(request, tag_name):
     """ View for picture tag listing """
     images = PhotoExtended.get_photo_tag(tag_name)
-    images = utils.paginate_view(request, images, 10)
-    args = {'images': images}
+    images, num_items = utils.paginate_view(request, images)
+    args = {'images': images, 'num_items': num_items,}
     return render(request, 'tag/picture_tag.html', args)
