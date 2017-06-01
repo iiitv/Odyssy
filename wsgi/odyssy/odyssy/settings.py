@@ -51,9 +51,11 @@ else:
 INSTALLED_APPS = (
     'photologue',
     'sortedm2m',
+    'taggit',
     'events.apps.EventConfig',
     'news.apps.NewsConfig',
     'basic.apps.BasicConfig',
+    'tag.apps.TagConfig',
     'announcement.apps.AnnouncementConfig',
     'django.contrib.sites',
     'django.contrib.sitemaps',
