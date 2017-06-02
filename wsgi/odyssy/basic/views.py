@@ -22,3 +22,8 @@ def index(request):
         'carousel': active_images
     }
     return render(request, 'basic/index.html', context)
+
+
+def serve_static(request):
+    print(request)
+    return render(request, request.path[1:])

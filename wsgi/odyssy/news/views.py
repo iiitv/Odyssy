@@ -6,10 +6,11 @@ from .models import News
 
 def news(request):
     news_list = News.get_all_news()
-    news_context, num_items = utils.paginate_view(request, news_list)
+    news_context, num_items, page = utils.paginate_view(request, news_list)
     context = {
         'news_list': news_context,
-        'num_items': num_items
+        'num_items': num_items,
+        'curr_page': page
     }
     return render(request, 'news/news_list.html', context=context)
 
