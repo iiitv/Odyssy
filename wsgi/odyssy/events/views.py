@@ -6,8 +6,7 @@ from .models import Event
 
 def event(request):
     events_list = Event.get_all_events()
-    num_items = request.GET.get('num_items', default=10)
-    events = utils.paginate_view(request, events_list, num_items)
+    events, num_items = utils.paginate_view(request, events_list)
     context = {'events': events, 'num_items': num_items}
     return render(request, 'events/event_list.html', context=context)
 
