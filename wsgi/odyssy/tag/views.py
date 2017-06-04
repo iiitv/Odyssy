@@ -22,22 +22,22 @@ def simple_tag(request, tag_name):
 def announcement_tag(request, tag_name):
     """ View for announcement tag listing """
     announcements = Announcement.get_announcement_tag(tag_name)
-    announcements, num_items = utils.paginate_view(request, announcements)
-    args = {'announcements': announcements, 'num_items': num_items,}
+    announcements, num_items, page = utils.paginate_view(request, announcements)
+    args = {'announcements': announcements, 'num_items': num_items, 'curr_page': page}
     return render(request, 'tag/announcement_tag.html', args)
 
 
 def news_tag(request, tag_name):
     """ View for news tag listing """
     news = News.get_news_tag(tag_name)
-    news, num_items = utils.paginate_view(request, news)
-    args = {'news': news, 'num_items': num_items,}
+    news, num_items, page = utils.paginate_view(request, news)
+    args = {'news': news, 'num_items': num_items, 'curr_page': page}
     return render(request, 'tag/news_tag.html', args)
 
 
 def picture_tag(request, tag_name):
     """ View for picture tag listing """
     images = PhotoExtended.get_photo_tag(tag_name)
-    images, num_items = utils.paginate_view(request, images)
-    args = {'images': images, 'num_items': num_items,}
+    images, num_items, page = utils.paginate_view(request, images)
+    args = {'images': images, 'num_items': num_items,'curr_page': page}
     return render(request, 'tag/picture_tag.html', args)

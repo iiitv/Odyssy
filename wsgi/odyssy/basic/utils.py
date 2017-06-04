@@ -32,4 +32,4 @@ def paginate_view(request, query_set, page=None, num_items=None):
         data_set = paginator.page(page)
     except EmptyPage:
         data_set = paginator.page(paginator.num_pages)
-    return data_set, num_items
+    return data_set, num_items, page
