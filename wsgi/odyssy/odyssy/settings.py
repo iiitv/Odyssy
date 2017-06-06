@@ -137,7 +137,6 @@ STATIC_ROOT = os.path.join(WSGI_DIR, 'static')
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(WSGI_DIR, 'media')
 
-
 # Redirects HTTP requests to HTTPS.
 # However, it is suggested to write a rewrite rule for this action.
 SECURE_SSL_REDIRECT = True

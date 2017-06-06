@@ -31,4 +31,7 @@ urlpatterns = [
     url(r'^tag/', include('tag.urls')),
     url(r'^announcement/', include('announcement.urls')),
     url(r'^', include('basic.urls')),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) \
+  + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
+
