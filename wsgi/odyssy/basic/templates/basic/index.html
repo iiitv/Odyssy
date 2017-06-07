@@ -22,7 +22,24 @@
 
             <!-- Edit this section for important announcements.-->
             <div class="alert alert-warning text-center">
-                <a href="#">Important news will come here, after we add tag 'imp' with them.</a>
+                <ul id="imp_announcement">
+                    <h3>Important Announcements:</h3>
+                    {% for announcement in imp_announcement %}
+                        <li>
+                            <a class="alert-link" href="#">{{ announcement.title }}:</a>
+                            <div style="margin-left: 5px">{{ announcement.description }}</div>
+                        </li>
+                    {% endfor %}
+                </ul>
+                <ul id="imp_news">
+                    <h3>Important news:</h3>
+                    {% for news in imp_news %}
+                        <li>
+                            <a class="alert-link" href="#">{{ news.title }}:</a>
+                            <div style="margin-left: 5px">{{ news.description }}</div>
+                        </li>
+                    {% endfor %}
+                </ul>
             </div>
 
             <!-- Announcements -->
