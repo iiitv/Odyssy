@@ -34,8 +34,9 @@
                             <ul id="announcement-list">
                             {% for announcement in latest_announcement %}
                                 <li>
-                                <span style = "font-size: 12px; font-weight: bold;color:Black">
-                                    <a href='/announcement/{{ announcement.key }}'> {{ announcement.title}} </a>
+                                	<span style = "font-size: 12px; font-weight: bold;color:Black">
+                                    	<a href='/announcement/{{ announcement.key }}'> {{ announcement.title}} </a>
+                                    	<p>{{ announcement.description | safe}}</p>
                                     </span>
                                 </li>
                             {% endfor %}
@@ -64,7 +65,10 @@
                                     </span>
                                 </div>
                                 <!-- Event-Description -->
-                                <div class="event-text"><a href="{% url 'event-view-single' event.id %}">{{ event.name }}</a></div>
+                                <div class="event-text">
+                                	<a href="{% url 'event-view-single' event.id %}">{{ event.name }}</a>
+                                	<p>{{ event.description | safe}}</p>
+                                </div>
                             </div>
                         </li>
                         {% endfor %}
@@ -79,7 +83,8 @@
                         <ul id="news-list">
                         {% for news in latest_news %}
                             <li>
-                            <a href="{% url 'news-single' news.id %}" target="_blank">{{ news.title }}</a>
+                            	<a href="{% url 'news-single' news.id %}" target="_blank">{{ news.title }}</a>
+                            	<p>{{ news.description | safe}}</p>
                             </li>
                         {% endfor %}
                         </ul>
