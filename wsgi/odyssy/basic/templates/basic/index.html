@@ -21,8 +21,8 @@
         <div class="widgets-container">
 
             <!-- Edit this section for important announcements.-->
-            <div class="alert alert-warning text-center">
-                {% if imp_news_announcement %}
+            {% if imp_news_announcement %}
+                <div class="alert alert-warning text-center">
                     <ul id="imp_announcement">
                         {% for announcement in imp_news_announcement %}
                             <li>
@@ -31,10 +31,7 @@
                             </li>
                         {% endfor %}
                     </ul>
-                {% else %}
-                    <h4>No new news or announcements</h4>
-                {% endif %}
-            </div>
+                </div>
 
             <!-- Announcements -->
             <div class="col-sm-4" id="announcements">
