@@ -44,7 +44,7 @@
                                     <span style = "font-size: 12px; font-weight: bold;color:Black">
                                         <a class="widgets-item-title" href='/announcement/{{ announcement.key }}'> {{ announcement.title }} </a>
                                         <div class="widgets-item-description">
-                                            {{ announcement.description|safe|truncatewords_html:"10"|linebreaks }}
+                                            {{ announcement.description | safe | truncatewords_html:"10" | linebreaks }}
                                         </div>
                                     </span>
                                 </li>
@@ -77,7 +77,7 @@
                                 <div class="widgets-item-text">
                                     <a class="widgets-item-title" href="{% url 'event-view-single' event.id %}">{{ event.name }}</a>
                                     <div class="widgets-item-description">
-                                        {{ event.description|safe|truncatewords_html:"10"|linebreaks }}
+                                        {{ event.description | safe | truncatewords_html:"10" | linebreaks }}
                                     </div>
                                 </div>
                             </div>
@@ -96,7 +96,7 @@
                             <li>
                                 <a class="widgets-item-title" href="{% url 'news-single' news.id %}" target="_blank">{{ news.title }}</a>
                                 <div class="widgets-item-description">
-                                        {{ news.description|safe|truncatewords_html:"10"|linebreaks }}
+                                        {{ news.description | safe | truncatewords_html:"10" | linebreaks }}
                                 </div>
                             </li>
                         {% endfor %}
