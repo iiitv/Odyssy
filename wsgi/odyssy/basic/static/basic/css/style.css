@@ -795,21 +795,20 @@ footer .address{
 }
 
 
-/****************
- * new styles
-**************** */
-
+/*
+widget-area styles
+*/
 .widgets-item-text {
     border-left: 4px solid  #ff5722;
     background-color:  #009688;
     margin: 5px 5px 5px 5px;
     border-radius: 2px;
-    box-shadow: 0px 0px 8px #263238;
+    box-shadow: 0 0 8px #263238;
   	transition: margin 0.5s, box-shadow 0.5s, border-left 0.5s;
 }
 
 .widgets-item-text:hover {
-	box-shadow: 0px 0px 0px #263238;
+	box-shadow: 0 0 0 #263238;
     border-left: 4px solid rgb(163,169,72);
 	margin: 5px 2px 5px -2px;
 }
