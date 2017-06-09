@@ -41,8 +41,11 @@
                             <ul id="announcement-list">
                             {% for announcement in latest_announcement %}
                                 <li>
-                                <span style = "font-size: 12px; font-weight: bold;color:Black">
-                                    <a href='/announcement/{{ announcement.key }}'> {{ announcement.title}} </a>
+                                    <span style = "font-size: 12px; font-weight: bold;color:Black">
+                                        <a class="widgets-item-title" href='/announcement/{{ announcement.key }}'> {{ announcement.title }} </a>
+                                        <div class="widgets-item-description">
+                                            {{ announcement.description | safe | truncatewords_html:"10" | linebreaks }}
+                                        </div>
                                     </span>
                                 </li>
                             {% endfor %}
@@ -71,7 +74,12 @@
                                     </span>
                                 </div>
                                 <!-- Event-Description -->
-                                <div class="event-text"><a href="{% url 'event-view-single' event.id %}">{{ event.name }}</a></div>
+                                <div class="widgets-item-text">
+                                    <a class="widgets-item-title" href="{% url 'event-view-single' event.id %}">{{ event.name }}</a>
+                                    <div class="widgets-item-description">
+                                        {{ event.description | safe | truncatewords_html:"10" | linebreaks }}
+                                    </div>
+                                </div>
                             </div>
                         </li>
                         {% endfor %}
@@ -86,7 +94,10 @@
                         <ul id="news-list">
                         {% for news in latest_news %}
                             <li>
-                            <a href="{% url 'news-single' news.id %}" target="_blank">{{ news.title }}</a>
+                                <a class="widgets-item-title" href="{% url 'news-single' news.id %}" target="_blank">{{ news.title }}</a>
+                                <div class="widgets-item-description">
+                                        {{ news.description | safe | truncatewords_html:"10" | linebreaks }}
+                                </div>
                             </li>
                         {% endfor %}
                         </ul>
