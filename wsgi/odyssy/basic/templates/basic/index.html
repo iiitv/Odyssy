@@ -21,11 +21,18 @@
         <div class="widgets-container">
 
             <!-- Edit this section for important announcements.-->
-            <div class="alert alert-warning text-center">
-                Institute invites applications for <a class="alert-link" href="http://pgadmissions.iiitvadodara.ac.in/">MTech
-                and PhD programs - Academic Year 2016-17</a>
-            </div>
-
+            {% if imp_news_announcement %}
+                <div class="alert alert-warning text-center">
+                    <ul id="imp_announcement">
+                        {% for announcement in imp_news_announcement %}
+                            <li>
+                                <a class="alert-link" href="#">{{ announcement.title }}:</a>
+                                <div style="margin-left: 5px">{{ announcement.description }}</div>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            {% endif %}
             <!-- Announcements -->
             <div class="col-sm-4" id="announcements">
                 <div class='announcement-content '>
