@@ -288,7 +288,7 @@ nav ul li{
 }
 
 .widgets-container{
-	max-width: 800px;
+	max-width: 75%;
     margin: 0 auto;
 }
 
@@ -799,7 +799,7 @@ footer .address{
 widget-area styles
 */
 .widgets-item-text {
-    border-left: 4px solid  #ff5722;
+    border-left: 4px solid rgb(136,64,99);
     background-color:  #009688;
     margin: 5px 5px 5px 5px;
     border-radius: 2px;
@@ -820,14 +820,20 @@ a{
 
 .widgets-item-title{
 	font-size: 14px;
+	letter-spacing: 0.1px;
 	margin-left: 1rem;
 	margin-right: 1rem;
 	margin-top: 0.5rem;
 }
 
 .widgets-item-description{
-	font-size: 11px;
+	font-size: 12px;
+	letter-spacing: 0.5px;
 	margin-left: 1rem;
 	margin-right: 1rem;
 	margin-top: 0.5rem;
+}
+
+.widgets-title a{
+	color: rgb(163,169,72);
 }
