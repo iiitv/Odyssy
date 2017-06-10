@@ -36,7 +36,7 @@
             <!-- Announcements -->
             <div class="col-sm-4" id="announcements">
                 <div class='announcement-content '>
-                    <div class="widgets-title"><h2><a href="/announcement/">Announcements</a></h2></div>
+                    <div class="widgets-title"><h2><a href="{% url 'all_announcements' %}">Announcements</a></h2></div>
                         {% if latest_announcement %}
                             <ul id="announcement-list">
                             {% for announcement in latest_announcement %}
