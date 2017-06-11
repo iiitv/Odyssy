@@ -799,7 +799,7 @@ footer .address{
 widget-area styles
 */
 .widgets-item-text {
-    border-left: 4px solid rgb(136,64,99);
+    border-left: 4px solid #CDDC39;
     background-color:  #009688;
     margin: 5px 5px 5px 5px;
     border-radius: 2px;
