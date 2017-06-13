@@ -680,18 +680,8 @@ footer .address{
 }
 
 
-.footer-social {
-	font-size: 2rem;
-}
-
-
-.footer-social a{
-	color: rgb(50,50,50);
-	margin:0 0.25rem;
-	opacity: 0.85;
-}
-.footer-social a:hover{
-	opacity: 1;
+.contact {
+	font-size: 1.5rem;
 }
 
 .footer-wrapper>.logo {
