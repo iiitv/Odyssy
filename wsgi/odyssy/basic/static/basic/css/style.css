@@ -666,6 +666,13 @@ footer .address{
 
 }
 
+.address{
+	margin-left: 10rem;
+}
+
+.links{
+	margin-left: 10rem;
+}
 
 .links a{
 	color:rgba(0, 0, 0, 0.87);
@@ -676,7 +683,7 @@ footer .address{
 }
 
 .links>div{
-	margin-bottom: 1rem
+	margin-bottom: 1rem;
 }
 
 
