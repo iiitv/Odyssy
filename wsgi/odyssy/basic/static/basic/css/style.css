@@ -820,7 +820,6 @@ a{
 
 .widgets-item-title{
 	font-size: 14px;
-	letter-spacing: 0.1px;
 	margin-left: 1rem;
 	margin-right: 1rem;
 	margin-top: 0.5rem;
@@ -828,7 +827,6 @@ a{
 
 .widgets-item-description{
 	font-size: 12px;
-	letter-spacing: 0.5px;
 	margin-left: 1rem;
 	margin-right: 1rem;
 	margin-top: 0.5rem;
