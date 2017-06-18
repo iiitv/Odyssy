@@ -288,7 +288,7 @@ nav ul li{
 }
 
 .widgets-container{
-	max-width: 800px;
+	max-width: 75%;
     margin: 0 auto;
 }
 
@@ -792,4 +792,46 @@ footer .address{
 	.gallery-design .grid-item {
 		width: 25%;
 	}
+}
+
+
+/*
+widget-area styles
+*/
+.widgets-item-text {
+    border-left: 4px solid #CDDC39;
+    background-color:  #009688;
+    margin: 5px 5px 5px 5px;
+    border-radius: 2px;
+    box-shadow: 0 0 8px #263238;
+  	transition: margin 0.5s, box-shadow 0.5s, border-left 0.5s;
+}
+
+.widgets-item-text:hover {
+	box-shadow: 0 0 0 #263238;
+    border-left: 4px solid rgb(163,169,72);
+	margin: 5px 2px 5px -2px;
+}
+
+
+a{
+	color: #6a1b9a;
+}
+
+.widgets-item-title{
+	font-size: 14px;
+	margin-left: 1rem;
+	margin-right: 1rem;
+	margin-top: 0.5rem;
+}
+
+.widgets-item-description{
+	font-size: 12px;
+	margin-left: 1rem;
+	margin-right: 1rem;
+	margin-top: 0.5rem;
+}
+
+.widgets-title a{
+	color: rgb(163,169,72);
 }
