@@ -6,3 +6,5 @@
 .project
 .pydevproject
 wsgi/media/photologue/photos/
+**/migrations/
+wsgi/odyssy/.idea/
