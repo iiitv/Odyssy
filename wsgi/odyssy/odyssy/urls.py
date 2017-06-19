@@ -29,6 +29,7 @@ urlpatterns = [
     url(r'^events/', include('events.urls')),
     url(r'^news/', include('news.urls')),
     url(r'^tag/', include('tag.urls')),
+    url(r'^photologue/', include('photologue.urls', namespace='photologue')),
     url(r'^announcement/', include('announcement.urls')),
     url(r'^', include('basic.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) \
