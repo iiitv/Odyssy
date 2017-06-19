@@ -659,11 +659,20 @@ footer{
 }
 
 footer .row{
+	margin-left: -15%;
+	margin-right: -18%;
 	font-size: 1.5rem;
 }
 
-footer .address{
+footer .links{
+	padding-left: 4%;
+}
 
+
+
+footer .address{
+	padding-left: 3%;
+	padding-right: 0;
 }
 
 
@@ -681,6 +690,7 @@ footer .address{
 
 
 .contact {
+	padding-left: 0;
 	font-size: 1.5rem;
 }
 
