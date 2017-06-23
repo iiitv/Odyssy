@@ -664,10 +664,12 @@ footer .row{
 	font-size: 1.5rem;
 }
 
-footer .links{
-	padding-left: 4%;
-}
 
+footer .links{
+	padding-left: 0;
+	text-align: center;
+	padding-right: 4%;
+}
 
 
 footer .address{
