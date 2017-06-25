@@ -8,8 +8,11 @@ from .views import (
 )
 
 urlpatterns = [
-    url(r'^$', AnnouncementListView.as_view(),  name='all-announcement'),
-    url(r'^(?P<key>\d+)/$', AnnouncementParticularView.as_view(), name='particular-announcement'),
-    url(r'^tag/(?P<tag_name>[\w\s]+)/$', AnnouncementTagView.as_view(), name='tag-announcement'),
-    url(r'^latest/(?P<cnt>\d+)/$', AnnouncementLatestView.as_view(), name='latest-announcement'),
+    url(r'^$', AnnouncementListView.as_view(),  name='api_all_announcement'),
+    url(r'^(?P<key>\d+)/$', AnnouncementParticularView.as_view(),
+        name='api_particular-announcement'),
+    url(r'^tag/(?P<tag_name>[\w\s]+)/$', AnnouncementTagView.as_view(),
+        name='api_tag-announcement'),
+    url(r'^latest/(?P<cnt>\d+)/$', AnnouncementLatestView.as_view(),
+        name='api_latest_announcement'),
 ]
