@@ -49,6 +49,7 @@ else:
 # Application definition
 
 INSTALLED_APPS = (
+    'people.apps.PeopleConfig',
     'photologue',
     'sortedm2m',
     'taggit',
