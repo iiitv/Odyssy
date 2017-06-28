@@ -66,21 +66,30 @@
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Institute <b
                                         class="caret"></b></a>
                                 <ul class="dropdown-menu multi-level">
-                                    <li><a href="/html/about.html">About</a></li>
-                                    <li><a href="/html/directors_message.html">Director's Message</a></li>
-                                    <li><a href="/html/bog.html">Board of Governors</a></li>
-                                    <li><a href="/html/society_members.html">Society Members</a></li>
-                                    <li><a href="/html/academic_council.html">Academic Council</a></li>
-                                    <li><a href="/html/finance_committee.html">Finance Committee</a></li>
-                                    <li><a href="/html/rti.html">RTI</a></li>
+                                    <li><a href="/institute/about.html">About</a></li>
+                                    <li><a href="/institute/directors_message.html">Director's Message</a></li>
+                                    <li><a href="/institute/bog.html">Board of Governors</a></li>
+                                    <li><a href="/institute/society_members.html">Society Members</a></li>
+                                    <li class="dropdown-submenu">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Committees</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="/institute/committee/senate.html">Senate</a></li>
+                                            <li><a href="/institute/committee/finance.html">Finance Committee</a></li>
+                                            <li><a href="/institute/committee/strategic-planning.html">Strategic Planning Committee</a></li>
+                                            <li><a href="/institute/committee/hr-planning.html">HR Planning Committee</a></li>
+                                            <li><a href="/institute/committee/building-works.html">Building And Works Committee</a></li>
+                                            <li><a href="/institute/committee/research-council.html">Research Council</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="/institute/rti.html">RTI</a></li>
                                     <li><a href="{% static 'basic/pdf/MOU.pdf' %}">MOU</a></li>
                                     <li class="dropdown-submenu">
                                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Linkages</a>
                                         <ul class="dropdown-menu">
-                                            <li><a href="/linkages/da-iict.html">DA-IICT</a></li>
-                                            <li><a href="/linkages/gsfc.html">GSFC</a></li>
-                                            <li><a href="/linkages/germi.html">GERMI</a></li>
-                                            <li><a href="/linkages/tcs.html">TCS</a></li>
+                                            <li><a href="/institute/linkages/da-iict.html">DA-IICT</a></li>
+                                            <li><a href="/institute/linkages/gsfc.html">GSFC</a></li>
+                                            <li><a href="/institute/linkages/germi.html">GERMI</a></li>
+                                            <li><a href="/institute/linkages/tcs.html">TCS</a></li>
                                         </ul>
                                     </li>
                                 </ul>
@@ -159,9 +168,9 @@
                 </div>
                 <div class="col-sm-4 links">
                     <div>
-                        <a href="#">Home</a>
+                        <a href="{% url 'index-view' %}">Home</a>
                         <i class="seperator"></i>
-                        <a href="/html/rti.html">RTI</a>
+                        <a href="/institute/rti.html">RTI</a>
                         <i class="seperator"></i>
                         <a href="{% static 'basic/pdf/MOU.pdf' %}">MOU</a>
                     </div>
@@ -182,7 +191,7 @@
     </footer>
 </div>
 <script   src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
-<script type="text/javascript" src="js/jquery.paginate.min.js "></script>
+<script type="text/javascript" src="{% static 'basic/js/jquery.paginate.min.js' %}"></script>
 <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 <script src="https://use.fontawesome.com/434d359724.js"></script>
