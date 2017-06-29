@@ -890,7 +890,7 @@ header, footer{
 	background-color: white;
 	color: black;
 	list-style: none;
-	padding: 1rem 0;
+	padding: 1rem;
 }
 
 .detailed-widget-view > li{
@@ -899,7 +899,7 @@ header, footer{
 
 .detailed-widget-view > li:before{
 	content: "•";
-	padding-right: 8px;
+	padding-right: 1.8rem;
 	color: rgb(15,108,107);
 }
 
@@ -911,4 +911,10 @@ h2 {
 	color: white;
 	text-align: center;
 	margin: 3rem 0;
+}
+
+.item-description{
+	background-color: white;
+	color: black;
+	padding: 2rem;
 }
