@@ -918,3 +918,15 @@ h2 {
 	color: black;
 	padding: 2rem;
 }
+
+.event-place{
+	color: rgb(15,108,107);
+	font-size: 18px;
+	display: inline;
+	font-weight: bold;
+}
+
+.event-time{
+	font-weight: bold;
+	display: inline;
+}

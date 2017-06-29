@@ -13,6 +13,7 @@
               <li><a href="/announcement/{{ announcement.key }}/">{{ announcement.title }}</a></li>
             {% endfor %}
           </ul>
+        
         {% if announcement_list.has_previous %}
           <a href="?page={{ announcement_list.previous_page_number }}&num_items={{ num_items }}">Previous</a>
         {% endif %}
