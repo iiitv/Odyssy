@@ -119,6 +119,7 @@
                             <li>
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">People <b class="caret"></b></a>
                                 <ul class="dropdown-menu multi-level">
+                                    <li><a href="{% url 'people:administration' %}">Administration</a></li>
                                     <li><a href="{% url 'people:faculty' %}">Faculty</a></li>
                                     <li><a href="{% url 'people:visiting_faculty' %}">Visiting Faculty</a></li>
                                     <li><a href="{% url 'people:staff' %}">Staff</a></li>
@@ -188,30 +189,30 @@
 <script src="https://use.fontawesome.com/434d359724.js"></script>
 <script src="{% static 'basic/js/main.js' %}"></script>
 <script>
-	$(document).on('click', function (e) {
-	    var
-	        $popover,
-	        $target = $(e.target);
+    $(document).on('click', function (e) {
+        var
+            $popover,
+            $target = $(e.target);
 
-	    //do nothing if there was a click on popover content
-	    if ($target.hasClass('popover') || $target.closest('.popover').length) {
-	        return;
-	    }
+        //do nothing if there was a click on popover content
+        if ($target.hasClass('popover') || $target.closest('.popover').length) {
+            return;
+        }
 
-	    $('[data-toggle="popover"]').each(function () {
-	        $popover = $(this);
+        $('[data-toggle="popover"]').each(function () {
+            $popover = $(this);
 
-	        if (!$popover.is(e.target) &&
-	            $popover.has(e.target).length === 0 &&
-	            $('.popover').has(e.target).length === 0)
-	        {
-	            $popover.popover('hide');
-	        } else {
-	            //fixes issue described above
-	            $popover.popover('toggle');
-	        }
-	    });
-	})
+            if (!$popover.is(e.target) &&
+                $popover.has(e.target).length === 0 &&
+                $('.popover').has(e.target).length === 0)
+            {
+                $popover.popover('hide');
+            } else {
+                //fixes issue described above
+                $popover.popover('toggle');
+            }
+        });
+    })
 </script>
 <!--
 /********************************

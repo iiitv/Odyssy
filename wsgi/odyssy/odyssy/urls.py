@@ -26,6 +26,7 @@ sitemaps = {
 
 urlpatterns = [
     url(r'^admin/?', include(admin.site.urls)),
+    url(r'^api/people/', include('people.api.urls')),
     url(r'^events/', include('events.urls')),
     url(r'^news/', include('news.urls')),
     url(r'^people/', include('people.urls', namespace='people')),
