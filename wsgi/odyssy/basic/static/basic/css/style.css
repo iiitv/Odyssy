@@ -293,7 +293,7 @@ nav ul li{
 }
 
 .announcement-content,.news-content{
-	color: white;
+	color: rgba(255, 255, 255, 0.95);
 }
 
 .events-content{
@@ -836,4 +836,18 @@ a{
 
 .widgets-title a{
 	color: rgb(163,169,72);
+}
+
+.widgets-item-title > a{
+	color: rgb(15,108,107);
+}
+
+.widgets-item-title > a:hover{
+	text-decoration: none;
+	font-weight: bold;
+}
+
+.event-title > a{
+	color: white;
+	text-transform: uppercase;
 }
