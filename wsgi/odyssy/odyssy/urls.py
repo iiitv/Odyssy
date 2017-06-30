@@ -32,6 +32,7 @@ urlpatterns = [
     url(r'^photologue/', include('photologue.urls', namespace='photologue')),
     url(r'^announcement/', include('announcement.urls')),
     url(r'^', include('basic.urls')),
+    url(r'^gallery/', include('gallery.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) \
   + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 

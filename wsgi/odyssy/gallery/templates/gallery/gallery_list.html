@@ -1,0 +1,29 @@
+{% extends 'basic/base.html' %}
+{% block title %}
+    Gallery
+{% endblock %}
+
+{% block body %}
+    <div class="row col-lg-12">
+        <h1 class="page-header">"All galleries"</h1>
+    </div>
+
+    {% if object_list %}
+        {% for gallery in object_list %}
+            <div class="row col-lg-12">
+                <h2><a href="{{ gallery.get_absolute_url }}">{{ gallery.title }}</a></h2>
+                <p class="muted"><small>"Published" {{ gallery.date_added }}</small></p>
+                {% if gallery.description %}<p>{{ gallery.description|safe }}</p>{% endif %}
+                {% for photo in gallery.sample %}
+                    <a href="{{ photo.get_absolute_url }}">
+                         <img src="{{ photo.get_thumbnail_url }}" class="thumbnail" alt="{{ photo.title }}">
+                    </a>
+                {% endfor %}
+            </div>
+        {% endfor %}
+    {% else %}
+        <div class="row col-lg-12">"No galleries were found".</div>
+    {% endif %}
+
+    
+{% endblock %}

@@ -57,6 +57,7 @@ INSTALLED_APPS = (
     'basic.apps.BasicConfig',
     'tag.apps.TagConfig',
     'announcement.apps.AnnouncementConfig',
+    'gallery.apps.GalleryConfig',
     'django.contrib.sites',
     'django.contrib.sitemaps',
     'django.contrib.admin',
