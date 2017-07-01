@@ -7,7 +7,7 @@
 <div class="contents-wrapper">
     <!-- Contents starts here -->
     <div class="content">
-        <h2 style="text-align:center">Strategic Planning Committee
+        <h2 style="text-align:center">{{ committee }}
             <br/><br/>
         </h2>
         <table class="table table-bordered table-responsive table-hover">
@@ -18,31 +18,13 @@
                 <th data-field="designation">Designation</th>
             </tr>
             </thead>
+            {% for member in member_list %}
             <tr>
-                <td>1</td>
-                <td>Prof R. Nagaraj</td>
-                <td>Chairman, Director DA-IICT</td>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ member.name }}</td>
+                <td>{{ member.post }}, {{ member.origin }}</td>
             </tr>
-            <tr>
-                <td>2</td>
-                <td>Prof Pankaj Jalote</td>
-                <td>Member, Director IIIT Delhi</td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>Shri Parveer Saxena</td>
-                <td>Member, US MHRD Government of India</td>
-            </tr>
-            <tr>
-                <td>4</td>
-                <td>Dr. V. S. Purani</td>
-                <td>Member, Joint Director, Technical Education, Government of Gujarat</td>
-            </tr>
-            <tr>
-                <td>5</td>
-                <td>Col Ravi Chugh</td>
-                <td>Member Secretary, Registrar IIIT Vadodara</td>
-            </tr>
+            {% endfor %}
         </table>
     </div>
 </div>

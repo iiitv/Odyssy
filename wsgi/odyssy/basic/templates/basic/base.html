@@ -75,15 +75,15 @@
                                     <li><a href="/institute/directors_message.html">Director's Message</a></li>
                                     <li><a href="/institute/bog.html">Board of Governors</a></li>
                                     <li><a href="/institute/society_members.html">Society Members</a></li>
+                                    <li><a href="/institute/senate.html">Senate</a></li>
                                     <li class="dropdown-submenu">
                                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Committees</a>
                                         <ul class="dropdown-menu">
-                                            <li><a href="/institute/committee/senate.html">Senate</a></li>
-                                            <li><a href="/institute/committee/finance.html">Finance Committee</a></li>
-                                            <li><a href="/institute/committee/strategic-planning.html">Strategic Planning Committee</a></li>
-                                            <li><a href="/institute/committee/hr-planning.html">HR Planning Committee</a></li>
-                                            <li><a href="/institute/committee/building-works.html">Building And Works Committee</a></li>
-                                            <li><a href="/institute/committee/research-council.html">Research Council</a></li>
+                                            <li><a href="{% url 'institute:finance' %}">Finance Committee</a></li>
+                                            <li><a href="{% url 'institute:strategic-planning' %}">Strategic Planning Committee</a></li>
+                                            <li><a href="{% url 'institute:hr-planning' %}">HR Planning Committee</a></li>
+                                            <li><a href="{% url 'institute:building-works' %}">Building And Works Committee</a></li>
+                                            <li><a href="{% url 'institute:research-council' %}">Research Council</a></li>
                                         </ul>
                                     </li>
                                     <li><a href="/institute/rti.html">RTI</a></li>

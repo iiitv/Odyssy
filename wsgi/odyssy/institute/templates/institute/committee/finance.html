@@ -7,7 +7,7 @@
 <div class="contents-wrapper">
     <!-- Contents starts here -->
     <div class="content">
-        <h2 style="text-align:center">Finance Committee
+        <h2 style="text-align:center">{{ committee }}
             <br/><br/>
         </h2>
         <table class="table table-bordered table-responsive table-hover">
@@ -18,36 +18,13 @@
                 <th data-field="designation">Designation</th>
             </tr>
             </thead>
+            {% for member in member_list %}
             <tr>
-                <td>1</td>
-                <td>Prof T. Harinarayana</td>
-                <td>Chairman, Director General GERMI</td>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ member.name }}</td>
+                <td>{{ member.post }}, {{ member.origin }}</td>
             </tr>
-            <tr>
-                <td>2</td>
-                <td>Prof R. Nagaraj</td>
-                <td>Member, Director DA-IICT</td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>Shri Manoj Rajput</td>
-                <td>Member, Senior General Manager (Finance) TATA Consultancy Services</td>
-            </tr>
-            <tr>
-                <td>4</td>
-                <td>Shri P. R. Dave</td>
-                <td>Member, Joint Director DTE Government of Gujarat</td>
-            </tr>
-            <tr>
-                <td>5</td>
-                <td>Shri Mahmood Fazal</td>
-                <td>Member, DS (Fin.) (HE) MHRD Government of India</td>
-            </tr>
-            <tr>
-                <td>6</td>
-                <td>Col Ravi Chugh</td>
-                <td>Member Secretary, Registrar IIIT Vadodara</td>
-            </tr>
+            {% endfor %}
         </table>
     </div>
 </div>

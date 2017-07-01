@@ -7,7 +7,7 @@
 <div class="contents-wrapper">
     <!-- Contents starts here -->
     <div class="content">
-        <h2 style="text-align:center">Research Council
+        <h2 style="text-align:center">{{ committee }}
             <br/><br/>
         </h2>
         <table class="table table-bordered table-responsive table-hover">
@@ -18,41 +18,13 @@
                 <th data-field="designation">Designation</th>
             </tr>
             </thead>
+            {% for member in member_list %}
             <tr>
-                <td>1</td>
-                <td>Prof R. Nagaraj</td>
-                <td>Chairperson, I/C Director</td>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ member.name }}</td>
+                <td>{{ member.post }}, {{ member.origin }}</td>
             </tr>
-            <tr>
-                <td>2</td>
-                <td>Prof Sanjeev Gupta</td>
-                <td>Vice Chairperson, Dean (Research) DA-IICT</td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>Dr. Gautam Shroff</td>
-                <td>Member, TCS Innovation Labs Delhi</td>
-            </tr>
-            <tr>
-                <td>4</td>
-                <td>Dr. Arun Rajagopalan</td>
-                <td>Member, Evive Software Analytics</td>
-            </tr>
-            <tr>
-                <td>5</td>
-                <td>Dr. B Kartikeyan</td>
-                <td>Member, Space Application Centre, Ahmedabad</td>
-            </tr>
-            <tr>
-                <td>6</td>
-                <td>Dr. Mandar Mitra</td>
-                <td>Member, Indian Statistical Institute</td>
-            </tr>
-            <tr>
-                <td>7</td>
-                <td>Col Ravi Chugh</td>
-                <td>Member Secretary, Registrar IIIT Vadodara</td>
-            </tr>
+            {% endfor %}
         </table>
     </div>
 </div>
