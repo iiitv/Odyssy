@@ -1,9 +1,7 @@
 from __future__ import unicode_literals
-from taggit.managers import TaggableManager
 from django.core.exceptions import ValidationError
 
 from django.db import models
-from django.shortcuts import get_object_or_404
 
 
 class Institute(models.Model):
