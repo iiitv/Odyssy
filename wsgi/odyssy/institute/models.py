@@ -21,7 +21,7 @@ class Institute(models.Model):
     POST_CHOICES = [
         ('default', 'Select choice'),
         ('Chairman', 'Chairman'),
-        ('Vice chairman', 'Vice Chairman'),
+        ('Vice Chairman', 'Vice Chairman'),
         ('Member', 'Member'),
         ('Member Secretary', 'Member Secretary'),
     ]
