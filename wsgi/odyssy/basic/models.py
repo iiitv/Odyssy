@@ -22,3 +22,11 @@ class PhotoExtended(models.Model):
         return PhotoExtended.objects.filter(
             tags__name=tag_name
         ).order_by('-photo__date_added')[:cnt]
+
+    @staticmethod
+    def carousel_check():
+        for tag in tags:
+            if tag == 'carousel':
+                return true
+        return false
+

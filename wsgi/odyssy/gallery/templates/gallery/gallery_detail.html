@@ -1,8 +1,12 @@
-{% extends 'gallery/base.html' %}
+{% extends 'basic/base.html' %}
+{% load staticfiles %}
 
 {% block title %}{{ gallery.title }}{% endblock %}
 
+
 {% block body %}
+	<script src="{% static 'basic/js/lightbox-plus-jquery.min.js' %}"></script>
+	<link rel="stylesheet" href="{% static 'basic/css/lightbox.min.css' %}">
 
 	<div class="contents-wrapper">
         <div class="gallery-content">
