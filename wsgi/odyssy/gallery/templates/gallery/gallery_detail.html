@@ -5,9 +5,9 @@
 {% block body %}
 
 	<div class="contents-wrapper">
-        <div class="content">
+        <div class="gallery-content">
         	<h2 id="gallery-title">{{ gallery.title }}</h2>        
-        	{% if gallery.description %}{{ gallery.description|safe }}{% endif %}
+ 
         	<div class="gallery-wrapper">
 	    		{% for photo in gallery.public %}
 	    			<div class="gallery-thumbnail">
@@ -16,6 +16,7 @@
 	             		</a>
 	            	 </div>
 	    		{% endfor %}
+	    		{% if gallery.description %}{{ gallery.description|safe }}{% endif %}
 	    	</div> 
 	    </div>
 	    <div class="gallery-bottom-section">

@@ -474,6 +474,18 @@ nav ul li{
 
 #gallery-title{
  	color: rgb(15,108,107);
+ 	text-align: center;
+ }
+
+hr{
+ 	display: block;
+    margin-top: 1rem;
+    margin-bottom: 2.5rem;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 1px;
+    color: rgb(15,108,107);
  }
 
  #gallery-published-date{
@@ -483,13 +495,14 @@ nav ul li{
  }
 
  .gallery-bottom-section{
- 	margin: 3rem;
+ 	margin: 1rem 0;
  	display: block;
  }
 
+
  .button{
  	color: white;
- 	margin: 3rem;
+ 	margin: 1rem 0;
  	background-color: rgb(15,108,107);
     border: none;
     padding: 1.5rem 3rem;

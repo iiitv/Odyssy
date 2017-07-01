@@ -7,6 +7,7 @@
     <div class="contents-wrapper">
         <div class="content">
             <h2 id="gallery-title">Gallery</h2>
+            <hr>
                 {% if object_list %}
                     {% for gallery in object_list %}
                         <div class="gallery-thumbnail">
@@ -21,7 +22,7 @@
                          </div>
                     {% endfor %}
                 {% else %}
-                <div class="row col-lg-12">"No galleries were found".</div>
+                <div>"No galleries were found".</div>
                 {% endif %}
         </div>
     </div>
