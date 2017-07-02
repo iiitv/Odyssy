@@ -14,11 +14,13 @@
  
         	<div class="gallery-wrapper">
 	    		{% for photo in gallery.public %}
-	    			<div class="gallery-thumbnail">
-	    				<a href="{{ photo.image.url }}" data-lightbox="full-image-set" data-title="{{ photo.title }}">
-	             			<img src="{{ photo.get_thumbnail_url }}" alt="{{ photo.title }}" class="image-thumbnail">
-	             		</a>
-	            	 </div>
+	    			{% if photo.extended.imageGallery %}
+	    				<div class="gallery-thumbnail">
+	    					<a href="{{ photo.image.url }}" data-lightbox="full-image-set" data-title="{{ photo.title }}">
+	             				<img src="{{ photo.get_thumbnail_url }}" alt="{{ photo.title }}" class="image-thumbnail">
+	             			</a>
+	            	 	</div>
+	            	 {% endif %}
 	    		{% endfor %}
 	    		{% if gallery.description %}{{ gallery.description|safe }}{% endif %}
 	    	</div> 
