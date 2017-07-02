@@ -8,11 +8,13 @@
     <div class="carousel-wrapper">
         <div class="carousel" style="margin: 0 auto">
             {% for image in carousel %}
-                <div class="carousel-items">
-                    <img height="400px" src="media/{{ image.image }}" alt="{{ image.id }}">
-                    <div></div>
-                </div>
-              {% endfor %}
+                {% if image.imageGallery %}
+                    <div class="carousel-items">
+                        <img height="400px" src="media/{{ image.image }}" alt="{{ image.id }}">
+                        <div></div>
+                    </div>
+                {% endif %}
+            {% endfor %}
         </div>
     </div>
 
