@@ -1,10 +1,5 @@
-from django.http import HttpResponse
-from django.shortcuts import render
-from django.urls import reverse
 from django.views import generic
-
-from photologue.models import Photo, Gallery
-
+from photologue.models import Gallery
 
 class IndexView(generic.ListView):
 	template_name = 'gallery/gallery_list.html'
