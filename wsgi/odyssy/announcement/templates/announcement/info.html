@@ -1,10 +1,21 @@
-<body>
-  {% if info %}
-    <h1>{{ info.title }}</h1><br>
-    {% if info.description is not None %}
-      <p>{{ info.description | safe }}</p>
-    {% endif %}
-  {% else %}
-    <h1> No such Announcement </h1>
-  {% endif %}
-</body>
+{% extends 'basic/base.html' %}
+{% block title %}
+    Announcement
+{% endblock %}
+
+{% block body %}
+	<div class="contents-wrapper">
+ 		<div class="content">
+  			{% if info %}
+    			<h2>{{ info.title }}</h2>
+    			{% if info.description is not None %}
+    				<div class="item-description">
+      					<p>{{ info.description | safe }}</p>
+    			{% endif %}
+  			{% else %}
+    			<h1> No such Announcement </h1>
+  			{% endif %}
+  			    	</div>
+  		</div>
+  	</div>
+{% endblock %}
