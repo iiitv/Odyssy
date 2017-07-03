@@ -29,7 +29,7 @@
                         {% for announcement in imp_news_announcement %}
                             <li>
                                 <a class="alert-link" href="#">{{ announcement.title }}:</a>
-                                <div style="margin-left: 5px">{{ announcement.description }}</div>
+                                <div>{{ announcement.description }}</div>
                             </li>
                         {% endfor %}
                     </ul>
@@ -114,4 +114,5 @@
             </div>
         </div>
     </div>
+
 {% endblock %}
