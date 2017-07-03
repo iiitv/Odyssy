@@ -49,6 +49,7 @@ else:
 # Application definition
 
 INSTALLED_APPS = (
+    'academic.apps.AcademicConfig',
     'institute.apps.InstituteConfig',
     'photologue',
     'sortedm2m',
