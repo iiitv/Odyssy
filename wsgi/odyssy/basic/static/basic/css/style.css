@@ -51,7 +51,7 @@ body{
 
 .contents-wrapper{
 	margin-top: 3rem;
-	margin-bottom: 2rem;
+	margin-bottom: 5rem;
 	flex:1;
 	line-height: 1.5;
 	font-size: 16px;
@@ -293,7 +293,7 @@ nav ul li{
 }
 
 .announcement-content,.news-content{
-	color: white;
+	color: rgba(255, 255, 255, 0.95);
 }
 
 .events-content{
@@ -780,4 +780,102 @@ widget-area styles
 
 .widgets-title a{
 	color: rgb(163,169,72);
+}
+
+.widgets-item-title > a{
+	color: rgb(15,108,107);
+}
+
+.widgets-item-title > a:hover{
+	text-decoration: none;
+	font-weight: bold;
+}
+
+.event-title > a{
+	color: white;
+	text-transform: uppercase;
+}
+
+#home{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.Site-content {
+  flex: 1 0 auto;
+  padding: var(--space) var(--space) 0;
+  width: 100%;
+  background-color: rgb(15,108,107);
+}
+.Site-content::after {
+  content: '\00a0';
+  display: block;
+  margin-top: var(--space);
+  height: 0px;
+  visibility: hidden;
+}
+@media (--break-lg) {
+  .Site-content {
+    padding-top: var(--space-lg);
+  }
+  .Site-content::after {
+    margin-top: var(--space-lg);
+  }
+}
+
+.Site-content--full {
+  padding: 0;
+}
+.Site-content--full::after {
+  content: none;
+}
+
+header, footer{
+	flex: none;
+}
+
+.detailed-widget-view {
+	background-color: white;
+	color: black;
+	list-style: none;
+	padding: 1rem;
+}
+
+.detailed-widget-view > li{
+ padding: 1rem;
+}
+
+.detailed-widget-view > li:before{
+	content: "•";
+	padding-right: 1.8rem;
+	color: rgb(15,108,107);
+}
+
+.detailed-widget-view > li > a{
+	color: black;
+}
+
+h2 {
+	color: white;
+	text-align: center;
+	margin: 3rem 0;
+}
+
+.item-description{
+	background-color: white;
+	color: black;
+	padding: 2rem;
+}
+
+.event-place{
+	color: rgb(15,108,107);
+	font-size: 18px;
+	display: inline;
+	font-weight: bold;
+}
+
+.event-time{
+	font-weight: bold;
+	display: inline;
 }

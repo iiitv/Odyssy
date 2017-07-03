@@ -1,0 +1,26 @@
+{% extends 'basic/base.html' %}
+{% load static %}
+{% block title %}
+    IIIT-V | RTI
+{% endblock %}
+{% block body %}
+<!-- Content wrapper -->
+<div class="contents-wrapper">
+    <!-- Contents starts here -->
+    <div class="content">
+        <h1>RTI Home</h1>
+        <img class="responsive-img" src="{% static 'basic/images/rti_standard_signature_eng_colour-copy.gif' %}" style="width: 25%">
+        <p>Right to Information (RTI) is an Act of the Indian Parliament enforced from the year 2005, to provide for a
+            practical regime for citizens to secure access to information under the control of public authorities. This
+            aims to promote transparency and accountability in the working of every public authority. IIIT Vadodara is
+            covered under this act.</p><br>
+        <p>For RTI queries please write to</p>
+        <h3><p>Public Information Officer (PIO)</p></h3>
+        <p><b>Address:</b> IIIT Vadodara, Block No.9, Government Engineering College, Sector-28, Gandhinagar-382028.</p>
+        <p><b>Phone:</b> +91 (79) 2975 0281</p>
+        <p><b>E-mail:</b> <img src="{% static 'basic/images/registrar-email.jpg' %}" style="max-width: 230px;"></p>
+        <p><a href="/institute/rti-section4.html">RTI Section 4</a></p>
+
+    </div>
+</div>
+{% endblock %}
