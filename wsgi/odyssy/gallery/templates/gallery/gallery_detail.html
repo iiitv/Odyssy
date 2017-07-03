@@ -25,11 +25,13 @@
 	    		{% if gallery.description %}{{ gallery.description|safe }}{% endif %}
 	    	</div> 
 	    </div>
+	</div>
+	<div class="contents-wrapper">   
 	    <div class="gallery-bottom-section">
 	    	Published:
 	    	<div id="gallery-published-date"> {{ gallery.date_added }}</div>
 	    </div>
         <div><a href="{% url 'gallery' %}"  class="button">View All</a></div>
-	</div>
+    </div>
 
 {% endblock %}
