@@ -1,0 +1,31 @@
+{% extends 'basic/base.html' %}
+{% block title %}
+    IIIT-V | Strategic Planning Committee
+{% endblock %}
+{% block body %}
+<!-- Contents -->
+<div class="contents-wrapper">
+    <!-- Contents starts here -->
+    <div class="content">
+        <h2 style="text-align:center">{{ committee }}
+            <br/><br/>
+        </h2>
+        <table class="table table-bordered table-responsive table-hover">
+            <thead>
+            <tr>
+                <th data-field="id">S. No.</th>
+                <th data-field="name">Name</th>
+                <th data-field="designation">Designation</th>
+            </tr>
+            </thead>
+            {% for member in member_list %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ member.name }}</td>
+                <td>{{ member.post }}, {{ member.origin }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</div>
+{% endblock %}
