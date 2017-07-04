@@ -50,6 +50,7 @@ else:
 
 INSTALLED_APPS = (
     'people.apps.PeopleConfig',
+    'institute.apps.InstituteConfig',
     'photologue',
     'sortedm2m',
     'taggit',

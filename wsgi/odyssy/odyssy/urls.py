@@ -27,6 +27,7 @@ sitemaps = {
 urlpatterns = [
     url(r'^admin/?', include(admin.site.urls)),
     url(r'^api/people/', include('people.api.urls')),
+    url(r'^institute/', include('institute.urls', namespace='institute')),
     url(r'^events/', include('events.urls')),
     url(r'^news/', include('news.urls')),
     url(r'^people/', include('people.urls', namespace='people')),
@@ -36,5 +37,3 @@ urlpatterns = [
     url(r'^', include('basic.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) \
   + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-
-
