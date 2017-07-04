@@ -57,7 +57,7 @@ INSTALLED_APPS = (
     'news.apps.NewsConfig',
     'basic.apps.BasicConfig',
     'tag.apps.TagConfig',
-    'more.apps.MoreConfig'
+    'more.apps.MoreConfig',
     'announcement.apps.AnnouncementConfig',
     'django.contrib.sites',
     'django.contrib.sitemaps',
