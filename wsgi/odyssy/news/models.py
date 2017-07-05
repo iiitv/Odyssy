@@ -53,3 +53,8 @@ class News(models.Model):
         return News.objects.filter(
             utils.get_active_filter()
         ).filter(tags__name=tag_name).order_by('-start_date')[:cnt]
+
+    @staticmethod
+    def get_model_type():
+        return "News"
+    

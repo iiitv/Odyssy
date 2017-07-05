@@ -48,6 +48,11 @@ class Announcement(models.Model):
             utils.get_active_filter()
             ).filter(tags__name=tag_name).order_by('-start_date')[:cnt]
 
+    @staticmethod
+    def get_model_type():
+        return "Announcement"
+    
+
     key = models.AutoField(primary_key=True)
     start_date = models.DateTimeField(default=utils.get_today_start)
     end_date = models.DateTimeField(default=utils.get_today_end)
