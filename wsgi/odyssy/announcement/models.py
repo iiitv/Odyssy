@@ -51,7 +51,6 @@ class Announcement(models.Model):
     @staticmethod
     def get_model_type():
         return "Announcement"
-    
 
     key = models.AutoField(primary_key=True)
     start_date = models.DateTimeField(default=utils.get_today_start)

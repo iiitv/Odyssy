@@ -57,4 +57,3 @@ class News(models.Model):
     @staticmethod
     def get_model_type():
         return "News"
-    

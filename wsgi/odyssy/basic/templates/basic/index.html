@@ -29,9 +29,8 @@
                             	{% if announcement.get_model_type == "Announcement" %}
                                 	<a class="alert-link" href="/announcement/{{ announcement.key }}">{{ announcement.title }}:</a>
                                 	<div style="margin-left: 5px">{{ announcement.description }}</div>
-                                {% endif %}
 
-                                {% if announcement.get_model_type == "News" %}
+                                {% elif announcement.get_model_type == "News" %}
                                 	<a class="alert-link" href="/news/{{ announcement.id }}">{{ announcement.title }}:</a>
                                 	<div style="margin-left: 5px">{{ announcement.description }}</div>
                                 {% endif %}
