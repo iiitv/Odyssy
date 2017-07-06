@@ -50,6 +50,7 @@ else:
 
 INSTALLED_APPS = (
     'academic.apps.AcademicConfig',
+    'people.apps.PeopleConfig',
     'institute.apps.InstituteConfig',
     'photologue',
     'sortedm2m',
@@ -67,6 +68,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
 )
 
 SITE_ID = 1
