@@ -32,6 +32,7 @@ urlpatterns = [
     url(r'^news/', include('news.urls')),
     url(r'^people/', include('people.urls', namespace='people')),
     url(r'^tag/', include('tag.urls')),
+    url(r'^careers/', include('careers.urls')),
     url(r'^photologue/', include('photologue.urls', namespace='photologue')),
     url(r'^announcement/', include('announcement.urls')),
     url(r'^academic/', include('academic.urls', namespace='academic')),
