@@ -783,6 +783,10 @@ widget-area styles
 	color: rgb(163,169,72);
 }
 
+.people{
+	margin-bottom: 30px;
+}
+
 .widgets-item-title > a{
 	color: rgb(15,108,107);
 }

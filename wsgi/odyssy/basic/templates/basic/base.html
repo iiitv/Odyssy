@@ -106,19 +106,18 @@
                                     <li class="dropdown-submenu">
                                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">B.Tech</a>
                                         <ul class="dropdown-menu">
-                                            <li><a href="/html/btech_cse.html">CSE</a></li>
-                                            <li><a href="/html/btech_it.html">IT</a></li>
+                                            <li><a href="/academic/btech/btech_cse.html">CSE</a></li>
+                                            <li><a href="/academic/btech/btech_it.html">IT</a></li>
                                         </ul>
                                     </li>
                                     <li class="dropdown-submenu">
                                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">M.Tech</a>
                                         <ul class="dropdown-menu">
-                                            <li><a href="/html/mtech_cse.html">CSE</a></li>
+                                            <li><a href="/academic/mtech/mtech_cse.html">CSE</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="/html/phd.html">Ph.D</a></li>
-                                    <li><a href="{% static 'basic/pdf/academic_calendar_autumn_2015_16.pdf' %}">Academic Calender</a></li>
-
+                                    <li><a href="/academic/phd.html">Ph.D</a></li>
+                                    <li><a href="{% static 'basic/pdf/Academic_Calendar.pdf' %}">Academic Calender</a></li>
                                 </ul>
                             </li>
                             <li>
@@ -133,9 +132,10 @@
                             <li>
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">People <b class="caret"></b></a>
                                 <ul class="dropdown-menu multi-level">
-                                    <li><a href="/html/faculty.html">Faculty</a></li>
-                                    <li><a href="/html/visiting_faculty.html">Visiting Faculty</a></li>
-                                    <li><a href="/html/staff.html">Staff</a></li>
+                                    <li><a href="{% url 'people:administration' %}">Administration</a></li>
+                                    <li><a href="{% url 'people:faculty' %}">Faculty</a></li>
+                                    <li><a href="{% url 'people:visiting_faculty' %}">Visiting Faculty</a></li>
+                                    <li><a href="{% url 'people:staff' %}">Staff</a></li>
                                 </ul>
                             </li>
                             <li>
@@ -149,8 +149,10 @@
                                     <li><a href="/html/invited_talks.html">Invited Talks</a></li>
                                 </ul>
                             </li>
-                            <li><a href="/html/career.html">Career</a></li>
+
+                            <li><a href="/careers/careers.html">Career</a></li>
                             <li><a href="/gallery/">Photo Gallery</a></li>
+
                         </ul>
                     </div>
                     <!--/.nav-collapse -->
@@ -186,7 +188,7 @@
                         <i class="seperator"></i>
                         <a href="/html/student_corner.html">Student</a>
                         <i class="seperator"></i>
-                        <a href="/html/faculty.html">Faculty</a>
+                        <a href="{% url 'people:faculty' %}">Faculty</a>
                     </div>
                 </div>
                 <div class="col-sm-4 contact">
@@ -199,30 +201,30 @@
 </div>
 
 <script>
-	$(document).on('click', function (e) {
-	    var
-	        $popover,
-	        $target = $(e.target);
+    $(document).on('click', function (e) {
+        var
+            $popover,
+            $target = $(e.target);
 
-	    //do nothing if there was a click on popover content
-	    if ($target.hasClass('popover') || $target.closest('.popover').length) {
-	        return;
-	    }
+        //do nothing if there was a click on popover content
+        if ($target.hasClass('popover') || $target.closest('.popover').length) {
+            return;
+        }
 
-	    $('[data-toggle="popover"]').each(function () {
-	        $popover = $(this);
+        $('[data-toggle="popover"]').each(function () {
+            $popover = $(this);
 
-	        if (!$popover.is(e.target) &&
-	            $popover.has(e.target).length === 0 &&
-	            $('.popover').has(e.target).length === 0)
-	        {
-	            $popover.popover('hide');
-	        } else {
-	            //fixes issue described above
-	            $popover.popover('toggle');
-	        }
-	    });
-	})
+            if (!$popover.is(e.target) &&
+                $popover.has(e.target).length === 0 &&
+                $('.popover').has(e.target).length === 0)
+            {
+                $popover.popover('hide');
+            } else {
+                //fixes issue described above
+                $popover.popover('toggle');
+            }
+        });
+    })
 </script>
 <!--
 /********************************
