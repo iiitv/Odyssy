@@ -26,8 +26,15 @@
                     <ul id="imp_announcement">
                         {% for announcement in imp_news_announcement %}
                             <li>
-                                <a class="alert-link" href="#">{{ announcement.title }}:</a>
-                                <div style="margin-left: 5px">{{ announcement.description }}</div>
+                            	{% if announcement.get_model_type == "Announcement" %}
+                                	<a class="alert-link" href="/announcement/{{ announcement.key }}">{{ announcement.title }}:</a>
+                                	<div style="margin-left: 5px">{{ announcement.description }}</div>
+
+                                {% elif announcement.get_model_type == "News" %}
+                                	<a class="alert-link" href="/news/{{ announcement.id }}">{{ announcement.title }}:</a>
+                                	<div style="margin-left: 5px">{{ announcement.description }}</div>
+                                {% endif %}
+
                             </li>
                         {% endfor %}
                     </ul>

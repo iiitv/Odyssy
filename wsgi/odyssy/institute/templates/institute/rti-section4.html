@@ -1,4 +1,5 @@
 {% extends 'basic/base.html' %}
+{% load staticfiles%}
 {% block title %}
     IIIT-V | RTI Section 4
 {% endblock %}
@@ -14,13 +15,13 @@
             <tr>
                 <td>i</td>
                 <td>Particulars of organization, Functions and duties</td>
-                <td><a href="about.php">About the Institute</a></td>
+                <td><a href="/institute/about.html">About the Institute</a></td>
             </tr>
             <tr>
                 <td>ii</td>
                 <td>Powers and duties of officers and employees</td>
-                <td>As per the <a href="pdf/MOA.pdf" target="_blank">Memorandum Of Association</a> and <a
-                        href="pdf/MOA-RULES-ND-REG.pdf" target="_blank">Rules and regulations</a> of IIITV Society
+                <td>As per the <a href="{% static 'basic/pdf/MOA.pdf' %}" target="_blank">Memorandum Of Association</a> and <a
+                        href="{% static 'basic/pdf/MOA-RULES-ND-REG.pdf' %}" target="_blank">Rules and regulations</a> of IIITV Society
                 </td>
             </tr>
             <tr>
@@ -28,15 +29,15 @@
                 <td>Procedures followed in the decision making process, including channels of supervision and
                     accountability
                 </td>
-                <td>As per the <a href="pdf/MOA.pdf" target="_blank">Memorandum Of Association</a> and <a
-                        href="pdf/MOA-RULES-ND-REG.pdf" target="_blank">Rules and regulations</a> of IIITV Society
+                <td>As per the <a href="{% static 'basic/pdf/MOA.pdf' %}" target="_blank">Memorandum Of Association</a> and <a
+                        href="{% static 'basic/pdf/MOA-RULES-ND-REG.pdf' %}" target="_blank">Rules and regulations</a> of IIITV Society
                 </td>
             </tr>
             <tr>
                 <td>iv</td>
                 <td>Norms set by it for the discharge of its functions;</td>
-                <td>As per the <a href="pdf/MOA.pdf" target="_blank">Memorandum Of Association</a> and <a
-                        href="pdf/MOA-RULES-ND-REG.pdf" target="_blank">Rules and regulations</a> of IIITV Society
+                <td>As per the <a href="{% static 'basic/pdf/MOA.pdf' %}" target="_blank">Memorandum Of Association</a> and <a
+                        href="{% static 'basic/pdf/MOA-RULES-ND-REG.pdf' %}" target="_blank">Rules and regulations</a> of IIITV Society
                 </td>
             </tr>
             <tr>
@@ -44,17 +45,17 @@
                 <td>The rules, regulations, instructions, manuals and records, held by it or under its control or used
                     by its employees for discharging its functions;
                 </td>
-                <td>As per the <a href="pdf/MOA.pdf" target="_blank">Memorandum Of Association</a> and <a
-                        href="pdf/MOA-RULES-ND-REG.pdf" target="_blank">Rules and regulations</a> of IIITV Society
+                <td>As per the <a href="{% static 'basic/pdf/MOA.pdf' %}" target="_blank">Memorandum Of Association</a> and <a
+                        href="{% static 'basic/pdf/MOA-RULES-ND-REG.pdf' %}" target="_blank">Rules and regulations</a> of IIITV Society
                 </td>
             </tr>
             <tr>
                 <td>vi</td>
                 <td>Statement of the categories of documents that are held by it or under its control</td>
-                <td>
+                <td style="list-style: none;">
                     <li>Annual Report</li>
                     <li>Administrative Office Orders/ Decisions and Guidelines as approved by Institutes’ <a
-                            href="bog.php">Board of Governors (BOG)</a></li>
+                            href="/institute/bog.html">Board of Governors (BOG)</a></li>
                 </td>
             </tr>
             <tr>
@@ -71,9 +72,9 @@
                     boards, councils, committees and other bodies are open to the public, or the minutes of such
                     meetings are accessible for public;
                 </td>
-                <td>Following are the Main Statutory Committees/ Governing bodies of the Institute:<br/>
-                    <li><a href="bog.php">Board of Governors</a></li>
-                    <li><a href="finance_committee.php">Finance Committee</a></li>
+                <td style="list-style: none;">Following are the Main Statutory Committees/ Governing bodies of the Institute:<br/>
+                    <li><a href="/institute/bog.html">Board of Governors</a></li>
+                    <li><a href="{% url 'institute:finance' %}">Finance Committee</a></li>
                 </td>
             </tr>
             <tr>
