@@ -16,6 +16,10 @@ class News(models.Model):
     title -- Title for News
     description -- Description of News
     """
+    class Meta:
+        verbose_name = 'News'
+        verbose_name_plural = 'News'
+
     start_date = models.DateTimeField(default=timezone.now)
     end_date = models.DateTimeField(default=timezone.now)
     title = models.CharField(max_length=50)

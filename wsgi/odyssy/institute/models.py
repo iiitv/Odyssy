@@ -10,6 +10,11 @@ class Institute(models.Model):
     post -- Post of the person in committee
     origin -- The origin institute of committee member
     """
+    class Meta:
+        ordering = ('name',)
+        verbose_name = 'Institute'
+        verbose_name_plural = 'Institute'
+
     COMMITTEE_CHOICES = [
         ('default', 'Select choice'),
         ('finance', 'Finance Committee'),
