@@ -38,5 +38,6 @@ urlpatterns = [
     url(r'^academic/', include('academic.urls', namespace='academic')),
     url(r'^admission/', include('admission.urls', namespace='admission')),
     url(r'^', include('basic.urls')),
+    url(r'^gallery/', include('gallery.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) \
   + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

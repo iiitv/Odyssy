@@ -8,11 +8,13 @@
     <div class="carousel-wrapper">
         <div class="carousel" style="margin: 0 auto">
             {% for image in carousel %}
-                <div class="carousel-items">
-                    <img height="400px" src="media/{{ image.image }}" alt="{{ image.id }}">
-                    <div></div>
-                </div>
-              {% endfor %}
+                {% if image.extended.indexPageCarousel %}
+                    <div class="carousel-items">
+                        <img height="400px" src="media/{{ image.image }}" alt="{{ image.id }}">
+                        <div></div>
+                    </div>
+                {% endif %}
+            {% endfor %}
         </div>
     </div>
 
@@ -34,7 +36,6 @@
                                 	<a class="alert-link" href="/news/{{ announcement.id }}">{{ announcement.title }}:</a>
                                 	<div style="margin-left: 5px">{{ announcement.description }}</div>
                                 {% endif %}
-
                             </li>
                         {% endfor %}
                     </ul>
@@ -119,4 +120,5 @@
             </div>
         </div>
     </div>
+
 {% endblock %}
