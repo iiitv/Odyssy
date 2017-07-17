@@ -11,8 +11,8 @@ class Event(models.Model):
     name = models.CharField(max_length=30, default="Sample Name")
     start_time = models.DateTimeField(default=datetime.datetime.now)
     end_time = models.DateTimeField(default=datetime.datetime.now)
-    description = models.TextField(max_length=300)
-    place = models.CharField(max_length=50, null=True, default=None, blank=True)
+    description = models.TextField(max_length=20000)
+    place = models.CharField(max_length=100, null=True, default=None, blank=True)
 
     def __str__(self):
         event_str = self.name + " on " + str(self.start_time.day) + \

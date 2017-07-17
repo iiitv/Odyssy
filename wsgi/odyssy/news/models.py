@@ -16,6 +16,10 @@ class News(models.Model):
     title -- Title for News
     description -- Description of News
     """
+    class Meta:
+        verbose_name = 'News'
+        verbose_name_plural = 'News'
+
     start_date = models.DateTimeField(default=timezone.now)
     end_date = models.DateTimeField(default=timezone.now)
     title = models.CharField(max_length=50)
@@ -53,3 +57,7 @@ class News(models.Model):
         return News.objects.filter(
             utils.get_active_filter()
         ).filter(tags__name=tag_name).order_by('-start_date')[:cnt]
+
+    @staticmethod
+    def get_model_type():
+        return "News"
