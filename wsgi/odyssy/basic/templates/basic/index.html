@@ -8,11 +8,13 @@
     <div class="carousel-wrapper">
         <div class="carousel" style="margin: 0 auto">
             {% for image in carousel %}
-                <div class="carousel-items">
-                    <img height="400px" src="media/{{ image.image }}" alt="{{ image.id }}">
-                    <div></div>
-                </div>
-              {% endfor %}
+                {% if image.extended.indexPageCarousel %}
+                    <div class="carousel-items">
+                        <img height="400px" src="media/{{ image.image }}" alt="{{ image.id }}">
+                        <div></div>
+                    </div>
+                {% endif %}
+            {% endfor %}
         </div>
     </div>
 
@@ -21,22 +23,38 @@
         <div class="widgets-container">
 
             <!-- Edit this section for important announcements.-->
-            <div class="alert alert-warning text-center">
-                Institute invites applications for <a class="alert-link" href="http://pgadmissions.iiitvadodara.ac.in/">MTech
-                and PhD programs - Academic Year 2016-17</a>
-            </div>
+            {% if imp_news_announcement %}
+                <div class="alert alert-warning text-center">
+                    <ul id="imp_announcement">
+                        {% for announcement in imp_news_announcement %}
+                            <li>
+                            	{% if announcement.get_model_type == "Announcement" %}
+                                	<a class="alert-link" href="/announcement/{{ announcement.key }}">{{ announcement.title }}:</a>
+                                	<div style="margin-left: 5px">{{ announcement.description }}</div>
 
+                                {% elif announcement.get_model_type == "News" %}
+                                	<a class="alert-link" href="/news/{{ announcement.id }}">{{ announcement.title }}:</a>
+                                	<div style="margin-left: 5px">{{ announcement.description }}</div>
+                                {% endif %}
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            {% endif %}
             <!-- Announcements -->
             <div class="col-sm-4" id="announcements">
                 <div class='announcement-content '>
-                    <div class="widgets-title"><h2>Announcements</h2></div>
+                    <div class="widgets-title"><h2><a href="{% url 'all_announcements' %}">Announcements</a></h2></div>
                         {% if latest_announcement %}
                             <ul id="announcement-list">
                             {% for announcement in latest_announcement %}
                                 <li>
-                                <span style = "font-size: 12px; font-weight: bold;color:Black">
-                                    <a href='/announcement/{{ announcement.key }}'> {{ announcement.title}} </a>
-                                    </span>
+                                    <div class="widgets-item-title">
+                                        <a href='/announcement/{{ announcement.key }}'> {{ announcement.title }} </a>
+                                    </div>
+                                    <div class="widgets-item-description">
+                                        {{ announcement.description | safe | truncatewords_html:"25" | linebreaks }}
+                                    </div>
                                 </li>
                             {% endfor %}
                             </ul>
@@ -49,7 +67,7 @@
             <!-- Events -->
             <div class="col-sm-4" id="events">
                 <div class="events-content">
-                    <div class="widgets-title"><h2>Events</h2></div>
+                    <div class="widgets-title"><h2><a href="{% url 'event-view' %}">Events</a></h2></div>
                     <ul id="events-list">
                         {% for event in events %}
                         <li>
@@ -64,7 +82,14 @@
                                     </span>
                                 </div>
                                 <!-- Event-Description -->
-                                <div class="event-text"><a href="{% url 'event-view-single' event.id %}">{{ event.name }}</a></div>
+                                <div class="widgets-item-text">
+                                    <div class="widgets-item-title event-title">
+                                        <a href="{% url 'event-view-single' event.id %}">{{ event.name }}</a>
+                                    </div>
+                                    <div class="widgets-item-description">
+                                        {{ event.description | safe | truncatewords_html:"20" | linebreaks }}
+                                    </div>
+                                </div>
                             </div>
                         </li>
                         {% endfor %}
@@ -74,12 +99,17 @@
             <!-- News section -->
             <div class="col-sm-4" id="news">
                 <div class='news-content '>
-                    <div class="widgets-title"><h2>News</h2></div>
+                    <div class="widgets-title"><h2><a href="{% url 'news-all' %}">News</a></h2></div>
                     {% if latest_news %}
                         <ul id="news-list">
                         {% for news in latest_news %}
                             <li>
-                            <a href="{% url 'news-single' news.id %}" target="_blank">{{ news.title }}</a>
+                                <div class="widgets-item-title" >
+                                    <a href="{% url 'news-single' news.id %}">{{ news.title }}</a>
+                                </div>
+                                <div class="widgets-item-description">
+                                        {{ news.description | safe | truncatewords_html:"25" | linebreaks }}
+                                </div>
                             </li>
                         {% endfor %}
                         </ul>
@@ -90,4 +120,5 @@
             </div>
         </div>
     </div>
+
 {% endblock %}

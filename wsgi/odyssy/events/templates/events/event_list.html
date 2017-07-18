@@ -1,19 +1,28 @@
-<body>
-    {% for event in events %}
-   <li><a href="{% url 'event-view-single' event.id %}">{{ event.name }}</a></li>
-    {% endfor %}
+{% extends 'basic/base.html' %}
+{% block title %}
+    Events
+{% endblock %}
 
-    {% if events.has_previous %}
-        <a href="?page={{ events.previous_page_number }}&num_items={{num_items}}">Previous</a>
-    {% endif %}
+{% block body %}
+    <div class="contents-wrapper">
+        <div class="content">
+            <h2>Events</h2>
+            {% if events %}
+                <ul class="detailed-widget-view">
+                {% for event in events %}
+                    <li><a href="{% url 'event-view-single' event.id %}">{{ event.name }}</a></li>
+                {% endfor %}
+                </ul>
+            {% endif %}
+    
+        {% if events.has_previous %}
+            <a href="?page={{ events.previous_page_number }}&num_items={{num_items}}">Previous</a>
+        {% endif %}
 
-    {% if events.has_next %}
-        <a href="?page={{ events.next_page_number }}&num_items={{num_items}}">Next</a>
-    {% endif %}
+        {% if events.has_next %}
+            <a href="?page={{ events.next_page_number }}&num_items={{num_items}}">Next</a>
+        {% endif %}
+        </div>
+    </div>
 
-    <a href="?num_items=4&page=1">4</a>
-    <a href="?num_items=6&page=1">6</a>
-    <a href="?num_items=8&page=1">8</a>
-    <a href="?num_items=10&page=1">10</a>
-    <a href="?num_items=20&page=1">20</a>
-</body>
+{% endblock %}

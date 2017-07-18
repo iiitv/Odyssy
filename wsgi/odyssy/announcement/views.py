@@ -13,7 +13,7 @@ def index(request):
         'num_items': num_items,
         'curr_page': page,
         }
-    return render(request, 'announcement/index.html', context)
+    return render(request, 'announcement/announcement-all.html', context)
 
 
 def open_view(request, announcement_id):

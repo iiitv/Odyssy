@@ -1,14 +1,22 @@
-<body>
-    <h3>News List:</h3>
-    {% if news_list %}
-        <ul>
-            {% for news in news_list %}
-                <li><a href="{% url 'news-single' news.id %}">{{ news.title }}</a></li>
-            {% endfor %}
-        </ul>
-    {% else %}
-        <h4>No News to display</h4>
-    {% endif %}
+{% extends 'basic/base.html' %}
+{% block title %}
+    News List
+{% endblock %}
+
+{% block body %}
+  <div class="contents-wrapper">
+    <div class="content">
+        <h2>News List</h2>
+            {% if news_list %}
+                 <ul class="detailed-widget-view">
+                {% for news in news_list %}
+                    <li><a href="{% url 'news-single' news.id %}">{{ news.title }}</a></li>
+                {% endfor %}
+                </ul>
+            {% else %}
+            <p>No News to display</p>
+            {% endif %}
+    
     {% if news_list.has_previous %}
         <a href="?page={{ news_list.previous_page_number }}&num_items={{num_items}}">Previous</a>
     {% endif %}
@@ -16,4 +24,6 @@
     {% if news_list.has_next %}
         <a href="?page={{ news_list.next_page_number }}&num_items={{num_items}}">Next</a>
     {% endif %}
-</body>
+    </div>
+</div>
+{% endblock %}

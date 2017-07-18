@@ -42,3 +42,9 @@ $ cd wsgi/odyssy
 $ python manage.py migrate
 $ python manage.py runserver
 ```
+
+#### Note:
+  ```
+  Don't delete/change the existing migration files.
+  Upload the migration files of your app in your PR.
+  ```

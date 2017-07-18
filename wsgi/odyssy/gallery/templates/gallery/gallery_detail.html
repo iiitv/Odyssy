@@ -1,0 +1,36 @@
+{% extends 'basic/base.html' %}
+{% load staticfiles %}
+
+{% block title %}{{ gallery.title }}{% endblock %}
+
+
+{% block body %}
+	<script src="{% static 'basic/js/lightbox-plus-jquery.min.js' %}"></script>
+	<link rel="stylesheet" href="{% static 'basic/css/lightbox.min.css' %}">
+
+	<div class="contents-wrapper">
+        <div class="gallery-content">
+        	<h2>{{ gallery.title }}</h2>
+        	<div class="gallery-wrapper">
+	    		{% for photo in gallery.public %}
+	    			{% if photo.extended.imageGallery %}
+	    				<div class="gallery-thumbnail">
+	    					<a href="{{ photo.image.url }}" data-lightbox="full-image-set" data-title="{{ photo.title }}">
+	             				<img src="{{ photo.get_thumbnail_url }}" alt="{{ photo.title }}" class="image-thumbnail">
+	             			</a>
+	            	 	</div>
+	            	 {% endif %}
+	    		{% endfor %}
+	    		{% if gallery.description %}{{ gallery.description|safe }}{% endif %}
+	    	</div> 
+	    </div>
+	</div>
+	<div class="contents-wrapper">   
+	    <div class="gallery-bottom-section">
+	    	Published:
+	    	<div id="gallery-published-date"> {{ gallery.date_added }}</div>
+	    </div>
+        <div><a href="{% url 'gallery' %}"  class="button">View All</a></div>
+    </div>
+
+{% endblock %}
