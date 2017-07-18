@@ -10,16 +10,18 @@
             <hr>
                 {% if object_list %}
                     {% for gallery in object_list %}
-                        <div class="gallery-thumbnail">
-                                {% for photo in gallery.sample %}
+                            {% for photo in gallery.sample %}
+                                {%if photo in gallery.sample%}
                                     {% if forloop.first %}
-                                        <a href="/gallery/{{gallery.id}}">
-                                        <img src="{{ photo.get_thumbnail_url }}" alt="{{ gallery.id }}" class="image-thumbnail">
-                                        {{ gallery.title }}
-                                        </a>
+                                        <div class="gallery-thumbnail">
+                                            <a href="/gallery/{{gallery.id}}">
+                                            <img src="{{ photo.get_thumbnail_url }}" alt="{{ gallery.id }}" class="image-thumbnail">
+                                            {{ gallery.title }}
+                                            </a>
+                                        </div>
+                                        {% endif %}
                                     {%endif%}
                                 {% endfor %}
-                         </div>
                     {% endfor %}
                 {% else %}
                 <div>"No galleries were found".</div>
