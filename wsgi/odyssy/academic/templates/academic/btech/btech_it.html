@@ -1,0 +1,23 @@
+{% extends 'basic/base.html' %}
+{% block title %}
+    IIIT-V | B. Tech. IT
+{% endblock %}
+{% load staticfiles %}
+{% block body %}
+<!-- Content wrapper -->
+<div class="contents-wrapper">
+    <!-- Contents starts here -->
+    <div class="content">
+        <h2>Bachelor of Technology - Information Technology</h2>
+        <br>
+        <p>Software engineering is a form of engineering that applies principles of computer science and mathematics to
+            achieve cost-effective solutions to software problems. The software engineering curriculum places primary
+            emphasis on the technical aspects of building and modifying high quality software systems. This programme is
+            designed to forge a strong linkage with the IT Industry, which will take up research and development
+            projects for the industry and play a key role in developing ICT applications for the masses.
+        </p>
+        <br/>
+        <a href="{% static 'basic/pdf/curriculum_IT.pdf' %}"><b>AC Approved Curriculum for B.Tech. IT</b></a>
+    </div>
+</div>
+{% endblock %}

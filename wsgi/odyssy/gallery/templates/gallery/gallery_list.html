@@ -1,0 +1,31 @@
+{% extends 'basic/base.html' %}
+{% block title %}
+    Gallery
+{% endblock %}
+
+{% block body %}
+    <div class="contents-wrapper">
+        <div class="content">
+            <h2>Gallery</h2>
+            <hr>
+                {% if object_list %}
+                    {% for gallery in object_list %}
+                        <div class="gallery-thumbnail">
+                                {% for photo in gallery.sample %}
+                                    {% if forloop.first %}
+                                        <a href="/gallery/{{gallery.id}}">
+                                        <img src="{{ photo.get_thumbnail_url }}" alt="{{ gallery.id }}" class="image-thumbnail">
+                                        {{ gallery.title }}
+                                        </a>
+                                    {%endif%}
+                                {% endfor %}
+                         </div>
+                    {% endfor %}
+                {% else %}
+                <div>"No galleries were found".</div>
+                {% endif %}
+        </div>
+    </div>
+    
+{% endblock %}
+

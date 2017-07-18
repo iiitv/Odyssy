@@ -16,11 +16,15 @@ class News(models.Model):
     title -- Title for News
     description -- Description of News
     """
+    class Meta:
+        verbose_name = 'News'
+        verbose_name_plural = 'News'
+
     start_date = models.DateTimeField(default=timezone.now)
     end_date = models.DateTimeField(default=timezone.now)
     title = models.CharField(max_length=50)
     tags = TaggableManager()
-    description = models.CharField(max_length=500)
+    description = models.TextField(max_length=500)
 
     def __str__(self):
         return str(self.pk) + ': ' + str(self.title)

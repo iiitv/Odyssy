@@ -49,6 +49,9 @@ else:
 # Application definition
 
 INSTALLED_APPS = (
+    'admission.apps.AdmissionConfig',
+    'academic.apps.AcademicConfig',
+    'people.apps.PeopleConfig',
     'institute.apps.InstituteConfig',
     'photologue',
     'sortedm2m',
@@ -57,7 +60,9 @@ INSTALLED_APPS = (
     'news.apps.NewsConfig',
     'basic.apps.BasicConfig',
     'tag.apps.TagConfig',
+    'careers.apps.CareersConfig',
     'announcement.apps.AnnouncementConfig',
+    'gallery.apps.GalleryConfig',
     'django.contrib.sites',
     'django.contrib.sitemaps',
     'django.contrib.admin',
@@ -66,6 +71,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
 )
 
 SITE_ID = 1
