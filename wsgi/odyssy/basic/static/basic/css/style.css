@@ -589,13 +589,13 @@ hr{
 
 
 footer{
-// background-image: url("../img/footer.jpg");
+
 	background-color: #F0F0F0;
 	background-size: cover;
 	background-position: top center;
 	border-top: 4px solid rgb(50,50,50);
 	align-items: center;
-	margin-top: 5rem;
+
 }
 
 .footer-wrapper{
