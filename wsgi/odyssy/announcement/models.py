@@ -55,6 +55,6 @@ class Announcement(models.Model):
     key = models.AutoField(primary_key=True)
     start_date = models.DateTimeField(default=utils.get_today_start)
     end_date = models.DateTimeField(default=utils.get_today_end)
-    tags = TaggableManager()
+    tags = TaggableManager(blank=True)
     title = models.CharField(max_length=50)
     description = models.TextField(max_length=500)

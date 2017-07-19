@@ -23,7 +23,7 @@ class News(models.Model):
     start_date = models.DateTimeField(default=timezone.now)
     end_date = models.DateTimeField(default=timezone.now)
     title = models.CharField(max_length=50)
-    tags = TaggableManager()
+    tags = TaggableManager(blank=True)
     description = models.TextField(max_length=500)
 
     def __str__(self):
