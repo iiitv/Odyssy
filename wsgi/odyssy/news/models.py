@@ -5,7 +5,7 @@ from django.utils import timezone
 from django.core.exceptions import ValidationError
 from django.db import models
 from django.shortcuts import get_object_or_404
-from django.db.models import Q
+from django.db.models.signals import post_save
 
 
 class News(models.Model):
@@ -61,3 +61,12 @@ class News(models.Model):
     @staticmethod
     def get_model_type():
         return "News"
+
+
+def set_default_tag(sender, instance, **kwargs):
+    post_save.disconnect(set_default_tag, sender=sender)
+    instance.tags.add('news')
+    instance.save()
+    post_save.connect(set_default_tag, sender=sender)
+
+post_save.connect(set_default_tag, sender=News)
