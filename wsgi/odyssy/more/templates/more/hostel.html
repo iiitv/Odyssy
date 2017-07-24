@@ -1,0 +1,48 @@
+{% extends 'basic/base.html' %}
+{% block title %}
+    IIIT-V | Hostel
+{% endblock %}
+{% load static %}
+{% block body %}
+    <!-- Content wrapper -->
+    <div class="contents-wrapper">
+        <!-- Contents starts here -->
+        <div class="content">
+            <div class="gallery gallery-design">
+			    <h1 style="text-align:center">Hostel </h1>
+		        <div class="grid">
+                    <div class="grid-sizer"></div>
+                    <!-- Remove appropriate comment and insert relevant caption if needed. -->
+
+                    <!--Image 01-->
+                    <a class="element-item grid-item mix mockups" href="{% static 'basic/images/hostel1.jpg' %}">
+                         <img style="width: 30%;" src="{% static 'basic/images/hostel1.jpg' %}" alt="">
+                    </a>
+		   <!--Image 02-->
+                    <a class="element-item grid-item mix mockups" href="{% static 'basic/images/hostel2.jpg' %}">
+                         <img style="width: 30%;" src="{% static 'basic/images/hostel2.jpg' %}" alt="">
+                    </a>
+		   <!--Image 03-->
+                    <a class="element-item grid-item mix mockups" href="{% static 'basic/images/hostel3.jpg' %}">
+                         <img style="width: 30%;" src="{% static 'basic/images/hostel3.jpg' %}" alt="">
+                    </a>
+
+		        </div>
+		        <h2>Hostel Amenities</h2><br/>
+		    </div>
+		    <li><b>Hostel Room:</b> Semi-furnished. (Each student is provided with a Cot, Cupboard, Study-Table, Bookshelf and Chair)</li>
+		    <li><b>R-O Plant with Water Cooler:</b> One on each floor</li>
+		    <li><b>Internet/Wi-Fi</b></li>
+		    <li><b>Television with DTH Connection</b></li>
+		    <li><b>Dining Hall:</b> 200 Capacity</li>
+		    <li><b>Gymnasium:</b> For Boys & Girls on separate floors</li>
+		    <li><b>Sports:</b> Table-Tennis, Carrom Board, Chess. Ground and open space for outdoor games</li>
+		    <li><b>Musical Instruments:</b> Drum, Congo, Electric Guitar, Flute, Synthesizers, Tabla, Violin and Harmonium</li>
+		    <li><b>Security:</b> Round the clock security</li>
+		    <li><b>Housekeeping</b></li>
+		    <li><b>Laundry:</b> Washing Machine</li>
+		    <li><b>Vehicle for Medical Emergency:</b> Round the clock</li><br/>
+                <b>Hostel Address:</b> Tower-B, PDPU High Rise Hostels, Raisan, Gandhinagar
+        </div>
+    </div>
+{% endblock %}

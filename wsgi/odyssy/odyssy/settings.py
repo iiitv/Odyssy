@@ -61,6 +61,7 @@ INSTALLED_APPS = (
     'basic.apps.BasicConfig',
     'tag.apps.TagConfig',
     'careers.apps.CareersConfig',
+    'more.apps.MoreConfig',
     'announcement.apps.AnnouncementConfig',
     'gallery.apps.GalleryConfig',
     'django.contrib.sites',
