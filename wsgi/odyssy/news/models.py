@@ -64,9 +64,10 @@ class News(models.Model):
 
 
 def set_default_tag(sender, instance, **kwargs):
-    post_save.disconnect(set_default_tag, sender=sender)
-    instance.tags.add('news')
-    instance.save()
-    post_save.connect(set_default_tag, sender=sender)
+    if not instance.tags:
+        post_save.disconnect(set_default_tag, sender=sender)
+        instance.tags.add('news')
+        instance.save()
+        post_save.connect(set_default_tag, sender=sender)
 
 post_save.connect(set_default_tag, sender=News)
