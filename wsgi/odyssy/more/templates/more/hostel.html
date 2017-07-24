@@ -1,35 +1,51 @@
 {% extends 'basic/base.html' %}
+{% load staticfiles %}
 {% block title %}
     IIIT-V | Hostel
 {% endblock %}
 {% load static %}
 {% block body %}
+
+    <script src="{% static 'basic/js/lightbox-plus-jquery.min.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'basic/css/lightbox.min.css' %}">
     <!-- Content wrapper -->
     <div class="contents-wrapper">
         <!-- Contents starts here -->
-        <div class="content">
-            <div class="gallery gallery-design">
-			    <h1 style="text-align:center">Hostel </h1>
-		        <div class="grid">
-                    <div class="grid-sizer"></div>
-                    <!-- Remove appropriate comment and insert relevant caption if needed. -->
+             <div class="contents-wrapper">
+       <div class="gallery-content">
 
-                    <!--Image 01-->
-                    <a class="element-item grid-item mix mockups" href="{% static 'basic/images/hostel1.jpg' %}">
-                         <img style="width: 30%;" src="{% static 'basic/images/hostel1.jpg' %}" alt="">
-                    </a>
-		   <!--Image 02-->
-                    <a class="element-item grid-item mix mockups" href="{% static 'basic/images/hostel2.jpg' %}">
-                         <img style="width: 30%;" src="{% static 'basic/images/hostel2.jpg' %}" alt="">
-                    </a>
-		   <!--Image 03-->
-                    <a class="element-item grid-item mix mockups" href="{% static 'basic/images/hostel3.jpg' %}">
-                         <img style="width: 30%;" src="{% static 'basic/images/hostel3.jpg' %}" alt="">
-                    </a>
+           <h1 style="text-align:center">Hostel </h1>
 
-		        </div>
+       <div class = "gallery-wrapper">
+            <!-- Remove appropriate comment and insert relevant caption if needed. -->
+
+            <div class="gallery-thumbnail">
+            <!--Image 01-->
+            <a href="{% static 'basic/images/hostel1.jpg' %}" data-lightbox="full-image-set">
+                 <img style="width: 100%;" class="image-thumbnail" src="{% static 'basic/images/hostel1.jpg' %}" alt="Hostel 1">
+            </a>
+            </div>
+
+   <!--Image 02-->
+            <div class="gallery-thumbnail">
+            <a href="{% static 'basic/images/ostel2.jpg' %}" data-lightbox="full-image-set">
+                 <img style="width: 100%;" class="image-thumbnail" src="{% static 'basic/images/hostel2.jpg' %}" alt="Hostel 2">
+            </a>
+            </div>
+
+   <!--Image 03-->
+            <div class="gallery-thumbnail">
+            <a href="{% static 'basic/images/hostel3.jpg' %}" data-lightbox="full-image-set">
+                 <img style="width: 100%;" class="image-thumbnail" src="{% static 'basic/images/hostel3.jpg' %}" alt="Hostel 3">
+            </a>
+            </div>
+
+        </div>
+       </div>
+
+            <div class="content">
 		        <h2>Hostel Amenities</h2><br/>
-		    </div>
+
 		    <li><b>Hostel Room:</b> Semi-furnished. (Each student is provided with a Cot, Cupboard, Study-Table, Bookshelf and Chair)</li>
 		    <li><b>R-O Plant with Water Cooler:</b> One on each floor</li>
 		    <li><b>Internet/Wi-Fi</b></li>
@@ -43,6 +59,6 @@
 		    <li><b>Laundry:</b> Washing Machine</li>
 		    <li><b>Vehicle for Medical Emergency:</b> Round the clock</li><br/>
                 <b>Hostel Address:</b> Tower-B, PDPU High Rise Hostels, Raisan, Gandhinagar
-        </div>
+            </div>
     </div>
 {% endblock %}
