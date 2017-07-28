@@ -1,0 +1,62 @@
+{% extends 'basic/base.html' %}
+{% load staticfiles %}
+{% block title %}
+    IIIT-V | Library
+{% endblock %}
+{% load static %}
+{% block body %}
+    <script src="{% static 'basic/js/lightbox-plus-jquery.min.js' %}"></script>
+	<link rel="stylesheet" href="{% static 'basic/css/lightbox.min.css' %}">
+
+
+        <!-- Contents starts here -->
+         <div class="contents-wrapper">
+               <div class="gallery-content">
+
+                   <h2 style="text-align:center">Library </h2>
+                   <hr>
+               <div class = "gallery-wrapper">
+                    <!-- Remove appropriate comment and insert relevant caption if needed. -->
+
+                    <div class="gallery-thumbnail-lib">
+                    <!--Image 01-->
+                    <a href="{% static 'basic/images/L1.jpg' %}" data-lightbox="full-image-set">
+                         <img style="width: 100%;" class="image-thumbnail" src="{% static 'basic/images/L1.jpg' %}" alt="Library 1">
+                    </a>
+                    </div>
+
+		   <!--Image 02-->
+                    <div class="gallery-thumbnail-lib">
+                    <a href="{% static 'basic/images/L2.jpg' %}" data-lightbox="full-image-set">
+                         <img style="width: 100%;" class="image-thumbnail" src="{% static 'basic/images/L2.jpg' %}" alt="Library 2">
+                    </a>
+                    </div>
+
+		   <!--Image 03-->
+                    <div class="gallery-thumbnail-lib">
+                    <a href="{% static 'basic/images/L3.jpg' %}" data-lightbox="full-image-set">
+                         <img style="width: 100%;" class="image-thumbnail" src="{% static 'basic/images/L3.jpg' %}" alt="Library 3">
+                    </a>
+                    </div>
+		   <!--Image 04-->
+                    <div class="gallery-thumbnail-lib">
+                    <a href="{% static 'basic/images/L4.jpg' %}" data-lightbox="full-image-set">
+                         <img style="width: 100%;" class="image-thumbnail" src="{% static 'basic/images/L4.jpg' %}" alt="Reading Room">
+                    </a>
+                    </div>
+                   
+                </div>
+               </div>
+
+       <div class="content">
+			<br/><br/>
+            <p style="text-align:center">
+                The primary aim of IIIT Vadodara Library is to support research, teaching and learning of the institute community. The Library is one of the central support services of IIIT Vadodara. The mission of the Library is to provide information services and access to full text digital and printed resources to support the scholarly and informational needs of faculty, students and staff. The Library is in fast growing stage. In March 2016 Library subscribed online <a href="http://dl.acm.org/" target="_blank">ACM Digital library</a> database. The library has a good collection of books on Computer Science, Information Technology, Physics, Mathematics, Humanities & Social Sciences and also technical and general print magazines. The collection includes reference books, text books, CDs etc. We are constantly in a process of increasing our collection of books further.
+            </p>
+            <p style="text-align:center">
+                <a href="http://iiitvadodara.ac.in/pdf/library-circulation.pdf" target="_blank">Library Rules and Regulations</a> <br/>
+                <a href="http://library.iiitv.ac.in/" target="_blank"><font color="red">Library Catalogue OPAC</font></a></p>
+
+        </div>
+    </div>
+{% endblock %}

@@ -1,9 +1,14 @@
 {% extends 'basic/base.html' %}
+<<<<<<< HEAD
+=======
+{% load staticfiles %}
+>>>>>>> eb917ae2a3adc9475a977b3c0203f822e3300117
 {% block title %}
     IIIT-V | Hostel
 {% endblock %}
 {% load static %}
 {% block body %}
+<<<<<<< HEAD
      <!-- Content wrapper -->
      <div class="contents-wrapper">
         <!-- Contents starts here -->
@@ -61,5 +66,62 @@
 		<li><b>Vehicle for Medical Emergency:</b> Round the clock</li><br/>
 			<b>Hostel Address:</b> Tower-B, PDPU High Rise Hostels, Raisan, Gandhinagar
         </div>
+=======
+
+    <script src="{% static 'basic/js/lightbox-plus-jquery.min.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'basic/css/lightbox.min.css' %}">
+    <!-- Content wrapper -->
+    <div class="contents-wrapper">
+        <!-- Contents starts here -->
+             <div class="contents-wrapper">
+       <div class="gallery-content">
+
+           <h2 style="text-align:center">Hostel </h2>
+            <hr>
+       <div class = "gallery-wrapper">
+            <!-- Remove appropriate comment and insert relevant caption if needed. -->
+
+            <div class="gallery-thumbnail">
+            <!--Image 01-->
+            <a href="{% static 'basic/images/hostel1.jpg' %}" data-lightbox="full-image-set">
+                 <img style="width: 100%;" class="image-thumbnail" src="{% static 'basic/images/hostel1.jpg' %}" alt="Hostel 1">
+            </a>
+            </div>
+
+   <!--Image 02-->
+            <div class="gallery-thumbnail">
+            <a href="{% static 'basic/images/ostel2.jpg' %}" data-lightbox="full-image-set">
+                 <img style="width: 100%;" class="image-thumbnail" src="{% static 'basic/images/hostel2.jpg' %}" alt="Hostel 2">
+            </a>
+            </div>
+
+   <!--Image 03-->
+            <div class="gallery-thumbnail">
+            <a href="{% static 'basic/images/hostel3.jpg' %}" data-lightbox="full-image-set">
+                 <img style="width: 100%;" class="image-thumbnail" src="{% static 'basic/images/hostel3.jpg' %}" alt="Hostel 3">
+            </a>
+            </div>
+
+        </div>
+       </div>
+
+            <div class="content">
+		        <h2>Hostel Amenities</h2><br/>
+
+		    <li><b>Hostel Room:</b> Semi-furnished. (Each student is provided with a Cot, Cupboard, Study-Table, Bookshelf and Chair)</li>
+		    <li><b>R-O Plant with Water Cooler:</b> One on each floor</li>
+		    <li><b>Internet/Wi-Fi</b></li>
+		    <li><b>Television with DTH Connection</b></li>
+		    <li><b>Dining Hall:</b> 200 Capacity</li>
+		    <li><b>Gymnasium:</b> For Boys & Girls on separate floors</li>
+		    <li><b>Sports:</b> Table-Tennis, Carrom Board, Chess. Ground and open space for outdoor games</li>
+		    <li><b>Musical Instruments:</b> Drum, Congo, Electric Guitar, Flute, Synthesizers, Tabla, Violin and Harmonium</li>
+		    <li><b>Security:</b> Round the clock security</li>
+		    <li><b>Housekeeping</b></li>
+		    <li><b>Laundry:</b> Washing Machine</li>
+		    <li><b>Vehicle for Medical Emergency:</b> Round the clock</li><br/>
+                <b>Hostel Address:</b> Tower-B, PDPU High Rise Hostels, Raisan, Gandhinagar
+            </div>
+>>>>>>> eb917ae2a3adc9475a977b3c0203f822e3300117
     </div>
 {% endblock %}

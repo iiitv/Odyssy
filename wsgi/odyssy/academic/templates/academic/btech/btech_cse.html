@@ -1,0 +1,23 @@
+{% extends 'basic/base.html' %}
+{% block title %}
+    IIIT-V | B.Tech. CSE
+{% endblock %}
+{% load staticfiles %}
+{% block body %}
+<!-- Content wrapper -->
+<div class="contents-wrapper">
+    <!-- Contents starts here -->
+    <div class="contents">
+        <h2>Bachelor of Technology - Computer Science and Engineering</h2
+        <br><br>
+        The programme is designed to make a strong foundation in CSE that includes electronics and hardware. Computer
+        science courses are introduced in the early semesters while non-IT courses in the later stages. IT workshops are
+        specially designed courses allowing the students to have mastery in the use of the latest software technologies.
+        The courses in mathematics, sciences, engineering and humanities enable students to explore the wider
+        applications of technology.
+        <br/>
+        <br/>
+        <a href="{% static 'basic/pdf/curriculum_CSE.pdf' %}"><b>AC Approved Curriculum for B.Tech. CSE</b></a>
+    </div>
+</div>
+{% endblock %}
