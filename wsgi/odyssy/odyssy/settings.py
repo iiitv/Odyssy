@@ -60,10 +60,7 @@ INSTALLED_APPS = (
     'news.apps.NewsConfig',
     'basic.apps.BasicConfig',
     'tag.apps.TagConfig',
-<<<<<<< HEAD
-=======
     'careers.apps.CareersConfig',
->>>>>>> eb917ae2a3adc9475a977b3c0203f822e3300117
     'more.apps.MoreConfig',
     'announcement.apps.AnnouncementConfig',
     'gallery.apps.GalleryConfig',
