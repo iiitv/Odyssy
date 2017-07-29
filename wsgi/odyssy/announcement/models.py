@@ -3,6 +3,7 @@ from taggit.managers import TaggableManager
 
 from django.db import models
 from django.core.exceptions import ValidationError
+from django.db.models.signals import post_save
 
 
 class Announcement(models.Model):
@@ -15,7 +16,7 @@ class Announcement(models.Model):
     """
 
     def __str__(self):
-        return "#" + str(self.key) + " " + self.title
+        return "#" + str(self.key) + " " + str(self.title)
 
     def clean(self):
         if self.start_date > self.end_date:
@@ -55,6 +56,16 @@ class Announcement(models.Model):
     key = models.AutoField(primary_key=True)
     start_date = models.DateTimeField(default=utils.get_today_start)
     end_date = models.DateTimeField(default=utils.get_today_end)
-    tags = TaggableManager()
+    tags = TaggableManager(blank=True)
     title = models.CharField(max_length=50)
     description = models.TextField(max_length=500)
+
+
+def set_default_tag(sender, instance, **kwargs):
+    if not instance.tags:
+        post_save.disconnect(set_default_tag, sender=sender)
+        instance.tags.add('announcement')
+        instance.save()
+        post_save.connect(set_default_tag, sender=sender)
+
+post_save.connect(set_default_tag, sender=Announcement)
