@@ -35,7 +35,6 @@ urlpatterns = [
     url(r'^careers/', include('careers.urls')),
     url(r'^more/', include('more.urls', namespace='more')),
     url(r'^photologue/', include('photologue.urls', namespace='photologue')),
-    url(r'^more/', include('more.urls', namespace='more')),
     url(r'^announcement/', include('announcement.urls')),
     url(r'^academic/', include('academic.urls', namespace='academic')),
     url(r'^admission/', include('admission.urls', namespace='admission')),
