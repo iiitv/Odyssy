@@ -7,7 +7,7 @@
 .project
 .pydevproject
 wsgi/media/photologue/photos/
-wsgi/odyssy/
+wsgi/odyssy/.idea/
 .idea/
 **/*.swp
 
