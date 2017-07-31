@@ -46,7 +46,12 @@ body{
     flex-direction: column;
 }
 
-.header-wrapper,.footer-wrapper,.contents-wrapper{
+.header-wrapper, .footer-wrapper{
+	margin: 0 auto;
+	max-width: 800px;
+}
+
+.contents-wrapper{
 	margin: 0 auto;
 	max-width: 75%;
 }
