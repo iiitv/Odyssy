@@ -1,0 +1,26 @@
+{% extends 'basic/base.html' %}
+{% block title %}
+    IIITV | Tender
+{% endblock %}
+
+{% block body %}
+<!-- Content wrapper -->
+        <div class="contents-wrapper">
+            <!-- Contents starts here -->
+            <div class="content career">
+                <h2>Tenders</h2>
+                <br>
+                {% if tenders %}
+                <ul class="list-group">
+                    {% for tender in tenders %}
+		            <li class="list-group-item">
+                        <a href="" target="_blank">{{ tender.title }}</a>
+           	        </li>
+                    {% endfor %}
+                </ul>
+                {% else %}
+                   <center><h4>No new tenders available.</h4></center>
+                {% endif %}
+            </div>
+        </div>
+{% endblock %}
