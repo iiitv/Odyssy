@@ -63,6 +63,7 @@ INSTALLED_APPS = (
     'careers.apps.CareersConfig',
     'announcement.apps.AnnouncementConfig',
     'gallery.apps.GalleryConfig',
+    'tender.apps.TenderConfig',
     'django.contrib.sites',
     'django.contrib.sitemaps',
     'django.contrib.admin',
