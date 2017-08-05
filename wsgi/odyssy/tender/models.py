@@ -1,6 +1,5 @@
 from django.db import models
 from django.db.models.signals import post_save
-from django.core.urlresolvers import reverse
 from django.utils import timezone
 from django.core.exceptions import ValidationError
 from taggit.managers import TaggableManager
