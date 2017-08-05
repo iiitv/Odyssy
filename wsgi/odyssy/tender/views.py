@@ -3,8 +3,8 @@ from .models import Tender
 
 
 def view_tender(request):
-    tenders = Tender.get_all_announcement()
+    tenders = Tender.get_all_tender()
     context = {
         'tenders': tenders
         }
-    return render(request, 'tender/tender.html', context)
+    return render(request, 'tender/tender.html', context=context)

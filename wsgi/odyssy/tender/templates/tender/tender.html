@@ -1,4 +1,5 @@
 {% extends 'basic/base.html' %}
+{% load static %}
 {% block title %}
     IIITV | Tender
 {% endblock %}
@@ -9,12 +10,13 @@
             <!-- Contents starts here -->
             <div class="content career">
                 <h2>Tenders</h2>
+                <hr>
                 <br>
                 {% if tenders %}
                 <ul class="list-group">
                     {% for tender in tenders %}
 		            <li class="list-group-item">
-                        <a href="" target="_blank">{{ tender.title }}</a>
+                        <a href="../media/{{ tender.tender }}" target="_blank">{{ tender.title }}</a>
            	        </li>
                     {% endfor %}
                 </ul>

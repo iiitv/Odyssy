@@ -4,5 +4,5 @@ from . import views
 
 
 urlpatterns = [
-    url(r'.html$', views.view_tender, name='tender')
+    url(r'^$', views.view_tender, name='tender')
 ]
