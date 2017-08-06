@@ -27,6 +27,9 @@ class Tender(models.Model):
         if self.start_date > self.end_date:
             raise ValidationError('Start date has to be before End date')
 
+    def __str__(self):
+        return self.title
+
     @staticmethod
     def get_all_tender():
         """ Get all the Tenders """
