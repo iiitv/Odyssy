@@ -33,6 +33,7 @@ urlpatterns = [
     url(r'^people/', include('people.urls', namespace='people')),
     url(r'^tag/', include('tag.urls')),
     url(r'^careers/', include('careers.urls')),
+    url(r'^more/', include('more.urls', namespace='more')),
     url(r'^photologue/', include('photologue.urls', namespace='photologue')),
     url(r'^announcement/', include('announcement.urls')),
     url(r'^academic/', include('academic.urls', namespace='academic')),

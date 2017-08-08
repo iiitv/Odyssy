@@ -16,7 +16,7 @@ def visiting_faculty(request):
 
 def staff(request):
     staff_list = People.objects.filter(status='staff')
-    context = {'people_list': staff_list, 'status': 'staff'}
+    context = {'people_list': staff_list, 'status': 'Staff'}
     return render(request, 'people.html', context=context)
 
 
