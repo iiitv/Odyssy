@@ -1,6 +1,6 @@
 {% extends 'basic/base.html' %}
 {% block title %}
-    Gallery
+    IIITV | Gallery
 {% endblock %}
 
 {% block body %}
@@ -11,7 +11,7 @@
                 {% if object_list %}
                     {% for gallery in object_list %}
                             {% for photo in gallery.sample %}
-                                {%if photo in gallery.sample%}
+                                {% if photo.extended.imageGallery %}
                                     {% if forloop.first %}
                                         <div class="gallery-thumbnail">
                                             <a href="/gallery/{{gallery.id}}">

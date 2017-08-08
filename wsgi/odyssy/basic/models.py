@@ -13,6 +13,8 @@ class PhotoExtended(models.Model):
             help_text=('Decide whether or not this image will be included in the Home Page Carousel'))
     imageGallery = models.BooleanField(('Gallery'), default=False,
             help_text=('Decide whether or not this image will be shown in the gallery'))
+    studentGallery = models.BooleanField(('StudentsCorner'), default=False,
+            help_text=('Decide whether or not this image will be shown in the Student\'s Corner'))
 
     def __str__(self):
         return self.photo.title

@@ -1,0 +1,32 @@
+{% extends 'basic/base.html' %}
+{% load staticfiles %}
+
+{% block title %}{{ gallery.title }}{% endblock %}
+
+
+{% block body %}
+	<script src="{% static 'basic/js/lightbox-plus-jquery.min.js' %}"></script>
+	<link rel="stylesheet" href="{% static 'basic/css/lightbox.min.css' %}">
+
+	<div class="contents-wrapper">
+        <div class="gallery-content">
+        	<h2>{{ gallery.title }}</h2><br>
+			<div>
+                {{ gallery.description|safe }}
+            </div>
+            <br>
+        	<div class="gallery-wrapper">
+	    		{% for photo in gallery.public %}
+	    			{% if photo.extended.studentGallery %}
+	    				<div class="gallery-thumbnail">
+	    					<a href="{{ photo.image.url }}" data-lightbox="full-image-set" data-title="{{ photo.title }}">
+	             				<img src="{{ photo.get_thumbnail_url }}" alt="{{ photo.title }}" class="image-thumbnail">
+	             			</a>
+	            	 	</div>
+	            	 {% endif %}
+	    		{% endfor %}
+	    	</div> 
+	    </div>
+	</div>
+
+{% endblock %}

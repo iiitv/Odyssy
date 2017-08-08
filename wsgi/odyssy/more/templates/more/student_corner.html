@@ -1,0 +1,32 @@
+{% extends 'basic/base.html' %}
+{% block title %}
+    IIITV | Student's Corner
+{% endblock %}
+
+{% block body %}
+    <div class="contents-wrapper">
+        <div class="content">
+            <h2>Student's Corner</h2>
+            <hr>
+                {% if object_list %}
+                    {% for gallery in object_list %}
+                            {% for photo in gallery.sample %}
+                                {% if photo.extended.studentGallery %}
+                                    {% if forloop.first %}
+                                        <div class="gallery-thumbnail">
+                                            <a href="/more/student_corner/{{gallery.id}}">
+                                                <img src="{{ photo.get_thumbnail_url }}" alt="{{ gallery.id }}" class="image-thumbnail">
+                                                {{ gallery.title }}
+                                            </a>
+                                        </div>
+                                        {% endif %}
+                                    {%endif%}
+                                {% endfor %}
+                    {% endfor %}
+                {% else %}
+                <div>"No galleries were found".</div>
+                {% endif %}
+        </div>
+    </div>
+    
+{% endblock %}
