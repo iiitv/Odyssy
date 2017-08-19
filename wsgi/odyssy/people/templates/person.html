@@ -1,4 +1,7 @@
 {% extends 'basic/base.html' %}
+{% block title %}
+    {{ status }} | {{ person.name }}
+{% endblock %}
 {% load static %}
 {% block body %}
     <div class="contents-wrapper">
