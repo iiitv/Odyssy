@@ -12,7 +12,8 @@ class Event(models.Model):
     start_time = models.DateTimeField(default=datetime.datetime.now)
     end_time = models.DateTimeField(default=datetime.datetime.now)
     description = models.TextField(max_length=20000)
-    place = models.CharField(max_length=100, null=True, default=None, blank=True)
+    place = models.CharField(max_length=100, null=True,
+                             default=None, blank=True)
 
     def __str__(self):
         event_str = self.name + " on " + str(self.start_time.day) + \
@@ -39,5 +40,5 @@ class Event(models.Model):
 
     @staticmethod
     def get_single_event_detail(event_id):
-            single_event = get_object_or_404(Event, pk=event_id)
-            return single_event
+        single_event = get_object_or_404(Event, pk=event_id)
+        return single_event

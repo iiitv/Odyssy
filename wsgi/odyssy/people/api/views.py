@@ -32,6 +32,7 @@ class StaffList(ListAPIView):
 
 class Details(APIView):
     """ Details list view """
+
     def get(self, request, slug):
         person = get_object_or_404(People, slug=slug)
         serializer = PeopleSerializer(person, many=False)
@@ -40,6 +41,7 @@ class Details(APIView):
 
 class TaggedPeople(APIView):
     """ Details list view """
+
     def get(self, request, tag):
         person = People.get_people_sorted(tag)
         serializer = PeopleSerializer(person, many=True)

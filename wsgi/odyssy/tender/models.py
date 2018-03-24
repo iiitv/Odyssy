@@ -4,6 +4,7 @@ from django.utils import timezone
 from django.core.exceptions import ValidationError
 from taggit.managers import TaggableManager
 
+
 class Tender(models.Model):
     """
     Model of Tender app
@@ -42,5 +43,6 @@ def set_default_tag(sender, instance, **kwargs):
         instance.tags.add('tender')
         instance.save()
         post_save.connect(set_default_tag, sender=sender)
+
 
 post_save.connect(set_default_tag, sender=Tender)
