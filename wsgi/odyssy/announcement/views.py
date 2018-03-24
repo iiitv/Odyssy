@@ -7,7 +7,8 @@ from .models import Announcement
 
 def index(request):
     announcements = Announcement.get_all_announcement()
-    announcements, num_items, page = utils.paginate_view(request, announcements)
+    announcements, num_items, page = utils.paginate_view(
+        request, announcements)
     context = {
         'announcement_list': announcements,
         'num_items': num_items,
