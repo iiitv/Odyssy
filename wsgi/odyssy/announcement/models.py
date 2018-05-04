@@ -68,4 +68,5 @@ def set_default_tag(sender, instance, **kwargs):
         instance.save()
         post_save.connect(set_default_tag, sender=sender)
 
+
 post_save.connect(set_default_tag, sender=Announcement)

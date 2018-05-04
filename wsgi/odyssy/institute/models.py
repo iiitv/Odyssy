@@ -31,9 +31,11 @@ class Institute(models.Model):
         ('Member Secretary', 'Member Secretary'),
     ]
     name = models.CharField(max_length=50)
-    post = models.CharField(max_length=20, choices=POST_CHOICES, default='default')
+    post = models.CharField(
+        max_length=20, choices=POST_CHOICES, default='default')
     origin = models.CharField(max_length=150)
-    committee = models.CharField(max_length=30, choices=COMMITTEE_CHOICES, default='default')
+    committee = models.CharField(
+        max_length=30, choices=COMMITTEE_CHOICES, default='default')
 
     def __str__(self):
         return str(self.name) + ': ' + str(self.post) + ', ' + str(self.origin)
@@ -45,4 +47,3 @@ class Institute(models.Model):
             raise ValidationError('Post cannot be empty')
         elif self.origin is '':
             raise ValidationError('Origin cannot be empty')
-

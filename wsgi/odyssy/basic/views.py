@@ -18,7 +18,8 @@ def index(request):
     events_list = Event.get_latest_events(3)
     active_images = carousel_api.get_all_index_page_images()
     imp_news_announcement = sorted(
-        chain(News.get_news_tag('important'), Announcement.get_announcement_tag('important')),
+        chain(News.get_news_tag('important'),
+              Announcement.get_announcement_tag('important')),
         key=attrgetter('start_date')
     )
     context = {

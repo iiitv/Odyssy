@@ -10,7 +10,8 @@ def faculty(request):
 
 def visiting_faculty(request):
     visiting_faculty_list = People.objects.filter(status='visiting_faculty')
-    context = {'people_list': visiting_faculty_list, 'status': 'Mentor Institute Faculty Members'}
+    context = {'people_list': visiting_faculty_list,
+               'status': 'Mentor Institute Faculty Members'}
     return render(request, 'people.html', context=context)
 
 
@@ -34,5 +35,6 @@ def details(request, slug):
 
 def filter_by_tag(request, tag):
     tagged_people = People.get_people_sorted(tag)
-    context = {'people_list': tagged_people, 'status': 'People with tags : ' + tag}
+    context = {'people_list': tagged_people,
+               'status': 'People with tags : ' + tag}
     return render(request, 'people.html', context=context)

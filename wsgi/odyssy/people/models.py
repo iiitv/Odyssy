@@ -22,17 +22,22 @@ class People(models.Model):
     photo = models.ImageField(upload_to='people_images/')
     post = models.CharField(max_length=50)
     tags = TaggableManager()
-    academic_highlights = models.CharField(max_length=200, blank=True, null=True)
+    academic_highlights = models.CharField(
+        max_length=200, blank=True, null=True)
     institute = models.CharField(max_length=50, blank=True, null=True)
     area_of_interest = models.CharField(max_length=500, blank=True, null=True)
     office = models.CharField(max_length=100, blank=True, null=True)
     email = models.CharField(max_length=50)
-    status = models.CharField(max_length=16, choices=STATUS_CHOICES, default='staff')
+    status = models.CharField(
+        max_length=16, choices=STATUS_CHOICES, default='staff')
     # Description page
-    academic_qualifications = models.TextField(max_length=500, blank=True, null=True)
-    professional_memberships = models.TextField(max_length=500, blank=True, null=True)
+    academic_qualifications = models.TextField(
+        max_length=500, blank=True, null=True)
+    professional_memberships = models.TextField(
+        max_length=500, blank=True, null=True)
     work_experience = models.TextField(max_length=500, blank=True, null=True)
-    administrative_experience = models.TextField(max_length=200, blank=True, null=True)
+    administrative_experience = models.TextField(
+        max_length=200, blank=True, null=True)
     publications = models.TextField(max_length=10000, blank=True, null=True)
     teaching = models.TextField(max_length=200, blank=True, null=True)
     other = models.TextField(max_length=200, blank=True, null=True)

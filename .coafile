@@ -1,0 +1,11 @@
+
+# coafile for this project
+# please add more settings beneath
+# Local fixing
+# coala --apply-patches -n
+
+# python lint
+[pep8]
+files = wsgi/odyssy/**/*.py
+ignore = wsgi/odyssy/**/migrations/**.*
+bears = PEP8Bear

@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from .models import Institute
-from itertools import  chain
+from itertools import chain
 
 
 def view_institute(request):
@@ -87,4 +87,3 @@ def view_strategic_planning(request):
         'committee': 'Strategic Planning Committee'
     }
     return render(request, 'institute/committee/strategic-planning.html', context=context)
-
