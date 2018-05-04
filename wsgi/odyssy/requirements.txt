@@ -1,0 +1,13 @@
+Django==1.10
+django-filter==1.0.4
+django-photologue==3.7
+django-sortedm2m==1.4.0
+django-taggit==0.22.1
+django-taggit-serializer==0.1.5
+djangorestframework==3.6.3
+ExifRead==2.1.2
+Markdown==2.6.8
+olefile==0.44
+Pillow==4.1.1
+psycopg2==2.7.1
+six==1.10.0

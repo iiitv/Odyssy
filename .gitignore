@@ -11,3 +11,5 @@ wsgi/odyssy/.idea/
 .idea/
 **/*.swp
 
+/wsgi/odyssy/venv/
+
