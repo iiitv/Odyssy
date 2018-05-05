@@ -7,7 +7,7 @@ env:
   -DJANGO=1.10 DB=postgresql
 install:
   - pip install -r requirements.txt
-  - pip insatll coala-bears
+  - pip install coala-bears
 before_script:
   - psql -c "CREATE USER odyssy WITH CREATEUSER PASSWORD 'odyssy';" -U postgres
   - psql -c "ALTER USER odyssy CREATEDB;" -U postgres
