@@ -144,9 +144,9 @@ nav{
 	line-height: 2.2;
 }
 
-.navbar-nav > li{
-	margin:0  10px;
-}
+/*.navbar-nav > li{*/
+	/*margin:0  10px;*/
+/*}*/
 
 .navbar-inverse .navbar-toggle{
 	border:0;
@@ -192,14 +192,15 @@ nav ul li{
 .logo-name{
 	display: flex;
 	align-items:center;
-	margin-left: 2rem;
+	margin-left: -2%;
+	padding-right: 2px;
 }
 
 .logo-name .name h5{
 	// font-weight: bold;
-	font-size: 2.3rem;
+	font-size: 15px;
 	text-decoration: none;
-	color: rgb(50,50,50);
+	color: #FFFFFF;
 }
 
 .logo-name .name a:hover{
@@ -219,7 +220,7 @@ nav ul li{
 }
 
 .logo-name .logo img{
-	width: 100px;
+	width: 50px;
 }
 
 .header-links{
@@ -857,4 +858,17 @@ h2 {
 .event-time{
 	font-weight: bold;
 	display: inline;
+}
+
+.nav > li > a {
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.college-name {
+	height: 10vh;
+}
+
+.navbar .container {
+	width: 95%;
 }
