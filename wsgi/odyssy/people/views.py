@@ -1,3 +1,4 @@
+from django.http import HttpResponse
 from django.shortcuts import render, get_object_or_404
 from .models import People
 
@@ -38,3 +39,7 @@ def filter_by_tag(request, tag):
     context = {'people_list': tagged_people,
                'status': 'People with tags : ' + tag}
     return render(request, 'people.html', context=context)
+
+
+def dashboard(request):
+    return render(request, 'dashboard.html')

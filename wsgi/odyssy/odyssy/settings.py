@@ -149,3 +149,11 @@ MEDIA_ROOT = os.path.join(WSGI_DIR, 'media')
 # Redirects HTTP requests to HTTPS.
 # However, it is suggested to write a rewrite rule for this action.
 SECURE_SSL_REDIRECT = True
+
+LOGIN_URL = 'login'
+
+LOGIN_REDIRECT_URL = 'dashboard'
+
+LOGOUT_URL = 'logout'
+
+LOGOUT_REDIRECT_URL = 'index-view'
