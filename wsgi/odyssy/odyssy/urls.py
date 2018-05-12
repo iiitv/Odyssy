@@ -17,7 +17,10 @@ from django.conf import settings
 from django.conf.urls import include, url
 from django.conf.urls.static import static
 from django.contrib import admin
+from django.contrib.auth import views
 from photologue.sitemaps import GallerySitemap, PhotoSitemap
+
+from people.views import dashboard
 
 sitemaps = {
             'photologue_galleries': GallerySitemap,
@@ -26,6 +29,9 @@ sitemaps = {
 
 urlpatterns = [
     url(r'^admin/?', include(admin.site.urls)),
+    url(r'^login/', views.login, name='login'),
+    url(r'^dashboard/', dashboard, name='dashboard'),
+    url(r'^logout/', views.logout, name='logout'),
     url(r'^api/people/', include('people.api.urls')),
     url(r'^institute/', include('institute.urls', namespace='institute')),
     url(r'^events/', include('events.urls')),
