@@ -10,5 +10,5 @@ urlpatterns = [
     url(r'^research-council/$', views.view_research_council, name='research-council'),
     url(r'^strategic-planning/$', views.view_strategic_planning,
         name='strategic-planning'),
-    url(r'.html/$', views.view_institute, name='institute-html')
+    url(r'.html/$', views.view_institute, name='committee-html')
 ]

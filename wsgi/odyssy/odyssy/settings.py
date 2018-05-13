@@ -52,7 +52,7 @@ INSTALLED_APPS = (
     'admission.apps.AdmissionConfig',
     'academic.apps.AcademicConfig',
     'people.apps.PeopleConfig',
-    'institute.apps.InstituteConfig',
+    'committee.apps.CommitteeConfig',
     'photologue',
     'sortedm2m',
     'taggit',
