@@ -24,7 +24,7 @@ class Migration(migrations.Migration):
                 ('photo', models.ImageField(upload_to='people_images/')),
                 ('post', models.CharField(max_length=50)),
                 ('academic_highlights', models.CharField(blank=True, max_length=200, null=True)),
-                ('institute', models.CharField(blank=True, max_length=50, null=True)),
+                ('committee', models.CharField(blank=True, max_length=50, null=True)),
                 ('area_of_interest', models.CharField(blank=True, max_length=500, null=True)),
                 ('office', models.CharField(blank=True, max_length=100, null=True)),
                 ('email', models.CharField(max_length=50)),

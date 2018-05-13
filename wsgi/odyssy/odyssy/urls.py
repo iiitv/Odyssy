@@ -33,7 +33,7 @@ urlpatterns = [
     url(r'^dashboard/', dashboard, name='dashboard'),
     url(r'^logout/', views.logout, name='logout'),
     url(r'^api/people/', include('people.api.urls')),
-    url(r'^institute/', include('institute.urls', namespace='institute')),
+    url(r'^committee/', include('committee.urls', namespace='committee')),
     url(r'^events/', include('events.urls')),
     url(r'^news/', include('news.urls')),
     url(r'^people/', include('people.urls', namespace='people')),

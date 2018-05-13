@@ -4,16 +4,16 @@ from django.core.exceptions import ValidationError
 from django.db import models
 
 
-class Institute(models.Model):
+class Committee(models.Model):
     """Model of Institute app
     name -- Name of the committee member
     post -- Post of the person in committee
-    origin -- The origin institute of committee member
+    origin -- The origin committee of committee member
     """
     class Meta:
         ordering = ('name',)
-        verbose_name = 'Institute'
-        verbose_name_plural = 'Institute'
+        verbose_name = 'Committee'
+        verbose_name_plural = 'Committees'
 
     COMMITTEE_CHOICES = [
         ('default', 'Select choice'),
