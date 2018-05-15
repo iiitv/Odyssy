@@ -36,7 +36,7 @@ class Course(models.Model):
     programme = models.CharField(max_length=120, choices=PROGRAMME_CHOICES, default='btech')
     branch = models.CharField(max_length=120, choices=BRANCH_CHOICES, default='cse')
     name = models.CharField(max_length=120, blank=True, null=True)
-    code = models.CharField(max_length=120, unique=True)
+    code = models.CharField(max_length=6, unique=True)
     is_elective = models.BooleanField(default=False)
     # Lecture credits
     lecture = models.IntegerField(default=0)
