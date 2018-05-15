@@ -50,7 +50,7 @@ else:
 
 INSTALLED_APPS = (
     'admission.apps.AdmissionConfig',
-    'academic',
+    'academic.apps.AcademicConfig',
     'people.apps.PeopleConfig',
     'committee.apps.CommitteeConfig',
     'photologue',
