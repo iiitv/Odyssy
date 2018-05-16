@@ -3,6 +3,19 @@ from __future__ import unicode_literals
 from django.db import models
 
 
+class Programme(models.Model):
+    class Meta:
+        ordering = ('name', )
+        verbose_name = 'Programme'
+        verbose_name_plural = 'Programmes'
+
+    name = models.CharField(max_length=50, blank=True, null=True)
+    info = models.TextField(max_length=5000, blank=True, null=True)
+
+    def __str__(self):
+        return self.name
+
+
 class Semester(models.Model):
     class Meta:
         ordering = ('sem', )
@@ -24,16 +37,12 @@ class Course(models.Model):
         verbose_name = 'Course'
         verbose_name_plural = 'Courses'
 
-    PROGRAMME_CHOICES = (
-        ('btech', 'Bachelor of Technology'),
-        ('mtech', 'Master of Technology'),
-    )
     BRANCH_CHOICES = (
         ('cse', 'Computer Science & Engineering'),
         ('it', 'Information Technology'),
         ('both', 'Computer Science & Engineering and Information Technology'),
     )
-    programme = models.CharField(max_length=120, choices=PROGRAMME_CHOICES, default='btech')
+    programme = models.ForeignKey(Programme, on_delete=models.PROTECT)
     branch = models.CharField(max_length=120, choices=BRANCH_CHOICES, default='cse')
     name = models.CharField(max_length=120, blank=True, null=True)
     code = models.CharField(max_length=6, unique=True)
