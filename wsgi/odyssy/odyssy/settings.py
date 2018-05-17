@@ -51,6 +51,7 @@ else:
 INSTALLED_APPS = (
     'admission.apps.AdmissionConfig',
     'academic.apps.AcademicConfig',
+    'dashboard.apps.DashboardConfig',
     'people.apps.PeopleConfig',
     'committee.apps.CommitteeConfig',
     'photologue',
@@ -152,7 +153,7 @@ SECURE_SSL_REDIRECT = True
 
 LOGIN_URL = 'login'
 
-LOGIN_REDIRECT_URL = 'dashboard'
+LOGIN_REDIRECT_URL = '/dashboard'
 
 LOGOUT_URL = 'logout'
 

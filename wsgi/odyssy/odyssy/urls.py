@@ -20,8 +20,6 @@ from django.contrib import admin
 from django.contrib.auth import views
 from photologue.sitemaps import GallerySitemap, PhotoSitemap
 
-from people.views import dashboard
-
 sitemaps = {
             'photologue_galleries': GallerySitemap,
             'photologue_photos': PhotoSitemap,
@@ -30,13 +28,13 @@ sitemaps = {
 urlpatterns = [
     url(r'^admin/?', include(admin.site.urls)),
     url(r'^login/', views.login, name='login'),
-    url(r'^dashboard/', dashboard, name='dashboard'),
     url(r'^logout/', views.logout, name='logout'),
     url(r'^api/people/', include('people.api.urls')),
     url(r'^committee/', include('committee.urls', namespace='committee')),
     url(r'^events/', include('events.urls')),
     url(r'^news/', include('news.urls')),
     url(r'^people/', include('people.urls', namespace='people')),
+    url(r'^dashboard/', include('dashboard.urls', namespace='dashboard')),
     url(r'^tag/', include('tag.urls')),
     url(r'^careers/', include('careers.urls')),
     url(r'^more/', include('more.urls', namespace='more')),
