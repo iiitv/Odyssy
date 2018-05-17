@@ -39,7 +39,3 @@ def filter_by_tag(request, tag):
     context = {'people_list': tagged_people,
                'status': 'People with tags : ' + tag}
     return render(request, 'people.html', context=context)
-
-
-def dashboard(request):
-    return render(request, 'dashboard.html')

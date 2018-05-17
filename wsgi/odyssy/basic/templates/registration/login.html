@@ -4,12 +4,22 @@
 {% endblock %}
 
 {% block body %}
-    <h2>Login</h2>
-  <form method="post">
-{% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Login</button>
-  </form>
-
-   <br>
+    <div style="margin-bottom: 100px; width: 70%; margin-left: 15%; margin-right: 15%;">
+        <div class="uk-card uk-card-default uk-card-body uk-margin-auto-right uk-margin-medium-top uk-margin-auto-bottom uk-margin-auto-left">
+            <h2 class="uk-text-center">Login</h2>
+            <form class="uk-align-center uk-text-center" method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button class="uk-button uk-button-primary" type="submit">Login</button>
+            </form>
+        </div>
+    </div>
+    <script>
+        document.getElementById("id_username").className = "uk-input uk-form-width-medium";
+        document.getElementById("id_password").className = "uk-input uk-form-width-medium";
+        var labels = document.getElementsByTagName("label");
+        console.log(labels);
+        labels[0].className = "uk-label";
+        labels[1].className = "uk-label";
+    </script>
 {% endblock %}

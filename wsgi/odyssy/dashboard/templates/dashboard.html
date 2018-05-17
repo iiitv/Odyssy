@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'basic/css/dashboard.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'basic/css/uikit.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'basic/css/uikit-rtl.min.css' %}">
+    <script src="{% static 'basic/js/main.js' %}"></script>
+    <script src="{% static 'basic/js/uikit.min.js' %}"></script>
+    <script src="{% static 'basic/js/uikit-icons.min.js' %}"></script>
+</head>
+<body>
+    <div uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; bottom: #transparent-sticky-navbar">
+    <nav class="uk-navbar-container" uk-navbar style="position: relative; z-index: 980; background: rgb(15,108,107); color: white;">
+        <div class="uk-navbar-left">
+
+            <ul class="uk-navbar-nav">
+                <li class="uk-active">
+                    <a class="nav-a" href="#">
+                        {% if user.is_authenticated %}
+                            Hello, {{ user.username }}
+                        {% endif %}
+                    </a>
+                </li>
+                <li>
+                    <a class="nav-a" href="#">Parent</a>
+                    <div class="uk-navbar-dropdown" uk-dropdown="animation: uk-animation-slide-top-small; duration: 300">
+                        <ul class="uk-nav uk-navbar-dropdown-nav">
+                            <li><a class="nav-a-dark" href="#">Active</a></li>
+                            <li><a class="nav-a-dark" href="#">Item</a></li>
+                            <li><a class="nav-a-dark" href="#">Item</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a class="nav-a" href="#">Item</a></li>
+            </ul>
+
+        </div>
+        <div class="uk-navbar-right">
+
+            <ul class="uk-navbar-nav">
+                {% if user.is_authenticated %}
+                    <li><a class="nav-a uk-button uk-button-secondary" href="{% url 'logout' %}"><span uk-icon="icon: sign-out; ratio: 2"></span>Logout</a></li>
+                {% endif %}
+            </ul>
+
+        </div>
+    </nav>
+    </div>
+</body>
+</html>
