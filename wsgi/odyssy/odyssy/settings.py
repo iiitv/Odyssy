@@ -57,6 +57,7 @@ INSTALLED_APPS = (
     'photologue',
     'sortedm2m',
     'taggit',
+    'widget_tweaks',
     'events.apps.EventConfig',
     'news.apps.NewsConfig',
     'basic.apps.BasicConfig',

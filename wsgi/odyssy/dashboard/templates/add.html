@@ -1,0 +1,45 @@
+{% extends 'dashboard.html' %}
+
+{% block title %}
+    <title>{{ title }}</title>
+{% endblock %}
+
+{% block body %}
+    <div class="add-edit-wrapper">
+         <div class="form-card uk-card uk-card-default uk-card-body">
+            <form class="entry-input-form" action="#" method="post">
+                {% csrf_token %}
+                <table class="uk-table uk-table-hover uk-table-divider">
+                    <thead>
+                        <tr>
+                            <th class="uk-width-small">Field</th>
+                            <th>Value</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>{{ form.title.label }}</td>
+                            <td>{{ form.title }}</td>
+                        </tr>
+                        <tr>
+                            <td>{{ form.description.label }}</td>
+                            <td>{{ form.description }}</td>
+                        </tr>
+                       <tr>
+                            <td>{{ form.start_date.label }}</td>
+                            {% load widget_tweaks %}
+                            <td>{{ form.start_date|attr:"type:datetime-local" }}</td>
+                        </tr>
+                        <tr>
+                            <td>{{ form.end_date.label }}</td>
+                            {% load widget_tweaks %}
+                            <td>{{ form.end_date|attr:"type:datetime-local" }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <input class="entry-input-submit-button uk-button-primary uk-width-1-1 uk-button" type="submit" value="Submit" />
+            </form>
+        </div>
+    </div>
+
+{% endblock %}

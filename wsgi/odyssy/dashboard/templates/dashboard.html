@@ -2,7 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Dashboard</title>
+    {% block title %}
+        <title>
+            Dashboard
+        </title>
+    {% endblock %}
     {% load staticfiles %}
     <link rel="stylesheet" type="text/css" href="{% static 'basic/css/dashboard.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'basic/css/uikit.min.css' %}">
@@ -49,5 +53,31 @@
         </div>
     </nav>
     </div>
+    {% block body %}
+        <div class="dashboard-cards ">
+            <div class="uk-card dashboard-card uk-card-hover uk-card-body">
+                <h3 class="uk-card-title">Announcements</h3>
+                <p>Recently added events</p>
+                <a class="add-btn uk-button uk-button-primary" href="{% url 'dashboard:add_data' 'announcements'%}">Add</a>
+                <a class="edit-btn uk-button uk-button-primary" href="#">Edit</a>
+                <a class="uk-button uk-button-danger" href="#">Delete</a>
+            </div>
+            <div class="uk-card dashboard-card uk-card-hover uk-card-body">
+                <h3 class="uk-card-title">Events</h3>
+                <p>Recently added news</p>
+                <a class="add-btn uk-button uk-button-primary" href="{% url 'dashboard:add_data' 'event'%}">Add</a>
+                <a class="edit-btn uk-button uk-button-primary" href="#">Edit</a>
+                <a class="uk-button uk-button-danger" href="#">Delete</a>
+            </div>
+            <div class="uk-card dashboard-card uk-card-hover uk-card-body">
+                <h3 class="uk-card-title">News</h3>
+                <p>Recently added news</p>
+                <a class="add-btn uk-button uk-button-primary" href="{% url 'dashboard:add_data' 'news'%}">Add</a>
+                <a class="edit-btn uk-button uk-button-primary" href="#">Edit</a>
+                <a class="uk-button uk-button-danger" href="#">Delete</a>
+            </div>
+        </div>
+
+    {% endblock %}
 </body>
 </html>

@@ -11,3 +11,4 @@ olefile==0.44
 Pillow==4.1.1
 psycopg2==2.7.1
 six==1.10.0
+django-widget-tweaks==1.4.2

@@ -5,3 +5,38 @@
 .nav-a-dark {
     color: #000 !important;
 }
+
+.dashboard-card {
+    box-shadow: 0 0 5px lightgray;
+    width: 90%;
+    left: 5%;
+    right: 5%;
+    margin-top: 20px;
+}
+
+.dashboard-cards {
+    max-width: 100%;
+    margin-top: 20px;
+}
+
+.uk-first-column {
+    padding: 0 !important;
+}
+
+.add-btn {
+    background: #3eb13e !important;
+}
+
+.edit-btn {
+    background: #d4c831 !important;
+}
+
+.add-edit-wrapper {
+    margin-top: 20px;
+}
+
+.form-card {
+    width: 70%;
+    left: 15%;
+    right: 15%;
+}
