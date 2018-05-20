@@ -18,8 +18,14 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>{{ form.title.label }}</td>
-                            <td>{{ form.title }}</td>
+                            {% if title == "Add event" %}
+                                <td>{{ form.name.label }}</td>
+                                <td>{{ form.name }}</td>
+                            {% else %}
+                                <td>{{ form.title.label }}</td>
+                                <td>{{ form.title }}</td>
+                            {% endif %}
+
                         </tr>
                         <tr>
                             <td>{{ form.description.label }}</td>
@@ -28,12 +34,12 @@
                        <tr>
                             <td>{{ form.start_date.label }}</td>
                             {% load widget_tweaks %}
-                            <td>{{ form.start_date|attr:"type:datetime-local" }}</td>
+                            <td>{{ form.start_date|attr:"type:date" }}</td>
                         </tr>
                         <tr>
                             <td>{{ form.end_date.label }}</td>
                             {% load widget_tweaks %}
-                            <td>{{ form.end_date|attr:"type:datetime-local" }}</td>
+                            <td>{{ form.end_date|attr:"type:date" }}</td>
                         </tr>
                     </tbody>
                 </table>

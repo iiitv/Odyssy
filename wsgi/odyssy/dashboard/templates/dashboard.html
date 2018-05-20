@@ -22,23 +22,23 @@
 
             <ul class="uk-navbar-nav">
                 <li class="uk-active">
-                    <a class="nav-a" href="#">
+                    <a class="nav-a uk-button uk-button-secondary" href="{% url 'dashboard:dashboard' %}">
                         {% if user.is_authenticated %}
-                            Hello, {{ user.username }}
+                            <span uk-icon="home"></span>
                         {% endif %}
                     </a>
                 </li>
                 <li>
-                    <a class="nav-a" href="#">Parent</a>
+                    <a class="nav-a" href="#">Operations</a>
                     <div class="uk-navbar-dropdown" uk-dropdown="animation: uk-animation-slide-top-small; duration: 300">
                         <ul class="uk-nav uk-navbar-dropdown-nav">
-                            <li><a class="nav-a-dark" href="#">Active</a></li>
-                            <li><a class="nav-a-dark" href="#">Item</a></li>
-                            <li><a class="nav-a-dark" href="#">Item</a></li>
+                            <li><a class="nav-a-dark" href="#">Edit Profile</a></li>
+                            <li><a class="nav-a-dark" href="#">Change Password</a></li>
+                            <li><a class="nav-a-dark" href="#">Add User</a></li>
                         </ul>
                     </div>
                 </li>
-                <li><a class="nav-a" href="#">Item</a></li>
+                <li><a class="nav-a" href="#">Other Link</a></li>
             </ul>
 
         </div>

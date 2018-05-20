@@ -2,7 +2,7 @@ from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse
 from django.shortcuts import render, redirect
 
-from .forms import AnnouncementForm
+from .forms import AnnouncementForm, EventForm, NewsForm
 
 from announcement.models import Announcement
 from events.models import Event
@@ -19,16 +19,55 @@ def dashboard(request):
 def add(request, data_type):
     title = 'Add ' + data_type
     if request.method == "POST":
-        announcement_form = AnnouncementForm(request.POST)
-        if announcement_form.is_valid():
-            print("yaha tak pahucha")
-            announcement = announcement_form.save(commit=False)
-            announcement.save()
-            return redirect(dashboard)
+        if data_type == 'announcements':
+            form = AnnouncementForm(request.POST)
+            if form.is_valid():
+                form_cleaned = form.clean()
+                object_instance = form.save(commit=False)
+                object_instance.start_date = form_cleaned['start_date']
+                object_instance.end_date = form_cleaned['end_date']
+                object_instance.save()
+                return redirect(dashboard)
+            else:
+                print(form.clean())
+                return JsonResponse({'msg': 'something went wrong'})
+        elif data_type == 'event':
+            form = EventForm(request.POST)
+            if form.is_valid():
+                form_cleaned = form.clean()
+                object_instance = form.save(commit=False)
+                object_instance.start_time = form_cleaned['start_date']
+                object_instance.end_time = form_cleaned['end_date']
+                object_instance.save()
+                return redirect(dashboard)
+            else:
+                print(form.clean())
+                return JsonResponse({'msg': 'something went wrong'})
+        elif data_type == 'news':
+            form = NewsForm(request.POST)
+            if form.is_valid():
+                form_cleaned = form.clean()
+                object_instance = form.save(commit=False)
+                object_instance.start_date = form_cleaned['start_date']
+                object_instance.end_date = form_cleaned['end_date']
+                object_instance.save()
+                return redirect(dashboard)
+            else:
+                print(form.clean())
+                return JsonResponse({'msg': 'something went wrong'})
         else:
-            print(announcement_form.clean())
-            return JsonResponse({'msf': 'u fucked up'})
+            return JsonResponse({'msg': 'Could not find what you are looking for. ;('})
     else:
-        form = AnnouncementForm()
-        return render(request, 'add.html', {'form': form,
-                                            'title': title})
+        if data_type == 'announcements':
+            form = AnnouncementForm()
+            return render(request, 'add.html', {'form': form,
+                                                'title': title})
+        if data_type == 'event':
+            form = EventForm()
+            return render(request, 'add.html', {'form': form,
+                                                'title': title})
+
+        if data_type == 'news':
+            form = NewsForm()
+            return render(request, 'add.html', {'form': form,
+                                                'title': title})
