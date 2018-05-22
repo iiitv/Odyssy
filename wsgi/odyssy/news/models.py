@@ -1,3 +1,5 @@
+from django.urls import reverse
+
 from basic import utils
 from taggit.managers import TaggableManager
 
@@ -61,6 +63,9 @@ class News(models.Model):
     @staticmethod
     def get_model_type():
         return "News"
+
+    def get_url(self):
+        return reverse('news:news-single', args=[self.pk])
 
 
 def set_default_tag(sender, instance, **kwargs):
