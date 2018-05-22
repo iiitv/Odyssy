@@ -56,25 +56,28 @@
     {% block body %}
         <div class="dashboard-cards ">
             <div class="uk-card dashboard-card uk-card-hover uk-card-body">
-                <h3 class="uk-card-title">Announcements</h3>
+                <a class="uk-link-heading" href="{% url 'dashboard:ane_list' 'announcements' %}">
+                    <h3 class="uk-card-title">Announcements</h3>
+                </a>
                 <p>Recently added events</p>
                 <a class="add-btn uk-button uk-button-primary" href="{% url 'dashboard:add_data' 'announcements'%}">Add</a>
-                <a class="edit-btn uk-button uk-button-primary" href="#">Edit</a>
-                <a class="uk-button uk-button-danger" href="#">Delete</a>
+                <a class="edit-btn uk-button uk-button-primary" href="#">Edit/Delete</a>
             </div>
             <div class="uk-card dashboard-card uk-card-hover uk-card-body">
-                <h3 class="uk-card-title">Events</h3>
+                <a class="uk-link-heading" href="{% url 'dashboard:ane_list' 'events' %}">
+                    <h3 class="uk-card-title">Events</h3>
+                </a>
                 <p>Recently added news</p>
-                <a class="add-btn uk-button uk-button-primary" href="{% url 'dashboard:add_data' 'event'%}">Add</a>
-                <a class="edit-btn uk-button uk-button-primary" href="#">Edit</a>
-                <a class="uk-button uk-button-danger" href="#">Delete</a>
+                <a class="add-btn uk-button uk-button-primary" href="{% url 'dashboard:add_data' 'events'%}">Add</a>
+                <a class="edit-btn uk-button uk-button-primary" href="#">Edit/Delete</a>
             </div>
             <div class="uk-card dashboard-card uk-card-hover uk-card-body">
-                <h3 class="uk-card-title">News</h3>
+                <a class="uk-link-heading" href="{% url 'dashboard:ane_list' 'news' %}">
+                    <h3 class="uk-card-title">News</h3>
+                </a>
                 <p>Recently added news</p>
                 <a class="add-btn uk-button uk-button-primary" href="{% url 'dashboard:add_data' 'news'%}">Add</a>
-                <a class="edit-btn uk-button uk-button-primary" href="#">Edit</a>
-                <a class="uk-button uk-button-danger" href="#">Delete</a>
+                <a class="edit-btn uk-button uk-button-danger" href="#">Edit/Delete</a>
             </div>
         </div>
 

@@ -8,30 +8,30 @@ from django.shortcuts import get_object_or_404
 
 
 class Event(models.Model):
-    name = models.CharField(max_length=30, default="Sample Name")
-    start_time = models.DateTimeField(default=datetime.datetime.now)
-    end_time = models.DateTimeField(default=datetime.datetime.now)
+    title = models.CharField(max_length=30, default="Sample Name")
+    start_date = models.DateTimeField(default=datetime.datetime.now)
+    end_date = models.DateTimeField(default=datetime.datetime.now)
     description = models.TextField(max_length=20000)
     place = models.CharField(max_length=100, null=True,
                              default=None, blank=True)
 
     def __str__(self):
-        event_str = self.name + " on " + str(self.start_time.day) + \
-            " - " + calendar.month_abbr[self.start_time.month] + \
-            " - " + str(self.start_time.year)
+        event_str = self.title + " on " + str(self.start_date.day) + \
+            " - " + calendar.month_abbr[self.start_date.month] + \
+            " - " + str(self.start_date.year)
         if self.place:
             event_str += " at " + self.place
         return event_str
 
     def clean(self):
-        if self.start_time > self.end_time:
+        if self.start_date > self.end_date:
             raise ValidationError("Start Date should be before end date")
         if self.place:
             self.place = self.place.strip(' \t\n')
 
     @staticmethod
     def get_all_events():
-        return Event.objects.order_by('-start_time')
+        return Event.objects.order_by('-start_date')
 
     @staticmethod
     def get_latest_events(num_items):

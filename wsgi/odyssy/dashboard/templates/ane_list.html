@@ -1,0 +1,35 @@
+{% extends 'dashboard.html' %}
+
+{% block title %}
+    <title>{{ title }}</title>
+{% endblock %}
+
+{% block body %}
+    <div class="add-edit-wrapper">
+        {% if msg %}
+            <h3 class="uk-text-success uk-text-center">{{ msg }}</h3>
+        {% endif %}
+         <div class="form-card uk-card uk-card-default uk-card-body">
+            <table class="uk-table uk-table-hover uk-table-divider">
+                <thead>
+                    <tr>
+                        <th class="uk-width-small">Start Date</th>
+                        <th class="uk-width-small">End Date</th>
+                        <th>Title</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in items %}
+                        <tr>
+                            <td>{{ item.start_date }}</td>
+                            <td>{{ item.end_date }}</td>
+                            <td>{{ item.title }}</td>
+                            <td>Hi</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}

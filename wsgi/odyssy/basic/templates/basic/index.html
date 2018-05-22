@@ -76,15 +76,15 @@
                                 <div class="date">
                                     <span>
                                          <!-- Day -->
-                                        <div class="day">{{ event.start_time|date:"d" }}</div>
+                                        <div class="day">{{ event.start_date|date:"d" }}</div>
                                         <!-- Month Short Form (first three letters) -->
-                                        <div class="month">{{ event.start_time|date:"M" }}</div>
+                                        <div class="month">{{ event.start_date|date:"M" }}</div>
                                     </span>
                                 </div>
                                 <!-- Event-Description -->
                                 <div class="widgets-item-text">
                                     <div class="widgets-item-title event-title">
-                                        <a href="{% url 'event-view-single' event.id %}">{{ event.name }}</a>
+                                        <a href="{% url 'event-view-single' event.id %}">{{ event.title }}</a>
                                     </div>
                                     <div class="widgets-item-description">
                                         {{ event.description | safe | truncatewords_html:"20" | linebreaks }}

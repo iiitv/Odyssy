@@ -7,7 +7,7 @@
 }
 
 .dashboard-card {
-    box-shadow: 0 0 5px lightgray;
+    box-shadow: 0 0 6px lightgray;
     width: 90%;
     left: 5%;
     right: 5%;
@@ -28,7 +28,7 @@
 }
 
 .edit-btn {
-    background: #d4c831 !important;
+    background: #f9a825 !important;
 }
 
 .add-edit-wrapper {
@@ -36,7 +36,11 @@
 }
 
 .form-card {
-    width: 70%;
-    left: 15%;
-    right: 15%;
+    width: 80%;
+    left: 10%;
+    right: 10%;
+}
+
+.uk-navbar-container{
+    box-shadow: 0 0 10px black;
 }

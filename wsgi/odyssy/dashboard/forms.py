@@ -23,6 +23,18 @@ class AnnouncementForm(forms.ModelForm):
             'class': 'uk-input'
         })
 
+    def clean(self):
+        cleaned_data = super(AnnouncementForm, self).clean()
+        start_date = cleaned_data.get('start_date')
+        end_date = cleaned_data.get('end_date')
+
+        if start_date and end_date:
+            if start_date > end_date:
+                msg = u"Start date must be before the end date"
+                self._errors['start_date'] = self.error_class([msg])
+
+        return self.cleaned_data
+
     class Meta:
         model = Announcement
         fields = {'title', 'description'}
@@ -36,18 +48,34 @@ class EventForm(forms.ModelForm):
         super(EventForm, self).__init__(*args, **kwargs)
         self.fields['start_date'].label = 'Start Date'
         self.fields['end_date'].label = 'End Date'
-        self.fields['name'].label = 'Title'
+        self.fields['title'].label = 'Title'
+        self.fields['place'].label = 'Place'
         self.fields['description'].label = 'Description'
-        self.fields['name'].widget.attrs.update({
+        self.fields['title'].widget.attrs.update({
+            'class': 'uk-input'
+        })
+        self.fields['place'].widget.attrs.update({
             'class': 'uk-input'
         })
         self.fields['description'].widget.attrs.update({
             'class': 'uk-input'
         })
 
+    def clean(self):
+        cleaned_data = super(EventForm, self).clean()
+        start_date = cleaned_data.get('start_date')
+        end_date = cleaned_data.get('end_date')
+
+        if start_date and end_date:
+            if start_date > end_date:
+                msg = u"Start date must be before the end date"
+                self._errors['start_date'] = self.error_class([msg])
+
+        return self.cleaned_data
+
     class Meta:
         model = Event
-        fields = {'name', 'description'}
+        fields = {'title', 'description', 'place'}
 
 
 class NewsForm(forms.ModelForm):
@@ -66,6 +94,18 @@ class NewsForm(forms.ModelForm):
         self.fields['description'].widget.attrs.update({
             'class': 'uk-input'
         })
+
+    def clean(self):
+        cleaned_data = super(NewsForm, self).clean()
+        start_date = cleaned_data.get('start_date')
+        end_date = cleaned_data.get('end_date')
+
+        if start_date and end_date:
+            if start_date > end_date:
+                msg = u"Start date must be before the end date"
+                self._errors['start_date'] = self.error_class([msg])
+
+        return self.cleaned_data
 
     class Meta:
         model = News

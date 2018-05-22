@@ -27,22 +27,24 @@ def add(request, data_type):
                 object_instance.start_date = form_cleaned['start_date']
                 object_instance.end_date = form_cleaned['end_date']
                 object_instance.save()
-                return redirect(dashboard)
+                return ane_list(request, data_type='announcements',
+                                msg='Announcement added successfully')
             else:
-                print(form.clean())
-                return JsonResponse({'msg': 'something went wrong'})
-        elif data_type == 'event':
+                print(form.errors)
+                return render(request, 'add.html', {'form': form, 'title': title})
+        elif data_type == 'events':
             form = EventForm(request.POST)
             if form.is_valid():
                 form_cleaned = form.clean()
                 object_instance = form.save(commit=False)
-                object_instance.start_time = form_cleaned['start_date']
-                object_instance.end_time = form_cleaned['end_date']
+                object_instance.start_date = form_cleaned['start_date']
+                object_instance.end_date = form_cleaned['end_date']
                 object_instance.save()
-                return redirect(dashboard)
+                return ane_list(request, data_type='events',
+                                msg='Announcement added successfully')
             else:
-                print(form.clean())
-                return JsonResponse({'msg': 'something went wrong'})
+                print(form.errors)
+                return render(request, 'add.html', {'form': form, 'title': title})
         elif data_type == 'news':
             form = NewsForm(request.POST)
             if form.is_valid():
@@ -51,10 +53,11 @@ def add(request, data_type):
                 object_instance.start_date = form_cleaned['start_date']
                 object_instance.end_date = form_cleaned['end_date']
                 object_instance.save()
-                return redirect(dashboard)
+                return ane_list(request, data_type='news',
+                                msg='Announcement added successfully')
             else:
-                print(form.clean())
-                return JsonResponse({'msg': 'something went wrong'})
+                print(form.errors)
+                return render(request, 'add.html', {'form': form, 'title': title})
         else:
             return JsonResponse({'msg': 'Could not find what you are looking for. ;('})
     else:
@@ -62,7 +65,7 @@ def add(request, data_type):
             form = AnnouncementForm()
             return render(request, 'add.html', {'form': form,
                                                 'title': title})
-        if data_type == 'event':
+        if data_type == 'events':
             form = EventForm()
             return render(request, 'add.html', {'form': form,
                                                 'title': title})
@@ -71,3 +74,15 @@ def add(request, data_type):
             form = NewsForm()
             return render(request, 'add.html', {'form': form,
                                                 'title': title})
+
+
+@login_required
+def ane_list(request, data_type, msg=None):
+    title = 'List of ' + data_type
+    items = Announcement.objects.all()
+    if data_type == 'events':
+        items = Event.objects.all()
+    if data_type == 'news':
+        items = News.objects.all()
+
+    return render(request, 'ane_list.html', {'items': items, 'title': title, 'msg': msg})

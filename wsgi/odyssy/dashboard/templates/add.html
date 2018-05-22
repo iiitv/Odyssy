@@ -18,19 +18,19 @@
                     </thead>
                     <tbody>
                         <tr>
-                            {% if title == "Add event" %}
-                                <td>{{ form.name.label }}</td>
-                                <td>{{ form.name }}</td>
-                            {% else %}
-                                <td>{{ form.title.label }}</td>
-                                <td>{{ form.title }}</td>
-                            {% endif %}
-
+                            <td>{{ form.title.label }}</td>
+                            <td>{{ form.title }}</td>
                         </tr>
                         <tr>
                             <td>{{ form.description.label }}</td>
                             <td>{{ form.description }}</td>
                         </tr>
+                        {% if form.place %}
+                            <tr>
+                                <td>{{ form.place.label }}</td>
+                                <td>{{ form.place }}</td>
+                            </tr>
+                        {% endif %}
                        <tr>
                             <td>{{ form.start_date.label }}</td>
                             {% load widget_tweaks %}
@@ -41,11 +41,16 @@
                             {% load widget_tweaks %}
                             <td>{{ form.end_date|attr:"type:date" }}</td>
                         </tr>
+                        {% if form.errors %}
+                            <tr>
+                                <td class="uk-text-danger uk-text-bold">Errors</td>
+                                <td class="uk-text-danger uk-text-bold">{{ form.start_date.errors }}</td>
+                            </tr>
+                        {% endif %}
                     </tbody>
                 </table>
                 <input class="entry-input-submit-button uk-button-primary uk-width-1-1 uk-button" type="submit" value="Submit" />
             </form>
         </div>
     </div>
-
 {% endblock %}

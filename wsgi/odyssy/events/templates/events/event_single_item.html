@@ -7,10 +7,11 @@
 	<div class="contents-wrapper">
  		<div class="content">
  		{% if event %}
- 			<h2>{{ event.name }}</h2>
+ 			<h2>{{ event.title }}</h2>
         	{% if event.description is not None %}
         		<div class="item-description">
         			<p>{{ event.description|safe }}</p>
+                </div>
         	{% endif %}
 
         	{% if event.place is not None %}
@@ -20,14 +21,13 @@
             	</div>
         	{% endif %}
 
-        	{% if event.start_time is not None %}
+        	{% if event.start_date is not None %}
         		<p></p> Time:
         		<div class="event-time">
-        			{{ event.start_time }}
+        			{{ event.start_date }}
         		</div>
         	{% endif %}
         {% endif %}
-        		</div>
         </div>
     </div>
 {% endblock %}
