@@ -1,0 +1,35 @@
+{% extends 'basic/base.html' %}
+{% block title %}
+IIITV | Linkages
+{% endblock %}
+{% load static %}
+{% block body %}
+<div class="contents-wrapper">
+    <div class="content">
+        <h2>Linkages of IIIT Vadodara</h2>
+        {% if link_list %}
+            {% for link in link_list %}
+                    <div class="linkage-card" href="{{ link.website }}">
+                        <a href="{% url 'linkages:linkage-single' link.id %}" style="text-decoration: none;">
+                        <img src="{% static link.logo %}" alt="Linkage" style="width:100%;">
+                        <div class="linkage-container">
+                            <h4><b>{{ link.name }}</b></h4>
+                            <p>{{ link.contact_number }}</p>
+                        </div>
+                        </a>
+                    </div>
+            {% endfor %}
+        {% else %}
+            <p align="center">No Linkages to display</p>
+        {% endif %}
+
+        {% if link_list.has_previous %}
+            <a href="?page={{ link_list.previous_page_number }}&num_items={{num_items}}">Previous</a>
+        {% endif %}
+
+        {% if link_list.has_next %}
+            <a href="?page={{ link_list.next_page_number }}&num_items={{num_items}}">Next</a>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

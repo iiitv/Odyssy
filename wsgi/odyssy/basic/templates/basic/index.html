@@ -44,7 +44,7 @@
             <!-- Announcements -->
             <div class="col-sm-4" id="announcements">
                 <div class='announcement-content '>
-                    <div class="widgets-title"><h2><a href="{% url 'all_announcements' %}">Announcements</a></h2></div>
+                    <div class="widgets-title"><h2><a href="{% url 'announcement:all_announcements' %}">Announcements</a></h2></div>
                         {% if latest_announcement %}
                             <ul id="announcement-list">
                             {% for announcement in latest_announcement %}
@@ -67,7 +67,7 @@
             <!-- Events -->
             <div class="col-sm-4" id="events">
                 <div class="events-content">
-                    <div class="widgets-title"><h2><a href="{% url 'event-view' %}">Events</a></h2></div>
+                    <div class="widgets-title"><h2><a href="{% url 'event:event-view' %}">Events</a></h2></div>
                     <ul id="events-list">
                         {% for event in events %}
                         <li>
@@ -84,7 +84,7 @@
                                 <!-- Event-Description -->
                                 <div class="widgets-item-text">
                                     <div class="widgets-item-title event-title">
-                                        <a href="{% url 'event-view-single' event.id %}">{{ event.title }}</a>
+                                        <a href="{% url 'event:event-view-single' event.id %}">{{ event.title }}</a>
                                     </div>
                                     <div class="widgets-item-description">
                                         {{ event.description | safe | truncatewords_html:"20" | linebreaks }}
@@ -99,13 +99,13 @@
             <!-- News section -->
             <div class="col-sm-4" id="news">
                 <div class='news-content '>
-                    <div class="widgets-title"><h2><a href="{% url 'news-all' %}">News</a></h2></div>
+                    <div class="widgets-title"><h2><a href="{% url 'news:news-all' %}">News</a></h2></div>
                     {% if latest_news %}
                         <ul id="news-list">
                         {% for news in latest_news %}
                             <li>
                                 <div class="widgets-item-title" >
-                                    <a href="{% url 'news-single' news.id %}">{{ news.title }}</a>
+                                    <a href="{% url 'news:news-single' news.id %}">{{ news.title }}</a>
                                 </div>
                                 <div class="widgets-item-description">
                                         {{ news.description | safe | truncatewords_html:"25" | linebreaks }}

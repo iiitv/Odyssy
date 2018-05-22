@@ -5,6 +5,7 @@ import datetime
 from django.core.exceptions import ValidationError
 from django.db import models
 from django.shortcuts import get_object_or_404
+from django.urls import reverse
 
 
 class Event(models.Model):
@@ -42,3 +43,6 @@ class Event(models.Model):
     def get_single_event_detail(event_id):
         single_event = get_object_or_404(Event, pk=event_id)
         return single_event
+
+    def get_url(self):
+        return reverse('event:event-view-single', args=[self.pk])

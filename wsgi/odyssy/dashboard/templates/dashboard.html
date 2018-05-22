@@ -56,7 +56,7 @@
     {% block body %}
         <div class="dashboard-cards ">
             <div class="uk-card dashboard-card uk-card-hover uk-card-body">
-                <a class="uk-link-heading" href="{% url 'dashboard:ane_list' 'announcements' %}">
+                <a class="uk-link-heading" href="{% url 'dashboard:ane_list' 'announcements' 'Announcements' %}">
                     <h3 class="uk-card-title">Announcements</h3>
                 </a>
                 <p>Recently added events</p>
@@ -64,7 +64,7 @@
                 <a class="edit-btn uk-button uk-button-primary" href="#">Edit/Delete</a>
             </div>
             <div class="uk-card dashboard-card uk-card-hover uk-card-body">
-                <a class="uk-link-heading" href="{% url 'dashboard:ane_list' 'events' %}">
+                <a class="uk-link-heading" href="{% url 'dashboard:ane_list' 'events' 'Events' %}">
                     <h3 class="uk-card-title">Events</h3>
                 </a>
                 <p>Recently added news</p>
@@ -72,7 +72,7 @@
                 <a class="edit-btn uk-button uk-button-primary" href="#">Edit/Delete</a>
             </div>
             <div class="uk-card dashboard-card uk-card-hover uk-card-body">
-                <a class="uk-link-heading" href="{% url 'dashboard:ane_list' 'news' %}">
+                <a class="uk-link-heading" href="{% url 'dashboard:ane_list' 'news' 'News' %}">
                     <h3 class="uk-card-title">News</h3>
                 </a>
                 <p>Recently added news</p>

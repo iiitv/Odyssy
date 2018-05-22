@@ -1,3 +1,5 @@
+from django.urls import reverse
+
 from basic import utils
 from taggit.managers import TaggableManager
 
@@ -52,6 +54,9 @@ class Announcement(models.Model):
     @staticmethod
     def get_model_type():
         return "Announcement"
+
+    def get_url(self):
+        return reverse('announcement:open-view', args=[self.pk])
 
     key = models.AutoField(primary_key=True)
     start_date = models.DateTimeField(default=utils.get_today_start)

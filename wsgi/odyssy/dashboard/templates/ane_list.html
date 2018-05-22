@@ -24,8 +24,11 @@
                         <tr>
                             <td>{{ item.start_date }}</td>
                             <td>{{ item.end_date }}</td>
-                            <td>{{ item.title }}</td>
-                            <td>Hi</td>
+                            <td><a href="{{ item.get_url }}">{{ item.title }}</a></td>
+                            <td>
+                                <a class="uk-button edit-btn uk-button-default" href="{% url 'dashboard:ane_edit' data_type item.pk %}">Edit</a>
+                                <a class="uk-button uk-button-danger" href="{% url 'dashboard:ane_delete' data_type item.pk %}">Delete</a>
+                            </td>
                         </tr>
                     {% endfor %}
                 </tbody>
