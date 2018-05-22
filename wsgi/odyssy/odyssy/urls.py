@@ -31,6 +31,7 @@ urlpatterns = [
     url(r'^logout/', views.logout, name='logout'),
     url(r'^api/people/', include('people.api.urls')),
     url(r'^committee/', include('committee.urls', namespace='committee')),
+    url(r'^linkages/', include('linkages.urls', namespace='linkages')),
     url(r'^events/', include('events.urls', namespace='event')),
     url(r'^news/', include('news.urls', namespace='news')),
     url(r'^people/', include('people.urls', namespace='people')),

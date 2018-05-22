@@ -1,0 +1,35 @@
+{% extends 'basic/base.html' %}
+{% load static %}
+{% block title %}
+    IIITV | {{ link.short_name }}
+{% endblock %}
+{% load static %}
+{% block body %}
+<!-- Content wrapper -->
+<div class="contents-wrapper">
+    <!-- Contents starts here -->
+    <div class="contents">
+        <div style="text-align: center;">
+            <h2>{{ link.name }}</h2>
+        </div>
+        <div style="text-align: center;">
+            <center>
+                <div class="linkage-card" href="{{ link.website }}">
+                    <a href="{{ link.website }}" style="text-decoration: none;" target="_blank">
+                        <img src="{% static link.logo %}" alt="Linkage" style="width:100%;">
+                    </a>
+                </div>
+            </center>
+        </div>
+        <br/>
+        <br/>
+            <h4><b>Description:</b></h4> &emsp; &emsp;{{ link.description }}
+        <br/>
+            <h4><b>Address:</b></h4> &emsp; &emsp;{{ link.address }}
+        <br />
+            <h4><b>Contact:</b></h4> &emsp; &emsp;{{ link.contact_number }}
+        <br />
+
+    </div>
+</div>
+{% endblock %}}
