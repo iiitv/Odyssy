@@ -14,7 +14,12 @@ from people.models import People
 
 @login_required
 def dashboard(request):
-    return render(request, 'dashboard.html')
+    recent_announcements = Announcement.objects.all()[:3]
+    recent_news = News.objects.all()[:3]
+    recent_events = Event.objects.all()[:3]
+    return render(request, 'dashboard.html', {'recent_announcements': recent_announcements,
+                                              'recent_news': recent_news,
+                                              'recent_events': recent_events})
 
 
 @login_required

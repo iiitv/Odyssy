@@ -59,25 +59,91 @@
                 <a class="uk-link-heading" href="{% url 'dashboard:ane_list' 'announcements' 'Announcements' %}">
                     <h3 class="uk-card-title">Announcements</h3>
                 </a>
-                <p>Recently added events</p>
-                <a class="add-btn uk-button uk-button-primary" href="{% url 'dashboard:add_data' 'announcements'%}">Add</a>
-                <a class="edit-btn uk-button uk-button-primary" href="#">Edit/Delete</a>
+                {% if recent_announcements %}
+                    <p>Recent announcements</p>
+                    <table class="uk-table recent-ane-table uk-table-divider uk-table-striped uk-table-hover">
+                        {% for recent_announcement in recent_announcements %}
+                            <tr>
+                                <td class="recent-ane-table-title">
+                                    <a class="uk-text-bold" href="{{ recent_announcement.get_url }}">{{ recent_announcement.title }}</a>
+                                </td>
+                                <td>
+                                    <div class="uk-button-group">
+                                        <a class="uk-button recent-ane-actions edit-btn uk-button-default" uk-icon="icon: pencil" href="{% url 'dashboard:ane_edit' 'announcements' recent_announcement.pk %}"></a>
+                                        <a class="uk-button recent-ane-actions uk-button-danger" uk-icon="icon:trash" href="{% url 'dashboard:ane_delete' 'announcements' recent_announcement.pk %}"></a>
+                                    </div>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </table>
+                {% else %}
+                    <p>No recent activity</p>
+                {% endif %}
+                <br>
+                <div class="uk-button-group uk-width-1-1">
+                    <a class="add-btn uk-button uk-button-primary uk-width-1-2" href="{% url 'dashboard:add_data' 'announcements'%}">Add new announcement</a>
+                    <a class="edit-btn uk-button uk-button-primary uk-width-1-2" href="{% url 'dashboard:ane_list' 'announcements' 'Announcements' %}">Edit/Delete announcements</a>
+                </div>
             </div>
             <div class="uk-card dashboard-card uk-card-hover uk-card-body">
                 <a class="uk-link-heading" href="{% url 'dashboard:ane_list' 'events' 'Events' %}">
                     <h3 class="uk-card-title">Events</h3>
                 </a>
-                <p>Recently added news</p>
-                <a class="add-btn uk-button uk-button-primary" href="{% url 'dashboard:add_data' 'events'%}">Add</a>
-                <a class="edit-btn uk-button uk-button-primary" href="#">Edit/Delete</a>
+                {% if recent_events %}
+                    <p>Recent announcements</p>
+                    <table class="uk-table recent-ane-table uk-table-divider uk-table-striped uk-table-hover">
+                        {% for recent_event in recent_events %}
+                            <tr>
+                                <td class="recent-ane-table-title">
+                                    <a class="uk-text-bold" href="{{ recent_event.get_url }}">{{ recent_event.title }}</a>
+                                </td>
+                                <td>
+                                    <div class="uk-button-group">
+                                        <a class="uk-button recent-ane-actions edit-btn uk-button-default" uk-icon="icon: pencil" href="{% url 'dashboard:ane_edit' 'events' recent_event.pk %}"></a>
+                                        <a class="uk-button recent-ane-actions uk-button-danger" uk-icon="icon:trash" href="{% url 'dashboard:ane_delete' 'events' recent_event.pk %}"></a>
+                                    </div>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </table>
+                {% else %}
+                    <p>No recent activity</p>
+                {% endif %}
+                <br>
+                <div class="uk-button-group uk-width-1-1">
+                    <a class="add-btn uk-button uk-button-primary uk-width-1-2" href="{% url 'dashboard:add_data' 'events'%}">Add new event</a>
+                    <a class="edit-btn uk-button uk-button-primary uk-width-1-2" href="{% url 'dashboard:ane_list' 'events' 'Events' %}">Edit/Delete events</a>
+                </div>
             </div>
             <div class="uk-card dashboard-card uk-card-hover uk-card-body">
                 <a class="uk-link-heading" href="{% url 'dashboard:ane_list' 'news' 'News' %}">
                     <h3 class="uk-card-title">News</h3>
                 </a>
-                <p>Recently added news</p>
-                <a class="add-btn uk-button uk-button-primary" href="{% url 'dashboard:add_data' 'news'%}">Add</a>
-                <a class="edit-btn uk-button uk-button-danger" href="#">Edit/Delete</a>
+                {% if recent_announcements %}
+                    <p>Recent News</p>
+                    <table class="uk-table recent-ane-table uk-table-divider uk-table-striped uk-table-hover">
+                        {% for recent_news_item in recent_news%}
+                            <tr>
+                                <td class="recent-ane-table-title">
+                                    <a class="uk-text-bold" href="{{ recent_news_item.get_url }}">{{ recent_news_item.title }}</a>
+                                </td>
+                                <td>
+                                    <div class="uk-button-group">
+                                        <a class="uk-button recent-ane-actions edit-btn uk-button-default" uk-icon="icon: pencil" href="{% url 'dashboard:ane_edit' 'news' recent_news_item.pk %}"></a>
+                                        <a class="uk-button recent-ane-actions uk-button-danger" uk-icon="icon:trash" href="{% url 'dashboard:ane_delete' 'news' recent_news_item.pk %}"></a>
+                                    </div>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </table>
+                {% else %}
+                    <p>No recent activity</p>
+                {% endif %}
+                <br>
+                <div class="uk-button-group uk-width-1-1">
+                    <a class="add-btn uk-button uk-button-primary uk-width-1-2" href="{% url 'dashboard:add_data' 'news'%}">Add new news</a>
+                    <a class="edit-btn uk-button uk-button-primary uk-width-1-2" href="{% url 'dashboard:ane_list' 'news' 'News' %}">Edit/Delete news</a>
+                </div>
             </div>
         </div>
 

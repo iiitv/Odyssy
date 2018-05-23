@@ -44,3 +44,20 @@
 .uk-navbar-container{
     box-shadow: 0 0 10px black;
 }
+
+.ane-list-actions {
+    width: 45%;
+    box-shadow: 0 0 2px gray;
+}
+
+.recent-ane-table {
+    box-shadow: 0 0 2px gray;
+}
+
+.recent-ane-actions {
+    box-shadow: 0 0 1px grey;
+}
+
+.recent-ane-table-title{
+    width: 80%;
+}
