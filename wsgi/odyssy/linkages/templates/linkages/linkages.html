@@ -13,8 +13,8 @@ IIITV | Linkages
                         <a href="{% url 'linkages:linkage-single' link.id %}" style="text-decoration: none;">
                         <img src="{% static link.logo %}" alt="Linkage" style="width:100%;">
                         <div class="linkage-container">
-                            <h4><b>{{ link.name }}</b></h4>
-                            <p>{{ link.contact_number }}</p>
+                            <h6>{{ link.name }}</h6>
+                            <b>Contact:</b> {{ link.contact_number }}
                         </div>
                         </a>
                     </div>
