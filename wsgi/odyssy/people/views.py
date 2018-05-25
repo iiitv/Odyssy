@@ -9,6 +9,12 @@ def faculty(request):
     return render(request, 'people.html', context=context)
 
 
+def former_faculty(request):
+    former_faculty_list = People.objects.filter(status='former_faculty')
+    context = {'people_list': former_faculty_list, 'status': 'Former Faculties'}
+    return render(request, 'people.html', context=context)
+
+
 def visiting_faculty(request):
     visiting_faculty_list = People.objects.filter(status='visiting_faculty')
     context = {'people_list': visiting_faculty_list,
@@ -22,9 +28,9 @@ def staff(request):
     return render(request, 'people.html', context=context)
 
 
-def administration(request):
-    administration_list = People.objects.filter(status='administrative')
-    context = {'people_list': administration_list, 'status': 'Administration'}
+def phd(request):
+    administration_list = People.objects.filter(status='phd')
+    context = {'people_list': administration_list, 'status': 'PhD Scholars'}
     return render(request, 'people.html', context=context)
 
 

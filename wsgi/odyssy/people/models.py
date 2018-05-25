@@ -17,9 +17,10 @@ class People(models.Model):
 
     STATUS_CHOICES = (
         ('faculty', 'Faculty'),
-        ('staff', 'Staff'),
+        ('former_faculty', 'Former Faculty'),
         ('visiting_faculty', 'Visiting Faculty'),
-        ('administrative', 'Administration'),
+        ('staff', 'Staff'),
+        ('phd', 'PhD Scholars'),
     )
     user = models.OneToOneField(User, on_delete=models.CASCADE, null=True)
     name = models.CharField(max_length=50, blank=True, null=True)

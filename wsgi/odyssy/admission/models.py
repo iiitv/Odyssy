@@ -17,7 +17,7 @@ class Admission(models.Model):
     programme = models.CharField(max_length=16, choices=STATUS_CHOICES, default='btech', blank=True, null=True)
 
     def __str__(self):
-        return str(self.batch)
+        return str(self.batch) + str(self.programme)
 
     def display_year(self):
         return str(self.batch) + '-' + str(F(self.batch)+1)
