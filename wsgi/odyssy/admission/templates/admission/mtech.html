@@ -1,6 +1,36 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta http-equiv="refresh" content="0; url=http://pgadmissions.iiitvadodara.ac.in/application-mtech">
-</head>
-</html>
+{% extends 'basic/base.html' %}
+{% load static %}
+{% block title %}
+    IIITV | M.Tech. Admissions
+{% endblock %}
+{% block body %}
+<!-- Content wrapper -->
+<div class="contents-wrapper">
+    <!-- Contents starts here -->
+    <div class="content">
+        <h2>M.Tech. Admissions</h2>
+        <br/> <br/>Admissions to the M.Tech. (CSE) Program is made through the  Centralized Counselling for M.Tech./M.Arch./M.Plan./M.Des. admissions (CCMT).
+        Official notification of the admissions is given wide publicity through national dailies during March-April every year.
+        CCMT is on-line admission process for NITs and many IIITs including other national level institutions.
+        It is a merit based admission considering valid GATE score and qualifying degree norms as declared by the CCMT.
+        A candidate may participate in the CCMT admissions process through the official admission portal of the <a href="https://ccmt.nic.in/" target="_blank">CCMT</a>
+                <br/>
+                <br/> Details about cutoffs, participating institutions, seat matrix, and more are available at <a href="https://ccmt.nic.in/" target="_blank">CCMT 2018</a>.
+				<br/> For any queries or details related to MTech admissions, e-mail us at <a href="mailto:pgadmission@iiitvadodara.ac.in">pgadmission@iiitvadodara.ac.in</a>.
+        <br/>
+        <br/>
+        <h3>Proposed Fees Structure </h3>
+        {% if fee_struct %}
+            {% for fee in fee_struct %}
+            <center>
+                <img src="{% static fee.fee_structure %}" style="width:100%;"/>
+            </center><br />
+        <br />
+            {% endfor %}
+        {% else %}
+            Fee Structure Yet to be published
+        {% endif %}
+        <a href="http://iiitvadodara.ac.in/ugpolicy.php" target="_blank">Fees Refund Policy</a>
+    </div>
+</div>
+{% endblock %}

@@ -1,7 +1,7 @@
 {% extends 'basic/base.html' %}
 {% load static %}
 {% block title %}
-    IIIT-V | B.Tech. Admissions
+    IIITV | B.Tech. Admissions
 {% endblock %}
 {% block body %}
 <!-- Content wrapper -->
@@ -17,14 +17,22 @@
         JEE (Main) invites candidates for counseling at selected centers and seats for various participating
         institutions are allotted, based upon individual merit.
         <br/>
-        <br/> Details about cutoffs are available at <a href="http://www.josaa.nic.in/">JoSAA website</a>. For any queries
-        or details related to admissions, <a href="mailto:admissions@iiitvadodara.ac.in"> e-mail us</a>.
+        <br/> Details about cutoffs are available at <a href="http://www.csab.nic.in/" target="_blank">CSAB website</a>. For any queries
+        or details related to admissions, <a href="mailto:registrar@iiitvadodara.ac.in"> e-mail us at registrar@iiitvadodara.ac.in</a>.
         <br/>
         <br/>
         <h3>B.Tech. (CSE/IT) Fees Structure </h3>
-        <center>
-            <img src="{% static fee_structure.fee_structure %}" style="width:100%;"/>
-        </center>
+        {% if fee_struct %}
+            {% for fee in fee_struct %}
+            <center>
+                <img src="{% static fee.fee_structure %}" style="width:100%;"/>
+            </center>
+        <br /><br />
+            {% endfor %}
+        {% else %}
+            Fee Structure Yet to be published
+        {% endif %}
+        <a href="http://iiitvadodara.ac.in/ugpolicy.php" target="_blank">Fees Refund Policy</a>
     </div>
 </div>
 {% endblock %}

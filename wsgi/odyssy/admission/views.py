@@ -1,15 +1,19 @@
+from django.http import Http404
 from django.shortcuts import render
 
 from .models import Admission
 
 
-def view_btech_admission(request):
-    fee_structure = Admission.objects.latest('fee_structure')
+def view_admission_programme(request, programme):
+    print(programme)
+    if programme != 'btech' and programme != 'mtech':
+        raise Http404
+    fee_struct = Admission.fetch_structures(programme)
     context = {
-        'fee_structure': fee_structure
+        'fee_struct': fee_struct,
     }
     return render(request,
-                  'admission/btech_admission.html',
+                  'admission/' + programme + '.html',
                   context=context)
 
 
