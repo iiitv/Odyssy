@@ -75,10 +75,6 @@ body{
 *Header Styles
 ****************/
 
-nav{
-	background-color:rgb(15,108,107);
-}
-
 /* Navbar */
 
 .dropdown-submenu {
@@ -127,6 +123,10 @@ nav{
     -webkit-border-radius: 6px 0 6px 6px;
     -moz-border-radius: 6px 0 6px 6px;
     border-radius: 6px 0 6px 6px;
+}
+
+.navbar-nav {
+	width: 100% !important;
 }
 
 .navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus{
@@ -179,10 +179,9 @@ nav ul li{
 }
 
 .header-container{
+	background-color:rgb(15,108,107);
 	display: flex;
-	align-items:flex-end;
-	justify-content: space-between;
-	margin: 0.4rem 0;
+	width: 100%;
 }
 
 #dropdown1{
@@ -192,8 +191,7 @@ nav ul li{
 .logo-name{
 	display: flex;
 	align-items:center;
-	margin-left: -2%;
-	padding-right: 2px;
+	margin: 3px 10px 10px 2px;
 }
 
 .logo-name .name h5{
@@ -865,7 +863,8 @@ h2 {
 }
 
 .navbar .container {
-	width: 95%;
+	width: 100%;
+	padding: 0;
 }
 
 .linkage-card {
@@ -887,4 +886,8 @@ h2 {
 /* Add some padding inside the card container */
 .linkage-container {
     padding: 2px 16px;
+}
+
+#header {
+	width: 100%;
 }

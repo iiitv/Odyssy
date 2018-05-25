@@ -22,27 +22,25 @@
 <!-- Start Your Body Code From here -->
 <div class="wrapper">
     <!-- header starts here -->
-    <header id="header" class="">
+    <header id="header">
         <!-- header -->
-        <nav>
+        <div class="header-container">
+            <div class="logo-name">
+                <div class="logo">
+                    <a href="{% url 'index-view' %}" title="">
+                        <img src="{% static 'basic/images/IIITV_Logo_1x1_small.png' %}" alt="logo">
+                    </a>
+                </div>
+                <div class="name">
+                    <a href="{% url 'index-view' %}" title="">
+                        <h5>Indian Institute of Information Technology Vadodara</h5>
+                        <h5>भारतीय सूचना प्रौद्योगिकी संस्थान वडोदरा</h5>
+                    </a>
+                </div>
+            </div>
+            <nav>
             <div class="navbar navbar-inverse navbar-custom" role="navigation">
                 <div class="container">
-                    <div class="logo-name">
-                        <div class="logo">
-                            <a href="{% url 'index-view' %}" title="">
-                                <img src="{% static 'basic/images/IIITV_Logo_1x1_small.png' %}" alt="logo">
-                            </a>
-                        </div>
-                        <div class="name">
-                            <a href="{% url 'index-view' %}" title="">
-                                <h5>Indian Institute of Information Technology Vadodara</h5>
-                                <h5>भारतीय सूचना प्रौद्योगिकी संस्थान वडोदरा</h5>
-                            </a>
-                        </div>
-                        <div class="top-buttons">
-                            <a href="{% url 'login' %}">Login</a>
-                        </div>
-                    </div>
                     <div class="navbar-header">
                         <button type="button" class="navbar-toggle" data-toggle="collapse"
                                 data-target=".navbar-collapse">
@@ -52,6 +50,19 @@
                             <span class="icon-bar"></span>
                         </button>
                     </div>
+{#                    <div class="logo-name">#}
+{#                        <div class="logo">#}
+{#                            <a href="{% url 'index-view' %}" title="">#}
+{#                                <img src="{% static 'basic/images/IIITV_Logo_1x1_small.png' %}" alt="logo">#}
+{#                            </a>#}
+{#                        </div>#}
+{#                        <div class="name">#}
+{#                            <a href="{% url 'index-view' %}" title="">#}
+{#                                <h5>Indian Institute of Information Technology Vadodara</h5>#}
+{#                                <h5>भारतीय सूचना प्रौद्योगिकी संस्थान वडोदरा</h5>#}
+{#                            </a>#}
+{#                        </div>#}
+{#                    </div>#}
                     <div class="collapse navbar-collapse">
                         <ul class="nav navbar-nav">
                             <li>
@@ -144,6 +155,7 @@
                 </div>
             </div>
         </nav>
+        </header>
     </header>
     <!-- /header -->
     <div class="Site-content">
