@@ -27,7 +27,7 @@ class People(models.Model):
     slug = models.SlugField(max_length=100, blank=True, null=True)
     photo = models.ImageField(upload_to='people_images/', blank=True, null=True)
     post = models.CharField(max_length=50, blank=True, null=True)
-    tags = TaggableManager()
+    tags = TaggableManager(blank=True)
     academic_highlights = models.CharField(
         max_length=200, blank=True, null=True)
     institute = models.CharField(max_length=50, blank=True, null=True)
