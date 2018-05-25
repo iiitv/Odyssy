@@ -471,8 +471,7 @@ footer{
 .carousel-items{
 	overflow: hidden;
 	border: 3px solid rgb(15,108,107);
-	border-bottom: 0;
-	border-top: 0;
+	border: 0;
 }
 
 /****************
