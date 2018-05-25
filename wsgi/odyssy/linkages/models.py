@@ -18,7 +18,7 @@ class Linkages(models.Model):
     description = models.TextField(max_length=10000, blank=True, null=True)
     logo = models.ImageField(upload_to='linkage_images/', blank=True, null=True)
     website = models.CharField(max_length=100, blank=True, null=True)
-    contact_number = models.CharField(max_length=12, blank=True, null=True)
+    contact_number = models.CharField(max_length=20, blank=True, null=True)
 
     def __str__(self):
         return str(self.name)
