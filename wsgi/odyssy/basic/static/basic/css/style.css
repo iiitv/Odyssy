@@ -879,6 +879,9 @@ h2 {
     transition: 0.3s;
 	max-width: 25%;
 	text-decoration: none;
+	display: inline-flex;
+	margin-left: 6%;
+	margin-top: 3%;
 }
 
 /* On mouse-over, add a deeper shadow */

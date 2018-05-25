@@ -8,6 +8,7 @@ IIITV | Linkages
     <div class="content">
         <h2>Linkages of IIIT Vadodara</h2>
         {% if link_list %}
+
             {% for link in link_list %}
                     <div class="linkage-card" href="{{ link.website }}">
                         <a href="{% url 'linkages:linkage-single' link.id %}" style="text-decoration: none;">

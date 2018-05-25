@@ -22,12 +22,18 @@
             </center>
         </div>
         <br/>
+        {% if link.description %}
         <br/>
             <h4><b>Description:</b></h4> &emsp; &emsp;{{ link.description }}
+        {% endif %}
+        {% if link.address %}
         <br/>
             <h4><b>Address:</b></h4> &emsp; &emsp;{{ link.address }}
+        {% endif %}
+        {% if link.contact_number %}
         <br />
             <h4><b>Contact:</b></h4> &emsp; &emsp;{{ link.contact_number }}
+        {% endif %}
         <br />
 
     </div>
