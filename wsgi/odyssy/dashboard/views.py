@@ -2,9 +2,10 @@ from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse
 from django.shortcuts import render, redirect, get_object_or_404
 from django import forms
+from django.contrib.auth.models import User
 from django.urls import reverse
 
-from .forms import AnnouncementForm, EventForm, NewsForm
+from .forms import AnnouncementForm, EventForm, NewsForm, SignUpForm
 
 from announcement.models import Announcement
 from events.models import Event
@@ -20,6 +21,36 @@ def dashboard(request):
     return render(request, 'dashboard.html', {'recent_announcements': recent_announcements,
                                               'recent_news': recent_news,
                                               'recent_events': recent_events})
+
+
+@login_required
+def signup(request):
+    title = 'create new user'
+    if request.method == 'POST':
+        form = SignUpForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            user.refresh_from_db()
+            user.people.name = form.cleaned_data.get('first_name') + ' ' + form.cleaned_data.get('last_name')
+            user.save()
+            msg = 'Added ' + user.username
+            return redirect(reverse('dashboard:all_users', args=[msg]))
+        else:
+            print(form.errors)
+            return render(request, 'signup.html', {'form': form, 'title': title})
+    else:
+        form = SignUpForm()
+    return render(request, 'signup.html', {'title': title,
+                                           'form': form})
+
+
+@login_required
+def all_users(request, msg=None):
+    title = 'All users'
+    users = User.objects.all()
+    return render(request, 'all_users.html', {'title': title,
+                                              'users': users,
+                                              'msg': msg})
 
 
 @login_required
