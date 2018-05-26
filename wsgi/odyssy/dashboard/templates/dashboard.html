@@ -33,7 +33,7 @@
                     <div class="uk-navbar-dropdown" uk-dropdown="animation: uk-animation-slide-top-small; duration: 300">
                         <ul class="uk-nav uk-navbar-dropdown-nav">
                             <li><a class="nav-a-dark" href="#">Edit Profile</a></li>
-                            <li><a class="nav-a-dark" href="#">Change Password</a></li>
+                            <li><a class="nav-a-dark" href="{% url 'dashboard:change_password' %}">Change Password</a></li>
                             <li><a class="nav-a-dark" href="{% url 'dashboard:create_new_user' %}">Add a new user</a></li>
                             <li><a class="nav-a-dark" href="{% url 'dashboard:all_users' 'Users'%}">Users</a></li>
                         </ul>
