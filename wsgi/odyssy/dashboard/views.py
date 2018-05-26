@@ -45,6 +45,28 @@ def signup(request):
 
 
 @login_required
+def edit_user(request, username):
+    title = 'Edit user'
+    user = get_object_or_404(User, username=username)
+    if request.method == 'POST':
+        form = SignUpForm(request.POST, instance=user)
+        if form.is_valid():
+            user = form.save()
+            user.refresh_from_db()
+            user.people.name = form.cleaned_data.get('first_name') + ' ' + form.cleaned_data.get('last_name')
+            user.save()
+            msg = 'Edited ' + user.username
+            return redirect(reverse('dashboard:all_users', args=[msg]))
+        else:
+            print(form.errors)
+            return render(request, 'signup.html', {'form': form, 'title': title})
+    else:
+        form = SignUpForm(instance=user)
+    return render(request, 'signup.html', {'title': title,
+                                           'form': form})
+
+
+@login_required
 def all_users(request, msg=None):
     title = 'All users'
     users = User.objects.all()

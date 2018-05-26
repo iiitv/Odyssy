@@ -8,5 +8,6 @@ urlpatterns = [
     url(r'^view/users/(?P<msg>.+)$', views.all_users, name='all_users'),
     url(r'^list/(?P<data_type>.+)/(?P<msg>.+)$', views.ane_list, name='ane_list'),
     url(r'^edit/(?P<data_type>.+)/(?P<data_id>.+)$', views.ane_edit, name='ane_edit'),
+    url(r'^user/(?P<username>.+)/edit$', views.edit_user, name='edit_user'),
     url(r'^delete/(?P<data_type>.+)/(?P<data_id>.+)$', views.ane_delete, name='ane_delete'),
 ]
