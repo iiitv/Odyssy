@@ -1,0 +1,36 @@
+{% extends 'dashboard.html' %}
+
+{% block title %}
+    <title>{{ title }}</title>
+{% endblock %}
+
+{% block body %}
+    <div class="add-edit-wrapper">
+        {% if msg %}
+            <h3 class="uk-text-success uk-text-center">{{ msg }}</h3>
+        {% endif %}
+         <div class="form-card uk-card uk-card-default uk-card-body">
+            <table class="uk-table uk-table-hover uk-table-divider">
+                <thead>
+                    <tr>
+                        <th class="uk-width-small">Username</th>
+                        <th class="uk-width-small">Name</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for user in users %}
+                        <tr>
+                            <td>{{ user.username }}</td>
+                            <td>{{ user.get_full_name }}</td>
+                            <td>
+                                <a class="uk-button edit-btn ane-list-actions uk-button-default" uk-icon="icon: pencil" href="#"></a>
+                                <a class="uk-button ane-list-actions uk-button-danger" uk-icon="icon: trash" href="#"></a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}

@@ -1,9 +1,55 @@
 from django import forms
 from django.forms.fields import DateField
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.models import User
 
 from announcement.models import Announcement
 from events.models import Event
 from news.models import News
+
+
+class SignUpForm(UserCreationForm):
+
+    def __init__(self, *args, **kwargs):
+        super(SignUpForm, self).__init__(*args, **kwargs)
+        self.fields['username'].label = 'Username'
+        self.fields['first_name'].label = 'First Name'
+        self.fields['last_name'].label = 'Last Name'
+        self.fields['password1'].label = 'Password'
+        self.fields['password2'].label = 'Re-type the password'
+        self.fields['username'].widget.attrs.update({
+            'class': 'uk-input'
+        })
+        self.fields['first_name'].widget.attrs.update({
+            'class': 'uk-input'
+        })
+        self.fields['last_name'].widget.attrs.update({
+            'class': 'uk-input'
+        })
+        self.fields['password1'].widget.attrs.update({
+            'class': 'uk-input',
+            'type': 'password'
+        })
+        self.fields['password2'].widget.attrs.update({
+            'class': 'uk-input',
+            'type': 'password'
+        })
+
+    def clean(self):
+        cleaned_data = super(SignUpForm, self).clean()
+        password1 = cleaned_data.get('password1')
+        password2 = cleaned_data.get('password2')
+
+        if password1 and password2:
+            if password1 != password2:
+                msg = u"Password must be same"
+                self._errors['password2'] = self.error_class([msg])
+
+        return self.cleaned_data
+
+    class Meta:
+        model = User
+        fields = ('username', 'password1', 'password2', 'first_name', 'last_name')
 
 
 class AnnouncementForm(forms.ModelForm):
