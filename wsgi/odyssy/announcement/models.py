@@ -56,7 +56,7 @@ class Announcement(models.Model):
         return "Announcement"
 
     def get_url(self):
-        return reverse('announcement:open-view', args=[self.pk])
+        return reverse('announcement:announcement-view-single', args=[self.pk])
 
     key = models.AutoField(primary_key=True)
     start_date = models.DateTimeField(default=utils.get_today_start)

@@ -10,7 +10,7 @@
         {% if announcement_list %}
           <ul class="detailed-widget-view">
             {% for announcement in announcement_list %}
-              <li><a href="/announcement/{{ announcement.key }}/">{{ announcement.title }}</a></li>
+              <li><a href="{{ announcement.get_url }}">{{ announcement.title }}</a></li>
             {% endfor %}
           </ul>
         

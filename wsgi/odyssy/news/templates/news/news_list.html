@@ -10,7 +10,7 @@
             {% if news_list %}
                  <ul class="detailed-widget-view">
                 {% for news in news_list %}
-                    <li><a href="{% url 'news-single' news.id %}">{{ news.title }}</a></li>
+                    <li><a href="{{ news.get_url }}">{{ news.title }}</a></li>
                 {% endfor %}
                 </ul>
             {% else %}

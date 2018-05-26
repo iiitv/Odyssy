@@ -28,7 +28,7 @@
                         {% for announcement in imp_news_announcement %}
                             <li>
                             	{% if announcement.get_model_type == "Announcement" %}
-                                	<a class="alert-link" href="/announcement/{{ announcement.key }}">{{ announcement.title }}:</a>
+                                	<a class="alert-link" href="{{ announcement.get_url }}">{{ announcement.title }}:</a>
                                 	<div style="margin-left: 5px">{{ announcement.description }}</div>
 
                                 {% elif announcement.get_model_type == "News" %}
