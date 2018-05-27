@@ -8,7 +8,7 @@ from django import forms
 from django.contrib.auth.models import User
 from django.urls import reverse
 
-from .forms import AnnouncementForm, EventForm, NewsForm, SignUpForm
+from .forms import AnnouncementForm, EventForm, NewsForm, SignUpForm, PeopleProfileForm
 
 from announcement.models import Announcement
 from events.models import Event
@@ -86,6 +86,26 @@ def change_password(request):
     else:
         form = PasswordChangeForm(request.user)
     return render(request, 'change_password.html', {
+        'title': 'Update password',
+        'form': form
+    })
+
+
+@login_required
+def update_profile(request):
+    if request.method == 'POST':
+        profile = request.user.people
+        form = PeopleProfileForm(request.POST, instance=profile)
+        if form.is_valid():
+            updated_profile = form.save()
+            return redirect(reverse('dashboard:dashboard'))
+        else:
+            messages.error(request, 'Something went wrong')
+    else:
+        profile = request.user.people
+        form = PeopleProfileForm(instance=profile)
+    return render(request, 'edit_profile.html', {
+        'title': 'Update profile',
         'form': form
     })
 

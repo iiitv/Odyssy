@@ -10,5 +10,6 @@ urlpatterns = [
     url(r'^edit/(?P<data_type>.+)/(?P<data_id>.+)$', views.ane_edit, name='ane_edit'),
     url(r'^user/(?P<username>.+)/edit$', views.edit_user, name='edit_user'),
     url(r'^delete/(?P<data_type>.+)/(?P<data_id>.+)$', views.ane_delete, name='ane_delete'),
-    url(r'^change/password$', views.change_password, name='change_password'),
+    url(r'^update/password$', views.change_password, name='change_password'),
+    url(r'^update/profile$', views.update_profile, name='update_profile'),
 ]

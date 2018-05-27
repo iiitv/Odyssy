@@ -6,6 +6,37 @@ from django.contrib.auth.models import User
 from announcement.models import Announcement
 from events.models import Event
 from news.models import News
+from people.models import People
+
+
+class PeopleProfileForm(forms.ModelForm):
+    def __init__(self, *args, **kwargs):
+        super(PeopleProfileForm, self).__init__(*args, **kwargs)
+        self.fields['photo'].label = 'Photo'
+        self.fields['name'].label = 'Full Name'
+        self.fields['post'].label = 'Current Post'
+        self.fields['email'].label = 'E-mail'
+        self.fields['office'].label = 'Office'
+        self.fields['academic_highlights'].label = 'Academic Highlights'
+        self.fields['area_of_interest'].label = 'Area of interest'
+        self.fields['academic_qualifications'].label = 'Academic Qualifications'
+        self.fields['status'].label = 'Category'
+        self.fields['publications'].label = 'Publications'
+        self.fields['teaching'].label = 'Teaching'
+        self.fields['other'].label = 'Other'
+        self.fields['administrative_experience'].label = 'Administrative Experience'
+        self.fields['work_experience'].label = 'Work Experience'
+        self.fields['professional_memberships'].label = 'Professional Memberships'
+
+    def clean(self):
+        cleaned_data = super(PeopleProfileForm, self).clean()
+        return self.cleaned_data
+
+    class Meta:
+        model = People
+        fields = {'photo', 'name', 'post', 'email', 'office', 'academic_highlights', 'area_of_interest',
+                  'academic_qualifications', 'status', 'professional_memberships', 'work_experience',
+                  'administrative_experience', 'publications', 'teaching', 'other'}
 
 
 class SignUpForm(UserCreationForm):

@@ -32,7 +32,7 @@
                     <a class="nav-a" href="#">Operations</a>
                     <div class="uk-navbar-dropdown" uk-dropdown="animation: uk-animation-slide-top-small; duration: 300">
                         <ul class="uk-nav uk-navbar-dropdown-nav">
-                            <li><a class="nav-a-dark" href="#">Edit Profile</a></li>
+                            <li><a class="nav-a-dark" href="{% url 'dashboard:update_profile' %}">Edit Profile</a></li>
                             <li><a class="nav-a-dark" href="{% url 'dashboard:change_password' %}">Change Password</a></li>
                             <li><a class="nav-a-dark" href="{% url 'dashboard:create_new_user' %}">Add a new user</a></li>
                             <li><a class="nav-a-dark" href="{% url 'dashboard:all_users' 'Users'%}">Users</a></li>
@@ -74,8 +74,8 @@
                      </div>
                 </div>
                 <div class="uk-card-footer">
-                    <a href="#" class="uk-icon-button uk-button-secondary" uk-icon="icon: file-edit"></a>
-                    <a href="#" class="uk-button uk-button-text">Read more</a>
+                    <a href="{% url 'dashboard:update_profile' %}" class="uk-icon-button uk-button-secondary" uk-icon="icon: file-edit"></a>
+                    <a href="{{ user.people.get_url }}" class="uk-button uk-button-text">Read more</a>
                 </div>
             </div>
         </div>
