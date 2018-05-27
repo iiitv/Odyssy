@@ -57,17 +57,25 @@
     {% block body %}
         <div class="profile-card-dashboard">
              <div class="uk-card uk-card-hover dashboard-card uk-card-body">
-                <h3 class="uk-card-title">{{ user.people }}</h3>
-                <div class="profile-card-dashboard-content" style="display: inline-flex;">
-                    <a href="#">
-                        <img width="150px" src="{% static user.people.photo %}" alt="{{ user.people }}">
-                    </a>
+                 <div class="uk-card-header">
+                    <div class="uk-grid-small uk-flex-middle" uk-grid>
+                        <img class="uk-border-circle" width="120" height="120" src="{% static user.people.photo %}">
+                        <div class="uk-width-expand">
+                            <h3 class="uk-card-title uk-margin-remove-bottom">{{ user.people }}</h3>
+                            <p class="uk-text-meta uk-margin-remove-top">{{ user.people.get_status_display }}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="uk-card-body" style="display: inline-flex;">
                     <div class="profile-card-dashboard-details" style="margin-left: 5px;">
-                        <h4 style="margin: 0;">{{ user.people.get_status_display }}</h4>
                         <h4 style="margin: 0;">{{ user.people.academic_highlights }}</h4>
                         <h4 style="margin: 0;">Office : {{ user.people.office }}</h4>
                         <h4 style="margin: 0;">E-mail : {{ user.people.email }}</h4>
-                    </div>
+                     </div>
+                </div>
+                <div class="uk-card-footer">
+                    <a href="#" class="uk-icon-button uk-button-secondary" uk-icon="icon: file-edit"></a>
+                    <a href="#" class="uk-button uk-button-text">Read more</a>
                 </div>
             </div>
         </div>
