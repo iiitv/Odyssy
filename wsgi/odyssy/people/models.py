@@ -24,7 +24,7 @@ class People(models.Model):
     )
     user = models.OneToOneField(User, on_delete=models.CASCADE, null=True)
     name = models.CharField(max_length=50, blank=True, null=True)
-    slug = models.SlugField(max_length=100, blank=True, null=True)
+    slug = models.SlugField(max_length=100, unique=True, blank=True, null=True)
     photo = models.ImageField(upload_to='people_images/', blank=True, null=True)
     post = models.CharField(max_length=50, blank=True, null=True)
     tags = TaggableManager(blank=True)

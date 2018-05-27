@@ -1,7 +1,10 @@
+import itertools
+
 from django import forms
 from django.forms.fields import DateField
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
+from django.utils.text import slugify
 
 from announcement.models import Announcement
 from events.models import Event
@@ -31,6 +34,18 @@ class PeopleProfileForm(forms.ModelForm):
     def clean(self):
         cleaned_data = super(PeopleProfileForm, self).clean()
         return self.cleaned_data
+
+    def save(self):
+        instance = super(PeopleProfileForm, self).save(commit=False)
+        instance.slug = orig = slugify(instance.name)
+
+        for x in itertools.count(1):
+            if not People.objects.filter(slug=instance.slug).exists():
+                break
+            instance.slug = '%s-%d' % (orig, x)
+
+        instance.save()
+        return instance
 
     class Meta:
         model = People
