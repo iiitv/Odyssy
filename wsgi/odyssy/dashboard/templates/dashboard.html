@@ -55,6 +55,22 @@
     </nav>
     </div>
     {% block body %}
+        <div class="profile-card-dashboard">
+             <div class="uk-card uk-card-hover dashboard-card uk-card-body">
+                <h3 class="uk-card-title">{{ user.people }}</h3>
+                <div class="profile-card-dashboard-content" style="display: inline-flex;">
+                    <a href="#">
+                        <img width="150px" src="{% static user.people.photo %}" alt="{{ user.people }}">
+                    </a>
+                    <div class="profile-card-dashboard-details" style="margin-left: 5px;">
+                        <h4 style="margin: 0;">{{ user.people.get_status_display }}</h4>
+                        <h4 style="margin: 0;">{{ user.people.academic_highlights }}</h4>
+                        <h4 style="margin: 0;">Office : {{ user.people.office }}</h4>
+                        <h4 style="margin: 0;">E-mail : {{ user.people.email }}</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="dashboard-cards ">
             <div class="uk-card dashboard-card uk-card-hover uk-card-body">
                 <a class="uk-link-heading" href="{% url 'dashboard:ane_list' 'announcements' 'Announcements' %}">
