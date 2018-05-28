@@ -95,9 +95,10 @@ def change_password(request):
 def update_profile(request):
     if request.method == 'POST':
         profile = request.user.people
-        form = PeopleProfileForm(request.POST, instance=profile)
+        form = PeopleProfileForm(request.POST, request.FILES, instance=profile)
+        print(request.FILES)
         if form.is_valid():
-            updated_profile = form.save()
+            form.save()
             return redirect(reverse('dashboard:dashboard'))
         else:
             messages.error(request, 'Something went wrong')
