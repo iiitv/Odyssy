@@ -185,35 +185,118 @@
     {% endblock %}
     </div>
     <!-- Footer -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <footer>
         <div class="footer-wrapper">
             <span class="logo"><img src="{% static 'basic/images/IIITV_Logo_1x1_small.png' %}" alt="Logo"></span>
-            <div class="row">
-                <div class="col-sm-4 address">
-                    <strong>Address : </strong>c/o Block No.9 (IC Department), Government Engineering College,
+           <div class="row">
+                <!--<div class="col-sm-4 address">-->
+				<p align="center">
+                    <strong>Address : </strong>c/o Block No.9, Government Engineering College,
                     Sector-28, Gandhinagar, Gujarat - 382028
-                </div>
-                <div class="col-sm-4 links">
-                    <div>
-                        <a href="{% url 'index-view' %}">Home</a>
+				</p>
+                <!--</div>-->
+                <!--<div class="col-sm-4 links">-->
+                    <p align="center">
+                        <a href="{% url 'news:news-all' %}">News</a>
+                        <i class="seperator"></i>
+                        <a href="{% url 'announcement:all_announcements' %}">Announcement</a>
+                        <i class="seperator"></i>
+                        <a href="{% url 'event:event-view' %}">Events</a>
+                    	<i class="seperator"></i>
+                        <a href="/">Home</a>
                         <i class="seperator"></i>
                         <a href="/committee/rti.html">RTI</a>
                         <i class="seperator"></i>
-                        <a href="{% static 'basic/pdf/MOU.pdf' %}">MOU</a>
-                    </div>
-                    <div>
-                        <a href="/html/admissions.html">Admission</a>
+                        <a href="{% static 'basic/pdf/MOU.pdf' %}" target="_blank">MOU</a>
+                    	<i class="seperator"></i>
+                        <a href="../admissions.php">Admission</a>
                         <i class="seperator"></i>
                         <a href="/more/student_corner.html">Student</a>
                         <i class="seperator"></i>
                         <a href="{% url 'people:faculty' %}">Faculty</a>
-                    </div>
-                </div>
-                <div class="col-sm-4 contact">
-                    <strong>Call us: </strong>+91-79-29750281 <br>
-                    <strong>Email us: </strong>helpdesk@iiitvadodara.ac.in
-                </div>
+                    	&nbsp;&nbsp;&nbsp;
+               <!-- </div>-->
+               <!-- <div class="col-sm-4 footer-social">-->
+                    <a href="#!"><i class="fa fa-facebook" aria-hidden="true" title="Official Facebook Page"></i></a>
+                    <!--<a href="https://github.com/iiitv"><i class="fa fa-github" aria-hidden="true"
+                                                          title="Github Group"></i></a>-->
+                    <a href="#!"><i class="fa fa-linkedin" aria-hidden="true" title="LinkedIn Profile"></i></a>
+                    <a href="#!" title=""><i class="fa fa-twitter" aria-hidden="true"
+                                             title="Official Twitter Account"></i></a>
+				</p>
+                <!--</div>-->
             </div>
+			<div>
+			<p style="text-align: justify;"><font size="1.5" color="#383736">Disclaimer:<br/> The contents in the website are for information purpose only. IIIT Vadodara regularly monitors and updates the information on this website. We attempt to ensure that the information on this website is correct, however, we do not warrant its completeness or accuracy. No rights can be derived from the information contained in the IIIT Vadodara website. The website may contain links to websites of third party organizations. IIIT Vadodara cannot be held responsible for any consequences arising from the use of information obtained from these websites.</font></p>
+			</div>
         </div>
     </footer>
 </div>
