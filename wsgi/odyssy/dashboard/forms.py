@@ -38,7 +38,7 @@ class PeopleProfileForm(forms.ModelForm):
     def save(self):
         instance = super(PeopleProfileForm, self).save(commit=False)
         instance.slug = orig = slugify(instance.name)
-
+        print(instance.photo)
         for x in itertools.count(1):
             if not People.objects.filter(slug=instance.slug).exists():
                 break
