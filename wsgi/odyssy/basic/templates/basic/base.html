@@ -1,361 +1,92 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>{% block title %}Welcome to IIIT Vadodara{% endblock %}</title>
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"/>
-    <link href='https://fonts.googleapis.com/css?family=Oxygen:400,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     {% load staticfiles %}
     <link rel="icon" type="image/png" href="{% static 'basic/images/IIITV_Logo_1x1_small.png' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'basic/css/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'basic/css/uikit.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'basic/css/uikit-rtl.min.css' %}">
 
 </head>
-<script   src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
-<script type="text/javascript" src="{% static 'basic/js/jquery.paginate.min.js' %}"></script>
-<script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-<script src="https://use.fontawesome.com/434d359724.js"></script>
+<script type="text/javascript" src="{% static 'basic/js/uikit.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'basic/js/uikit-icons.min.js' %}"></script>
 <script src="{% static 'basic/js/main.js' %}"></script>
 <body id="home">
-<!-- Start Your Body Code From here -->
-<div class="wrapper">
-    <!-- header starts here -->
     <header id="header">
-        <!-- header -->
-        <div class="header-container">
-            <div class="logo-name">
-                <div class="logo">
-                    <a href="{% url 'index-view' %}" title="">
-                        <img src="{% static 'basic/images/IIITV_Logo_1x1_small.png' %}" alt="logo">
-                    </a>
-                </div>
-                <div class="name">
-                    <a href="{% url 'index-view' %}" title="">
-                        <h5>Indian Institute of Information Technology Vadodara</h5>
-                        <h5>भारतीय सूचना प्रौद्योगिकी संस्थान वडोदरा</h5>
-                    </a>
-                </div>
+        <div uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; bottom: #transparent-sticky-navbar">
+{#        background: rgb(15,108,107)#}
+        <nav class="uk-navbar-container nav-bar" uk-navbar>
+            <div class="uk-navbar-left">
+                <ul class="uk-navbar-nav">
+                    <li>
+                        <a class="nav-a" href="#">Institute</a>
+                        <div class="uk-width-large@m" uk-dropdown="animation: uk-animation-slide-top-small; duration: 300">
+                             <div class="uk-dropdown-grid nav-dropdown uk-child-width-1-2@m" uk-grid>
+                                    <ul class="uk-nav uk-navbar-dropdown-nav uk-padding-remove">
+                                        <li><a href="#">About</a></li>
+                                        <li><a href="#">Director's message</a></li>
+                                        <li><a href="#">Board of governors</a></li>
+                                        <li><a href="#">Senate</a></li>
+                                        <li><a href="#">RTI</a></li>
+                                        <li><a href="#">MOU</a></li>
+                                        <li><a href="#">Linkages</a></li>
+                                    </ul>
+                                    <ul class="uk-nav uk-dropdown-nav uk-padding-remove">
+                                        <li class="uk-nav-header">Committees</li>
+                                        <li><a href="#">Finance Committee</a></li>
+                                        <li><a href="#">Strategic Planning Committee</a></li>
+                                        <li><a href="#">HR Planning Committee</a></li>
+                                        <li><a href="#">Building And Works Committee</a></li>
+                                        <li><a href="#">Research Council</a></li>
+                                    </ul>
+                             </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="nav-a" href="#">Academics</a>
+                        <div uk-dropdown="animation: uk-animation-slide-top-small; duration: 300">
+                            <div class="uk-dropdown-grid uk-child-width-1-2@m" uk-grid>
+                                <div>
+                                    <ul class="uk-nav uk-dropdown-nav">
+                                        <li class="uk-active"><a href="#">B.Tech</a></li>
+                                        <li class="uk-nav-divider"></li>
+                                        <li><a href="#">CSE</a></li>
+                                        <li><a href="#">IT</a></li>
+                                        <li class="uk-nav-divider"></li>
+                                        <li class="uk-active">M.Tech</li>
+                                        <li class="uk-nav-divider"></li>
+                                        <li><a href="#">CSE</a></li>
+                                        <li><a href="#">IT</a></li>
+                                        <li class="uk-nav-divider"></li>
+                                        <li class="uk-active"><a href="#">Ph.D</a></li>
+                                        <li class="uk-nav-divider"></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
             </div>
-            <nav>
-            <div class="navbar navbar-inverse navbar-custom" role="navigation">
-                <div class="container">
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse"
-                                data-target=".navbar-collapse">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                    </div>
-{#                    <div class="logo-name">#}
-{#                        <div class="logo">#}
-{#                            <a href="{% url 'index-view' %}" title="">#}
-{#                                <img src="{% static 'basic/images/IIITV_Logo_1x1_small.png' %}" alt="logo">#}
-{#                            </a>#}
-{#                        </div>#}
-{#                        <div class="name">#}
-{#                            <a href="{% url 'index-view' %}" title="">#}
-{#                                <h5>Indian Institute of Information Technology Vadodara</h5>#}
-{#                                <h5>भारतीय सूचना प्रौद्योगिकी संस्थान वडोदरा</h5>#}
-{#                            </a>#}
-{#                        </div>#}
-{#                    </div>#}
-                    <div class="collapse navbar-collapse">
-                        <ul class="nav navbar-nav">
-                            <li>
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Institute <b
-                                        class="caret"></b></a>
-                                <ul class="dropdown-menu multi-level">
-                                    <li><a href="/committee/about.html">About</a></li>
-                                    <li><a href="/committee/directors_message.html">Director's Message</a></li>
-                                    <li><a href="/committee/bog.html">Board of Governors</a></li>
-                                    <li><a href="/committee/society_members.html">Society Members</a></li>
-                                    <li><a href="/committee/senate.html">Senate</a></li>
-                                    <li class="dropdown-submenu">
-                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Committees</a>
-                                        <ul class="dropdown-menu">
-                                            <li><a href="{% url 'committee:finance' %}">Finance Committee</a></li>
-                                            <li><a href="{% url 'committee:strategic-planning' %}">Strategic Planning Committee</a></li>
-                                            <li><a href="{% url 'committee:hr-planning' %}">HR Planning Committee</a></li>
-                                            <li><a href="{% url 'committee:building-works' %}">Building And Works Committee</a></li>
-                                            <li><a href="{% url 'committee:research-council' %}">Research Council</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="/committee/rti.html">RTI</a></li>
-                                    <li><a href="{% static 'basic/pdf/MOU.pdf' %}" target="_blank">MOU</a></li>
-                                    <li>
-                                        <a href="{% url 'linkages:linkage-all' %}">Linkages</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Academics <b
-                                        class="caret"></b></a>
-                                <ul class="dropdown-menu multi-level">
-                                    <li class="dropdown-submenu">
-                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">B.Tech</a>
-                                        <ul class="dropdown-menu">
-                                            <li><a href="/academic/btech/btech_cse.html">CSE</a></li>
-                                            <li><a href="/academic/btech/btech_it.html">IT</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="dropdown-submenu">
-                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">M.Tech</a>
-                                        <ul class="dropdown-menu">
-                                            <li><a href="/academic/mtech/mtech_cse.html">CSE</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="/academic/phd.html">Ph.D</a></li>
-                                    <li><a href="{% static 'basic/pdf/AC-IIITV.pdf' %}" target="_blank">Academic Calender Autumn 2017-18</a></li>
-                                    <li><a href="{% static 'basic/pdf/IC-IIITV.pdf' %}" target="_blank">Institute Calendar Winter 2017-18</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Admission <b
-                                        class="caret"></b></a>
-                                <ul class="dropdown-menu multi-level">
-                                    <li><a href="/admission/btech" >B.Tech</a></li>
-                                    <li><a href="/admission/mtech">M.Tech</a></li>
-                                    <li><a href="/admission/phd_admission.html" target="_blank">Ph.D</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">People <b class="caret"></b></a>
-                                <ul class="dropdown-menu multi-level">
-                                    <li><a href="{% url 'people:faculty' %}">Faculty</a></li>
-                                    <li><a href="{% url 'people:former_faculty' %}">Former Faculty</a></li>
-                                    <li><a href="{% url 'people:visiting_faculty' %}">Visiting Faculty</a></li>
-                                    <li><a href="{% url 'people:staff' %}">Staff</a></li>
-                                    <li><a href="{% url 'people:phd' %}">PhD Scholars</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">More <b
-                                        class="caret"></b></a>
-                                <ul class="dropdown-menu multi-level">
-                                    <li><a href="/more/faq.html">FAQs</a></li>
-                                    <li><a href="/more/hostel.html">Hostel</a></li>
-                                    <li><a href="/more/student_corner.html">Student's Corner</a></li>
-                                    <li><a href="http://moodle.iiitv.ac.in" target="_blank">Moodle</a></li>
-                                    <li><a href="/more/library.html">Library</a></li>
-                                    <li><a href="/more/invited_talks.html">Invited Talks</a></li>
-                                    <li><a href="https://sites.google.com/iiitvadodara.ac.in/placements/home" target="_blank">Placement</a></li>
-                                    <li><a href="/gallery/">Photo Gallery</a></li>
-                                </ul>
-                            </li>
+            <div class="uk-navbar-right">
 
-                            <li><a href="/careers/careers.html">Career</a></li>
-                            <li><a href="/tender/">Tenders</a></li>
-                            <li>
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Useful Links <b
-                                        class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="http://sri.nic.in/fellowship-scheme" target="_blank">Loksabha Research Fellowships <br/>2018-19</a></li>
-                                        <hr>
-                                    <li><a href="https://scholarships.gov.in/homePage#" target="_blank">National Scholarship Portal</a></li>
-                                        <hr>
-                                    <li><a href="http://scholarship.up.nic.in/" target="_blank">Uttar Pradesh Government -<br/>Scholarship System</a></li>
-                                        <hr>
-                                    <li><a href="http://scholarshipportal.mp.nic.in/MedhaviChhatra/" target="_blank">Madhya Pradesh State -<br/>Mukhyamantri Medhavi -<br/>Vidyarthi Yojna</a></li>
-                                        <hr>
-                                    <li><a href="http://iiitvadodara.ac.in/pdf/05232018141444.pdf" target="_blank">Central Sector Interest Subsidy Scheme(CSIS)</a></li>
-                                </ul>
-                            </li>
-                            <li> <a href="#" class="dropdown-toggle" data-toggle="dropdown">Notices <b class="caret"></b></a>
-                                <ul class="dropdown-menu multi-level">
-                                    <li><a href="http://iiitvadodara.ac.in/pdf/NN_001.pdf" target="_blank">National Scholarship Portal</a></li>
-                                </ul>
-			                </li>
-
-                        </ul>
-                    </div>
-                    <!--/.nav-collapse -->
-                </div>
+                <ul class="uk-navbar-nav">
+                    {% if user.is_authenticated %}
+                        <li><a class="nav-a" href="{% url 'logout' %}"><span uk-icon="icon: sign-out; ratio: 1"></span></a></li>
+                    {% endif %}
+                </ul>
             </div>
         </nav>
-        </header>
-    </header>
-    <!-- /header -->
-    <div class="Site-content">
-    {% block body %}
-
-    {% endblock %}
     </div>
-    <!-- Footer -->
 
+    </header>
+    <div class="Site-content">
+        {% block body %}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        {% endblock %}
+    </div>
     <footer>
-        <div class="footer-wrapper">
-            <span class="logo"><img src="{% static 'basic/images/IIITV_Logo_1x1_small.png' %}" alt="Logo"></span>
-           <div class="row">
-                <!--<div class="col-sm-4 address">-->
-				<p align="center">
-                    <strong>Address : </strong>c/o Block No.9, Government Engineering College,
-                    Sector-28, Gandhinagar, Gujarat - 382028
-				</p>
-                <!--</div>-->
-                <!--<div class="col-sm-4 links">-->
-                    <p align="center">
-                        <a href="{% url 'news:news-all' %}">News</a>
-                        <i class="seperator"></i>
-                        <a href="{% url 'announcement:all_announcements' %}">Announcement</a>
-                        <i class="seperator"></i>
-                        <a href="{% url 'event:event-view' %}">Events</a>
-                    	<i class="seperator"></i>
-                        <a href="/">Home</a>
-                        <i class="seperator"></i>
-                        <a href="/committee/rti.html">RTI</a>
-                        <i class="seperator"></i>
-                        <a href="{% static 'basic/pdf/MOU.pdf' %}" target="_blank">MOU</a>
-                    	<i class="seperator"></i>
-                        <a href="../admissions.php">Admission</a>
-                        <i class="seperator"></i>
-                        <a href="/more/student_corner.html">Student</a>
-                        <i class="seperator"></i>
-                        <a href="{% url 'people:faculty' %}">Faculty</a>
-                    	&nbsp;&nbsp;&nbsp;
-               <!-- </div>-->
-               <!-- <div class="col-sm-4 footer-social">-->
-                    <a href="#!"><i class="fa fa-facebook" aria-hidden="true" title="Official Facebook Page"></i></a>
-                    <!--<a href="https://github.com/iiitv"><i class="fa fa-github" aria-hidden="true"
-                                                          title="Github Group"></i></a>-->
-                    <a href="#!"><i class="fa fa-linkedin" aria-hidden="true" title="LinkedIn Profile"></i></a>
-                    <a href="#!" title=""><i class="fa fa-twitter" aria-hidden="true"
-                                             title="Official Twitter Account"></i></a>
-				</p>
-                <!--</div>-->
-            </div>
-			<div>
-			<p style="text-align: justify;"><font size="1.5" color="#383736">Disclaimer:<br/> The contents in the website are for information purpose only. IIIT Vadodara regularly monitors and updates the information on this website. We attempt to ensure that the information on this website is correct, however, we do not warrant its completeness or accuracy. No rights can be derived from the information contained in the IIIT Vadodara website. The website may contain links to websites of third party organizations. IIIT Vadodara cannot be held responsible for any consequences arising from the use of information obtained from these websites.</font></p>
-			</div>
-        </div>
     </footer>
-</div>
-
-<script>
-    $(document).on('click', function (e) {
-        var
-            $popover,
-            $target = $(e.target);
-
-        //do nothing if there was a click on popover content
-        if ($target.hasClass('popover') || $target.closest('.popover').length) {
-            return;
-        }
-
-        $('[data-toggle="popover"]').each(function () {
-            $popover = $(this);
-
-            if (!$popover.is(e.target) &&
-                $popover.has(e.target).length === 0 &&
-                $('.popover').has(e.target).length === 0)
-            {
-                $popover.popover('hide');
-            } else {
-                //fixes issue described above
-                $popover.popover('toggle');
-            }
-        });
-    })
-</script>
-<!--
-/********************************
-**Contributors for this Website**
-*********************************
-
---Designed by--
-Mofid Ansari (ansarimofid@gmail.com)
-Pratyush Singh (singh.pratyush96@gmail.com)
-
---Core Developers--
-Mofid Ansari (ansarimofid@gmail.com)
-Pratyush Singh (singh.pratyush96@gmail.com)
-Saurabh Jain (saurabhjn76@gmail.com)
-
---Supporting Developers--
-RajuKoushik (g.rajukoushik@gmail.com)
-Kamal Awasthi (kamalawasthi97@gmail.com)
-Avi Aryan (avi.aryan123@gmail.com)
-
---Contribution through reporting issues--
-Harish Krupo (harishkrupo@gmail.com)
-Shalinee Singh (shalinee43@gmail.com)
-Mayank Maurya (mayankm522@gmail.com)
-Navneet Nandan (navneet.nandan8@gmail.com)
-Prem Chand Saini (premchandsaini779@gmail.com)
-Unni Rajendra (unni332265@gmail.com)
-Ravi Kishan Jha (ravikishan77@gmail.com)
-Ankit Kumar (ankit.kumar071460@yahoo.com)
-
--->
 </body>
 </html>
