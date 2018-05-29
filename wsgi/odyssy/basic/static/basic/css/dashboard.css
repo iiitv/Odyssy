@@ -19,6 +19,18 @@
     margin-top: 20px;
 }
 
+.academic-cards {
+    width: 92%;
+    margin-left: 4%;
+}
+
+@media (max-width: 640px) {
+    .academic-cards {
+        width: 95%;
+        margin-left: 0;
+    }
+}
+
 .uk-first-column {
     padding: 0 !important;
 }

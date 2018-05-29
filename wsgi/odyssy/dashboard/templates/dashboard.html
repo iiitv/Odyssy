@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% block title %}
         <title>
             Dashboard
@@ -55,6 +56,30 @@
     </nav>
     </div>
     {% block body %}
+        <div class="academic-cards">
+            <div class="uk-child-width-expand@s uk-text-center" uk-grid>
+                <div>
+                    <a href="#">
+                        <div class="uk-card uk-card-default dashboard-card uk-card-hover uk-card-body">Programmes</div>
+                    </a>
+                </div>
+                <div>
+                    <a href="#">
+                        <div class="uk-card uk-card-default dashboard-card uk-card-hover uk-card-body">Semesters</div>
+                    </a>
+                </div>
+                <div>
+                    <a href="#">
+                        <div class="uk-card uk-card-default dashboard-card uk-card-hover uk-card-body">Courses</div>
+                    </a>
+                </div>
+                <div>
+                    <a href="#">
+                        <div class="uk-card uk-card-default dashboard-card uk-card-hover uk-card-body">Courses in sem</div>
+                    </a>
+                </div>
+            </div>
+        </div>
         <div class="profile-card-dashboard">
              <div class="uk-card uk-card-hover dashboard-card uk-card-body">
                  <div class="uk-card-header">
@@ -79,7 +104,7 @@
                 </div>
             </div>
         </div>
-        <div class="dashboard-cards ">
+        <div class="dashboard-cards">
             <div class="uk-card dashboard-card uk-card-hover uk-card-body">
                 <a class="uk-link-heading" href="{% url 'dashboard:ane_list' 'announcements' 'Announcements' %}">
                     <h3 class="uk-card-title">Announcements</h3>
