@@ -4,7 +4,6 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import PasswordChangeForm
 from django.http import JsonResponse
 from django.shortcuts import render, redirect, get_object_or_404
-from django import forms
 from django.contrib.auth.models import User
 from django.urls import reverse
 
@@ -13,7 +12,6 @@ from .forms import AnnouncementForm, EventForm, NewsForm, SignUpForm, PeopleProf
 from announcement.models import Announcement
 from events.models import Event
 from news.models import News
-from people.models import People
 
 
 @login_required
