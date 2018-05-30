@@ -7,12 +7,13 @@
     <div>
         <div class="uk-child-width-expand@s uk-text-center" uk-grid>
             <div class="uk-width-3-5@s">
-                <div class="uk-position-relative uk-visible-toggle uk-light" uk-slider="clsActivated: uk-transition-active; center: true; autoplay: true; autoplay-interval: 5000;">
+                <div class="uk-position-relative uk-visible-toggle uk-dark" uk-slider="clsActivated: uk-transition-active; center: true; autoplay: true; autoplay-interval: 5000;">
                     <ul class="uk-slider-items uk-grid">
                         {% for image in carousel %}
                             {% if image.extended.indexPageCarousel %}
                                 <li class="uk-width-1-1">
                                     <div class="uk-panel uk-transition-toggle">
+{#                                        Best view 5 : 8 or 750px X 420px #}
                                         <img class="carousel-img" src="media/{{ image.image }}" alt="{{ image.title }}">
                                         <div class="uk-overlay uk-overlay-primary carousel-img-details uk-position-bottom uk-text-center uk-transition-slide-bottom">
                                             <p class="uk-margin-remove">{{ image.title }}</p>
