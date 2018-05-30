@@ -18,6 +18,20 @@
 	padding-left: 5px;
 }
 
+.carousel {
+	padding: 0;
+}
+.uk-grid {
+	margin-right: 0!important;
+}
+.carousel-img {
+	height: 460px !important;
+}
+
+.carousel-img-details {
+	box-shadow: 0 0 5px black;
+}
+
 .college-logo {
 	width: 30%;
 }
@@ -43,6 +57,10 @@ nav {
 }
 
 @media (max-width: 640px) {
+	.carousel-img {
+		height: 250px !important;
+	}
+
     nav {
 		display: none!important;
 	}

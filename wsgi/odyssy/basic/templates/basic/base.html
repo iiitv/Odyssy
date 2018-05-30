@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Welcome to IIIT Vadodara{% endblock %}</title>
     {% load staticfiles %}
     <link rel="icon" type="image/png" href="{% static 'basic/images/IIITV_Logo_1x1_small.png' %}">
@@ -82,46 +83,62 @@
                             </div>
                         </li>
                         <li>
-                            <a class="nav-a" href="#">Academics</a>
+                            <a class="nav-a" href="#">Admissions</a>
                             <div uk-dropdown="animation: uk-animation-slide-top-small; duration: 300">
                                 <div class="uk-dropdown-grid uk-child-width-1-2@m" uk-grid>
                                     <div>
                                         <ul class="uk-nav uk-dropdown-nav">
                                             <li class="uk-active"><a href="#">B.Tech</a></li>
-                                            <li class="uk-nav-divider"></li>
-                                            <li><a href="#">CSE</a></li>
-                                            <li><a href="#">IT</a></li>
-                                            <li class="uk-nav-divider"></li>
-                                            <li class="uk-active">M.Tech</li>
-                                            <li class="uk-nav-divider"></li>
-                                            <li><a href="#">CSE</a></li>
-                                            <li><a href="#">IT</a></li>
-                                            <li class="uk-nav-divider"></li>
+                                            <li class="uk-active"><a href="#">M.Tech</a></li>
                                             <li class="uk-active"><a href="#">Ph.D</a></li>
-                                            <li class="uk-nav-divider"></li>
                                         </ul>
                                     </div>
                                 </div>
                             </div>
                         </li>
                         <li>
-                            <a class="nav-a" href="#">Academics</a>
+                            <a class="nav-a" href="#">People</a>
                             <div uk-dropdown="animation: uk-animation-slide-top-small; duration: 300">
                                 <div class="uk-dropdown-grid uk-child-width-1-2@m" uk-grid>
                                     <div>
                                         <ul class="uk-nav uk-dropdown-nav">
-                                            <li class="uk-active"><a href="#">B.Tech</a></li>
-                                            <li class="uk-nav-divider"></li>
-                                            <li><a href="#">CSE</a></li>
-                                            <li><a href="#">IT</a></li>
-                                            <li class="uk-nav-divider"></li>
-                                            <li class="uk-active">M.Tech</li>
-                                            <li class="uk-nav-divider"></li>
-                                            <li><a href="#">CSE</a></li>
-                                            <li><a href="#">IT</a></li>
-                                            <li class="uk-nav-divider"></li>
-                                            <li class="uk-active"><a href="#">Ph.D</a></li>
-                                            <li class="uk-nav-divider"></li>
+                                            <li class="uk-active"><a href="#">Faculty</a></li>
+                                            <li class="uk-active"><a href="#">Visiting Faculty</a></li>
+                                            <li class="uk-active"><a href="#">Former Faculty</a></li>
+                                            <li class="uk-active"><a href="#">Staff</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <a class="nav-a" href="#">More</a>
+                            <div uk-dropdown="animation: uk-animation-slide-top-small; duration: 300">
+                                <div class="uk-dropdown-grid uk-child-width-1-2@m" uk-grid>
+                                    <div>
+                                        <ul class="uk-nav uk-dropdown-nav">
+                                            <li class="uk-active"><a href="#">FAQs</a></li>
+                                            <li class="uk-active"><a href="#">Hostel</a></li>
+                                            <li class="uk-active"><a href="#">Student's Corner</a></li>
+                                            <li class="uk-active"><a href="#">Moodle</a></li>
+                                            <li class="uk-active"><a href="#">Library</a></li>
+                                            <li class="uk-active"><a href="#">Placements</a></li>
+                                            <li class="uk-active"><a href="#">Photo Gallery</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <a class="nav-a" href="#">Useful Links</a>
+                            <div uk-dropdown="animation: uk-animation-slide-top-small; duration: 300">
+                                <div class="uk-dropdown-grid uk-child-width-1-2@m" uk-grid>
+                                    <div>
+                                        <ul class="uk-nav uk-dropdown-nav">
+                                            <li class="uk-active"><a href="#">Link 1</a></li>
+                                            <li class="uk-active"><a href="#">Link 2</a></li>
+                                            <li class="uk-active"><a href="#">Link 3</a></li>
+                                            <li class="uk-active"><a href="#">Link 4</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -133,6 +150,7 @@
 
                     <ul class="uk-navbar-nav">
                         {% if user.is_authenticated %}
+                            <li><a class="nav-a" href="{% url 'dashboard:dashboard' %}"><span uk-icon="icon: user; ratio: 1"></span></a></li>
                             <li><a class="nav-a" href="{% url 'logout' %}"><span uk-icon="icon: sign-out; ratio: 1"></span></a></li>
                         {% endif %}
                     </ul>
@@ -144,60 +162,83 @@
                 <div id="offcanvas-nav-primary" uk-offcanvas="flip: true overlay: true">
                     <div class="uk-offcanvas-bar uk-flex uk-flex-column">
 
-                        <ul class="uk-nav uk-nav-primary uk-nav-center uk-margin-auto-vertical">
-                            <li class="uk-active"><a href="#">Institute</a></li>
-                            <li class="uk-parent">
-                                <ul class="uk-nav-sub">
-                                    <li><a href="#">About</a></li>
-                                    <li><a href="#">Director's message</a></li>
-                                    <li><a href="#">Board of governors</a></li>
-                                    <li><a href="#">Senate</a></li>
-                                    <li><a href="#">RTI</a></li>
-                                    <li><a href="#">MOU</a></li>
-                                    <li><a href="#">Linkages</a></li>
-                                </ul>
-                            </li>
-                            <li class="uk-active"><a href="#">Institute</a></li>
-                            <li class="uk-parent">
-                                <ul class="uk-nav-sub">
-                                    <li><a href="#">About</a></li>
-                                    <li><a href="#">Director's message</a></li>
-                                    <li><a href="#">Board of governors</a></li>
-                                    <li><a href="#">Senate</a></li>
-                                    <li><a href="#">RTI</a></li>
-                                    <li><a href="#">MOU</a></li>
-                                    <li><a href="#">Linkages</a></li>
-                                </ul>
-                            </li>
-                            <li class="uk-active"><a href="#">Institute</a></li>
-                            <li class="uk-parent">
-                                <ul class="uk-nav-sub">
-                                    <li><a href="#">About</a></li>
-                                    <li><a href="#">Director's message</a></li>
-                                    <li><a href="#">Board of governors</a></li>
-                                    <li><a href="#">Senate</a></li>
-                                    <li><a href="#">RTI</a></li>
-                                    <li><a href="#">MOU</a></li>
-                                    <li><a href="#">Linkages</a></li>
-                                </ul>
-                            </li>
-                            <li class="uk-active"><a href="#">Institute</a></li>
-                            <li class="uk-parent">
-                                <ul class="uk-nav-sub">
-                                    <li><a href="#">About</a></li>
-                                    <li><a href="#">Director's message</a></li>
-                                    <li><a href="#">Board of governors</a></li>
-                                    <li><a href="#">Senate</a></li>
-                                    <li><a href="#">RTI</a></li>
-                                    <li><a href="#">MOU</a></li>
-                                    <li><a href="#">Linkages</a></li>
-                                </ul>
-                            </li>
-                            <li class="uk-nav-header">Header</li>
-                            <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: table"></span> Item</a></li>
-                            <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: thumbnails"></span> Item</a></li>
+                        <ul class="uk-nav uk-nav-primary uk-nav-left uk-margin-auto-vertical">
+
+                            <li><a href="{% url 'dashboard:dashboard' %}"><span class="uk-margin-small-right" uk-icon="icon: user"></span>Dashboard</a></li>
+                            {% if user.is_authenticated %}
+                                <li><a href="{% url 'logout' %}"><span class="uk-margin-small-right" uk-icon="icon: sign-out"></span>Logout</a></li>
+                            {% endif %}
                             <li class="uk-nav-divider"></li>
-                            <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: trash"></span> Item</a></li>
+                            <li class="uk-active"><a href="#">Institute</a></li>
+                            <li class="uk-parent">
+                                <ul class="uk-nav-sub">
+                                    <li><a href="#">About</a></li>
+                                    <li><a href="#">Director's message</a></li>
+                                    <li><a href="#">Board of governors</a></li>
+                                    <li><a href="#">Senate</a></li>
+                                    <li><a href="#">RTI</a></li>
+                                    <li><a href="#">MOU</a></li>
+                                    <li><a href="#">Linkages</a></li>
+                                </ul>
+                            </li>
+                            <li class="uk-active"><a href="#">Committees</a></li>
+                            <li class="uk-parent">
+                                <ul class="uk-nav-sub">
+                                    <li><a href="#">Finance Committee</a></li>
+                                    <li><a href="#">Strategic Planning Committee</a></li>
+                                    <li><a href="#">HR Planning Committee</a></li>
+                                    <li><a href="#">Building And Works Committee</a></li>
+                                    <li><a href="#">Research Council</a></li>
+                                </ul>
+                            </li>
+                            <li class="uk-active"><a href="#">Academics</a></li>
+                            <li class="uk-parent">
+                                <ul class="uk-nav-sub">
+                                    <li><a href="#">B.Tech CSE</a></li>
+                                    <li><a href="#">B.Tech IT</a></li>
+                                    <li><a href="#">M.Tech CSE</a></li>
+                                    <li><a href="#">M.Tech IT</a></li>
+                                    <li><a href="#">Ph.D</a></li>
+                                </ul>
+                            </li>
+                            <li class="uk-active"><a href="#">Admissions</a></li>
+                            <li class="uk-parent">
+                                <ul class="uk-nav-sub">
+                                    <li><a href="#">B.Tech</a></li>
+                                    <li><a href="#">M.Tech</a></li>
+                                    <li><a href="#">Ph.D</a></li>
+                                </ul>
+                            </li>
+                            <li class="uk-active"><a href="#">People</a></li>
+                            <li class="uk-parent">
+                                <ul class="uk-nav-sub">
+                                    <li><a href="#">Faculty</a></li>
+                                    <li><a href="#">Visiting Faculty</a></li>
+                                    <li><a href="#">Former Faculty</a></li>
+                                    <li><a href="#">Staff</a></li>
+                                </ul>
+                            </li>
+                            <li class="uk-active"><a href="#">More</a></li>
+                            <li class="uk-parent">
+                                <ul class="uk-nav-sub">
+                                    <li><a href="#">FAQs</a></li>
+                                    <li><a href="#">Hostel</a></li>
+                                    <li><a href="#">Student's Corner</a></li>
+                                    <li><a href="#">Moodle</a></li>
+                                    <li><a href="#">Library</a></li>
+                                    <li><a href="#">Placements</a></li>
+                                    <li><a href="#">Photo Gallery</a></li>
+                                </ul>
+                            </li>
+                            <li class="uk-active"><a href="#">Useful Links</a></li>
+                            <li class="uk-parent">
+                                <ul class="uk-nav-sub">
+                                    <li><a href="#">Link 1</a></li>
+                                    <li><a href="#">Link 2</a></li>
+                                    <li><a href="#">Link 3</a></li>
+                                    <li><a href="#">Link 4</a></li>
+                                </ul>
+                            </li>
                         </ul>
 
                     </div>
