@@ -15,8 +15,22 @@
 <script src="{% static 'basic/js/main.js' %}"></script>
 <body id="home">
     <header id="header">
-        <div uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; bottom: #transparent-sticky-navbar">
+{#        <div uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; bottom: #transparent-sticky-navbar">#}
 {#        background: rgb(15,108,107)#}
+        <div class="college-logo">
+            <div class="logo-name">
+                <div class="logo">
+                    <a href="{% url 'index-view' %}" title="">
+                        <img width="80px" src="{% static 'basic/images/logo.jpg' %}" alt="logo">
+                    </a>
+                </div>
+                <div class="name">
+                    <a href="{% url 'index-view' %}" title="">
+                        <h5>Indian Institute of Information Technology Vadodara</h5>
+                    </a>
+                </div>
+            </div>
+        </div>
         <nav class="uk-navbar-container nav-bar" uk-navbar>
             <div class="uk-navbar-left">
                 <ul class="uk-navbar-nav">
@@ -67,6 +81,52 @@
                             </div>
                         </div>
                     </li>
+                    <li>
+                        <a class="nav-a" href="#">Academics</a>
+                        <div uk-dropdown="animation: uk-animation-slide-top-small; duration: 300">
+                            <div class="uk-dropdown-grid uk-child-width-1-2@m" uk-grid>
+                                <div>
+                                    <ul class="uk-nav uk-dropdown-nav">
+                                        <li class="uk-active"><a href="#">B.Tech</a></li>
+                                        <li class="uk-nav-divider"></li>
+                                        <li><a href="#">CSE</a></li>
+                                        <li><a href="#">IT</a></li>
+                                        <li class="uk-nav-divider"></li>
+                                        <li class="uk-active">M.Tech</li>
+                                        <li class="uk-nav-divider"></li>
+                                        <li><a href="#">CSE</a></li>
+                                        <li><a href="#">IT</a></li>
+                                        <li class="uk-nav-divider"></li>
+                                        <li class="uk-active"><a href="#">Ph.D</a></li>
+                                        <li class="uk-nav-divider"></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="nav-a" href="#">Academics</a>
+                        <div uk-dropdown="animation: uk-animation-slide-top-small; duration: 300">
+                            <div class="uk-dropdown-grid uk-child-width-1-2@m" uk-grid>
+                                <div>
+                                    <ul class="uk-nav uk-dropdown-nav">
+                                        <li class="uk-active"><a href="#">B.Tech</a></li>
+                                        <li class="uk-nav-divider"></li>
+                                        <li><a href="#">CSE</a></li>
+                                        <li><a href="#">IT</a></li>
+                                        <li class="uk-nav-divider"></li>
+                                        <li class="uk-active">M.Tech</li>
+                                        <li class="uk-nav-divider"></li>
+                                        <li><a href="#">CSE</a></li>
+                                        <li><a href="#">IT</a></li>
+                                        <li class="uk-nav-divider"></li>
+                                        <li class="uk-active"><a href="#">Ph.D</a></li>
+                                        <li class="uk-nav-divider"></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
                 </ul>
             </div>
             <div class="uk-navbar-right">
@@ -78,7 +138,74 @@
                 </ul>
             </div>
         </nav>
-    </div>
+        <div class="uk-offcanvas-content">
+
+            <button class="uk-button uk-button-default uk-margin-small-right" type="button" uk-toggle="target: #offcanvas-nav-primary"><span uk-icon="menu"></span></button>
+
+            <div id="offcanvas-nav-primary" uk-offcanvas="flip: true overlay: true">
+                <div class="uk-offcanvas-bar uk-flex uk-flex-column">
+
+                    <ul class="uk-nav uk-nav-primary uk-nav-center uk-margin-auto-vertical">
+                        <li class="uk-active"><a href="#">Institute</a></li>
+                        <li class="uk-parent">
+                            <ul class="uk-nav-sub">
+                                <li><a href="#">About</a></li>
+                                <li><a href="#">Director's message</a></li>
+                                <li><a href="#">Board of governors</a></li>
+                                <li><a href="#">Senate</a></li>
+                                <li><a href="#">RTI</a></li>
+                                <li><a href="#">MOU</a></li>
+                                <li><a href="#">Linkages</a></li>
+                            </ul>
+                        </li>
+                        <li class="uk-active"><a href="#">Institute</a></li>
+                        <li class="uk-parent">
+                            <ul class="uk-nav-sub">
+                                <li><a href="#">About</a></li>
+                                <li><a href="#">Director's message</a></li>
+                                <li><a href="#">Board of governors</a></li>
+                                <li><a href="#">Senate</a></li>
+                                <li><a href="#">RTI</a></li>
+                                <li><a href="#">MOU</a></li>
+                                <li><a href="#">Linkages</a></li>
+                            </ul>
+                        </li>
+                        <li class="uk-active"><a href="#">Institute</a></li>
+                        <li class="uk-parent">
+                            <ul class="uk-nav-sub">
+                                <li><a href="#">About</a></li>
+                                <li><a href="#">Director's message</a></li>
+                                <li><a href="#">Board of governors</a></li>
+                                <li><a href="#">Senate</a></li>
+                                <li><a href="#">RTI</a></li>
+                                <li><a href="#">MOU</a></li>
+                                <li><a href="#">Linkages</a></li>
+                            </ul>
+                        </li>
+                        <li class="uk-active"><a href="#">Institute</a></li>
+                        <li class="uk-parent">
+                            <ul class="uk-nav-sub">
+                                <li><a href="#">About</a></li>
+                                <li><a href="#">Director's message</a></li>
+                                <li><a href="#">Board of governors</a></li>
+                                <li><a href="#">Senate</a></li>
+                                <li><a href="#">RTI</a></li>
+                                <li><a href="#">MOU</a></li>
+                                <li><a href="#">Linkages</a></li>
+                            </ul>
+                        </li>
+                        <li class="uk-nav-header">Header</li>
+                        <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: table"></span> Item</a></li>
+                        <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: thumbnails"></span> Item</a></li>
+                        <li class="uk-nav-divider"></li>
+                        <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: trash"></span> Item</a></li>
+                    </ul>
+
+                </div>
+            </div>
+
+        </div>
+{#    </div>make it sticky#}
 
     </header>
     <div class="Site-content">

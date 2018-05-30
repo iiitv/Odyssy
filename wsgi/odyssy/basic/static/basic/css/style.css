@@ -7,3 +7,41 @@
 .nav-a {
 	height: 50px !important;
 }
+
+#header {
+	display: inline-flex;
+	width: 100%;
+}
+
+.college-logo {
+	width: 30%;
+}
+
+.college-logo .name {
+	margin-top: 10px;
+	margin-right: -10px;
+	margin-left: 7px;
+	margin-bottom: 0;
+}
+
+.logo-name {
+	display: inline-flex;
+}
+
+nav {
+	width: 70%;
+	background: white !important;
+}
+
+@media (max-width: 640px) {
+    nav {
+		display: none!important;
+	}
+	.college-logo {
+		width: 85%;
+	}
+}
+
+.uk-navbar-nav li a {
+	color: black !important;
+}
