@@ -10,6 +10,49 @@ from announcement.models import Announcement
 from events.models import Event
 from news.models import News
 from people.models import People
+from academic.models import Programme, Course, Semester, CourseInSem
+
+
+class ProgrammeForm(forms.ModelForm):
+    def __init__(self, *args, **kwargs):
+        super(ProgrammeForm, self).__init__(*args, **kwargs)
+        self.fields['name'].label = 'Programme Name'
+        self.fields['info'].label = 'Details'
+        self.fields['name'].widget.attrs.update({
+            'class': 'uk-input'
+        })
+        self.fields['info'].widget.attrs.update({
+            'class': 'uk-input'
+        })
+
+    class Meta:
+        model = Programme
+        fields = {'name', 'info'}
+
+
+class SemesterForm(forms.ModelForm):
+    def __init__(self, *args, **kwargs):
+        super(SemesterForm, self).__init__(*args, **kwargs)
+        self.fields['sem'].label = 'Sem no'
+        self.fields['structure_mtech_cs'].label = 'Details M.Tech CSE'
+        self.fields['structure_btech_cs'].label = 'Details B.Tech CSE'
+        self.fields['structure_btech_it'].label = 'Details B.Tech IT'
+        self.fields['sem'].widget.attrs.update({
+            'class': 'uk-input'
+        })
+        self.fields['structure_mtech_cs'].widget.attrs.update({
+            'class': 'uk-input'
+        })
+        self.fields['structure_btech_cs'].widget.attrs.update({
+            'class': 'uk-input'
+        })
+        self.fields['structure_btech_it'].widget.attrs.update({
+            'class': 'uk-input'
+        })
+
+    class Meta:
+        model = Semester
+        fields = {'sem', 'structure_btech_cs', 'structure_btech_it', 'structure_mtech_cs'}
 
 
 class PeopleProfileForm(forms.ModelForm):
@@ -30,10 +73,6 @@ class PeopleProfileForm(forms.ModelForm):
         self.fields['administrative_experience'].label = 'Administrative Experience'
         self.fields['work_experience'].label = 'Work Experience'
         self.fields['professional_memberships'].label = 'Professional Memberships'
-
-    def clean(self):
-        cleaned_data = super(PeopleProfileForm, self).clean()
-        return self.cleaned_data
 
     def save(self):
         instance = super(PeopleProfileForm, self).save(commit=False)
