@@ -28,6 +28,10 @@
 	display: inline-flex;
 }
 
+.uk-offcanvas-content {
+	display: none;
+}
+
 nav {
 	width: 70%;
 	background: white !important;
@@ -37,8 +41,13 @@ nav {
     nav {
 		display: none!important;
 	}
+
 	.college-logo {
 		width: 85%;
+	}
+
+	.uk-offcanvas-content {
+		display: block;
 	}
 }
 
