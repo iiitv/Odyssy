@@ -219,7 +219,7 @@ def ane_edit(request, data_type, data_id):
                 object_instance.end_date = form_cleaned['end_date']
                 object_instance.save()
                 return redirect(reverse('dashboard:ane_list', args=['announcements',
-                                                                    'Announcement added modified']))
+                                                                    'Announcement successfully modified']))
             else:
                 print(form.errors)
                 return render(request, 'add.html', {'form': form, 'title': title})
@@ -247,7 +247,7 @@ def ane_edit(request, data_type, data_id):
                 object_instance.end_date = form_cleaned['end_date']
                 object_instance.save()
                 return redirect(reverse('dashboard:ane_list', args=['news',
-                                                                    'News added modified']))
+                                                                    'News successfully modified']))
             else:
                 print(form.errors)
                 return render(request, 'add.html', {'form': form, 'title': title})
