@@ -67,7 +67,7 @@ nav {
 	height: 200px;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 960px) {
 	.carousel-img {
 		height: 250px !important;
 	}
