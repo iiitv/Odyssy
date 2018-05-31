@@ -18,24 +18,11 @@
 	padding-left: 5px;
 }
 
-.carousel {
-	padding: 0;
-}
 .uk-grid {
 	margin-right: 0!important;
 }
-.carousel-img {
-	height: 460px !important;
-}
 
-.carousel-img-details {
-	box-shadow: 0 0 5px black;
-}
-
-.college-logo {
-	width: 30%;
-}
-
+/* NAV */
 .college-logo .name {
 	margin-top: 10px;
 	margin-right: -4px;
@@ -65,6 +52,24 @@ nav {
 	box-shadow: 0 0 5px lightgrey;
 	align-items: center;
 	height: 200px;
+}
+
+/* Carousel */
+.carousel-img {
+	height: 460px !important;
+}
+
+.carousel-img-details {
+	box-shadow: 0 0 5px black;
+}
+
+.college-logo {
+	width: 30%;
+}
+
+/* Announcements*/
+.index-announcement-card  {
+	height: 100%;
 }
 
 @media (max-width: 960px) {

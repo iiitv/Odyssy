@@ -147,10 +147,9 @@
                     </ul>
                 </div>
                 <div class="uk-navbar-right">
-
                     <ul class="uk-navbar-nav">
+                        <li><a class="nav-a" href="{% url 'dashboard:dashboard' %}"><span uk-icon="icon: user; ratio: 1"></span></a></li>
                         {% if user.is_authenticated %}
-                            <li><a class="nav-a" href="{% url 'dashboard:dashboard' %}"><span uk-icon="icon: user; ratio: 1"></span></a></li>
                             <li><a class="nav-a" href="{% url 'logout' %}"><span uk-icon="icon: sign-out; ratio: 1"></span></a></li>
                         {% endif %}
                     </ul>

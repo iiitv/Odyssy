@@ -14,7 +14,7 @@ def index(request):
 
     """
     latest_news = News.get_latest_news(3)
-    latest_announcement = Announcement.get_latest_announcements(5)
+    latest_announcement = Announcement.get_latest_announcements(4)
     events_list = Event.get_latest_events(3)
     active_images = carousel_api.get_all_index_page_images()
     imp_news_announcement = sorted(
