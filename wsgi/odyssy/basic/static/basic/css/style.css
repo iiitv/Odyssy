@@ -96,4 +96,5 @@ nav {
 
 .site-content {
 	margin-top: 5px;
+	min-height: 50vh;
 }

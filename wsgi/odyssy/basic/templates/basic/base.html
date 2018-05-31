@@ -26,8 +26,9 @@
                         </a>
                     </div>
                     <div class="name">
-                        <a href="{% url 'index-view' %}" title="">
-                            <h5>Indian Institute of Information Technology Vadodara</h5>
+                        <a class="uk-link-heading" href="{% url 'index-view' %}" title="">
+                            <h5 class="uk-margin-remove">Indian Institute of Information Technology Vadodara</h5>
+                            <span style="font-size: 12px;">(Institute of National Importance under Act of Parliament)</span>
                         </a>
                     </div>
                 </div>
@@ -254,11 +255,28 @@
     </div>
     <footer>
         <div class="footer-wrapper">
-            <p align="center">
-                <strong>Address : </strong>c/o Block No.9, Government Engineering College,
-                Sector-28, Gandhinagar, Gujarat - 382028
-            </p>
-            <h4 align="center" class="uk-margin-remove">This is the footer</h4>
+            <br>
+            <div align="center"  uk-lightbox>
+                <a uk-icon="location" uk-tooltip="Find us" class="uk-icon-button uk-button-primary" href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3665.559707391575!2d72.64821711490949!3d23.259103884833806!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395c2c777c4b5e63%3A0xf2af0643c7186398!2sIndian+Institute+Of+Information+Technology+Vadodara!5e0!3m2!1sen!2sin!4v1527807578188" data-caption="Google Maps" data-type="iframe"></a>
+            </div>
+            <div align="center">
+                <a uk-icon="facebook" uk-tooltip="Find us on facebook" class="uk-icon-button uk-button-primary" href="#" target="_blank"></a>
+                <a uk-icon="twitter" uk-tooltip="Find us on twitter" class="uk-icon-button uk-button-primary" href="#"></a>
+                <a uk-icon="linkedin" uk-tooltip="Find us on linkedin" class="uk-icon-button uk-button-primary" href="#"></a>
+                <a uk-icon="github" uk-tooltip="Contribute on IIITV Open source" class="uk-icon-button uk-button-primary" href="https://www.github.com/iiitv" target="_blank"></a>
+            </div>
+            <div align="center" class="uk-margin-small uk-margin-small-left uk-margin-small-right">
+                <span style="font-size: 12px;">
+                    <span class="uk-text-bold">
+                        Disclaimer:
+                    </span>
+                    The contents in the website are for information purpose only. IIIT Vadodara regularly monitors and updates the information on this website.
+                    We attempt to ensure that the information on this website is correct, however, we do not warrant its completeness or accuracy.
+                    No rights can be derived from the information contained in the IIIT Vadodara website.
+                    The website may contain links to websites of third party organizations.
+                    IIIT Vadodara cannot be held responsible for any consequences arising from the use of information obtained from these websites.
+                </span>
+            </div>
         </div>
     </footer>
 </body>

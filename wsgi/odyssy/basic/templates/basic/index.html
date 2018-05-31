@@ -33,15 +33,15 @@
                 <div class="uk-card index-announcement-card uk-card-default uk-card-body">
                     <h3 class="uk-card-title">Announcements</h3>
                     {% if latest_announcement %}
-                        {% for announcement in latest_announcement %}
-                            <ul class="uk-list uk-list-large uk-list-divider">
+                        <hr>
+                        <ul class="uk-list uk-list-large uk-list-divider">
+                            {% for announcement in latest_announcement %}
                                 <li>
-                                    <hr>
-                                    <a class="uk-link-heading uk-text-primary index-announcement-title uk-align-left" href='/announcement/{{ announcement.key }}'> {{ announcement.title }} </a>
+                                    <a class="uk-link-heading index-announcement-title uk-align-left" href='/announcement/{{ announcement.key }}'> {{ announcement.title }} </a>
                                 </li>
-                            </ul>
+                            {% endfor %}
                             <hr>
-                        {% endfor %}
+                        </ul>
                     {% else %}
                     <p> No latest announcement </p>
                     {% endif %}
