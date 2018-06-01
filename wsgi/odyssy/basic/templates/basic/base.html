@@ -34,7 +34,7 @@
                 </div>
             </div>
             <nav class="uk-navbar-container nav-bar" uk-navbar>
-                <div class="uk-navbar-left">
+                <div class="uk-navbar-right">
                     <ul class="uk-navbar-nav">
                         <li>
                             <a class="nav-a" href="#">Institute</a>
@@ -66,18 +66,13 @@
                                 <div class="uk-dropdown-grid uk-child-width-1-2@m" uk-grid>
                                     <div>
                                         <ul class="uk-nav uk-dropdown-nav">
-                                            <li class="uk-active"><a href="#">B.Tech</a></li>
-                                            <li class="uk-nav-divider"></li>
+                                            <li class="uk-active uk-text-bold">B.Tech</li>
                                             <li><a href="#">CSE</a></li>
                                             <li><a href="#">IT</a></li>
-                                            <li class="uk-nav-divider"></li>
-                                            <li class="uk-active">M.Tech</li>
-                                            <li class="uk-nav-divider"></li>
+                                            <li class="uk-active uk-text-bold">M.Tech</li>
                                             <li><a href="#">CSE</a></li>
                                             <li><a href="#">IT</a></li>
-                                            <li class="uk-nav-divider"></li>
-                                            <li class="uk-active"><a href="#">Ph.D</a></li>
-                                            <li class="uk-nav-divider"></li>
+                                            <li class="uk-active uk-text-bold"><a href="#">Ph.D</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -145,10 +140,6 @@
                                 </div>
                             </div>
                         </li>
-                    </ul>
-                </div>
-                <div class="uk-navbar-right">
-                    <ul class="uk-navbar-nav">
                         <li><a class="nav-a" href="{% url 'dashboard:dashboard' %}"><span uk-icon="icon: user; ratio: 1"></span></a></li>
                         {% if user.is_authenticated %}
                             <li><a class="nav-a" href="{% url 'logout' %}"><span uk-icon="icon: sign-out; ratio: 1"></span></a></li>
