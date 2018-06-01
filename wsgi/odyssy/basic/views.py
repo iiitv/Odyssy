@@ -25,7 +25,7 @@ def index(request):
     context = {
         'latest_news': latest_news,
         'latest_announcement': latest_announcement,
-        'events': events_list,
+        'latest_events': events_list,
         'carousel': active_images,
         'imp_news_announcement': imp_news_announcement,
     }

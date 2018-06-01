@@ -15,8 +15,8 @@ def news(request):
     return render(request, 'news/news_list.html', context=context)
 
 
-def news_detail(request, news_id):
-    single_news = News.get_single_news_detail(news_id)
+def news_detail(request, news_slug):
+    single_news = News.get_single_news_detail(news_slug)
     context = {
         'info': single_news
     }

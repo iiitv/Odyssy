@@ -13,6 +13,7 @@ class Event(models.Model):
     start_date = models.DateTimeField(default=datetime.datetime.now)
     end_date = models.DateTimeField(default=datetime.datetime.now)
     description = models.TextField(max_length=20000)
+    slug = models.SlugField(max_length=100, unique=True, blank=True, null=True)
     place = models.CharField(max_length=100, null=True,
                              default=None, blank=True)
 
@@ -40,9 +41,9 @@ class Event(models.Model):
         return events_list
 
     @staticmethod
-    def get_single_event_detail(event_id):
-        single_event = get_object_or_404(Event, pk=event_id)
+    def get_single_event_detail(event_slug):
+        single_event = get_object_or_404(Event, pk=event_slug)
         return single_event
 
     def get_url(self):
-        return reverse('event:event-view-single', args=[self.pk])
+        return reverse('event:event-view-single', args=[self.slug])

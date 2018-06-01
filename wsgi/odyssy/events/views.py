@@ -11,7 +11,7 @@ def event(request):
     return render(request, 'events/event_list.html', context=context)
 
 
-def event_detail(request, event_id):
-    single_event = Event.get_single_event_detail(event_id)
+def event_detail(request, event_slug):
+    single_event = Event.get_single_event_detail(event_slug)
     context = {'event': single_event}
     return render(request, 'events/event_single_item.html', context=context)

@@ -30,9 +30,9 @@ class Announcement(models.Model):
         return Announcement.objects.all().order_by('-start_date')
 
     @staticmethod
-    def get_single_announcement(announcement_id):
+    def get_single_announcement(announcement_slug):
         """ get a single announcement by announcement_id """
-        return Announcement.objects.filter(key=announcement_id)
+        return Announcement.objects.filter(slug=announcement_slug)
 
     @staticmethod
     def get_latest_announcements(cnt):
@@ -56,7 +56,7 @@ class Announcement(models.Model):
         return "Announcement"
 
     def get_url(self):
-        return reverse('announcement:announcement-view-single', args=[self.pk])
+        return reverse('announcement:announcement-view-single', args=[self.slug])
 
     key = models.AutoField(primary_key=True)
     start_date = models.DateTimeField(default=utils.get_today_start)
@@ -64,6 +64,7 @@ class Announcement(models.Model):
     tags = TaggableManager(blank=True)
     title = models.CharField(max_length=50)
     description = models.TextField(max_length=500)
+    slug = models.SlugField(max_length=200, unique=True, blank=True, null=True)
 
 
 def set_default_tag(sender, instance, **kwargs):

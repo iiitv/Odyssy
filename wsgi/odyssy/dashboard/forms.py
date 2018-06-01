@@ -38,7 +38,6 @@ class PeopleProfileForm(forms.ModelForm):
     def save(self):
         instance = super(PeopleProfileForm, self).save(commit=False)
         instance.slug = orig = slugify(instance.name)
-        print(instance.photo)
         for x in itertools.count(1):
             if not People.objects.filter(slug=instance.slug).exists():
                 break
@@ -127,6 +126,17 @@ class AnnouncementForm(forms.ModelForm):
 
         return self.cleaned_data
 
+    def save(self):
+        instance = super(AnnouncementForm, self).save(commit=False)
+        instance.slug = orig = slugify(instance.title)
+        for x in itertools.count(1):
+            if not Announcement.objects.filter(slug=instance.slug).exists():
+                break
+            instance.slug = '%s-%d' % (orig, x)
+
+        instance.save()
+        return instance
+
     class Meta:
         model = Announcement
         fields = {'title', 'description'}
@@ -165,6 +175,17 @@ class EventForm(forms.ModelForm):
 
         return self.cleaned_data
 
+    def save(self):
+        instance = super(EventForm, self).save(commit=False)
+        instance.slug = orig = slugify(instance.title)
+        for x in itertools.count(1):
+            if not Event.objects.filter(slug=instance.slug).exists():
+                break
+            instance.slug = '%s-%d' % (orig, x)
+
+        instance.save()
+        return instance
+
     class Meta:
         model = Event
         fields = {'title', 'description', 'place'}
@@ -198,6 +219,17 @@ class NewsForm(forms.ModelForm):
                 self._errors['start_date'] = self.error_class([msg])
 
         return self.cleaned_data
+
+    def save(self):
+        instance = super(NewsForm, self).save(commit=False)
+        instance.slug = orig = slugify(instance.title)
+        for x in itertools.count(1):
+            if not News.objects.filter(slug=instance.slug).exists():
+                break
+            instance.slug = '%s-%d' % (orig, x)
+
+        instance.save()
+        return instance
 
     class Meta:
         model = News

@@ -27,6 +27,7 @@ class News(models.Model):
     title = models.CharField(max_length=50)
     tags = TaggableManager(blank=True)
     description = models.TextField(max_length=500)
+    slug = models.SlugField(max_length=100, unique=True, blank=True, null=True)
 
     def __str__(self):
         return str(self.pk) + ': ' + str(self.title)
@@ -46,8 +47,8 @@ class News(models.Model):
         ).order_by('-start_date')[:num_items]
 
     @staticmethod
-    def get_single_news_detail(event_id):
-        single_news = get_object_or_404(News, pk=event_id)
+    def get_single_news_detail(event_slug):
+        single_news = get_object_or_404(News, slug=event_slug)
         return single_news
 
     @staticmethod
@@ -65,7 +66,7 @@ class News(models.Model):
         return "News"
 
     def get_url(self):
-        return reverse('news:news-single', args=[self.pk])
+        return reverse('news:news-single', args=[self.slug])
 
 
 def set_default_tag(sender, instance, **kwargs):

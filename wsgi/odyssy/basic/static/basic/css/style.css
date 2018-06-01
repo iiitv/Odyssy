@@ -68,8 +68,14 @@ nav {
 	width: 30%;
 }
 
+/* 3rd row*/
+.index-3row-card:hover {
+	box-shadow: 0 0 10px rgba(33,33,33,.2) !important;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
 /* Announcements*/
-.index-announcement-card  {
+.index-announcement-card, .index-3row-card  {
 	height: 100%;
 }
 
