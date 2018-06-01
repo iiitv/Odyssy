@@ -12,4 +12,4 @@ wsgi/odyssy/.idea/
 **/*.swp
 
 /wsgi/odyssy/venv/
-
+/wsgi/media
