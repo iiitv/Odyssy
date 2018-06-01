@@ -17,8 +17,8 @@ def index(request):
     return render(request, 'announcement/announcement-all.html', context)
 
 
-def open_view(request, announcement_id):
-    announcement = Announcement.get_single_announcement(announcement_id)
+def open_view(request, announcement_slug):
+    announcement = Announcement.get_single_announcement(announcement_slug)
     if announcement:
         announcement = announcement.get()
     else:

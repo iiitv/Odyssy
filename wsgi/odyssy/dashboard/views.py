@@ -126,7 +126,7 @@ def add(request, data_type):
             form = AnnouncementForm(request.POST)
             if form.is_valid():
                 form_cleaned = form.clean()
-                object_instance = form.save(commit=False)
+                object_instance = form.save()
                 object_instance.start_date = form_cleaned['start_date']
                 object_instance.end_date = form_cleaned['end_date']
                 object_instance.save()
@@ -139,7 +139,7 @@ def add(request, data_type):
             form = EventForm(request.POST)
             if form.is_valid():
                 form_cleaned = form.clean()
-                object_instance = form.save(commit=False)
+                object_instance = form.save()
                 object_instance.start_date = form_cleaned['start_date']
                 object_instance.end_date = form_cleaned['end_date']
                 object_instance.save()
@@ -152,7 +152,7 @@ def add(request, data_type):
             form = NewsForm(request.POST)
             if form.is_valid():
                 form_cleaned = form.clean()
-                object_instance = form.save(commit=False)
+                object_instance = form.save()
                 object_instance.start_date = form_cleaned['start_date']
                 object_instance.end_date = form_cleaned['end_date']
                 object_instance.save()
@@ -214,7 +214,7 @@ def ane_edit(request, data_type, data_id):
             form = AnnouncementForm(request.POST, instance=instance)
             if form.is_valid():
                 form_cleaned = form.clean()
-                object_instance = form.save(commit=False)
+                object_instance = form.save()
                 object_instance.start_date = form_cleaned['start_date']
                 object_instance.end_date = form_cleaned['end_date']
                 object_instance.save()
@@ -228,7 +228,7 @@ def ane_edit(request, data_type, data_id):
             form = EventForm(request.POST, instance=instance)
             if form.is_valid():
                 form_cleaned = form.clean()
-                object_instance = form.save(commit=False)
+                object_instance = form.save()
                 object_instance.start_date = form_cleaned['start_date']
                 object_instance.end_date = form_cleaned['end_date']
                 object_instance.save()
@@ -242,7 +242,7 @@ def ane_edit(request, data_type, data_id):
             form = NewsForm(request.POST, instance=instance)
             if form.is_valid():
                 form_cleaned = form.clean()
-                object_instance = form.save(commit=False)
+                object_instance = form.save()
                 object_instance.start_date = form_cleaned['start_date']
                 object_instance.end_date = form_cleaned['end_date']
                 object_instance.save()

@@ -4,120 +4,105 @@
 {% endblock %}
 
 {% block body %}
-<!-- carousel -->
-    <div class="carousel-wrapper">
-        <div class="carousel" style="margin: 0 auto">
-            {% for image in carousel %}
-                {% if image.extended.indexPageCarousel %}
-                    <div class="carousel-items">
-                        <img height="350px" src="media/{{ image.image }}" alt="{{ image.title }}">
-                    </div>
-                {% endif %}
-            {% endfor %}
-        </div>
-    </div>
-
-    <!-- Announcements, Events, News -->
-    <div class="widgets-wrapper">
-        <div class="widgets-container">
-
-            <!-- Edit this section for important announcements.-->
-            {% if imp_news_announcement %}
-                <div class="alert alert-warning text-center">
-                    <ul id="imp_announcement">
-                        {% for announcement in imp_news_announcement %}
-                            <li>
-                            	{% if announcement.get_model_type == "Announcement" %}
-                                	<a class="alert-link" href="{{ announcement.get_url }}">{{ announcement.title }}:</a>
-                                	<div style="margin-left: 5px">{{ announcement.description }}</div>
-
-                                {% elif announcement.get_model_type == "News" %}
-                                	<a class="alert-link" href="/news/{{ announcement.id }}">{{ announcement.title }}:</a>
-                                	<div style="margin-left: 5px">{{ announcement.description }}</div>
-                                {% endif %}
-                            </li>
-                        {% endfor %}
-                    </ul>
-                </div>
-            {% endif %}
-            <!-- Announcements -->
-            <div class="col-sm-4" id="announcements">
-                <div class='announcement-content '>
-                    <div class="widgets-title"><h2><a href="{% url 'announcement:all_announcements' %}">Announcements</a></h2></div>
-                        {% if latest_announcement %}
-                            <ul id="announcement-list">
-                            {% for announcement in latest_announcement %}
-                                <li>
-                                    <div class="widgets-item-title">
-                                        <a href='/announcement/{{ announcement.key }}'> {{ announcement.title }} </a>
-                                    </div>
-                                    <div class="widgets-item-description">
-                                        {{ announcement.description | safe | truncatewords_html:"25" | linebreaks }}
+    <div>
+        <div class="uk-child-width-expand@s uk-text-center" uk-grid>
+            <div class="uk-width-3-5@m uk-padding-remove">
+                <div class="uk-position-relative uk-visible-toggle uk-dark" uk-slider="clsActivated: uk-transition-active; center: true; autoplay: true; autoplay-interval: 5000;">
+                    <ul class="uk-slider-items uk-grid">
+                        {% for image in carousel %}
+                            {% if image.extended.indexPageCarousel %}
+                                <li class="uk-width-1-1">
+                                    <div class="uk-panel uk-transition-toggle">
+{#                                        Best view 5 : 8 or 750px X 420px #}
+                                        <img class="carousel-img" src="media/{{ image.image }}" alt="{{ image.title }}">
+                                        <div class="uk-overlay uk-overlay-primary carousel-img-details uk-position-bottom uk-text-center uk-transition-slide-bottom">
+                                            <p class="uk-margin-remove">{{ image.caption }}</p>
+                                        </div>
                                     </div>
                                 </li>
-                            {% endfor %}
-                            </ul>
-                        {% else %}
-                        <p> No latest announcement </p>
-                        {% endif %}
-                </div>
-            </div>
-
-            <!-- Events -->
-            <div class="col-sm-4" id="events">
-                <div class="events-content">
-                    <div class="widgets-title"><h2><a href="{% url 'event:event-view' %}">Events</a></h2></div>
-                    <ul id="events-list">
-                        {% for event in events %}
-                        <li>
-                            <div class="event-container">
-                                <!-- Date -->
-                                <div class="date">
-                                    <span>
-                                         <!-- Day -->
-                                        <div class="day">{{ event.start_date|date:"d" }}</div>
-                                        <!-- Month Short Form (first three letters) -->
-                                        <div class="month">{{ event.start_date|date:"M" }}</div>
-                                    </span>
-                                </div>
-                                <!-- Event-Description -->
-                                <div class="widgets-item-text">
-                                    <div class="widgets-item-title event-title">
-                                        <a href="{% url 'event:event-view-single' event.id %}">{{ event.title }}</a>
-                                    </div>
-                                    <div class="widgets-item-description">
-                                        {{ event.description | safe | truncatewords_html:"20" | linebreaks }}
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
+                            {% endif %}
                         {% endfor %}
                     </ul>
+
+                    <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slider-item="previous"></a>
+                    <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slider-item="next"></a>
+
                 </div>
             </div>
-            <!-- News section -->
-            <div class="col-sm-4" id="news">
-                <div class='news-content '>
-                    <div class="widgets-title"><h2><a href="{% url 'news:news-all' %}">News</a></h2></div>
-                    {% if latest_news %}
-                        <ul id="news-list">
-                        {% for news in latest_news %}
-                            <li>
-                                <div class="widgets-item-title" >
-                                    <a href="{% url 'news:news-single' news.id %}">{{ news.title }}</a>
-                                </div>
-                                <div class="widgets-item-description">
-                                        {{ news.description | safe | truncatewords_html:"25" | linebreaks }}
-                                </div>
-                            </li>
-                        {% endfor %}
+            <div class="uk-width-2-5@m uk-padding-remove">
+                <div class="uk-card index-announcement-card uk-card-default uk-card-body">
+                    <h3 class="uk-card-title">Announcements</h3>
+                    {% if latest_announcement %}
+                        <hr>
+                        <ul class="uk-list uk-list-large uk-list-divider">
+                            {% for announcement in latest_announcement %}
+                                <li>
+                                    <a class="uk-link-heading index-announcement-title uk-align-left" href="{{ announcement.get_url }}"> {{ announcement.title }} </a>
+                                </li>
+                            {% endfor %}
+                            <hr>
                         </ul>
                     {% else %}
-                        <p> No latest News </p>
+                    <p> No latest announcement </p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        <div class="uk-child-width-expand@s uk-responsive-height uk-text-center uk-margin-small-left uk-margin-small-right" uk-grid>
+            <div class="uk-width-1-3@m uk-padding-remove">
+                <div class="uk-card index-3row-card uk-card-body">
+                    <h3 class="uk-card-title">MyGov</h3>
+                    {% if latest_announcement %}
+                        <hr>
+                        <ul class="uk-list uk-list-large uk-list-divider">
+                            {% for announcement in latest_announcement %}
+                                <li>
+                                    <a class="uk-link-heading index-announcement-title uk-align-left" href='/announcement/{{ announcement.key }}'> {{ announcement.title }} </a>
+                                </li>
+                            {% endfor %}
+                            <hr>
+                        </ul>
+                    {% else %}
+                    <p> No latest announcement </p>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="uk-width-1-3@m uk-padding-remove">
+                <div class="uk-card index-3row-card uk-card-body">
+                    <h3 class="uk-card-title">Events</h3>
+                    {% if latest_events %}
+                        <hr>
+                        <ul class="uk-list uk-list-large uk-list-divider">
+                            {% for event in latest_events %}
+                                <li>
+                                    <a class="uk-link-heading index-announcement-title uk-align-left" href="{{ event.get_url }}"> {{ event.title }} </a>
+                                </li>
+                            {% endfor %}
+                            <hr>
+                        </ul>
+                    {% else %}
+                    <p> No latest announcement </p>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="uk-width-1-3@m uk-padding-remove">
+                <div class="uk-card index-3row-card uk-card-body">
+                    <h3 class="uk-card-title">News</h3>
+                    {% if latest_news %}
+                        <hr>
+                        <ul class="uk-list uk-list-large uk-list-divider">
+                            {% for news in latest_news %}
+                                <li>
+                                    <a class="uk-link-heading index-announcement-title uk-align-left" href="{{ news.get_url }}"> {{ news.title }} </a>
+                                </li>
+                            {% endfor %}
+                            <hr>
+                        </ul>
+                    {% else %}
+                    <p> No latest announcement </p>
                     {% endif %}
                 </div>
             </div>
         </div>
     </div>
-
 {% endblock %}
