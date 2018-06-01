@@ -41,6 +41,7 @@
 nav {
 	width: 70%;
 	background: white !important;
+	align-self: center;
 }
 
 .footer-wrapper {

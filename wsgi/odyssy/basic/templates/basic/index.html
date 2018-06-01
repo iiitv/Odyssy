@@ -48,5 +48,61 @@
                 </div>
             </div>
         </div>
+        <div class="uk-child-width-expand@s uk-responsive-height uk-text-center uk-margin-small-left uk-margin-small-right" uk-grid>
+            <div class="uk-width-1-3@m uk-padding-remove">
+                <div class="uk-card index-3row-card uk-card-hover uk-card-body">
+                    <h3 class="uk-card-title">MyGov</h3>
+                    {% if latest_announcement %}
+                        <hr>
+                        <ul class="uk-list uk-list-large uk-list-divider">
+                            {% for announcement in latest_announcement %}
+                                <li>
+                                    <a class="uk-link-heading index-announcement-title uk-align-left" href='/announcement/{{ announcement.key }}'> {{ announcement.title }} </a>
+                                </li>
+                            {% endfor %}
+                            <hr>
+                        </ul>
+                    {% else %}
+                    <p> No latest announcement </p>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="uk-width-1-3@m uk-padding-remove">
+                <div class="uk-card index-3row-card uk-card-hover uk-card-body">
+                    <h3 class="uk-card-title">Events</h3>
+                    {% if latest_announcement %}
+                        <hr>
+                        <ul class="uk-list uk-list-large uk-list-divider">
+                            {% for announcement in latest_announcement %}
+                                <li>
+                                    <a class="uk-link-heading index-announcement-title uk-align-left" href='/announcement/{{ announcement.key }}'> {{ announcement.title }} </a>
+                                </li>
+                            {% endfor %}
+                            <hr>
+                        </ul>
+                    {% else %}
+                    <p> No latest announcement </p>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="uk-width-1-3@m uk-padding-remove">
+                <div class="uk-card index-3row-card uk-card-hover uk-card-body">
+                    <h3 class="uk-card-title">News</h3>
+                    {% if latest_announcement %}
+                        <hr>
+                        <ul class="uk-list uk-list-large uk-list-divider">
+                            {% for announcement in latest_announcement %}
+                                <li>
+                                    <a class="uk-link-heading index-announcement-title uk-align-left" href='/announcement/{{ announcement.key }}'> {{ announcement.title }} </a>
+                                </li>
+                            {% endfor %}
+                            <hr>
+                        </ul>
+                    {% else %}
+                    <p> No latest announcement </p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
     </div>
 {% endblock %}
