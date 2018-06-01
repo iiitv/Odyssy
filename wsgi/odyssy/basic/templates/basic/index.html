@@ -32,7 +32,7 @@
             <div class="uk-width-2-5@m uk-padding-remove">
                 <div class="uk-card index-announcement-card uk-card-body">
                     <h3 class="uk-card-title">
-                        <a style="color: white;" class="uk-text-lead" href="{% url 'announcement:all_announcements' %}">Announcements</a>
+                        <a style="color: white;" class="uk-text-lead" href="{% url 'announcement:all_announcements' %}"><span class="uk-margin-small-right" uk-icon="warning" ratio="1.5"></span>Announcements</a>
                     </h3>
                     {% if latest_announcement %}
                         <hr>
@@ -60,14 +60,22 @@
             <div class="uk-width-1-3@m uk-padding-remove">
                 <div class="uk-card index-3row-card uk-card-body">
                     <h3 class="uk-card-title">
-                        <a class="uk-link-heading" href="{% url 'event:event-view' %}">Events</a>
+                        <a class="uk-link-heading" href="{% url 'event:event-view' %}"><span class="uk-margin-small-right" uk-icon="calendar" ratio="2"></span>Events</a>
                     </h3>
                     {% if latest_events %}
                         <hr>
-                        <ul class="uk-list uk-list-large uk-list-divider">
+                        <ul class="uk-list uk-list-large">
                             {% for event in latest_events %}
-                                <li>
-                                    <a class="uk-link-heading index-announcement-title uk-align-left" href="{{ event.get_url }}"> {{ event.title }} </a>
+                                <li class="event-li">
+                                    <div class="event-date uk-margin-small-right">
+                                        <span>
+                                             <!-- Day -->
+                                            <div class="day">{{ event.start_date|date:"d" }}</div>
+                                            <!-- Month Short Form (first three letters) -->
+                                            <div class="month">{{ event.start_date|date:"M" }}</div>
+                                        </span>
+                                    </div>
+                                    <a class="uk-link-heading index-event-title uk-align-left" href="{{ event.get_url }}"> {{ event.title }} </a>
                                 </li>
                             {% endfor %}
                             <hr>
@@ -80,14 +88,14 @@
             <div class="uk-width-1-3@m uk-padding-remove">
                 <div class="uk-card index-3row-card uk-card-body">
                     <h3 class="uk-card-title">
-                        <a class="uk-link-heading" href="{% url 'news:news-all' %}">News</a>
+                        <a class="uk-link-heading" href="{% url 'news:news-all' %}"><span class="uk-margin-small-right" uk-icon="rss" ratio="1.5"></span>News</a>
                     </h3>
                     {% if latest_news %}
                         <hr>
                         <ul class="uk-list uk-list-large uk-list-divider">
                             {% for news in latest_news %}
                                 <li>
-                                    <a class="uk-link-heading index-announcement-title uk-align-left" href="{{ news.get_url }}"> {{ news.title }} </a>
+                                    <a class="uk-link-heading index-news-title uk-align-left" href="{{ news.get_url }}"> {{ news.title }} </a>
                                 </li>
                             {% endfor %}
                             <hr>
