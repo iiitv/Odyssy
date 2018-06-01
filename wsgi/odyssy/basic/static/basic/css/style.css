@@ -39,7 +39,7 @@
 }
 
 nav {
-	width: 70%;
+	width: 60%;
 	background: white !important;
 	align-self: center;
 }
@@ -65,13 +65,13 @@ nav {
 }
 
 .college-logo {
-	width: 30%;
+	width: 40%;
 }
 
 /* 3rd row*/
 .index-3row-card:hover {
 	box-shadow: 0 0 10px rgba(33,33,33,.2) !important;
-  transition: box-shadow 0.3s ease-in-out;
+    transition: box-shadow 0.3s ease-in-out;
 }
 
 /* Announcements*/
