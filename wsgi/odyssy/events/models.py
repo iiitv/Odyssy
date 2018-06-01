@@ -42,7 +42,7 @@ class Event(models.Model):
 
     @staticmethod
     def get_single_event_detail(event_slug):
-        single_event = get_object_or_404(Event, pk=event_slug)
+        single_event = get_object_or_404(Event, slug=event_slug)
         return single_event
 
     def get_url(self):

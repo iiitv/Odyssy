@@ -41,21 +41,22 @@
                             <div class="uk-width-large@m" uk-dropdown="animation: uk-animation-slide-top-small; duration: 300">
                                  <div class="uk-dropdown-grid nav-dropdown uk-child-width-1-2@m" uk-grid>
                                         <ul class="uk-nav uk-navbar-dropdown-nav uk-padding-remove">
-                                            <li><a href="#">About</a></li>
-                                            <li><a href="#">Director's message</a></li>
-                                            <li><a href="#">Board of governors</a></li>
-                                            <li><a href="#">Senate</a></li>
-                                            <li><a href="#">RTI</a></li>
-                                            <li><a href="#">MOU</a></li>
-                                            <li><a href="#">Linkages</a></li>
+                                            <li><a href="/committee/about.html">About</a></li>
+                                            <li><a href="/committee/directors_message.html">Director's message</a></li>
+                                            <li><a href="/committee/bog.html">Board of governors</a></li>
+                                            <li><a href="/committee/society_members.html">Society Members</a></li>
+                                            <li><a href="/committee/senate.html">Senate</a></li>
+                                            <li><a href="/committee/rti.html">RTI</a></li>
+                                            <li><a href="{% static 'basic/pdf/MOU.pdf' %}">MOU</a></li>
+                                            <li><a href="{% url 'linkages:linkage-all' %}">Linkages</a></li>
                                         </ul>
                                         <ul class="uk-nav uk-dropdown-nav uk-padding-remove">
                                             <li class="uk-nav-header">Committees</li>
-                                            <li><a href="#">Finance Committee</a></li>
-                                            <li><a href="#">Strategic Planning Committee</a></li>
-                                            <li><a href="#">HR Planning Committee</a></li>
-                                            <li><a href="#">Building And Works Committee</a></li>
-                                            <li><a href="#">Research Council</a></li>
+                                            <li><a href="{% url 'committee:finance' %}">Finance Committee</a></li>
+                                            <li><a href="{% url 'committee:strategic-planning' %}">Strategic Planning Committee</a></li>
+                                            <li><a href="{% url 'committee:hr-planning' %}">HR Planning Committee</a></li>
+                                            <li><a href="{% url 'committee:building-works' %}">Building And Works Committee</a></li>
+                                            <li><a href="{% url 'committee:research-council' %}">Research Council</a></li>
                                         </ul>
                                  </div>
                             </div>
@@ -67,12 +68,12 @@
                                     <div>
                                         <ul class="uk-nav uk-dropdown-nav">
                                             <li class="uk-active uk-text-bold">B.Tech</li>
-                                            <li><a href="#">CSE</a></li>
-                                            <li><a href="#">IT</a></li>
+                                            <li><a href="/academic/btech/btech_cse.html">CSE</a></li>
+                                            <li><a href="/academic/btech/btech_it.html">IT</a></li>
                                             <li class="uk-active uk-text-bold">M.Tech</li>
-                                            <li><a href="#">CSE</a></li>
-                                            <li><a href="#">IT</a></li>
-                                            <li class="uk-active uk-text-bold"><a href="#">Ph.D</a></li>
+                                            <li><a href="/academic/mtech/mtech_cse.html">CSE</a></li>
+                                            <li><a href="/academic/mtech/mtech_it.html">IT</a></li>
+                                            <li class="uk-active uk-text-bold"><a href="/academic/phd.html">Ph.D</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -84,9 +85,9 @@
                                 <div class="uk-dropdown-grid uk-child-width-1-2@m" uk-grid>
                                     <div>
                                         <ul class="uk-nav uk-dropdown-nav">
-                                            <li class="uk-active"><a href="#">B.Tech</a></li>
-                                            <li class="uk-active"><a href="#">M.Tech</a></li>
-                                            <li class="uk-active"><a href="#">Ph.D</a></li>
+                                            <li class="uk-active"><a href="/admission/btech">B.Tech</a></li>
+                                            <li class="uk-active"><a href="/admission/mtech">M.Tech</a></li>
+                                            <li class="uk-active"><a href="/admission/phd_admission.html">Ph.D</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -98,10 +99,11 @@
                                 <div class="uk-dropdown-grid uk-child-width-1-2@m" uk-grid>
                                     <div>
                                         <ul class="uk-nav uk-dropdown-nav">
-                                            <li class="uk-active"><a href="#">Faculty</a></li>
-                                            <li class="uk-active"><a href="#">Visiting Faculty</a></li>
-                                            <li class="uk-active"><a href="#">Former Faculty</a></li>
-                                            <li class="uk-active"><a href="#">Staff</a></li>
+                                            <li class="uk-active"><a href="{% url 'people:faculty' %}">Faculty</a></li>
+                                            <li class="uk-active"><a href="{% url 'people:former_faculty' %}">Visiting Faculty</a></li>
+                                            <li class="uk-active"><a href="{% url 'people:visiting_faculty' %}">Former Faculty</a></li>
+                                            <li class="uk-active"><a href="{% url 'people:staff' %}">Staff</a></li>
+                                            <li class="uk-active"><a href="{% url 'people:phd' %}">Ph.D scholars</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -113,13 +115,14 @@
                                 <div class="uk-dropdown-grid uk-child-width-1-2@m" uk-grid>
                                     <div>
                                         <ul class="uk-nav uk-dropdown-nav">
-                                            <li class="uk-active"><a href="#">FAQs</a></li>
-                                            <li class="uk-active"><a href="#">Hostel</a></li>
-                                            <li class="uk-active"><a href="#">Student's Corner</a></li>
-                                            <li class="uk-active"><a href="#">Moodle</a></li>
-                                            <li class="uk-active"><a href="#">Library</a></li>
-                                            <li class="uk-active"><a href="#">Placements</a></li>
-                                            <li class="uk-active"><a href="#">Photo Gallery</a></li>
+                                            <li class="uk-active"><a href="/more/faq.html">FAQs</a></li>
+                                            <li class="uk-active"><a href="/more/hostel.html">Hostel</a></li>
+                                            <li class="uk-active"><a href="/more/student_corner.html">Student's Corner</a></li>
+                                            <li class="uk-active"><a href="http://moodle.iiitv.ac.in">Moodle</a></li>
+                                            <li class="uk-active"><a href="/more/library.html">Library</a></li>
+                                            <li><a href="/more/invited_talks.html">Invited Talks</a></li>
+                                            <li class="uk-active"><a href="https://sites.google.com/iiitvadodara.ac.in/placements/home">Placements</a></li>
+                                            <li class="uk-active"><a href="/gallery/">Photo Gallery</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -163,62 +166,65 @@
                             <li class="uk-active"><a href="#">Institute</a></li>
                             <li class="uk-parent">
                                 <ul class="uk-nav-sub">
-                                    <li><a href="#">About</a></li>
-                                    <li><a href="#">Director's message</a></li>
-                                    <li><a href="#">Board of governors</a></li>
-                                    <li><a href="#">Senate</a></li>
-                                    <li><a href="#">RTI</a></li>
-                                    <li><a href="#">MOU</a></li>
-                                    <li><a href="#">Linkages</a></li>
+                                    <li><a href="/committee/about.html">About</a></li>
+                                    <li><a href="/committee/directors_message.html">Director's message</a></li>
+                                    <li><a href="/committee/bog.html">Board of governors</a></li>
+                                    <li><a href="/committee/senate.html">Senate</a></li>
+                                    <li><a href="/committee/society_members.html">Society Members</a></li>
+                                    <li><a href="/committee/rti.html">RTI</a></li>
+                                    <li><a href="{% static 'basic/pdf/MOU.pdf' %}">MOU</a></li>
+                                    <li><a href="{% url 'linkages:linkage-all' %}">Linkages</a></li>
                                 </ul>
                             </li>
                             <li class="uk-active"><a href="#">Committees</a></li>
                             <li class="uk-parent">
                                 <ul class="uk-nav-sub">
-                                    <li><a href="#">Finance Committee</a></li>
-                                    <li><a href="#">Strategic Planning Committee</a></li>
-                                    <li><a href="#">HR Planning Committee</a></li>
-                                    <li><a href="#">Building And Works Committee</a></li>
-                                    <li><a href="#">Research Council</a></li>
+                                    <li><a href="{% url 'committee:finance' %}">Finance Committee</a></li>
+                                    <li><a href="{% url 'committee:strategic-planning' %}">Strategic Planning Committee</a></li>
+                                    <li><a href="{% url 'committee:hr-planning' %}">HR Planning Committee</a></li>
+                                    <li><a href="{% url 'committee:building-works' %}">Building And Works Committee</a></li>
+                                    <li><a href="{% url 'committee:research-council' %}">Research Council</a></li>
                                 </ul>
                             </li>
                             <li class="uk-active"><a href="#">Academics</a></li>
                             <li class="uk-parent">
                                 <ul class="uk-nav-sub">
-                                    <li><a href="#">B.Tech CSE</a></li>
-                                    <li><a href="#">B.Tech IT</a></li>
-                                    <li><a href="#">M.Tech CSE</a></li>
-                                    <li><a href="#">M.Tech IT</a></li>
-                                    <li><a href="#">Ph.D</a></li>
+                                    <li><a href="/academic/btech/btech_cse.html">B.Tech CSE</a></li>
+                                    <li><a href="/academic/btech/btech_it.html">B.Tech IT</a></li>
+                                    <li><a href="/academic/mtech/mtech_cse.html">M.Tech CSE</a></li>
+                                    <li><a href="/academic/mtech/mtech_it.html">M.Tech IT</a></li>
+                                    <li><a href="/academic/phd.html">Ph.D</a></li>
                                 </ul>
                             </li>
                             <li class="uk-active"><a href="#">Admissions</a></li>
                             <li class="uk-parent">
                                 <ul class="uk-nav-sub">
-                                    <li><a href="#">B.Tech</a></li>
-                                    <li><a href="#">M.Tech</a></li>
-                                    <li><a href="#">Ph.D</a></li>
+                                    <li><a href="/admission/btech">B.Tech</a></li>
+                                    <li><a href="/admission/mtech">M.Tech</a></li>
+                                    <li><a href="/admission/phd_admission.html">Ph.D</a></li>
                                 </ul>
                             </li>
                             <li class="uk-active"><a href="#">People</a></li>
                             <li class="uk-parent">
                                 <ul class="uk-nav-sub">
-                                    <li><a href="#">Faculty</a></li>
-                                    <li><a href="#">Visiting Faculty</a></li>
-                                    <li><a href="#">Former Faculty</a></li>
-                                    <li><a href="#">Staff</a></li>
+                                    <li><a href="{% url 'people:faculty' %}">Faculty</a></li>
+                                    <li><a href="{% url 'people:former_faculty' %}">Visiting Faculty</a></li>
+                                    <li><a href="{% url 'people:visiting_faculty' %}">Former Faculty</a></li>
+                                    <li><a href="{% url 'people:staff' %}">Staff</a></li>
+                                    <li><a href="{% url 'people:phd' %}">Ph.D scholars</a></li>
                                 </ul>
                             </li>
                             <li class="uk-active"><a href="#">More</a></li>
                             <li class="uk-parent">
                                 <ul class="uk-nav-sub">
-                                    <li><a href="#">FAQs</a></li>
-                                    <li><a href="#">Hostel</a></li>
-                                    <li><a href="#">Student's Corner</a></li>
-                                    <li><a href="#">Moodle</a></li>
-                                    <li><a href="#">Library</a></li>
-                                    <li><a href="#">Placements</a></li>
-                                    <li><a href="#">Photo Gallery</a></li>
+                                    <li><a href="/more/faq.html">FAQs</a></li>
+                                    <li><a href="/more/hostel.html">Hostel</a></li>
+                                    <li><a href="/more/student_corner.html">Student's Corner</a></li>
+                                    <li><a href="http://moodle.iiitv.ac.in">Moodle</a></li>
+                                    <li><a href="/more/library.html">Library</a></li>
+                                    <li><a href="/more/invited_talks.html">Invited Talks</a></li>
+                                    <li><a href="https://sites.google.com/iiitvadodara.ac.in/placements/home">Placements</a></li>
+                                    <li><a href="/gallery/">Photo Gallery</a></li>
                                 </ul>
                             </li>
                             <li class="uk-active"><a href="#">Useful Links</a></li>
