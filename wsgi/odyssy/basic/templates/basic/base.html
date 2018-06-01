@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Welcome to IIIT Vadodara{% endblock %}</title>
     {% load staticfiles %}
-    <link rel="icon" type="image/png" href="{% static 'basic/images/IIITV_Logo_1x1_small.png' %}">
+    <link rel="icon" type="image/png" href="{% static 'basic/images/logo.jpg' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'basic/css/style.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'basic/css/uikit.min.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'basic/css/uikit-rtl.min.css' %}">
@@ -16,7 +16,6 @@
 <script src="{% static 'basic/js/main.js' %}"></script>
 <body id="home">
     <div uk-sticky="animation: uk-animation-slide-top; sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; cls-inactive: uk-navbar-transparent uk-light; top: 200">
-
         <header id="header">
             <div class="college-logo">
                 <div class="logo-name">
@@ -26,7 +25,7 @@
                         </a>
                     </div>
                     <div class="name">
-                        <a class="uk-link-heading" href="{% url 'index-view' %}" title="">
+                        <a class="uk-link-heading" href="{% url 'index-view' %}">
                             <h5 class="uk-margin-remove">Indian Institute of Information Technology Vadodara</h5>
                             <span style="font-size: 12px;">(Institute of National Importance under Act of Parliament)</span>
                         </a>
@@ -251,18 +250,22 @@
         {% endblock %}
     </div>
     <footer>
-        <div class="footer-wrapper">
+        <div align="center" class="footer-wrapper">
             <br>
-            <div align="center"  uk-lightbox>
-                <a uk-icon="location" uk-tooltip="Find us" class="uk-icon-button uk-button-primary" href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3665.559707391575!2d72.64821711490949!3d23.259103884833806!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395c2c777c4b5e63%3A0xf2af0643c7186398!2sIndian+Institute+Of+Information+Technology+Vadodara!5e0!3m2!1sen!2sin!4v1527807578188" data-caption="Google Maps" data-type="iframe"></a>
+            <div id="contact-us">
+                <div  uk-lightbox>
+                    <a id="contact-us-gmaps" uk-icon="location" uk-tooltip="Find us" class="uk-icon-button uk-button-primary" href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3665.559707391575!2d72.64821711490949!3d23.259103884833806!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395c2c777c4b5e63%3A0xf2af0643c7186398!2sIndian+Institute+Of+Information+Technology+Vadodara!5e0!3m2!1sen!2sin!4v1527807578188" data-caption="Google Maps" data-type="iframe"></a>
+                </div>
+                <div>
+                    <a uk-icon="mail" uk-tooltip="Mail your queries" class="uk-icon-button uk-button-secondary" href="mailto:#"></a>
+                    <a id="contact-us-phone" uk-icon="receiver" uk-tooltip="Telephone" class="uk-icon-button" href="tel:#"></a>
+                    <a id="contact-us-facebook" uk-icon="facebook" uk-tooltip="Find us on facebook" class="uk-icon-button" href="#" target="_blank"></a>
+                    <a uk-icon="twitter" uk-tooltip="Find us on twitter" class="uk-icon-button uk-button-primary" target="_blank" href="#"></a>
+                    <a id="contact-us-linkedin" uk-icon="linkedin" uk-tooltip="Find us on linkedin" class="uk-icon-button" target="_blank" href="#"></a>
+                    <a id="contact-us-github" uk-icon="github" uk-tooltip="Contribute on IIITV Open source" class="uk-icon-button uk-button-primary" href="https://www.github.com/iiitv" target="_blank"></a>
+                </div>
             </div>
-            <div align="center">
-                <a uk-icon="facebook" uk-tooltip="Find us on facebook" class="uk-icon-button uk-button-primary" href="#" target="_blank"></a>
-                <a uk-icon="twitter" uk-tooltip="Find us on twitter" class="uk-icon-button uk-button-primary" href="#"></a>
-                <a uk-icon="linkedin" uk-tooltip="Find us on linkedin" class="uk-icon-button uk-button-primary" href="#"></a>
-                <a uk-icon="github" uk-tooltip="Contribute on IIITV Open source" class="uk-icon-button uk-button-primary" href="https://www.github.com/iiitv" target="_blank"></a>
-            </div>
-            <div align="center" class="uk-margin-small uk-margin-small-left uk-margin-small-right">
+            <div class="uk-margin-small uk-margin-small-left uk-margin-small-right uk-margin-large-top uk-margin-remove-bottom">
                 <span style="font-size: 12px;">
                     <span class="uk-text-bold">
                         Disclaimer:

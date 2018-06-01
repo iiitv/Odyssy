@@ -44,6 +44,38 @@ nav {
 	align-self: center;
 }
 
+/* Footer */
+#contact-us {
+	display: inline-flex;
+}
+
+#contact-us-gmaps {
+	margin-right: 5px;
+	background: white;
+	border: 1px solid black;
+	color: red;
+}
+
+#contact-us-facebook {
+	background: #3b5998;
+	color: white;
+}
+
+#contact-us-phone {
+	background: rgb(15,108,107);
+	color: white;
+}
+
+#contact-us-linkedin {
+	background: #0077B5;
+	color: white;
+}
+
+#contact-us-github{
+	background: #333;
+	color: white;
+}
+
 .footer-wrapper {
 	margin-top: 50px;
 	background: white;
@@ -84,6 +116,25 @@ nav {
 	height: 100%;
 }
 
+/* Event card */
+.event-li {
+	display: inline-flex;
+	width: 100%;
+}
+
+.event-date {
+	min-width: 70px;
+	border: 2px solid #232353;
+	border-radius: 50px;
+	font-size: 15px;
+	color: #232353;
+}
+
+.index-event-title {
+	align-self: center;
+}
+
+/* Media queries */
 @media (max-width: 960px) {
 	.carousel-img {
 		height: 250px !important;
