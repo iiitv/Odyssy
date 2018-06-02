@@ -84,7 +84,7 @@ nav {
 	width: 100%;
 	box-shadow: 0 0 5px lightgrey;
 	align-items: center;
-	height: 200px;
+	height: auto;
 }
 
 /* Carousel */
@@ -150,6 +150,16 @@ nav {
 
 	.uk-offcanvas-content {
 		display: block;
+	}
+}
+
+@media (max-width: 550px) {
+	#college-name {
+		font-size: 14px !important;
+	}
+
+	#inp-slogan {
+		font-size: 10px !important;
 	}
 }
 

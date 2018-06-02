@@ -20,14 +20,14 @@
             <div class="college-logo">
                 <div class="logo-name">
                     <div class="logo">
-                        <a href="{% url 'index-view' %}" title="">
+                        <a href="{% url 'index-view' %}">
                             <img width="90px" src="{% static 'basic/images/Logo.jpg' %}" alt="logo">
                         </a>
                     </div>
                     <div class="name">
                         <a class="uk-link-heading" href="{% url 'index-view' %}">
-                            <h5 class="uk-margin-remove">Indian Institute of Information Technology Vadodara</h5>
-                            <span style="font-size: 12px;">(Institute of National Importance under Act of Parliament)</span>
+                            <h5 id="college-name" class="uk-margin-remove">Indian Institute of Information Technology Vadodara</h5>
+                            <span id="inp-slogan" style="font-size: 12px;">(Institute of National Importance under Act of Parliament)</span>
                         </a>
                     </div>
                 </div>
@@ -150,7 +150,7 @@
                 </div>
             </nav>
             <div class="uk-offcanvas-content">
-                <button class="uk-button uk-button-default uk-margin-small-right" type="button" uk-toggle="target: #offcanvas-nav-primary"><span uk-icon="menu"></span></button>
+                <button class="uk-icon-button uk-button-default uk-margin-small-top uk-margin-small-right" type="button" uk-toggle="target: #offcanvas-nav-primary"><span uk-icon="menu"></span></button>
 
                 <div id="offcanvas-nav-primary" uk-offcanvas="flip: true overlay: true">
                     <div class="uk-offcanvas-bar uk-flex uk-flex-column">
