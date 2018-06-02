@@ -9,26 +9,14 @@ class Programme(models.Model):
         verbose_name = 'Programme'
         verbose_name_plural = 'Programmes'
 
-    name = models.CharField(max_length=50, blank=True, null=True)
+    name = models.CharField(max_length=50, blank=True, null=True, help_text='e.g. B.Tech')
+    full_name = models.CharField(max_length=100, blank=True, null=True)
+    branch_code = models.CharField(max_length=10, blank=True, null=True, help_text='e.g. CSE')
+    branch_name = models.CharField(max_length=100, blank=True, null=True)
     info = models.TextField(max_length=5000, blank=True, null=True)
 
     def __str__(self):
-        return self.name
-
-
-class Semester(models.Model):
-    class Meta:
-        ordering = ('sem', )
-        verbose_name = 'Semester'
-        verbose_name_plural = 'Semesters'
-
-    sem = models.PositiveIntegerField(default=1)
-    structure_btech_it = models.TextField(max_length=20000, blank=True, null=True)
-    structure_btech_cs = models.TextField(max_length=20000, blank=True, null=True)
-    structure_mtech_cs = models.TextField(max_length=20000, blank=True, null=True)
-
-    def __str__(self):
-        return str(self.sem)
+        return str(self.name) + ' ' + str(self.branch_code)
 
 
 class Course(models.Model):
@@ -37,15 +25,20 @@ class Course(models.Model):
         verbose_name = 'Course'
         verbose_name_plural = 'Courses'
 
-    BRANCH_CHOICES = (
-        ('cse', 'Computer Science & Engineering'),
-        ('it', 'Information Technology'),
-        ('both', 'Computer Science & Engineering and Information Technology'),
+    SEM_CHOICES = (
+        ('1', 'Semester I'),
+        ('2', 'Semester II'),
+        ('3', 'Semester III'),
+        ('4', 'Semester IV'),
+        ('5', 'Semester V'),
+        ('6', 'Semester VI'),
+        ('7', 'Semester VII'),
+        ('8', 'Semester VII1')
     )
     programme = models.ForeignKey(Programme, on_delete=models.PROTECT)
-    branch = models.CharField(max_length=120, choices=BRANCH_CHOICES, default='cse')
+    semester = models.CharField(max_length=120, choices=SEM_CHOICES, default='1')
     name = models.CharField(max_length=120, blank=True, null=True)
-    code = models.CharField(max_length=6, unique=True)
+    code = models.CharField(max_length=6, unique=True, help_text='Unique code e.g. CSE101')
     is_elective = models.BooleanField(default=False)
     # Lecture credits
     lecture = models.IntegerField(default=0)
@@ -61,16 +54,3 @@ class Course(models.Model):
 
     def __str__(self):
         return self.code + ' : ' + self.name
-
-
-class CourseInSem(models.Model):
-    class Meta:
-        ordering = ('semester', )
-        verbose_name = 'CourseInSem'
-        verbose_name_plural = 'CoursesInSems'
-
-    course = models.ForeignKey(Course, on_delete=models.PROTECT)
-    semester = models.ForeignKey(Semester, on_delete=models.PROTECT)
-
-    def __str__(self):
-        return self.semester.__str__() + ' : ' + self.course.__str__()

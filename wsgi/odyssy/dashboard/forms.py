@@ -10,15 +10,27 @@ from announcement.models import Announcement
 from events.models import Event
 from news.models import News
 from people.models import People
-from academic.models import Programme, Course, Semester, CourseInSem
+from academic.models import Programme, Course
 
 
 class ProgrammeForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super(ProgrammeForm, self).__init__(*args, **kwargs)
-        self.fields['name'].label = 'Programme Name'
+        self.fields['name'].label = 'Programme Short Name'
+        self.fields['full_name'].label = 'Programme Full Name'
+        self.fields['branch_name'].label = 'Branch Full Name'
+        self.fields['branch_code'].label = 'Branch Code'
         self.fields['info'].label = 'Details'
         self.fields['name'].widget.attrs.update({
+            'class': 'uk-input'
+        })
+        self.fields['full_name'].widget.attrs.update({
+            'class': 'uk-input'
+        })
+        self.fields['branch_code'].widget.attrs.update({
+            'class': 'uk-input'
+        })
+        self.fields['branch_code'].widget.attrs.update({
             'class': 'uk-input'
         })
         self.fields['info'].widget.attrs.update({
@@ -27,32 +39,68 @@ class ProgrammeForm(forms.ModelForm):
 
     class Meta:
         model = Programme
-        fields = {'name', 'info'}
+        fields = {'name', 'full_name', 'branch_code', 'branch_name', 'info'}
 
 
-class SemesterForm(forms.ModelForm):
+class CourseForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
-        super(SemesterForm, self).__init__(*args, **kwargs)
-        self.fields['sem'].label = 'Sem no'
-        self.fields['structure_mtech_cs'].label = 'Details M.Tech CSE'
-        self.fields['structure_btech_cs'].label = 'Details B.Tech CSE'
-        self.fields['structure_btech_it'].label = 'Details B.Tech IT'
-        self.fields['sem'].widget.attrs.update({
+        super(CourseForm, self).__init__(*args, **kwargs)
+        self.fields['programme'].label = 'Programme'
+        self.fields['semester'].label = 'Semester'
+        self.fields['name'].label = 'Course Full Name'
+        self.fields['code'].label = 'Course Code'
+        self.fields['is_elective'].label = 'Elective'
+        self.fields['lecture'].label = 'Lecture Credits'
+        self.fields['tutorial'].label = 'Tutorial Credits'
+        self.fields['practical'].label = 'Practical Credits'
+        self.fields['credits'].label = 'Total Credits'
+        self.fields['content'].label = 'Course Content'
+        self.fields['text_book'].label = 'Text Books'
+        self.fields['ref_book'].label = 'Ref. Books'
+        self.fields['programme'].widget.attrs.update({
             'class': 'uk-input'
         })
-        self.fields['structure_mtech_cs'].widget.attrs.update({
+        self.fields['semester'].widget.attrs.update({
             'class': 'uk-input'
         })
-        self.fields['structure_btech_cs'].widget.attrs.update({
+        self.fields['name'].widget.attrs.update({
             'class': 'uk-input'
         })
-        self.fields['structure_btech_it'].widget.attrs.update({
+        self.fields['code'].widget.attrs.update({
+            'class': 'uk-input'
+        })
+        self.fields['is_elective'].widget.attrs.update({
+            'class': 'uk-input'
+        })
+        self.fields['lecture'].widget.attrs.update({
+            'class': 'uk-input'
+        })
+        self.fields['tutorial'].widget.attrs.update({
+            'class': 'uk-input'
+        })
+        self.fields['practical'].widget.attrs.update({
+            'class': 'uk-input'
+        })
+        self.fields['credits'].widget.attrs.update({
+            'class': 'uk-input'
+        })
+
+        self.fields['content'].widget.attrs.update({
+            'class': 'uk-input'
+        })
+
+        self.fields['text_book'].widget.attrs.update({
+            'class': 'uk-input'
+        })
+
+        self.fields['ref_book'].widget.attrs.update({
             'class': 'uk-input'
         })
 
     class Meta:
-        model = Semester
-        fields = {'sem', 'structure_btech_cs', 'structure_btech_it', 'structure_mtech_cs'}
+        model = Course
+        fields = {'programme', 'semester', 'name', 'code', 'is_elective', 'lecture', 'tutorial', 'practical', 'credits',
+                  'content', 'text_book', 'ref_book'}
 
 
 class PeopleProfileForm(forms.ModelForm):
