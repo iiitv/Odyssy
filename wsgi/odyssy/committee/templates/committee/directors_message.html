@@ -4,17 +4,20 @@
 {% endblock %}
 {% load static %}
 {% block body %}
-<div class="contents-wrapper">
-    <!-- Contents starts here -->
-    <div class="content dir-msg">
-        <div class="dir-detail">
-            <img class="responsive-img circle" src="{% static 'basic/images/SKP.jpg' %}">
-            <div>Prof Sarat Kumar Patra</div>
-            <div>
-                Director
+<div class="dir-msg uk-container uk-container-expand uk-width-xxlarge@l uk-padding-remove uk-margin-small-top uk-text-small">
+    <div class="uk-card uk-card-default uk-width-1-1@m">
+        <div class="uk-card-header">
+            <div class="uk-grid-small uk-flex-middle" uk-grid>
+                <div class="uk-width-auto">
+                    <img class="uk-border-rounded uk-box-shadow-small" width="150" height="150" src="{% static 'basic/images/SKP.jpg' %}">
+                </div>
+                <div class="uk-width-expand">
+                    <h3 class="uk-card-title uk-margin-remove-bottom">Prof. Sarat Kumar Patra</h3>
+                    <p class="uk-text-meta uk-margin-remove-top">Director, Indian Institute of Information Technology Vadodara</p>
+                </div>
             </div>
         </div>
-        <div class="dir-text">
+        <div class="uk-card-body">
             <p>
                 It gives me great pleasure in taking up the responsibility as Director, IIIT Vadodara. Gujarat is a vibrant state with strong industrial base.
                 <br/> I am sure, the industrial base will provide a strong environment to the budding talents. I seek support of all stake holders in steering the institute to a great future.
@@ -22,6 +25,8 @@
                 <br/> Enhancement in enrollment to postgraduate studies and research will be a key factor for improving our visibility to the world. We have to achieve all these in the fast changing education system.
                 <br/>Let's all work together to achieve these heights.
             </p>
+        </div>
+        <div class="uk-card-footer">
         </div>
     </div>
 </div>
