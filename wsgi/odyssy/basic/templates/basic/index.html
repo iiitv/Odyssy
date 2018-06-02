@@ -75,7 +75,7 @@
                                             <div class="month">{{ event.start_date|date:"M" }}</div>
                                         </span>
                                     </div>
-                                    <a class="uk-link-heading index-event-title uk-align-left" href="{{ event.get_url }}"> {{ event.title }} </a>
+                                    <a class="uk-link-heading index-event-title uk-text-small uk-align-left" href="{{ event.get_url }}"> {{ event.title }} </a>
                                 </li>
                             {% endfor %}
                             <hr>
@@ -95,7 +95,7 @@
                         <ul class="uk-list uk-list-large uk-list-divider">
                             {% for news in latest_news %}
                                 <li>
-                                    <a class="uk-link-heading index-news-title uk-align-left" href="{{ news.get_url }}"> {{ news.title }} </a>
+                                    <a class="uk-link-heading index-news-title uk-align-left uk-text-small" href="{{ news.get_url }}"> {{ news.title }} </a>
                                 </li>
                             {% endfor %}
                             <hr>
