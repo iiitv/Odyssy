@@ -19,4 +19,4 @@ def view_admission_programme(request, programme):
 
 def view_admission(request):
     print(request)
-    return render(request, request.path[1:])
+    return render(request, 'admission/admission.html')

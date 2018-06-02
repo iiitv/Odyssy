@@ -4,20 +4,28 @@
 {% endblock %}
 {% load staticfiles %}
 {% block body %}
-<!-- Content wrapper -->
-<div class="contents-wrapper">
-    <!-- Contents starts here -->
-    <div class="content">
-        <h2>Bachelor of Technology - Information Technology</h2>
-        <br>
-        <p>Software engineering is a form of engineering that applies principles of computer science and mathematics to
-            achieve cost-effective solutions to software problems. The software engineering curriculum places primary
-            emphasis on the technical aspects of building and modifying high quality software systems. This programme is
-            designed to forge a strong linkage with the IT Industry, which will take up research and development
-            projects for the industry and play a key role in developing ICT applications for the masses.
-        </p>
-        <br/>
-        <a href="{% static 'basic/pdf/curriculum_IT.pdf' %}" target="_blank"><b>AC Approved Curriculum for B.Tech. IT</b></a>
+<div class="uk-container">
+<!-- Contents starts here -->
+    <div class="uk-card uk-card-default uk-margin-medium-top uk-width-1-1@m">
+        <div class="uk-card-header">
+            <div class="uk-grid-small uk-flex-middle" uk-grid>
+                <div class="uk-width-expand">
+                    <h3 class="uk-card-title uk-margin-remove-bottom">Bachelor of Technology - Information Technology</h3>
+                </div>
+            </div>
+        </div>
+        <div class="uk-card-body">
+            <p>
+                Software engineering is a form of engineering that applies principles of computer science and mathematics to
+                achieve cost-effective solutions to software problems. The software engineering curriculum places primary
+                emphasis on the technical aspects of building and modifying high quality software systems. This programme is
+                designed to forge a strong linkage with the IT Industry, which will take up research and development
+                projects for the industry and play a key role in developing ICT applications for the masses.
+            </p>
+        </div>
+        <div class="uk-card-footer">
+            <a href="{% static 'basic/pdf/curriculum_IT.pdf' %}" target="_blank"><b>AC Approved Curriculum for B.Tech. IT</b></a>
+        </div>
     </div>
 </div>
 {% endblock %}
