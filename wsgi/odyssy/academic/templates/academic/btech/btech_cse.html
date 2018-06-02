@@ -5,19 +5,28 @@
 {% load staticfiles %}
 {% block body %}
 <!-- Content wrapper -->
-<div class="contents-wrapper">
+<div class="uk-container">
     <!-- Contents starts here -->
-    <div class="contents">
-        <h2>Bachelor of Technology - Computer Science and Engineering</h2>
-        <br><br>
-        The programme is designed to make a strong foundation in CSE that includes electronics and hardware. Computer
-        science courses are introduced in the early semesters while non-IT courses in the later stages. IT workshops are
-        specially designed courses allowing the students to have mastery in the use of the latest software technologies.
-        The courses in mathematics, sciences, engineering and humanities enable students to explore the wider
-        applications of technology.
-        <br/>
-        <br/>
-        <a href="{% static 'basic/pdf/curriculum_CSE.pdf' %}" target="_blank"><b>AC Approved Curriculum for B.Tech. CSE</b></a>
+    <div class="uk-card uk-card-default uk-margin-medium-top uk-width-1-1@m">
+        <div class="uk-card-header">
+            <div class="uk-grid-small uk-flex-middle" uk-grid>
+                <div class="uk-width-expand">
+                    <h3 class="uk-card-title uk-margin-remove-bottom">Bachelor of Technology - Computer Science and Engineering</h3>
+                </div>
+            </div>
+        </div>
+        <div class="uk-card-body">
+            <p>
+                The programme is designed to make a strong foundation in CSE that includes electronics and hardware. Computer
+                science courses are introduced in the early semesters while non-IT courses in the later stages. IT workshops are
+                specially designed courses allowing the students to have mastery in the use of the latest software technologies.
+                The courses in mathematics, sciences, engineering and humanities enable students to explore the wider
+                applications of technology.
+            </p>
+        </div>
+        <div class="uk-card-footer">
+                <a href="{% static 'basic/pdf/curriculum_CSE.pdf' %}" target="_blank"><b>AC Approved Curriculum for B.Tech. CSE</b></a>
+        </div>
     </div>
 </div>
 {% endblock %}

@@ -87,6 +87,10 @@ nav {
 	height: auto;
 }
 
+footer {
+	flex-shrink: 0;
+}
+
 /* Carousel */
 .carousel-and-announcements-grid, .index-announcement-card {
     background: #232353;
@@ -151,6 +155,10 @@ nav {
 	.uk-offcanvas-content {
 		display: block;
 	}
+
+	.footer-wrapper {
+		height: auto;
+	}
 }
 
 @media (max-width: 550px) {
@@ -169,4 +177,13 @@ nav {
 
 .site-content {
 	min-height: 50vh;
+}
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.site-content {
+  flex: 1;
 }

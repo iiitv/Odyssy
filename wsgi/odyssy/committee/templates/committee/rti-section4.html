@@ -5,13 +5,13 @@
 {% endblock %}
 {% block body %}
 <!-- Contents -->
-<div class="contents-wrapper">
+<div class="uk-container">
     <!-- Contents starts here -->
     <div class="content">
-        <h2 style="text-align:center">RTI Section 4
+        <h2 class="uk-text-center uk-margin-small-top">RTI Section 4
             <br/><br/>
         </h2>
-        <table class="table table-bordered table-responsive table-hover">
+        <table class="uk-table uk-box-shadow-small uk-text-left uk-table-hover uk-table-responsive uk-table-divider">
             <tr>
                 <td>i</td>
                 <td>Particulars of organization, Functions and duties</td>
@@ -74,7 +74,7 @@
                 </td>
                 <td style="list-style: none;">Following are the Main Statutory Committees/ Governing bodies of the Institute:<br/>
                     <li><a href="/committee/bog.html">Board of Governors</a></li>
-                    <li><a href="{% url 'institute:finance' %}">Finance Committee</a></li>
+                    <li><a href="{% url 'committee:finance' %}">Finance Committee</a></li>
                 </td>
             </tr>
             <tr>
