@@ -1,0 +1,34 @@
+{% extends 'basic/base.html' %}
+{% block title %}
+    IIIT-V | {{ committee_name }}
+{% endblock %}
+{% block body %}
+<!-- Contents -->
+<div class="contents-wrapper">
+        <h2 style="text-align:center">{{ committee_name }}
+            <br/><br/>
+        </h2>
+        {% if member_list %}
+        <table class="uk-table uk-table-hover uk-table-divider">
+    <thead>
+        <tr align="center">
+            <th>S. No.</th>
+            <th>Name</th>
+            <th>Designation</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for member in member_list %}
+        <tr align="center">
+            <td>{{ forloop.counter }}</td>
+            <td>{{ member.name }}</td>
+            <td>{{ member.post }}, {{ member.origin }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+        {% else %}
+            No members added yet.
+        {% endif %}
+</div>
+{% endblock %}

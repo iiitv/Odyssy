@@ -50,12 +50,7 @@
                                             <li><a href="{% url 'linkages:linkage-all' %}">Linkages</a></li>
                                         </ul>
                                         <ul class="uk-nav uk-dropdown-nav uk-padding-remove">
-                                            <li class="uk-nav-header">Committees</li>
-                                            <li><a href="{% url 'committee:finance' %}">Finance Committee</a></li>
-                                            <li><a href="{% url 'committee:strategic-planning' %}">Strategic Planning Committee</a></li>
-                                            <li><a href="{% url 'committee:hr-planning' %}">HR Planning Committee</a></li>
-                                            <li><a href="{% url 'committee:building-works' %}">Building And Works Committee</a></li>
-                                            <li><a href="{% url 'committee:research-council' %}">Research Council</a></li>
+                                            <li class="uk-nav-header"><a href="{% url 'committee:all-committee' %}">Committees</a></li>
                                         </ul>
                                  </div>
                             </div>
@@ -175,16 +170,7 @@
                                     <li><a href="{% url 'linkages:linkage-all' %}">Linkages</a></li>
                                 </ul>
                             </li>
-                            <li class="uk-active"><a href="#">Committees</a></li>
-                            <li class="uk-parent">
-                                <ul class="uk-nav-sub">
-                                    <li><a href="{% url 'committee:finance' %}">Finance Committee</a></li>
-                                    <li><a href="{% url 'committee:strategic-planning' %}">Strategic Planning Committee</a></li>
-                                    <li><a href="{% url 'committee:hr-planning' %}">HR Planning Committee</a></li>
-                                    <li><a href="{% url 'committee:building-works' %}">Building And Works Committee</a></li>
-                                    <li><a href="{% url 'committee:research-council' %}">Research Council</a></li>
-                                </ul>
-                            </li>
+                            <li class="uk-active"><a href="{% url 'committee:all-committee' %}">Committees</a></li>
                             <li class="uk-active"><a href="#">Academics</a></li>
                             <li class="uk-parent">
                                 <ul class="uk-nav-sub">
