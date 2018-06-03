@@ -6,25 +6,24 @@
 {% load static %}
 {% block body %}
 <!-- Content wrapper -->
-<div class="contents-wrapper">
+<div class="uk-container">
     <!-- Contents starts here -->
     <div class="contents">
-        <div style="text-align: center;">
+        <div class="uk-text-center">
             <h2>{{ link.name }}</h2>
         </div>
-        <div style="text-align: center;">
-            <center>
-                <div class="linkage-card" href="{{ link.website }}">
-                    <a href="{{ link.website }}" style="text-decoration: none;" target="_blank">
-                        <img src="{% static link.logo %}" alt="Linkage" style="width:100%;">
-                    </a>
-                </div>
-            </center>
+        <div class="uk-text-center">
+            <div class="linkage-card">
+                <a href="{{ link.website }}" style="text-decoration: none;" target="_blank">
+                    <img class="uk-width-small" src="{% static link.logo %}" alt="Linkage">
+                </a>
+            </div>
         </div>
         <br/>
         {% if link.description %}
-        <br/>
-            <h4><b>Description:</b></h4> &emsp; &emsp;{{ link.description }}
+             <br/>
+            <h4><b>Description:</b></h4>
+            {{ link.description }}
         {% endif %}
         {% if link.address %}
         <br/>

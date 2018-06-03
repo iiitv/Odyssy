@@ -37,8 +37,8 @@
                     <ul class="uk-navbar-nav">
                         <li>
                             <a class="nav-a" href="#">Institute</a>
-                            <div class="uk-width-large@m" uk-dropdown="animation: uk-animation-slide-top-small; duration: 300">
-                                 <div class="uk-dropdown-grid nav-dropdown uk-child-width-1-2@m" uk-grid>
+                            <div class="uk-width-small@m" uk-dropdown="animation: uk-animation-slide-top-small; duration: 300">
+                                 <div class="uk-dropdown-grid nav-dropdown uk-child-width-1-1@m" uk-grid>
                                         <ul class="uk-nav uk-navbar-dropdown-nav uk-padding-remove">
                                             <li><a href="/committee/about.html">About</a></li>
                                             <li><a href="/committee/directors_message.html">Director's message</a></li>
@@ -48,9 +48,7 @@
                                             <li><a href="/committee/rti.html">RTI</a></li>
                                             <li><a href="{% static 'basic/pdf/MOU.pdf' %}">MOU</a></li>
                                             <li><a href="{% url 'linkages:linkage-all' %}">Linkages</a></li>
-                                        </ul>
-                                        <ul class="uk-nav uk-dropdown-nav uk-padding-remove">
-                                            <li class="uk-nav-header"><a href="{% url 'committee:all-committee' %}">Committees</a></li>
+                                            <li><a href="{% url 'committee:all-committee' %}">Committees</a></li>
                                         </ul>
                                  </div>
                             </div>
@@ -168,9 +166,9 @@
                                     <li><a href="/committee/rti.html">RTI</a></li>
                                     <li><a href="{% static 'basic/pdf/MOU.pdf' %}">MOU</a></li>
                                     <li><a href="{% url 'linkages:linkage-all' %}">Linkages</a></li>
+                                    <li class="uk-active"><a href="{% url 'committee:all-committee' %}">Committees</a></li>
                                 </ul>
                             </li>
-                            <li class="uk-active"><a href="{% url 'committee:all-committee' %}">Committees</a></li>
                             <li class="uk-active"><a href="#">Academics</a></li>
                             <li class="uk-parent">
                                 <ul class="uk-nav-sub">

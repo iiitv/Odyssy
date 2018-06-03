@@ -4,20 +4,21 @@ IIITV | Linkages
 {% endblock %}
 {% load static %}
 {% block body %}
-<div class="contents-wrapper">
-    <div class="content">
-        <h2>Linkages of IIIT Vadodara</h2>
+<div class="uk-container">
+    <h2 class="uk-text-center">Linkages of IIIT Vadodara</h2>
+    <div class="uk-grid-small uk-grid-margin-small" uk-grid>
         {% if link_list %}
-
             {% for link in link_list %}
-                    <div class="linkage-card" href="{{ link.website }}">
-                        <a href="{% url 'linkages:linkage-single' link.id %}" style="text-decoration: none;">
-                        <img src="{% static link.logo %}" alt="Linkage" style="width:100%;">
-                        <div class="linkage-container">
-                            <h6><b>{{ link.name }}</b></h6>
-                        </div>
+                <div class="uk-card uk-card-default uk-grid-collapse uk-width-1-3@m uk-child-width-1-2@m uk-margin" uk-grid>
+                    <div class="uk-card-media-left uk-padding-remove uk-cover-container">
+                        <img width="150" src="{% static link.logo %}" alt="">
+                    </div>
+                    <div class="uk-card-body uk-padding-remove-bottom">
+                        <a class="uk-text-lead" href="{% url 'linkages:linkage-single' link.id %}">
+                            <h3 class="uk-card-title uk-text-lead">{{ link.short_name }}</h3>
                         </a>
                     </div>
+                </div>
             {% endfor %}
         {% else %}
             <p align="center">No Linkages to display</p>
