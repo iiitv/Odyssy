@@ -31,7 +31,7 @@
                                 {% if people.user == user %}
                                     <a href="{% url 'dashboard:update_profile' %}" class="uk-icon-button uk-button-secondary" uk-icon="icon: file-edit"></a>
                                 {% endif %}
-                                <a href="{{ user.people.get_url }}" class="uk-button uk-button-text">Read more</a>
+                                <a href="{{ people.get_url }}" class="uk-button uk-button-text">Read more</a>
                             </div>
                         </div>
                     {% endfor %}
