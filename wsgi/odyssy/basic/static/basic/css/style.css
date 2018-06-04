@@ -15,7 +15,7 @@
 	box-shadow: 0 0 5px black;
 	padding-bottom: 5px;
 	padding-top: 5px;
-	padding-left: 5px;
+	padding-left: 0;
 }
 
 .uk-grid {
@@ -23,6 +23,10 @@
 }
 
 /* NAV */
+.college-logo {
+	margin-left: 3px;
+}
+
 .college-logo .name {
 	margin-top: 10px;
 	margin-right: -4px;
