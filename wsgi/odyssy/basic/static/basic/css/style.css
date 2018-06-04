@@ -86,7 +86,8 @@ nav {
 
 .footer-wrapper {
 	margin-top: 50px;
-	background: white;
+	background: #424242;
+	color: #ECEFF1;
 	position: relative;
 	bottom: 0;
 	width: 100%;
