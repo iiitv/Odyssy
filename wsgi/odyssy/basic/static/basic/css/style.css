@@ -48,6 +48,10 @@ nav {
 	align-self: center;
 }
 
+.uk-navbar-nav>li>a:hover, .uk-navbar-nav .uk-dropdown-nav>li>a:focus, .uk-dropdown-nav>li>a:hover {
+    color: #3F72AF !important;
+}
+
 /* Footer */
 #contact-us {
 	display: inline-flex;
