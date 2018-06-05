@@ -170,8 +170,9 @@ body {
 }
 
 .widget-container {
-    background: #03A9F4;
+    background: #2dabb2;
     color: rgba(255,255,255,1);
+	box-shadow: 0 0 5px black!important;
     border-radius: 10px;
 }
 
