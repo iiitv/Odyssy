@@ -6,9 +6,9 @@
 {% block body %}
 <div class="uk-container uk-margin-small-top">
     {% for committee in committees %}
-        <div class="uk-card uk-card-default">
+        <div class="uk-card uk-card-default uk-margin-small uk-card-hover">
             <a class="uk-link-heading" href="{% url 'committee:committee-single' committee.0 %}">
-            <div class="uk-card-header">
+            <div class="uk-card-body">
                 <div class="uk-grid-small uk-flex-middle" uk-grid>
                     <div class="uk-width-auto">
                         <img class="uk-border-square" width="40" height="40" src="{% static committee.2 %}" alt = "">
