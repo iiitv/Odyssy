@@ -1,4 +1,3 @@
-from django.db.models import Q
 from django.shortcuts import render
 from academic.models import Course, Programme
 
@@ -15,7 +14,7 @@ def all_programme(request):
 
 
 def single_programme(request, name, branch):
-    programme = Programme.objects.get(Q(name=name, branch_code=branch))
+    programme = Programme.objects.filter(name=name, branch_code=branch)
     sems_list = list()
     sems = 8 if name == 'B.Tech' else 4
     for i in range(1, sems+1):
