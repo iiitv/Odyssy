@@ -1,15 +1,21 @@
 {% extends 'basic/base.html' %}
 {% block title %}
-    IIIT-V | {{  }}
+    IIIT-V | {{ programme.name }}
 {% endblock %}
 {% block body %}
 <div class="uk-container">
 <!-- Contents starts here -->
-    <h3 class="uk-card-title uk-margin-remove-bottom">Semesters in {{  }}-{{  }}</h3>
+    <h3 class="uk-card-title uk-margin-remove-bottom">Semesters in {{ programme.name }}-{{ programme.branch_name }}</h3>
 
     <div>
         {% for semester in semesters %}
-            <a href="{% url '' programme.name programme.branch_code %}"> Semester-{{ semester.semester }}</a>
+            <a href="{% url 'academic:single-course' programme.name programme.branch_code semester.0 %}"> Semester-{{ semester.0 }}</a>
+            <!-- list only course names -->
+            <ul>
+            {% for course in semester.1 %}
+                <li>{{ course.name }}</li>
+            {% endfor %}
+            </ul>
         {% endfor %}
     </div>
         

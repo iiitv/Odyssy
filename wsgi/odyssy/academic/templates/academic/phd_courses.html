@@ -1,0 +1,17 @@
+{% extends 'basic/base.html' %}
+{% block title %}
+    IIIT-V | P.hD.
+{% endblock %}
+{% block body %}
+<div class="uk-container">
+<!-- Contents starts here -->
+    <h3 class="uk-card-title uk-margin-remove-bottom">Courses offered in P.hD.</h3>
+
+    <div>
+        {% for course in courses %}
+            <h3>{{ course.name }}</h3> ({{ course.code }})
+        {% endfor %}
+    </div>
+
+</div>
+{% endblock %}

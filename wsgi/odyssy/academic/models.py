@@ -9,7 +9,7 @@ class Programme(models.Model):
         verbose_name = 'Programme'
         verbose_name_plural = 'Programmes'
 
-    name = models.CharField(max_length=50, blank=True, null=True, help_text='e.g. B.Tech')
+    name = models.CharField(max_length=50, blank=True, null=True, help_text='B.Tech, M.Tech or P.hD.')
     full_name = models.CharField(max_length=100, blank=True, null=True)
     branch_code = models.CharField(max_length=10, blank=True, null=True, help_text='e.g. CSE')
     branch_name = models.CharField(max_length=100, blank=True, null=True)

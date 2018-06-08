@@ -10,17 +10,19 @@
         <div>
             <h4>B.Tech:</h4>
             {% for branch in btech %}
-            <div><a href="{% url '' branch.name branch.branch_code %}">List of courses in {{ branch.branch }}</a></div>
+            <div><a href="{% url 'academic:single-programme' branch.name branch.branch_code %}">List of courses in {{ branch.branch_name }}</a></div>
             {% endfor %}
         </div>
         <div>
             <h4>M.Tech:</h4>
             {% for branch in mtech %}
-            <div><a href="{% url '' branch.name branch.branch_code %}">{{ branch.branch }}</a></div>
+            <div><a href="{% url 'academic:single-programme' branch.name branch.branch_code %}">{{ branch.branch_name }}</a></div>
             {% endfor %}
         </div>
         <div>
-            <div><a href="{% url '' branch.name %}">P.hD.</a> </div>
+            {% for branch in phd %}
+                <div><a href="{% url 'academic:view-phd' branch.name %}">P.hD.</a> </div>
+            {% endfor %}
         </div>
 
 </div>

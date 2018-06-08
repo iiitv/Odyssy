@@ -1,0 +1,18 @@
+{% extends 'basic/base.html' %}
+{% block title %}
+    IIIT-V | {{ programme.name }}
+{% endblock %}
+{% block body %}
+<div class="uk-container">
+<!-- Contents starts here -->
+    <h3 class="uk-card-title uk-margin-remove-bottom">Courses in {{ programme.name }}-{{ programme.branch_name }}, Semester-{{ semester }}</h3>
+
+    <div>
+        <!-- List all info of courses -->
+        {% for course in courses %}
+            <h3>{{ course.name }}</h3> ({{ course.code }})
+        {% endfor %}
+    </div>
+        
+</div>
+{% endblock %}
