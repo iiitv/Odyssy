@@ -1,0 +1,27 @@
+{% extends 'basic/base.html' %}
+{% block title %}
+    IIIT-V | Academics
+{% endblock %}
+{% block body %}
+<div class="uk-container">
+<!-- Contents starts here -->
+    <h3 class="uk-card-title uk-margin-remove-bottom">Academics: Offered programmes</h3>
+
+        <div>
+            <h4>B.Tech:</h4>
+            {% for branch in btech %}
+            <div><a href="{% url '' branch.name branch.branch_code %}">List of courses in {{ branch.branch }}</a></div>
+            {% endfor %}
+        </div>
+        <div>
+            <h4>M.Tech:</h4>
+            {% for branch in mtech %}
+            <div><a href="{% url '' branch.name branch.branch_code %}">{{ branch.branch }}</a></div>
+            {% endfor %}
+        </div>
+        <div>
+            <div><a href="{% url '' branch.name %}">P.hD.</a> </div>
+        </div>
+
+</div>
+{% endblock %}

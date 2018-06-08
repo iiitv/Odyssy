@@ -1,0 +1,17 @@
+{% extends 'basic/base.html' %}
+{% block title %}
+    IIIT-V | {{  }}
+{% endblock %}
+{% block body %}
+<div class="uk-container">
+<!-- Contents starts here -->
+    <h3 class="uk-card-title uk-margin-remove-bottom">Semesters in {{  }}-{{  }}</h3>
+
+    <div>
+        {% for semester in semesters %}
+            <a href="{% url '' programme.name programme.branch_code %}"> Semester-{{ semester.semester }}</a>
+        {% endfor %}
+    </div>
+        
+</div>
+{% endblock %}
