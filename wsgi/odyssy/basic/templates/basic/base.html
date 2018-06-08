@@ -36,7 +36,7 @@
                 <div class="uk-navbar-right">
                     <ul class="uk-navbar-nav">
                         <li>
-                            <a class="nav-a" href="#">Institute</a>
+                            <a class="nav-a uk-button-text" href="#">Institute</a>
                             <div uk-dropdown="animation: uk-animation-slide-top-small; duration: 300">
                                  <div class="uk-dropdown-grid uk-child-width-1-1@m" uk-grid>
                                         <ul class="uk-nav uk-dropdown-nav">
@@ -54,10 +54,10 @@
                             </div>
                         </li>
                         <li>
-                            <a class="nav-a" href="#">Academics</a>
+                            <a class="nav-a uk-button-text" href="#">Academics</a>
                             <div uk-dropdown="animation: uk-animation-slide-top-small; duration: 300">
-                                <div class="uk-dropdown-grid uk-child-width-1-2@m" uk-grid>
-                                    <div>
+                                <div class="uk-dropdown-grid uk-child-width-1-1@m" uk-grid>
+                                    <div class="uk-padding-remove">
                                         <ul class="uk-nav uk-dropdown-nav">
                                             <li class="uk-active uk-text-bold">B.Tech</li>
                                             <li><a href="/academic/btech/btech_cse.html">CSE</a></li>
@@ -72,10 +72,10 @@
                             </div>
                         </li>
                         <li>
-                            <a class="nav-a" href="#">Admissions</a>
+                            <a class="nav-a uk-button-text" href="#">Admissions</a>
                             <div uk-dropdown="animation: uk-animation-slide-top-small; duration: 300">
-                                <div class="uk-dropdown-grid uk-child-width-1-2@m" uk-grid>
-                                    <div>
+                                <div class="uk-dropdown-grid uk-child-width-1-1@m" uk-grid>
+                                    <div class="uk-padding-remove">
                                         <ul class="uk-nav uk-dropdown-nav">
                                             <li class="uk-active"><a href="/admission/btech">B.Tech</a></li>
                                             <li class="uk-active"><a href="/admission/mtech">M.Tech</a></li>
@@ -86,10 +86,10 @@
                             </div>
                         </li>
                         <li>
-                            <a class="nav-a" href="#">People</a>
+                            <a class="nav-a uk-button-text" href="#">People</a>
                             <div uk-dropdown="animation: uk-animation-slide-top-small; duration: 300">
-                                <div class="uk-dropdown-grid uk-child-width-1-2@m" uk-grid>
-                                    <div>
+                                <div class="uk-dropdown-grid uk-child-width-1-1@m" uk-grid>
+                                    <div class="uk-padding-remove">
                                         <ul class="uk-nav uk-dropdown-nav">
                                             <li class="uk-active"><a href="{% url 'people:faculty' %}">Faculty</a></li>
                                             <li class="uk-active"><a href="{% url 'people:former_faculty' %}">Visiting Faculty</a></li>
@@ -102,28 +102,28 @@
                             </div>
                         </li>
                         <li>
-                            <a class="nav-a" href="#">More</a>
+                            <a class="nav-a uk-button-text" href="#">More</a>
                             <div uk-dropdown="animation: uk-animation-slide-top-small; duration: 300">
-                                <div class="uk-dropdown-grid uk-child-width-1-2@m" uk-grid>
-                                    <div>
+                                <div class="uk-dropdown-grid uk-child-width-1-1@m" uk-grid>
+                                    <div class="uk-padding-remove">
                                         <ul class="uk-nav uk-dropdown-nav">
-                                            <li class="uk-active"><a href="/more/faq.html">FAQs</a></li>
-                                            <li class="uk-active"><a href="/more/hostel.html">Hostel</a></li>
-                                            <li class="uk-active"><a href="/more/student_corner.html">Student's Corner</a></li>
-                                            <li class="uk-active"><a href="http://moodle.iiitv.ac.in">Moodle</a></li>
-                                            <li class="uk-active"><a href="/more/library.html">Library</a></li>
+                                            <li><a href="/more/faq.html">FAQs</a></li>
+                                            <li><a href="/more/hostel.html">Hostel</a></li>
+                                            <li><a href="/more/student_corner.html">Student's Corner</a></li>
+                                            <li><a href="http://moodle.iiitv.ac.in">Moodle</a></li>
+                                            <li><a href="/more/library.html">Library</a></li>
                                             <li><a href="/more/invited_talks.html">Invited Talks</a></li>
-                                            <li class="uk-active"><a href="https://sites.google.com/iiitvadodara.ac.in/placements/home">Placements</a></li>
-                                            <li class="uk-active"><a href="/gallery/">Photo Gallery</a></li>
+                                            <li><a href="https://sites.google.com/iiitvadodara.ac.in/placements/home">Placements</a></li>
+                                            <li><a href="/gallery/">Photo Gallery</a></li>
                                         </ul>
                                     </div>
                                 </div>
                             </div>
                         </li>
                         <li>
-                            <a class="nav-a" href="#">Useful Links</a>
+                            <a class="nav-a uk-button-text" href="#">Useful Links</a>
                             <div uk-dropdown="animation: uk-animation-slide-top-small; duration: 300">
-                                <div class="uk-dropdown-grid uk-child-width-1-2@m" uk-grid>
+                                <div class="uk-dropdown-grid uk-child-width-1-1@m" uk-grid>
                                     <div>
                                         <ul class="uk-nav uk-dropdown-nav">
                                             <li class="uk-active"><a href="#">Link 1</a></li>
@@ -135,9 +135,9 @@
                                 </div>
                             </div>
                         </li>
-                        <li><a class="nav-a" href="{% url 'dashboard:dashboard' %}"><span uk-icon="icon: user; ratio: 1"></span></a></li>
+                        <li><a class="nav-a uk-button-text" href="{% url 'dashboard:dashboard' %}"><span uk-icon="icon: user; ratio: 1"></span></a></li>
                         {% if user.is_authenticated %}
-                            <li><a class="nav-a" href="{% url 'logout' %}"><span uk-icon="icon: sign-out; ratio: 1"></span></a></li>
+                            <li><a class="nav-a uk-button-text" href="{% url 'logout' %}"><span uk-icon="icon: sign-out; ratio: 1"></span></a></li>
                         {% endif %}
                     </ul>
                 </div>
