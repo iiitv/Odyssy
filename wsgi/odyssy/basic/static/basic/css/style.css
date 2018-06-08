@@ -34,6 +34,14 @@
 	margin-bottom: 0;
 }
 
+.uk-sticky-below .logo{
+	width: 65px;
+}
+
+.uk-sticky-below #college-name {
+	font-size: 15px !important;
+}
+
 .logo-name {
 	display: inline-flex;
 }
