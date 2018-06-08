@@ -10,7 +10,7 @@
             {% if events %}
                 <ul class="detailed-widget-view">
                 {% for event in events %}
-                    <li><a href="{% url 'event:event-view-single' event.id %}">{{ event.title }}</a></li>
+                    <li><a href="{{ event.get_url }}">{{ event.title }}</a></li>
                 {% endfor %}
                 </ul>
             {% endif %}

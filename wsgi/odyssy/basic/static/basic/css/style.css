@@ -15,7 +15,7 @@
 	box-shadow: 0 0 5px black;
 	padding-bottom: 5px;
 	padding-top: 5px;
-	padding-left: 5px;
+	padding-left: 0;
 }
 
 .uk-grid {
@@ -23,6 +23,10 @@
 }
 
 /* NAV */
+.college-logo {
+	margin-left: 3px;
+}
+
 .college-logo .name {
 	margin-top: 10px;
 	margin-right: -4px;
@@ -42,6 +46,10 @@ nav {
 	width: 60%;
 	background: white !important;
 	align-self: center;
+}
+
+.uk-navbar-nav>li>a:hover, .uk-dropdown-nav>li>a:hover {
+    color: #F44336 !important;
 }
 
 /* Footer */
@@ -77,12 +85,12 @@ nav {
 }
 
 .footer-wrapper {
-	margin-top: 50px;
-	background: white;
+	background: #424242;
+	color: #ECEFF1;
 	position: relative;
 	bottom: 0;
 	width: 100%;
-	box-shadow: 0 0 5px lightgrey;
+	box-shadow: 0 0 8px #060606;
 	align-items: center;
 	height: auto;
 }
@@ -93,7 +101,7 @@ footer {
 
 /* Carousel */
 .carousel-and-announcements-grid, .index-announcement-card {
-    background: #232353;
+    /*background: #232353;*/
     color: white;
 }
 
@@ -138,6 +146,44 @@ footer {
 	align-self: center;
 }
 
+/*Color*/
+.uk-navbar-nav li a {
+	color: black !important;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+.site-content {
+    background: linear-gradient(to right, rgb(27, 183, 199) 0%, rgb(39, 2, 100) 100%);
+    padding-bottom: 50px;
+    color: #FFF8E1;
+    min-height: 50vh;
+    flex: 1;
+}
+
+.index-card-heading:hover, .index-announcement-card a:hover, .index-3row-card a:hover {
+    color: #F44336 !important;
+}
+
+.widget-container {
+    background: #2dabb2;
+    color: rgba(255,255,255,1);
+	box-shadow: 0 0 5px black!important;
+    border-radius: 10px;
+}
+
+.uk-card {
+    border-radius: 10px;
+}
+
+.th-with-background {
+    background: #138ec5 !important;
+    color: white !important;
+}
 /* Media queries */
 @media (max-width: 960px) {
 	.carousel-img {
@@ -159,6 +205,10 @@ footer {
 	.footer-wrapper {
 		height: auto;
 	}
+
+    .site-content {
+        background: rgb(4, 146, 161);
+    }
 }
 
 @media (max-width: 550px) {
@@ -169,21 +219,4 @@ footer {
 	#inp-slogan {
 		font-size: 10px !important;
 	}
-}
-
-.uk-navbar-nav li a {
-	color: black !important;
-}
-
-.site-content {
-	min-height: 50vh;
-}
-body {
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
-}
-
-.site-content {
-  flex: 1;
 }
