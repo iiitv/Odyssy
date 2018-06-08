@@ -42,6 +42,10 @@
 	font-size: 15px !important;
 }
 
+.uk-sticky-below nav {
+	align-self: center;
+}
+
 .logo-name {
 	display: inline-flex;
 }
