@@ -1,6 +1,7 @@
 from __future__ import unicode_literals
 
 from django.db import models
+from django.urls import reverse
 
 
 class Programme(models.Model):
@@ -17,6 +18,9 @@ class Programme(models.Model):
 
     def __str__(self):
         return str(self.name) + ' ' + str(self.branch_code)
+
+    def get_url(self):
+        return reverse('academic:single-programme', args=[self.name, self.branch_code])
 
 
 class Course(models.Model):

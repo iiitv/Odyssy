@@ -63,22 +63,7 @@
                             </div>
                         </li>
                         <li>
-                            <a class="nav-a uk-button-text" href="#">Academics</a>
-                            <div uk-dropdown="animation: uk-animation-slide-top-small; duration: 300">
-                                <div class="uk-dropdown-grid uk-child-width-1-1@m" uk-grid>
-                                    <div>
-                                        <ul class="uk-nav uk-dropdown-nav">
-                                            <li class="uk-active uk-text-bold"><a href="uk-button-text">B.Tech</a></li>
-                                            <li><a href="/academic/btech/btech_cse.html">CSE</a></li>
-                                            <li><a href="/academic/btech/btech_it.html">IT</a></li>
-                                            <li class="uk-active uk-text-bold">M.Tech</li>
-                                            <li><a href="/academic/mtech/mtech_cse.html">CSE</a></li>
-                                            <li><a href="/academic/mtech/mtech_it.html">IT</a></li>
-                                            <li class="uk-active uk-text-bold"><a href="/academic/phd.html">Ph.D</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
+                            <a class="nav-a uk-button-text" href="{% url 'academic:all-programme' %}">Academics</a>
                         </li>
                         <li>
                             <a class="nav-a uk-button-text" href="#">Admissions</a>
