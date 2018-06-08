@@ -45,7 +45,7 @@
 nav {
 	width: 60%;
 	background: white !important;
-	align-self: end;
+	align-self: flex-end;
 }
 
 .uk-navbar-nav>li>a:hover, .uk-dropdown-nav>li>a:hover {

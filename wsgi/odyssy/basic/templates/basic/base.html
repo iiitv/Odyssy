@@ -32,21 +32,30 @@
                     </div>
                 </div>
             </div>
-            <nav class="uk-navbar-container nav-bar" uk-navbar>
+            <nav class="uk-navbar-container nav-bar uk-padding-small-right" uk-navbar>
                 <div class="uk-navbar-right">
                     <ul class="uk-navbar-nav">
                         <li>
-                            <a class="nav-a uk-button-text" href="#">Institute</a>
+                            <a class="nav-a uk-button-text" href="#">Home</a>
                             <div uk-dropdown="animation: uk-animation-slide-top-small; duration: 300">
                                  <div class="uk-dropdown-grid uk-child-width-1-1@m" uk-grid>
                                         <ul class="uk-nav uk-dropdown-nav">
                                             <li><a href="/committee/about.html">About</a></li>
                                             <li><a href="/committee/directors_message.html">Director's message</a></li>
+                                            <li><a href="/committee/rti.html">RTI</a></li>
+                                            <li><a href="{% static 'basic/pdf/MOU.pdf' %}">MOU</a></li>
+                                        </ul>
+                                 </div>
+                            </div>
+                        </li>
+                        <li>
+                            <a class="nav-a uk-button-text" href="#">Institute</a>
+                            <div uk-dropdown="animation: uk-animation-slide-top-small; duration: 300">
+                                 <div class="uk-dropdown-grid uk-child-width-1-1@m" uk-grid>
+                                        <ul class="uk-nav uk-dropdown-nav">
                                             <li><a href="/committee/bog.html">Board of governors</a></li>
                                             <li><a href="/committee/society_members.html">Society Members</a></li>
                                             <li><a href="/committee/senate.html">Senate</a></li>
-                                            <li><a href="/committee/rti.html">RTI</a></li>
-                                            <li><a href="{% static 'basic/pdf/MOU.pdf' %}">MOU</a></li>
                                             <li><a href="{% url 'linkages:linkage-all' %}">Linkages</a></li>
                                             <li><a href="{% url 'committee:all-committee' %}">Committees</a></li>
                                         </ul>
@@ -57,9 +66,9 @@
                             <a class="nav-a uk-button-text" href="#">Academics</a>
                             <div uk-dropdown="animation: uk-animation-slide-top-small; duration: 300">
                                 <div class="uk-dropdown-grid uk-child-width-1-1@m" uk-grid>
-                                    <div class="uk-padding-remove">
+                                    <div>
                                         <ul class="uk-nav uk-dropdown-nav">
-                                            <li class="uk-active uk-text-bold">B.Tech</li>
+                                            <li class="uk-active uk-text-bold"><a href="uk-button-text">B.Tech</a></li>
                                             <li><a href="/academic/btech/btech_cse.html">CSE</a></li>
                                             <li><a href="/academic/btech/btech_it.html">IT</a></li>
                                             <li class="uk-active uk-text-bold">M.Tech</li>
@@ -75,7 +84,7 @@
                             <a class="nav-a uk-button-text" href="#">Admissions</a>
                             <div uk-dropdown="animation: uk-animation-slide-top-small; duration: 300">
                                 <div class="uk-dropdown-grid uk-child-width-1-1@m" uk-grid>
-                                    <div class="uk-padding-remove">
+                                    <div>
                                         <ul class="uk-nav uk-dropdown-nav">
                                             <li class="uk-active"><a href="/admission/btech">B.Tech</a></li>
                                             <li class="uk-active"><a href="/admission/mtech">M.Tech</a></li>
@@ -102,7 +111,7 @@
                             </div>
                         </li>
                         <li>
-                            <a class="nav-a uk-button-text" href="#">More</a>
+                            <a class="nav-a uk-button-text" href="#">Students</a>
                             <div uk-dropdown="animation: uk-animation-slide-top-small; duration: 300">
                                 <div class="uk-dropdown-grid uk-child-width-1-1@m" uk-grid>
                                     <div class="uk-padding-remove">
@@ -121,15 +130,13 @@
                             </div>
                         </li>
                         <li>
-                            <a class="nav-a uk-button-text" href="#">Useful Links</a>
+                            <a class="nav-a uk-button-text" href="#">Notices</a>
                             <div uk-dropdown="animation: uk-animation-slide-top-small; duration: 300">
                                 <div class="uk-dropdown-grid uk-child-width-1-1@m" uk-grid>
                                     <div>
                                         <ul class="uk-nav uk-dropdown-nav">
-                                            <li class="uk-active"><a href="#">Link 1</a></li>
-                                            <li class="uk-active"><a href="#">Link 2</a></li>
-                                            <li class="uk-active"><a href="#">Link 3</a></li>
-                                            <li class="uk-active"><a href="#">Link 4</a></li>
+                                            <li class="uk-active"><a href="#">Tenders</a></li>
+                                            <li class="uk-active"><a href="#">Office orders</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -155,16 +162,21 @@
                                 <li><a href="{% url 'logout' %}"><span class="uk-margin-small-right" uk-icon="icon: sign-out"></span>Logout</a></li>
                             {% endif %}
                             <li class="uk-nav-divider"></li>
-                            <li class="uk-active"><a href="#">Institute</a></li>
+                            <li class="uk-active"><a href="#">Home</a></li>
                             <li class="uk-parent">
                                 <ul class="uk-nav-sub">
                                     <li><a href="/committee/about.html">About</a></li>
                                     <li><a href="/committee/directors_message.html">Director's message</a></li>
+                                    <li><a href="/committee/rti.html">RTI</a></li>
+                                    <li><a href="{% static 'basic/pdf/MOU.pdf' %}">MOU</a></li>
+                                </ul>
+                            </li>
+                            <li class="uk-active"><a href="#">Institute</a></li>
+                            <li class="uk-parent">
+                                <ul class="uk-nav-sub">
                                     <li><a href="/committee/bog.html">Board of governors</a></li>
                                     <li><a href="/committee/senate.html">Senate</a></li>
                                     <li><a href="/committee/society_members.html">Society Members</a></li>
-                                    <li><a href="/committee/rti.html">RTI</a></li>
-                                    <li><a href="{% static 'basic/pdf/MOU.pdf' %}">MOU</a></li>
                                     <li><a href="{% url 'linkages:linkage-all' %}">Linkages</a></li>
                                     <li class="uk-active"><a href="{% url 'committee:all-committee' %}">Committees</a></li>
                                 </ul>
@@ -197,7 +209,7 @@
                                     <li><a href="{% url 'people:phd' %}">Ph.D scholars</a></li>
                                 </ul>
                             </li>
-                            <li class="uk-active"><a href="#">More</a></li>
+                            <li class="uk-active"><a href="#">Students</a></li>
                             <li class="uk-parent">
                                 <ul class="uk-nav-sub">
                                     <li><a href="/more/faq.html">FAQs</a></li>
@@ -210,13 +222,11 @@
                                     <li><a href="/gallery/">Photo Gallery</a></li>
                                 </ul>
                             </li>
-                            <li class="uk-active"><a href="#">Useful Links</a></li>
+                            <li class="uk-active"><a href="#">Notices</a></li>
                             <li class="uk-parent">
                                 <ul class="uk-nav-sub">
-                                    <li><a href="#">Link 1</a></li>
-                                    <li><a href="#">Link 2</a></li>
-                                    <li><a href="#">Link 3</a></li>
-                                    <li><a href="#">Link 4</a></li>
+                                    <li><a href="#">Tenders</a></li>
+                                    <li><a href="#">Office orders</a></li>
                                 </ul>
                             </li>
                         </ul>
