@@ -10,7 +10,7 @@
         <div>
             <h4>B.Tech:</h4>
             {% for branch in btech %}
-            <div><a href="{% url 'academic:single-programme' branch.name branch.branch_code %}">List of courses in {{ branch.branch_name }}</a></div>
+            <div><a href="{% url 'academic:single-programme' branch.name branch.branch_code %}">{{ branch.branch_name }}</a></div>
             {% endfor %}
         </div>
         <div>

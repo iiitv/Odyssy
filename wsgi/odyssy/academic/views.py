@@ -15,6 +15,7 @@ def all_programme(request):
 
 def single_programme(request, name, branch):
     programme = Programme.objects.filter(name=name, branch_code=branch)
+    print(programme)
     sems_list = list()
     sems = 8 if name == 'B.Tech' else 4
     for i in range(1, sems+1):
@@ -24,7 +25,7 @@ def single_programme(request, name, branch):
         temp.append(course)
         sems_list.append(temp)
     context = {
-        'programme': programme,
+        'programme': programme[0],
         'semesters': sems_list
     }
     return render(request, 'academic/single_programme.html', context=context)
