@@ -56,7 +56,12 @@ nav {
 	align-self: flex-end;
 }
 
-.uk-navbar-nav>li>a:hover, .uk-dropdown-nav>li>a:hover {
+.uk-navbar-nav>li>a:hover {
+    color: #F44336 !important;
+	background: #616161;
+}
+
+.uk-dropdown-nav>li>a:hover {
     color: #F44336 !important;
 }
 
