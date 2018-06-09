@@ -23,24 +23,41 @@
 
             <ul class="uk-navbar-nav">
                 <li class="uk-active">
-                    <a class="nav-a uk-button uk-button-secondary" href="{% url 'dashboard:dashboard' %}">
-                        {% if user.is_authenticated %}
-                            <span uk-icon="home"></span>
-                        {% endif %}
+                    <a class="nav-a uk-button uk-button-secondary" href="{% url 'index-view' %}">
+                        <span uk-icon="home"></span>
                     </a>
                 </li>
-                <li>
-                    <a class="nav-a" href="#">Operations</a>
-                    <div class="uk-navbar-dropdown" uk-dropdown="animation: uk-animation-slide-top-small; duration: 300">
-                        <ul class="uk-nav uk-navbar-dropdown-nav">
-                            <li><a class="nav-a-dark" href="{% url 'dashboard:update_profile' %}">Edit Profile</a></li>
-                            <li><a class="nav-a-dark" href="{% url 'dashboard:change_password' %}">Change Password</a></li>
-                            <li><a class="nav-a-dark" href="{% url 'dashboard:create_new_user' %}">Add a new user</a></li>
-                            <li><a class="nav-a-dark" href="{% url 'dashboard:all_users' 'Users'%}">Users</a></li>
-                        </ul>
-                    </div>
+                <li class="uk-active">
+                    {% if user.is_authenticated %}
+                        <a class="nav-a uk-button uk-button-secondary" href="{% url 'dashboard:dashboard' %}">
+                            <span uk-icon="grid"></span>
+                        </a>
+                    {% endif %}
                 </li>
-                <li><a class="nav-a" href="#">Other Link</a></li>
+                {% if user.is_superuser %}
+                    <li>
+                        <a class="nav-a" href="#">Operations</a>
+                        <div class="uk-navbar-dropdown" uk-dropdown="animation: uk-animation-slide-top-small; duration: 300">
+                            <ul class="uk-nav uk-navbar-dropdown-nav">
+                                <li><a class="nav-a-dark" href="{% url 'dashboard:update_profile' %}">Edit Profile</a></li>
+                                <li><a class="nav-a-dark" href="{% url 'dashboard:change_password' %}">Change Password</a></li>
+                                <li><a class="nav-a-dark" href="{% url 'dashboard:create_new_user' %}">Add a new user</a></li>
+                                <li><a class="nav-a-dark" href="{% url 'dashboard:all_users' 'Users'%}">Users</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="nav-a" href="#">Academic operations</a>
+                        <div class="uk-navbar-dropdown" uk-dropdown="animation: uk-animation-slide-top-small; duration: 300">
+                            <ul class="uk-nav uk-navbar-dropdown-nav">
+                                <li><a class="nav-a-dark" href="#">Programmes</a></li>
+                                <li><a class="nav-a-dark" href="#">Courses</a></li>
+                                <li><a class="nav-a-dark" href="#">Add a new Programme</a></li>
+                                <li><a class="nav-a-dark" href="#">Add a new Course</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                {% endif %}
             </ul>
 
         </div>
@@ -56,35 +73,6 @@
     </nav>
     </div>
     {% block body %}
-        <div class="academic-cards">
-            <div class="uk-child-width-expand@s uk-text-center" uk-grid>
-                <div>
-                    <a href="#">
-                        <div class="uk-card uk-card-default dashboard-card uk-card-hover uk-card-body">Programmes</div>
-                    </a>
-                </div>
-                <div>
-                    <a href="#">
-                        <div class="uk-card uk-card-default dashboard-card uk-card-hover uk-card-body">Semesters</div>
-                    </a>
-                </div>
-{#                <div>#}
-{#                    <a href="#">#}
-{#                        <div class="uk-card uk-card-default dashboard-card uk-card-hover uk-card-body">Branches</div>#}
-{#                    </a>#}
-{#                </div>#}
-                <div>
-                    <a href="#">
-                        <div class="uk-card uk-card-default dashboard-card uk-card-hover uk-card-body">Courses</div>
-                    </a>
-                </div>
-                <div>
-                    <a href="#">
-                        <div class="uk-card uk-card-default dashboard-card uk-card-hover uk-card-body">Courses in sem</div>
-                    </a>
-                </div>
-            </div>
-        </div>
         <div class="profile-card-dashboard">
              <div class="uk-card uk-card-hover dashboard-card uk-card-body">
                  <div class="uk-card-header">
@@ -109,7 +97,8 @@
                 </div>
             </div>
         </div>
-        <div class="dashboard-cards">
+        {% if user.is_superuser %}
+            <div class="dashboard-cards">
             <div class="uk-card dashboard-card uk-card-hover uk-card-body">
                 <a class="uk-link-heading" href="{% url 'dashboard:ane_list' 'announcements' 'Announcements' %}">
                     <h3 class="uk-card-title">Announcements</h3>
@@ -201,7 +190,7 @@
                 </div>
             </div>
         </div>
-
+        {% endif %}
     {% endblock %}
 </body>
 </html>
