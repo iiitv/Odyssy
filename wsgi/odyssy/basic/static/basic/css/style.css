@@ -57,7 +57,8 @@
 nav {
 	width: 60%;
 	background: white !important;
-	align-self: flex-end;
+	align-self: center;
+	font-weight: 300;
 }
 
 .uk-navbar-nav>li>a:hover {
@@ -179,6 +180,7 @@ body {
     padding-bottom: 50px;
     color: #FFF8E1;
     min-height: 50vh;
+	font-weight: 300;
     flex: 1;
 }
 
@@ -187,7 +189,7 @@ body {
 }
 
 .widget-container {
-    background: #2dabb2;
+    background: linear-gradient(141deg, #2388b0, #3ac);
     color: rgba(255,255,255,1);
 	box-shadow: 0 0 5px black!important;
     border-radius: 10px;
