@@ -164,6 +164,10 @@ footer {
 }
 
 /*Color*/
+.text-black {
+	color: black !important;
+}
+
 .uk-navbar-nav li a {
 	color: black !important;
 }
