@@ -58,7 +58,6 @@ nav {
 	width: 60%;
 	background: white !important;
 	align-self: center;
-	font-weight: 300;
 }
 
 .uk-navbar-nav>li>a:hover {
@@ -184,8 +183,12 @@ body {
     flex: 1;
 }
 
-.index-card-heading:hover, .index-announcement-card a:hover, .index-3row-card a:hover {
+.index-card-heading:hover {
     color: #F44336 !important;
+}
+
+index-announcement-card a:hover, .index-3row-card a:hover {
+	color: black !important;
 }
 
 .widget-container {
