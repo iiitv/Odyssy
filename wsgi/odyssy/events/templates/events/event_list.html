@@ -4,13 +4,26 @@
 {% endblock %}
 
 {% block body %}
-    <div class="contents-wrapper">
-        <div class="content">
+    <div class="uk-container">
+        <div>
             <h2>Events</h2>
             {% if events %}
-                <ul class="detailed-widget-view">
+                <ul class="uk-list uk-list-large">
                 {% for event in events %}
-                    <li><a href="{{ event.get_url }}">{{ event.title }}</a></li>
+                    <div class="uk-card uk-card-default uk-margin-small uk-card-hover">
+                        <a class="uk-link-heading" href="{{ event.get_url }}">
+                        <div class="uk-card-body">
+                            <div class="uk-grid-small uk-child-width-1-2@l uk-flex-middle" uk-grid>
+                                <div class="uk-width-expand">
+                                    <h4 class="uk-card-title uk-margin-remove-bottom">{{ event.title }}</h4>
+                                </div>
+                                <div class="uk-text-right">
+                                    {{ event.get_start_date }} to {{ event.get_end_date}}
+                                </div>
+                            </div>
+                        </div>
+                        </a>
+                    </div>
                 {% endfor %}
                 </ul>
             {% endif %}

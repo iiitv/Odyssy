@@ -47,3 +47,9 @@ class Event(models.Model):
 
     def get_url(self):
         return reverse('event:event-view-single', args=[self.slug])
+
+    def get_start_date(self):
+        return self.start_date.date()
+
+    def get_end_date(self):
+        return self.end_date.date()

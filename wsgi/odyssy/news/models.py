@@ -67,6 +67,9 @@ class News(models.Model):
 
     def get_url(self):
         return reverse('news:news-single', args=[self.slug])
+    
+    def get_start_date(self):
+        return self.start_date.date()
 
 
 def set_default_tag(sender, instance, **kwargs):

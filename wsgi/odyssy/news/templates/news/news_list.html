@@ -4,14 +4,27 @@
 {% endblock %}
 
 {% block body %}
-  <div class="contents-wrapper">
-    <div class="content">
+  <div class="uk-container">
+    <div>
         <h2>News List</h2>
             {% if news_list %}
-                 <ul class="detailed-widget-view">
-                {% for news in news_list %}
-                    <li><a href="{{ news.get_url }}">{{ news.title }}</a></li>
-                {% endfor %}
+                <ul class="uk-list uk-list-large">
+                    {% for news in news_list %}
+                        <div class="uk-card uk-card-default uk-margin-small uk-card-hover">
+                            <a class="uk-link-heading" href="{{ news.get_url }}">
+                            <div class="uk-card-body">
+                                <div class="uk-grid-small uk-child-width-1-2@l uk-flex-middle" uk-grid>
+                                    <div class="uk-width-expand">
+                                        <h4 class="uk-card-title uk-margin-remove-bottom">{{ news.title }}</h4>
+                                    </div>
+                                    <div class="uk-text-right">
+                                        {{ news.get_start_date }}
+                                    </div>
+                                </div>
+                            </div>
+                            </a>
+                        </div>
+                    {% endfor %}
                 </ul>
             {% else %}
             <p>No News to display</p>
