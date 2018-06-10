@@ -118,8 +118,8 @@ footer {
 
 /* Carousel */
 .carousel-and-announcements-grid, .index-announcement-card {
-    /*background: #232353;*/
-    color: white;
+    background: #e9ebee;
+    color: black;
 }
 
 .carousel-img {
