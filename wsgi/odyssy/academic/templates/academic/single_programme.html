@@ -39,12 +39,12 @@
                                             </div>
                                         </a>
 
-                                        <div id="modal-course-{{ course.code }}" class="uk-modal-full" uk-modal>
+                                        <div id="modal-course-{{ course.code }}" class="uk-modal-container" uk-modal>
                                             <div class="uk-modal-dialog">
                                                 <button class="uk-modal-close-full uk-close-medium" type="button" uk-close></button>
                                                 <div class="uk-grid-collapse uk-child-width-1-2@m uk-container uk-flex-middle" uk-grid>
                                                     <div>
-                                                        <div class="uk-padding-large uk-margin-medium-top">
+                                                        <div class="uk-padding-large uk-margin-medium-top uk-padding-remove-right">
                                                             <h1 class="uk-text-capitalize">{{ course.code }}</h1>
                                                                 {% if course.is_elective %}
                                                                     <p class="uk-width-auto uk-label-primary uk-margin-remove uk-badge uk-padding-small">
@@ -60,7 +60,7 @@
                                                             <h2>{{ course.name }}</h2>
                                                         </div>
                                                     </div>
-                                                    <div>
+                                                    <div class="uk-padding-small-right">
                                                         <table class="uk-table uk-box-shadow-medium uk-table-striped uk-table-hover">
                                                             <thead>
                                                                 <tr>
@@ -93,10 +93,10 @@
                                                     <p>{{ course.content }}</p>
                                                     <hr>
                                                     <h2>Recommended text books</h2>
-                                                    <p>{{ course.text_books }}</p>
+                                                    <p>{{ course.text_book }}</p>
                                                     <hr>
                                                     <h2>Additional reference books</h2>
-                                                    <p>{{ course.ref_books }}</p>
+                                                    <p>{{ course.ref_book }}</p>
                                                     <hr>
                                                 </div>
                                             </div>
