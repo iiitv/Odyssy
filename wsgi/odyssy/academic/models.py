@@ -58,3 +58,7 @@ class Course(models.Model):
 
     def __str__(self):
         return self.code + ' : ' + self.name
+
+    def get_url(self):
+        return reverse('academic:single-course', args=[self.programme.name, self.programme.branch_code, self.semester,
+                                                       self.code])

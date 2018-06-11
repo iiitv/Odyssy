@@ -1,9 +1,12 @@
 from __future__ import unicode_literals
 
+import itertools
+
 from django.contrib.auth.models import User
 from django.core.urlresolvers import reverse
 from django.db.models.signals import post_save
 from django.dispatch import receiver
+from django.utils.text import slugify
 from taggit.managers import TaggableManager
 
 from django.db import models
@@ -62,7 +65,18 @@ class People(models.Model):
 @receiver(post_save, sender=User)
 def create_user_people(sender, instance, created, **kwargs):
     if created:
-        People.objects.create(user=instance)
+        new_people = People.objects.create(user=instance)
+        if not new_people.user.get_full_name():
+            new_people.slug = orig = slugify(new_people.user.username)
+        else:
+            new_people.slug = orig = slugify(new_people.user.get_full_name())
+
+        for x in itertools.count(1):
+            if not People.objects.filter(slug=new_people.slug).exists():
+                break
+            new_people.slug = '%s-%d' % (orig, x)
+
+        new_people.save()
 
 
 @receiver(post_save, sender=User)

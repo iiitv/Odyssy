@@ -184,7 +184,7 @@ body {
     padding-bottom: 50px;
     color: #FFF8E1;
     min-height: 50vh;
-	font-weight: 300;
+	font-weight: 400;
     flex: 1;
 }
 
@@ -211,6 +211,15 @@ index-announcement-card a:hover, .index-3row-card a:hover {
     background: #138ec5 !important;
     color: white !important;
 }
+
+/*Course*/
+.course-accordion {
+    padding: 3px 3px 3px 3px;
+    background: #e6dcdc9e;
+    border-radius: 12px;
+    box-shadow: 0 0 2px slategrey;
+}
+
 /* Media queries */
 @media (max-width: 960px) {
 	.carousel-img {

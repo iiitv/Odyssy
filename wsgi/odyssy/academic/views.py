@@ -4,18 +4,16 @@ from academic.models import Course, Programme
 
 def all_programme(request):
     programmes = Programme.objects.all().order_by('name')
-    print(programmes.filter(name='P.hD.'))
     context = {
         'btech': programmes.filter(name='B.Tech'),
         'mtech': programmes.filter(name='M.Tech'),
-        'phd': programmes.filter(name='P.hD.')
+        'phd': programmes.filter(name='Ph.D.')
     }
     return render(request, 'academic/all_programme.html', context=context)
 
 
 def single_programme(request, name, branch):
     programme = Programme.objects.filter(name=name, branch_code=branch)
-    print(programme)
     sems_list = list()
     sems = 8 if name == 'B.Tech' else 4
     for i in range(1, sems+1):
@@ -31,11 +29,9 @@ def single_programme(request, name, branch):
     return render(request, 'academic/single_programme.html', context=context)
 
 
-def single_course(request, name, branch, semester):
+def single_course(request, name, branch, semester, course_code):
     programme = Programme.objects.filter(name=name, branch_code=branch)
-    print(programme)
-    courses = Course.objects.filter(programme=programme, semester=semester)
-    print(courses)
+    courses = Course.objects.filter(programme=programme, semester=semester, code=course_code)
     context = {
         'courses': courses,
         'programme': programme[0],
