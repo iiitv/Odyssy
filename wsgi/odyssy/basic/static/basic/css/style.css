@@ -179,7 +179,8 @@ body {
 }
 
 .site-content {
-    background: linear-gradient(to right, rgb(27, 183, 199) 0%, rgb(39, 2, 100) 100%);
+    background: linear-gradient(to right, rgb(95, 134, 224) 0%, rgb(31, 184, 212) 100%);
+    /*background: linear-gradient(to right, rgb(27, 183, 199) 0%, rgb(39, 2, 100) 100%);*/
     padding-bottom: 50px;
     color: #FFF8E1;
     min-height: 50vh;

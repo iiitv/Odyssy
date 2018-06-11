@@ -1,29 +1,81 @@
 {% extends 'basic/base.html' %}
 {% block title %}
     IIIT-V | Academics
+    {% load staticfiles %}
 {% endblock %}
 {% block body %}
-<div class="uk-container">
-<!-- Contents starts here -->
-    <h3 class="uk-card-title uk-margin-remove-bottom">Academics: Offered programmes</h3>
-
-        <div>
-            <h4>B.Tech:</h4>
+<div class="uk-container uk-margin-small-top">
+    <div class="uk-card uk-card-default uk-width-1-1@m uk-margin-small">
+        <div class="uk-card-header">
+            <div class="uk-grid-small uk-flex-middle" uk-grid>
+                <div class="uk-width-auto">
+                     <img class="" width="50" height="50" src="{% static 'basic/images/majors.png' %}">
+                </div>
+                <div class="uk-width-expand">
+                    <h3 class="uk-card-title uk-margin-remove-bottom">Bachelor's Degree Programs</h3>
+                </div>
+            </div>
+        </div>
+        <div class="uk-card-body">
+            <h5>IIITV offers bachelors degree in technology in Computer Science and Information Technology.</h5>
             {% for branch in btech %}
-            <div><a href="{{ branch.get_url }}">{{ branch.branch_name }}</a></div>
+            <div class="uk-text-lead"><a class="uk-link-heading uk-text-primary" href="{{ branch.get_url }}">{{ branch.branch_name }}</a></div>
             {% endfor %}
         </div>
-        <div>
-            <h4>M.Tech:</h4>
-            {% for branch in mtech %}
-            <div><a href="{{ branch.get_url }}">{{ branch.branch_name }}">{{ branch.branch_name }}</a></div>
-            {% endfor %}
+        <div class="uk-card-footer">
+            <a href="{% url 'admission:admission' 'btech' %}" class="uk-button uk-button-text uk-text-bold">Read more about admissions</a>
         </div>
-        <div>
-            {% for branch in phd %}
-                <div><a href="{{ branch.get_url }}">{{ branch.branch_name }}">P.hD.</a> </div>
-            {% endfor %}
+    </div>
+    {% if mtech %}
+        <div class="uk-card uk-card-default uk-width-1-1@m uk-margin-small">
+            <div class="uk-card-header">
+                <div class="uk-grid-small uk-flex-middle" uk-grid>
+                    <div class="uk-width-auto">
+                         <img class="" width="50" height="50" src="{% static 'basic/images/majors.png' %}">
+                    </div>
+                    <div class="uk-width-expand">
+                        <h3 class="uk-card-title uk-margin-remove-bottom">Master's Degree Programs</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="uk-card-body">
+                <h5>IIITV offers masters degree in technology in Computer Science.</h5>
+                {% for branch in mtech %}
+                <div class="uk-text-lead"><a class="uk-link-heading uk-text-primary" href="{{ branch.get_url }}">{{ branch.branch_name }}</a></div>
+                {% endfor %}
+            </div>
+            <div class="uk-card-footer">
+                    <a href="{% url 'admission:admission' 'mtech' %}" class="uk-button uk-button-text uk-text-bold">Read more about admissions</a>
+            </div>
         </div>
-
+    {% endif %}
+    {% if not phd %}
+        <div class="uk-card uk-card-default uk-width-1-1@m uk-margin-small">
+            <div class="uk-card-header">
+                <div class="uk-grid-small uk-flex-middle" uk-grid>
+                    <div class="uk-width-auto">
+                         <img class="" width="50" height="50" src="{% static 'basic/images/courses.png' %}">
+                    </div>
+                    <div class="uk-width-expand">
+                        <h3 class="uk-card-title uk-margin-remove-bottom">PhD</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="uk-card-body">
+                <h5>
+                    Doctoral Program is intended for students who wish to conduct, manage or interpret research in academic, industry or government settings.
+                    This degree certifies credible completion of an approved program of advanced study in addition to a research thesis of high quality based on original research.
+                    Program comprises of one-two semester of intensive course work followed by minimum of two-three years of research.
+                    Students are expected to demonstrate excellence in research area via quality publications in reputed journals and conferences.
+                </h5>
+                {% for branch in phd %}
+                <div class="uk-text-lead"><a class="uk-link-heading uk-text-primary" href="{{ branch.get_url }}">{{ branch.branch_name }}</a></div>
+                {% endfor %}
+            </div>
+            <div class="uk-card-footer">
+                <a href="http://pgadmissions.iiitvadodara.ac.in/" class="uk-button uk-button-text uk-text-bold">Read more about admissions</a>
+            </div>
+        </div>
+    {% endif %}
 </div>
 {% endblock %}

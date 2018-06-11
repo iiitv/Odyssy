@@ -36,7 +36,7 @@
                 <div class="uk-navbar-right">
                     <ul class="uk-navbar-nav">
                         <li>
-                            <a class="nav-a uk-button-text" href="#">Home</a>
+                            <a class="nav-a uk-button-text" href="{% url 'index-view' %}">Home</a>
                             <div uk-dropdown="animation: uk-animation-slide-top-small; duration: 300">
                                  <div class="uk-dropdown-grid uk-child-width-1-1@m" uk-grid>
                                         <ul class="uk-nav uk-dropdown-nav">
@@ -147,7 +147,7 @@
                                 <li><a href="{% url 'logout' %}"><span class="uk-margin-small-right" uk-icon="icon: sign-out"></span>Logout</a></li>
                             {% endif %}
                             <li class="uk-nav-divider"></li>
-                            <li class="uk-active"><a href="#">Home</a></li>
+                            <li class="uk-active"><a href="{% url 'index-view' %}">Home</a></li>
                             <li class="uk-parent">
                                 <ul class="uk-nav-sub">
                                     <li><a href="/committee/about.html">About</a></li>
