@@ -61,8 +61,8 @@ nav {
 }
 
 .uk-navbar-nav>li>a:hover {
-    color: #F44336 !important;
-	background: #616161;
+    color: #FFF !important;
+	background: #777373;
 }
 
 .uk-dropdown-nav>li>a:hover {
