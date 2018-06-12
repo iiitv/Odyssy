@@ -63,7 +63,16 @@
                             </div>
                         </li>
                         <li>
-                            <a class="nav-a uk-button-text" href="{% url 'academic:all-programme' %}">Academics</a>
+                            <a class="nav-a uk-button-text" href="#">Academics</a>
+                            <div uk-dropdown="animation: uk-animation-slide-top-small; duration: 300">
+                                 <div class="uk-dropdown-grid uk-child-width-1-1@m" uk-grid>
+                                        <ul class="uk-nav uk-dropdown-nav">
+                                            <li><a href="{% url 'academic:all-programme' %}">Degree programs</a></li>
+                                            <li><a href="{% url 'academic:all-calenders' %}">Academic calenders</a></li>
+                                        </ul>
+                                 </div>
+                            </div>
+
                         </li>
                         <li>
                             <a class="nav-a uk-button-text" href="#">Admissions</a>

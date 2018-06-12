@@ -1,0 +1,30 @@
+{% extends 'basic/base.html' %}
+{% load staticfiles %}
+{% block title %}
+    IIIT-V | Academic calenders
+{% endblock %}
+{% block body %}
+<div class="uk-container uk-margin-small-top">
+    {% for cal in calenders %}
+        <div class="uk-card uk-card-default uk-margin-small uk-card-hover">
+            <a class="uk-link-heading" target="_blank" href="{{ cal.get_url }}">
+            <div class="uk-card-body">
+                <div class="uk-flex-middle" uk-grid>
+                    <div class="uk-width-1-6@m">
+                        <span uk-icon="cloud-download" ratio="2"></span>
+                    </div>
+                    <div class="uk-grid-small uk-width-5-6@m uk-child-width-1-2@l uk-flex-middle" uk-grid>
+                        <div class="uk-width-expand">
+                            <h4 class="uk-card-title uk-margin-remove-bottom">{{ cal.name }}</h4>
+                        </div>
+                        <div class="uk-text-right">
+                            {{ cal.date }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </a>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}

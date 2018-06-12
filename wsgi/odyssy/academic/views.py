@@ -1,5 +1,25 @@
+from django.http import HttpResponse
 from django.shortcuts import render
-from academic.models import Course, Programme
+from academic.models import Course, Programme, Calendar
+from django.utils.encoding import smart_str
+
+
+def all_calenders(request):
+    calenders = Calendar.objects.all()
+    return render(request, 'academic/ac.html', context={'calenders': reversed(calenders)})
+
+
+def throw_cal_response(name):
+    calender = Calendar.objects.get(slug=name)
+    filename = calender.file.name.split('/')[-1]
+    response = HttpResponse(calender.file, content_type='application/pdf')
+    response['Content-Disposition'] = 'attachment; filename=%s' % filename
+    response['X-Sendfile'] = calender.file
+    return response
+
+
+def load_calender(request, name):
+    return throw_cal_response(name)
 
 
 def all_programme(request):

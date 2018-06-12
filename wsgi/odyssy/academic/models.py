@@ -1,7 +1,43 @@
 from __future__ import unicode_literals
 
+import itertools
+
 from django.db import models
+from django.db.models.signals import post_save
+from django.dispatch import receiver
 from django.urls import reverse
+from django.utils.text import slugify
+
+
+class Calendar(models.Model):
+    class Meta:
+        ordering = ('-date', )
+        verbose_name = 'Academic Calender'
+        verbose_name_plural = 'Academic Calenders'
+
+    file = models.FileField(upload_to='calenders/')
+    slug = models.SlugField(unique=True, null=True, blank=True)
+    name = models.TextField(max_length=1000, unique=True, blank=True, null=True, default='ac')
+    date = models.DateField(auto_now=True)
+
+    def __str__(self):
+        return self.name + ' : ' + str(self.date)
+
+    def get_url(self):
+        return reverse('academic:down-calender', args=[self.slug])
+
+
+@receiver(post_save, sender=Calendar)
+def slugify_calender(sender, instance, created, **kwargs):
+    if created:
+        instance.slug = orig = slugify(instance.name)
+
+        for x in itertools.count(1):
+            if not Calendar.objects.filter(slug=instance.slug).exists():
+                break
+            instance.slug = '%s-%d' % (orig, x)
+
+        instance.save()
 
 
 class Programme(models.Model):
