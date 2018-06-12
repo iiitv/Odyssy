@@ -15,7 +15,7 @@
                                     <img class="uk-border-rounded" width="200" src="{% static people.photo %}">
                                     <div class="uk-width-expand">
                                         <h3 class="uk-card-title uk-margin-remove-bottom">{{ people }}</h3>
-                                        <p class="uk-text-meta uk-margin-remove-top">{{ people.get_status_display }}</p>
+                                        <p class="uk-text-meta uk-margin-remove-top">{{ people.post }}</p>
                                     </div>
                                 </div>
                             </div>
@@ -38,6 +38,10 @@
                                         <div class="uk-padding-large uk-margin-medium-top uk-padding-remove-right">
                                             <img class="uk-border-rounded" width="200px" src="{% static people.photo %}" alt="">
                                             <br>
+                                            <br>
+                                            <p class="uk-text-meta">
+                                                {{ people.post }}
+                                            </p>
                                             <br>
                                             {% if people.user == user %}
                                                 <a href="{% url 'dashboard:update_profile' %}" target="_blank"><span uk-icon="file-edit" ratio="1.5"></span> Edit profile</a>
