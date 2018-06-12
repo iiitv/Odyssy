@@ -110,14 +110,15 @@
                                 <div class="uk-dropdown-grid uk-child-width-1-1@m" uk-grid>
                                     <div class="uk-padding-remove">
                                         <ul class="uk-nav uk-dropdown-nav">
-                                            <li><a href="/more/faq.html">FAQs</a></li>
-                                            <li><a href="/more/hostel.html">Hostel</a></li>
                                             <li><a href="/more/student_corner.html">Student's Corner</a></li>
                                             <li><a href="http://moodle.iiitv.ac.in">Moodle</a></li>
+                                            <li><a href="/more/hostel.html">Hostel</a></li>
                                             <li><a href="/more/library.html">Library</a></li>
                                             <li><a href="/more/invited_talks.html">Invited Talks</a></li>
                                             <li><a href="https://sites.google.com/iiitvadodara.ac.in/placements/home">Placements</a></li>
                                             <li><a href="/gallery/">Photo Gallery</a></li>
+                                            <li><a href="/more/faq.html">FAQs</a></li>
+                                            <li><a href="#">Useful link</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -176,6 +177,12 @@
                                 </ul>
                             </li>
                             <li class="uk-active"><a href="{% url 'academic:all-programme' %}">Academics</a></li>
+                            <li class="uk-parent">
+                                <ul class="uk-subnav">
+                                    <li><a href="{% url 'academic:all-programme' %}">Degree programs</a></li>
+                                    <li><a href="{% url 'academic:all-calenders' %}">Academic calenders</a></li>
+                                </ul>
+                            </li>
                             <li class="uk-active"><a href="#">Admissions</a></li>
                             <li class="uk-parent">
                                 <ul class="uk-nav-sub">
