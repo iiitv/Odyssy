@@ -4,7 +4,7 @@
 {% endblock %}
 {% load static %}
 {% block body %}
-    <div class="contents-wrapper">
+    <div class="uk-container">
         <div class="row people">
             <div class="col-sm-4 pic-meta">
                 <img width="200px" src="{% static person.photo %}" alt="">
@@ -12,6 +12,21 @@
                     <h3>{{ person.name }}</h3>
                     <h3>{{ person.post }}</h3>
                 </div>
+                {% if people.link_fb != '#' %}
+                    <a href="{{ people.link_fb }}" target="_blank" uk-tooltip="connect on facebook"><span uk-icon="facebook" ratio="1.5"></span></a>
+                {% endif %}
+                {% if people.link_tw != '#' %}
+                    <a href="{{ people.link_tw }}" target="_blank" uk-tooltip="follow on twitter"><span uk-icon="twitter" ratio="1.5"></span></a>
+                {% endif %}
+                {% if people.link_gh != '#' %}
+                    <a href="{{ people.link_gh}}" target="_blank" uk-tooltip="Find on Github"><span uk-icon="github" ratio="1.5"></span></a>
+                {% endif %}
+                {% if people.link_ln != '#' %}
+                    <a href="{{ people.link_ln }}" target="_blank" uk-tooltip="connect on LinkedIn"><span uk-icon="linkedin" ratio="1.5"></span></a>
+                {% endif %}
+                {% if people.link_gs != '#' %}
+                    <a href="{{ people.link_gs }}" target="_blank" uk-tooltip="find on Google Scholars"><span uk-icon="google" ratio="1.5"></span></a>
+                {% endif %}
             </div>
             <div class="col-sm-8">
                 {% if person.academic_qualifications %}

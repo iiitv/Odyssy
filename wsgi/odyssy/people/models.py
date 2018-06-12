@@ -50,6 +50,11 @@ class People(models.Model):
     publications = models.TextField(max_length=10000, blank=True, null=True)
     teaching = models.TextField(max_length=200, blank=True, null=True)
     other = models.TextField(max_length=200, blank=True, null=True)
+    link_fb = models.URLField(default='#', blank=True, null=True, max_length=400)
+    link_tw = models.URLField(default='#', blank=True, null=True, max_length=400)
+    link_ln = models.URLField(default='#', blank=True, null=True, max_length=400)
+    link_gs = models.URLField(default='#', blank=True, null=True, max_length=400)
+    link_gh = models.URLField(default='#', blank=True, null=True, max_length=400)
 
     def get_url(self):
         return reverse('people:details', args=[self.slug])

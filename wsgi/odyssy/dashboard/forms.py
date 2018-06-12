@@ -107,6 +107,11 @@ class PeopleProfileForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super(PeopleProfileForm, self).__init__(*args, **kwargs)
         self.fields['photo'].label = 'Photo'
+        self.fields['link_gh'].label = 'Github profile'
+        self.fields['link_ln'].label = 'LinkedIn profile'
+        self.fields['link_gs'].label = 'Google Scholars profile'
+        self.fields['link_tw'].label = 'Twitter profile'
+        self.fields['link_fb'].label = 'Facebook profile'
         self.fields['name'].label = 'Full Name'
         self.fields['post'].label = 'Current Post'
         self.fields['email'].label = 'E-mail'
@@ -137,7 +142,8 @@ class PeopleProfileForm(forms.ModelForm):
         model = People
         fields = {'photo', 'name', 'post', 'email', 'office', 'academic_highlights', 'area_of_interest',
                   'academic_qualifications', 'status', 'professional_memberships', 'work_experience',
-                  'administrative_experience', 'publications', 'teaching', 'other'}
+                  'administrative_experience', 'publications', 'teaching', 'other', 'link_fb', 'link_tw', 'link_gs',
+                  'link_ln', 'link_gh'}
 
 
 class SignUpForm(UserCreationForm):
