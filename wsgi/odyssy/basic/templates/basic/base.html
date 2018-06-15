@@ -40,10 +40,10 @@
                             <div uk-dropdown="animation: uk-animation-slide-top-small; duration: 300">
                                  <div class="uk-dropdown-grid uk-child-width-1-1@m" uk-grid>
                                         <ul class="uk-nav uk-dropdown-nav">
-                                            <li><a href="/committee/about.html">About</a></li>
-                                            <li><a href="/committee/directors_message.html">Director's message</a></li>
-                                            <li><a href="/committee/rti.html">RTI</a></li>
-                                            <li><a href="{% static 'basic/pdf/MOU.pdf' %}">MOU</a></li>
+                                            <li class="uk-button-text"><a href="/committee/about.html">About</a></li>
+                                            <li class="uk-button-text"><a href="/committee/directors_message.html">Director's message</a></li>
+                                            <li class="uk-button-text"><a href="/committee/rti.html">RTI</a></li>
+                                            <li class="uk-button-text"><a target="_blank" href="{% static 'basic/pdf/MOU.pdf' %}">MOU</a></li>
                                         </ul>
                                  </div>
                             </div>
@@ -53,11 +53,11 @@
                             <div uk-dropdown="animation: uk-animation-slide-top-small; duration: 300">
                                  <div class="uk-dropdown-grid uk-child-width-1-1@m" uk-grid>
                                         <ul class="uk-nav uk-dropdown-nav">
-                                            <li><a href="/committee/bog.html">Board of governors</a></li>
-                                            <li><a href="/committee/society_members.html">Society Members</a></li>
-                                            <li><a href="/committee/senate.html">Senate</a></li>
-                                            <li><a href="{% url 'committee:all-committee' %}">Committees</a></li>
-                                            <li><a href="{% url 'linkages:linkage-all' %}">Linkages</a></li>
+                                            <li class="uk-button-text"><a href="/committee/bog.html">Board of governors</a></li>
+                                            <li class="uk-button-text"><a href="/committee/society_members.html">Society Members</a></li>
+                                            <li class="uk-button-text"><a href="/committee/senate.html">Senate</a></li>
+                                            <li class="uk-button-text"><a href="{% url 'committee:all-committee' %}">Committees</a></li>
+                                            <li class="uk-button-text"><a href="{% url 'linkages:linkage-all' %}">Linkages</a></li>
                                         </ul>
                                  </div>
                             </div>
@@ -67,8 +67,8 @@
                             <div uk-dropdown="animation: uk-animation-slide-top-small; duration: 300">
                                  <div class="uk-dropdown-grid uk-child-width-1-1@m" uk-grid>
                                         <ul class="uk-nav uk-dropdown-nav">
-                                            <li><a href="{% url 'academic:all-programme' %}">Degree programs</a></li>
-                                            <li><a href="{% url 'academic:all-calenders' %}">Academic calenders</a></li>
+                                            <li class="uk-button-text"><a href="{% url 'academic:all-programme' %}">Degree programs</a></li>
+                                            <li class="uk-button-text"><a href="{% url 'academic:all-calenders' %}">Academic calenders</a></li>
                                         </ul>
                                  </div>
                             </div>
@@ -80,9 +80,9 @@
                                 <div class="uk-dropdown-grid uk-child-width-1-1@m" uk-grid>
                                     <div>
                                         <ul class="uk-nav uk-dropdown-nav">
-                                            <li class="uk-active"><a href="/admission/btech">B.Tech</a></li>
-                                            <li class="uk-active"><a href="/admission/mtech">M.Tech</a></li>
-                                            <li class="uk-active"><a target="_blank" href="http://pgadmissions.iiitvadodara.ac.in/programs-offered-1">Ph.D</a></li>
+                                            <li class="uk-active uk-button-text"><a href="/admission/btech">B.Tech</a></li>
+                                            <li class="uk-active uk-button-text"><a href="/admission/mtech">M.Tech</a></li>
+                                            <li class="uk-active uk-button-text"><a target="_blank" href="http://pgadmissions.iiitvadodara.ac.in/programs-offered-1">Ph.D</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -94,11 +94,11 @@
                                 <div class="uk-dropdown-grid uk-child-width-1-1@m" uk-grid>
                                     <div class="uk-padding-remove">
                                         <ul class="uk-nav uk-dropdown-nav">
-                                            <li class="uk-active"><a href="{% url 'people:faculty' %}">Faculty</a></li>
-                                            <li class="uk-active"><a href="{% url 'people:former_faculty' %}">Former Faculty</a></li>
-                                            <li class="uk-active"><a href="{% url 'people:visiting_faculty' %}">Visiting Faculty</a></li>
-                                            <li class="uk-active"><a href="{% url 'people:staff' %}">Staff</a></li>
-                                            <li class="uk-active"><a href="{% url 'people:phd' %}">Ph.D scholars</a></li>
+                                            <li class="uk-active uk-button-text"><a href="{% url 'people:faculty' %}">Faculty</a></li>
+                                            <li class="uk-active uk-button-text"><a href="{% url 'people:former_faculty' %}">Former Faculty</a></li>
+                                            <li class="uk-active uk-button-text"><a href="{% url 'people:visiting_faculty' %}">Visiting Faculty</a></li>
+                                            <li class="uk-active uk-button-text"><a href="{% url 'people:staff' %}">Staff</a></li>
+                                            <li class="uk-active uk-button-text"><a href="{% url 'people:phd' %}">Ph.D scholars</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -110,15 +110,14 @@
                                 <div class="uk-dropdown-grid uk-child-width-1-1@m" uk-grid>
                                     <div class="uk-padding-remove">
                                         <ul class="uk-nav uk-dropdown-nav">
-                                            <li><a href="/more/student_corner.html">Student's Corner</a></li>
-                                            <li><a href="http://moodle.iiitv.ac.in">Moodle</a></li>
-                                            <li><a href="/more/hostel.html">Hostel</a></li>
-                                            <li><a href="/more/library.html">Library</a></li>
-                                            <li><a href="/more/invited_talks.html">Invited Talks</a></li>
-                                            <li><a href="https://sites.google.com/iiitvadodara.ac.in/placements/home">Placements</a></li>
-                                            <li><a href="/gallery/">Photo Gallery</a></li>
-                                            <li><a href="/more/faq.html">FAQs</a></li>
-                                            <li><a href="#">Useful link</a></li>
+                                            <li class="uk-button-text"><a href="/more/student_corner.html">Student's Corner</a></li>
+                                            <li class="uk-button-text"><a href="/more/hostel.html">Hostel</a></li>
+                                            <li class="uk-button-text"><a href="/more/library.html">Library</a></li>
+                                            <li class="uk-button-text"><a href="/more/invited_talks.html">Invited Talks</a></li>
+                                            <li class="uk-button-text"><a href="https://sites.google.com/iiitvadodara.ac.in/placements/home">Placements</a></li>
+                                            <li class="uk-button-text"><a href="/gallery/">Photo Gallery</a></li>
+                                            <li class="uk-button-text"><a href="/more/faq.html">FAQs</a></li>
+                                            <li class="uk-button-text"><a href="#">Useful link</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -130,8 +129,8 @@
                                 <div class="uk-dropdown-grid uk-child-width-1-1@m" uk-grid>
                                     <div>
                                         <ul class="uk-nav uk-dropdown-nav">
-                                            <li class="uk-active"><a href="#">Tenders</a></li>
-                                            <li class="uk-active"><a href="#">Office orders</a></li>
+                                            <li class="uk-active uk-button-text"><a href="#">Tenders</a></li>
+                                            <li class="uk-active uk-button-text"><a href="#">Office orders</a></li>
                                         </ul>
                                     </div>
                                 </div>

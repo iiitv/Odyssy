@@ -67,7 +67,7 @@ nav {
 }
 
 .uk-dropdown-nav>li>a:hover {
-    color: #F44336 !important;
+    color: #2a184c  !important;
 }
 
 /* Footer */
@@ -196,7 +196,7 @@ body {
 }
 
 .index-card-heading:hover {
-    color: #F44336 !important;
+    color: #2a184c !important;
 }
 
 index-announcement-card a:hover, .index-3row-card a:hover {
