@@ -6,12 +6,13 @@
 
 .nav-a {
 	height: 50px !important;
+	color: white !important;
 }
 
 #header {
 	display: inline-flex;
 	width: 100%;
-	background: white !important;
+	background: #2a184c !important;
 	box-shadow: 0 0 5px black;
 	padding-bottom: 5px;
 	padding-top: 5px;
@@ -56,7 +57,7 @@
 
 nav {
 	width: 70%;
-	background: white !important;
+	background: #2a184c !important;
 	align-self: center;
 }
 
@@ -172,6 +173,11 @@ footer {
 	color: black !important;
 }
 
+
+.uk-navbar-nav li .nav-a {
+	color: white !important;
+}
+
 body {
     display: flex;
     min-height: 100vh;
@@ -179,7 +185,8 @@ body {
 }
 
 .site-content {
-    background: linear-gradient(to right, rgb(95, 134, 224) 0%, rgb(31, 184, 212) 100%);
+	background: #504f96;
+    /*background: linear-gradient(to right, rgb(95, 134, 224) 0%, rgb(31, 184, 212) 100%);*/
     /*background: linear-gradient(to right, rgb(27, 183, 199) 0%, rgb(39, 2, 100) 100%);*/
     padding-bottom: 50px;
     color: #FFF8E1;
@@ -197,10 +204,12 @@ index-announcement-card a:hover, .index-3row-card a:hover {
 }
 
 .widget-container {
-    background: linear-gradient(141deg, #2388b0, #3ac);
-    color: rgba(255,255,255,1);
-	box-shadow: 0 0 5px black!important;
-    border-radius: 10px;
+    color: black;
+}
+
+.index-3row-card {
+	background: #e5eaf2;
+	border-radius: 10px;
 }
 
 .uk-card {
