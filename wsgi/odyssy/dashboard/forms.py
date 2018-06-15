@@ -129,11 +129,12 @@ class PeopleProfileForm(forms.ModelForm):
 
     def save(self):
         instance = super(PeopleProfileForm, self).save(commit=False)
-        instance.slug = orig = slugify(instance.name)
-        for x in itertools.count(1):
-            if not People.objects.filter(slug=instance.slug).exists():
-                break
-            instance.slug = '%s-%d' % (orig, x)
+        if not instance.slug:
+            instance.slug = orig = slugify(instance.name)
+            for x in itertools.count(1):
+                if not People.objects.filter(slug=instance.slug).exists():
+                    break
+                instance.slug = '%s-%d' % (orig, x)
 
         instance.save()
         return instance
@@ -221,11 +222,12 @@ class AnnouncementForm(forms.ModelForm):
 
     def save(self):
         instance = super(AnnouncementForm, self).save(commit=False)
-        instance.slug = orig = slugify(instance.title)
-        for x in itertools.count(1):
-            if not Announcement.objects.filter(slug=instance.slug).exists():
-                break
-            instance.slug = '%s-%d' % (orig, x)
+        if not instance.slug:
+            instance.slug = orig = slugify(instance.title)
+            for x in itertools.count(1):
+                if not Announcement.objects.filter(slug=instance.slug).exists():
+                    break
+                instance.slug = '%s-%d' % (orig, x)
 
         instance.save()
         return instance
@@ -270,11 +272,12 @@ class EventForm(forms.ModelForm):
 
     def save(self):
         instance = super(EventForm, self).save(commit=False)
-        instance.slug = orig = slugify(instance.title)
-        for x in itertools.count(1):
-            if not Event.objects.filter(slug=instance.slug).exists():
-                break
-            instance.slug = '%s-%d' % (orig, x)
+        if not instance.slug:
+            instance.slug = orig = slugify(instance.title)
+            for x in itertools.count(1):
+                if not Event.objects.filter(slug=instance.slug).exists():
+                    break
+                instance.slug = '%s-%d' % (orig, x)
 
         instance.save()
         return instance
@@ -315,11 +318,12 @@ class NewsForm(forms.ModelForm):
 
     def save(self):
         instance = super(NewsForm, self).save(commit=False)
-        instance.slug = orig = slugify(instance.title)
-        for x in itertools.count(1):
-            if not News.objects.filter(slug=instance.slug).exists():
-                break
-            instance.slug = '%s-%d' % (orig, x)
+        if not instance.slug:
+            instance.slug = orig = slugify(instance.title)
+            for x in itertools.count(1):
+                if not News.objects.filter(slug=instance.slug).exists():
+                    break
+                instance.slug = '%s-%d' % (orig, x)
 
         instance.save()
         return instance

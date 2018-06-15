@@ -5,67 +5,94 @@
 {% load static %}
 {% block body %}
     <div class="uk-container">
-        <div class="row people">
-            <div class="col-sm-4 pic-meta">
-                <img width="200px" src="{% static person.photo %}" alt="">
-                <div class="meta">
-                    <h3>{{ person.name }}</h3>
-                    <h3>{{ person.post }}</h3>
+        <div class="uk-card-default uk-card uk-margin-medium-top uk-card-hover">
+            <div class="uk-grid-collapse uk-child-width-1-2@m uk-container uk-flex-middle" uk-grid>
+                <div>
+                    <div class="uk-padding-small uk-padding-remove-right">
+                        <img class="uk-border-rounded" width="200px" src="{% static person.photo %}" alt="">
+                        <br>
+                        <br>
+                        <p class="uk-text-meta">
+                            {{ person.post }}
+                        </p>
+                        {% if person.user == user %}
+                            <a href="{% url 'dashboard:update_profile' %}" target="_blank"><span uk-icon="file-edit" ratio="1.5"></span> Edit profile</a>
+                        {% endif %}
+                    </div>
+
                 </div>
-                {% if people.link_fb != '#' %}
-                    <a href="{{ people.link_fb }}" target="_blank" uk-tooltip="connect on facebook"><span uk-icon="facebook" ratio="1.5"></span></a>
-                {% endif %}
-                {% if people.link_tw != '#' %}
-                    <a href="{{ people.link_tw }}" target="_blank" uk-tooltip="follow on twitter"><span uk-icon="twitter" ratio="1.5"></span></a>
-                {% endif %}
-                {% if people.link_gh != '#' %}
-                    <a href="{{ people.link_gh}}" target="_blank" uk-tooltip="Find on Github"><span uk-icon="github" ratio="1.5"></span></a>
-                {% endif %}
-                {% if people.link_ln != '#' %}
-                    <a href="{{ people.link_ln }}" target="_blank" uk-tooltip="connect on LinkedIn"><span uk-icon="linkedin" ratio="1.5"></span></a>
-                {% endif %}
-                {% if people.link_gs != '#' %}
-                    <a href="{{ people.link_gs }}" target="_blank" uk-tooltip="find on Google Scholars"><span uk-icon="google" ratio="1.5"></span></a>
-                {% endif %}
+                <div class="uk-padding-small-right uk-text-center uk-box-shadow-small uk-box-shadow-hover-large uk-padding-small">
+                    {% if person.link_fb != '#' %}
+                        <a href="{{ person.link_fb }}" target="_blank" uk-tooltip="connect on facebook"><span uk-icon="facebook" ratio="1.5"></span></a>
+                    {% endif %}
+                    {% if person.link_tw != '#' %}
+                        <a href="{{ person.link_tw }}" target="_blank" uk-tooltip="follow on twitter"><span uk-icon="twitter" ratio="1.5"></span></a>
+                    {% endif %}
+                    {% if person.link_gh != '#' %}
+                        <a href="{{ person.link_gh}}" target="_blank" uk-tooltip="Find on Github"><span uk-icon="github" ratio="1.5"></span></a>
+                    {% endif %}
+                    {% if person.link_ln != '#' %}
+                        <a href="{{ person.link_ln }}" target="_blank" uk-tooltip="connect on LinkedIn"><span uk-icon="linkedin" ratio="1.5"></span></a>
+                    {% endif %}
+                    {% if person.link_gs != '#' %}
+                        <a href="{{ person.link_gs }}" target="_blank" uk-tooltip="find on Google Scholars"><span uk-icon="google" ratio="1.5"></span></a>
+                    {% endif %}
+                    {% if person.email != '#' %}
+                        <a href="mailto:{{ person.email }}" target="_blank" uk-tooltip="{{ person.email }}"><span uk-icon="mail" ratio="1.5"></span></a>
+                    {% endif %}
+{#                                        <a href="{{ person.get_url }}" uk-tooltip="Full profile"><span uk-icon="desktop" ratio="1.5"></span></a>#}
+                    <br>
+                    {% if person.office %}
+                        <h5>Office: {{ person.office }}</h5>
+                    {% endif %}
+                </div>
             </div>
-            <div class="col-sm-8">
+            <div class="uk-card-default uk-padding-small uk-card uk-margin-medium-top uk-card-hover uk-margin-small-right uk-margin-small-left">
                 {% if person.academic_qualifications %}
                     <h3><strong>Academic qualifications:</strong></h3>
                     <p>{{ person.academic_qualifications | safe }}</p>
                 {% endif %}
+            </div>
+            <div class="uk-card-default uk-padding-small uk-card uk-margin-medium-top uk-card-hover uk-margin-small-right uk-margin-small-left">
                 {% if person.professional_memberships %}
                     <h3><strong>Member of Professional bodies:</strong></h3>
                     <p>{{ person.professional_memberships | safe }}</p>
                 {% endif %}
+            </div>
+            <div class="uk-card-default uk-padding-small uk-card uk-margin-medium-top uk-card-hover uk-margin-small-right uk-margin-small-left">
                 {% if person.area_of_interest %}
                     <h3><strong>Areas of interest:</strong></h3>
                     <p>{{ person.area_of_interest | safe }}</p>
                 {% endif %}
+            </div>
+            <div class="uk-card-default uk-padding-small uk-card uk-margin-medium-top uk-card-hover uk-margin-small-right uk-margin-small-left">
                 {% if person.work_experience %}
                     <h3><strong>Work experience: </strong></h3>
                     <p>{{ person.work_experience | safe }}</p>
                 {% endif %}
+            </div>
+            <div class="uk-card-default uk-padding-small uk-card uk-margin-medium-top uk-card-hover uk-margin-small-right uk-margin-small-left">
                 {% if person.administrative_experience %}
                     <h3><strong>Administrative experience: </strong></h3>
                     <p>{{ person.administrative_experience | safe }}</p>
                 {% endif %}
+            </div>
+            <div class="uk-card-default uk-padding-small uk-card uk-margin-medium-top uk-card-hover uk-margin-small-right uk-margin-small-left">
                 {% if person.publications %}
                     <h3><strong>Publications: </strong></h3>
                     <p>{{ person.publications | safe }}</p>
                 {% endif %}
+            </div>
+            <div class="uk-card-default uk-padding-small uk-card uk-margin-medium-top uk-card-hover uk-margin-small-right uk-margin-small-left">
                 {% if person.teaching %}
                     <h3><strong>Teaching: </strong></h3>
                     <p>{{ person.teaching | safe }}</p>
                 {% endif %}
+            </div>
+            <div class="uk-card-default uk-padding-small uk-card uk-margin-medium-top uk-card-hover uk-margin-small-right uk-margin-small-left">
                 {% if person.other %}
                     <h3><strong>Other: </strong></h3>
                     <p>{{ person.other | safe }}</p>
-                {% endif %}
-                {% if person.office %}
-                    <p>Office: <strong>{{ person.office }}</strong></p>
-                {% endif %}
-                {% if person.email %}
-                    <p>Contact: <strong>{{ person.email }}</strong></p>
                 {% endif %}
             </div>
         </div>
