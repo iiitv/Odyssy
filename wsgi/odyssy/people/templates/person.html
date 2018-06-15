@@ -5,7 +5,7 @@
 {% load static %}
 {% block body %}
     <div class="uk-container">
-        <div class="uk-card-default uk-card uk-margin-medium-top uk-card-hover">
+        <div class="uk-card-default uk-card uk-margin-medium-top uk-card-hover uk-padding-small">
             <div class="uk-grid-collapse uk-child-width-1-2@m uk-container uk-flex-middle" uk-grid>
                 <div>
                     <div class="uk-padding-small uk-padding-remove-right">
@@ -89,7 +89,7 @@
                     <p>{{ person.teaching | safe }}</p>
                 {% endif %}
             </div>
-            <div class="uk-card-default uk-padding-small uk-card uk-margin-medium-top uk-card-hover uk-margin-small-right uk-margin-small-left">
+            <div class="uk-card-default uk-padding-small uk-card uk-margin-medium-top uk-card-hover uk-margin-small-right uk-margin-medium-bottom uk-margin-small-left">
                 {% if person.other %}
                     <h3><strong>Other: </strong></h3>
                     <p>{{ person.other | safe }}</p>
