@@ -63,11 +63,11 @@ nav {
 
 .uk-navbar-nav>li>a:hover {
     color: #FFF !important;
-	background: #777373;
+	background: #0d409c;
 }
 
 .uk-dropdown-nav>li>a:hover {
-    color: #2a184c  !important;
+    color: #0d409c  !important;
 }
 
 /* Footer */
@@ -254,7 +254,7 @@ index-announcement-card a:hover, .index-3row-card a:hover {
     .site-content {
         background: #504f96;
     }
-	
+
 	.widget-card {
 		padding: 0 !important;
 	}
