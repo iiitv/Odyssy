@@ -36,7 +36,7 @@
                 <div class="uk-navbar-right">
                     <ul class="uk-navbar-nav">
                         <li>
-                            <a class="nav-a uk-button-text" href="{% url 'index-view' %}">Home</a>
+                            <a class="nav-a" href="{% url 'index-view' %}">Home</a>
                             <div uk-dropdown="animation: uk-animation-slide-top-small; duration: 300">
                                  <div class="uk-dropdown-grid uk-child-width-1-1@m" uk-grid>
                                         <ul class="uk-nav uk-dropdown-nav">
@@ -49,21 +49,21 @@
                             </div>
                         </li>
                         <li>
-                            <a class="nav-a uk-button-text" href="#">Institute</a>
+                            <a class="nav-a" href="#">Institute</a>
                             <div uk-dropdown="animation: uk-animation-slide-top-small; duration: 300">
                                  <div class="uk-dropdown-grid uk-child-width-1-1@m" uk-grid>
                                         <ul class="uk-nav uk-dropdown-nav">
                                             <li><a href="/committee/bog.html">Board of governors</a></li>
                                             <li><a href="/committee/society_members.html">Society Members</a></li>
                                             <li><a href="/committee/senate.html">Senate</a></li>
-                                            <li><a href="{% url 'linkages:linkage-all' %}">Linkages</a></li>
                                             <li><a href="{% url 'committee:all-committee' %}">Committees</a></li>
+                                            <li><a href="{% url 'linkages:linkage-all' %}">Linkages</a></li>
                                         </ul>
                                  </div>
                             </div>
                         </li>
                         <li>
-                            <a class="nav-a uk-button-text" href="#">Academics</a>
+                            <a class="nav-a" href="#">Academics</a>
                             <div uk-dropdown="animation: uk-animation-slide-top-small; duration: 300">
                                  <div class="uk-dropdown-grid uk-child-width-1-1@m" uk-grid>
                                         <ul class="uk-nav uk-dropdown-nav">
@@ -75,7 +75,7 @@
 
                         </li>
                         <li>
-                            <a class="nav-a uk-button-text" href="#">Admissions</a>
+                            <a class="nav-a" href="#">Admissions</a>
                             <div uk-dropdown="animation: uk-animation-slide-top-small; duration: 300">
                                 <div class="uk-dropdown-grid uk-child-width-1-1@m" uk-grid>
                                     <div>
@@ -89,7 +89,7 @@
                             </div>
                         </li>
                         <li>
-                            <a class="nav-a uk-button-text" href="#">People</a>
+                            <a class="nav-a" href="#">People</a>
                             <div uk-dropdown="animation: uk-animation-slide-top-small; duration: 300">
                                 <div class="uk-dropdown-grid uk-child-width-1-1@m" uk-grid>
                                     <div class="uk-padding-remove">
@@ -105,7 +105,7 @@
                             </div>
                         </li>
                         <li>
-                            <a class="nav-a uk-button-text" href="#">Students</a>
+                            <a class="nav-a" href="#">Students</a>
                             <div uk-dropdown="animation: uk-animation-slide-top-small; duration: 300">
                                 <div class="uk-dropdown-grid uk-child-width-1-1@m" uk-grid>
                                     <div class="uk-padding-remove">
@@ -125,7 +125,7 @@
                             </div>
                         </li>
                         <li>
-                            <a class="nav-a uk-button-text" href="#">Notices</a>
+                            <a class="nav-a" href="#">Notices</a>
                             <div uk-dropdown="animation: uk-animation-slide-top-small; duration: 300">
                                 <div class="uk-dropdown-grid uk-child-width-1-1@m" uk-grid>
                                     <div>
@@ -137,15 +137,15 @@
                                 </div>
                             </div>
                         </li>
-                        <li><a class="nav-a uk-button-text" href="{% url 'dashboard:dashboard' %}"><span uk-icon="icon: user; ratio: 1"></span></a></li>
+                        <li><a class="nav-a" href="{% url 'dashboard:dashboard' %}"><span uk-icon="icon: user; ratio: 1"></span></a></li>
                         {% if user.is_authenticated %}
-                            <li><a class="nav-a uk-button-text" href="{% url 'logout' %}"><span uk-icon="icon: sign-out; ratio: 1"></span></a></li>
+                            <li><a class="nav-a" href="{% url 'logout' %}"><span uk-icon="icon: sign-out; ratio: 1"></span></a></li>
                         {% endif %}
                     </ul>
                 </div>
             </nav>
             <div class="uk-offcanvas-content uk-padding-remove">
-                <button class="uk-icon-button uk-button-default uk-margin-small-top uk-padding-remove" type="button" uk-toggle="target: #offcanvas-nav-primary"><span uk-icon="menu"></span></button>
+                <button class="uk-icon-button uk-button-default uk-margin-small-top uk-padding-remove" type="button" uk-toggle="target: #offcanvas-nav-primary"><span uk-icon="menu" ratio="1.5" style="color: white;"></span></button>
 
                 <div id="offcanvas-nav-primary" uk-offcanvas="flip: true overlay: true">
                     <div class="uk-offcanvas-bar uk-flex uk-flex-column">
