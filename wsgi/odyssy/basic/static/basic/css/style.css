@@ -254,6 +254,10 @@ index-announcement-card a:hover, .index-3row-card a:hover {
     .site-content {
         background: #504f96;
     }
+	
+	.widget-card {
+		padding: 0 !important;
+	}
 }
 
 @media (max-width: 550px) {
