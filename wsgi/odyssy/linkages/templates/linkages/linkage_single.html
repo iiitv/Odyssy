@@ -8,7 +8,7 @@
 <!-- Content wrapper -->
 <div class="uk-container">
     <!-- Contents starts here -->
-    <div class="contents">
+    <div class="uk-card uk-card-hover uk-card-default uk-padding-small uk-margin-medium-top">
         <div class="uk-text-center">
             <h2>{{ link.name }}</h2>
         </div>
@@ -19,19 +19,27 @@
                 </a>
             </div>
         </div>
+        <hr>
         <br/>
         {% if link.description %}
-             <br/>
-            <h4><b>Description:</b></h4>
-            {{ link.description }}
+            <div class="uk-card-default uk-card-hover uk-card uk-padding-small">
+                <h4><b>Description:</b></h4>
+                {{ link.description }}
+            </div>
+            <hr>
         {% endif %}
         {% if link.address %}
-        <br/>
-            <h4><b>Address:</b></h4> &emsp; &emsp;{{ link.address }}
+            <div class="uk-card-default uk-card-hover uk-card uk-padding-small">
+                <h4><b>Address:</b></h4>
+                {{ link.address }}
+            </div>
+            <hr>
         {% endif %}
         {% if link.contact_number %}
-        <br />
-            <h4><b>Contact:</b></h4> &emsp; &emsp;{{ link.contact_number }}
+            <div class="uk-card-default uk-card-hover uk-card uk-padding-small">
+                <h4><b>Contact:</b></h4>{{ link.contact_number }}
+            </div>
+            <hr>
         {% endif %}
         <br />
 
