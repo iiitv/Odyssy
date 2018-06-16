@@ -23,7 +23,7 @@ def load_calender(request, name):
 
 
 def all_programme(request):
-    programmes = Programme.objects.all().order_by('name')
+    programmes = Programme.objects.all().order_by('branch_name')
     context = {
         'btech': programmes.filter(name='B.Tech'),
         'mtech': programmes.filter(name='M.Tech'),
