@@ -18,10 +18,9 @@
         </div>
         <div class="uk-card-body">
             <h5>IIITV offers bachelors degree in technology in Computer Science and Information Technology.</h5>
-            <hr>
             {% for branch in btech %}
-                <div class="uk-text-lead"><a class="uk-link-heading uk-text-primary" href="{{ branch.get_url }}">{{ branch.branch_name }}</a></div>
                 <hr>
+                <div class="uk-text-lead"><a class="uk-link-heading uk-text-primary" href="{{ branch.get_url }}">{{ branch.branch_name }}</a></div>
             {% endfor %}
         </div>
         <div class="uk-card-footer">
@@ -43,8 +42,8 @@
             <div class="uk-card-body">
                 <h5>IIITV offers masters degree in technology in Computer Science.</h5>
                 {% for branch in mtech %}
-                    <div class="uk-text-lead"><a class="uk-link-heading uk-text-primary" href="{{ branch.get_url }}">{{ branch.branch_name }}</a></div>
                     <hr>
+                    <div class="uk-text-lead"><a class="uk-link-heading uk-text-primary" href="{{ branch.get_url }}">{{ branch.branch_name }}</a></div>
                 {% endfor %}
             </div>
             <div class="uk-card-footer">
@@ -72,8 +71,8 @@
                     Students are expected to demonstrate excellence in research area via quality publications in reputed journals and conferences.
                 </h5>
                 {% for branch in phd %}
-                    <div class="uk-text-lead"><a class="uk-link-heading uk-text-primary" href="{{ branch.get_url }}">{{ branch.branch_name }}</a></div>
                     <hr>
+                    <div class="uk-text-lead"><a class="uk-link-heading uk-text-primary" href="{{ branch.get_url }}">{{ branch.branch_name }}</a></div>
                 {% endfor %}
             </div>
             <div class="uk-card-footer">
