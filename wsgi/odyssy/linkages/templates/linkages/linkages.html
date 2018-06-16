@@ -5,30 +5,36 @@ IIITV | Linkages
 {% load static %}
 {% block body %}
 <div class="uk-container">
-    <h2 class="uk-text-center">Linkages of IIIT Vadodara</h2>
+    <div class="uk-card uk-card-default uk-margin-small-top uk-card-hover">
+        <div class="uk-card-header">
+            <h3 class="uk-card-title">Linkages of IIIT Vadodara</h3>
+        </div>
+        <div class="uk-card-body">
+            <div class="uk-grid-margin-small uk-flex-center uk-text-center" uk-grid>
+                {% if link_list %}
+                    {% for link in link_list %}
+                        <div class="uk-card uk-card-hover uk-margin-large-left uk-padding-remove-right uk-width-small uk-margin-small-left uk-card-default uk-margin-small uk-grid-collapse uk-margin" uk-grid>
+                            <div class="uk-card-media-left uk-cover-container">
+                                <a href="{% url 'linkages:linkage-single' link.id %}">
+                                    <img class="uk-padding-small" width="180" src="{% static link.logo %}">
+                                </a>
+                            </div>
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    <p align="center">No Linkages to display</p>
+                {% endif %}
 
-    <div class="uk-grid-margin-small uk-flex-center uk-text-center" uk-grid>
-        {% if link_list %}
-            {% for link in link_list %}
-                <div class="uk-card uk-margin-large-left uk-padding-remove-right uk-width-small uk-margin-small-left uk-card-default uk-margin-small uk-grid-collapse uk-margin" uk-grid>
-                    <div class="uk-card-media-left uk-cover-container">
-                        <a href="{% url 'linkages:linkage-single' link.id %}">
-                            <img class="uk-padding-small" width="180" src="{% static link.logo %}">
-                        </a>
-                    </div>
-                </div>
-            {% endfor %}
-        {% else %}
-            <p align="center">No Linkages to display</p>
-        {% endif %}
+                {% if link_list.has_previous %}
+                    <a href="?page={{ link_list.previous_page_number }}&num_items={{num_items}}">Previous</a>
+                {% endif %}
 
-        {% if link_list.has_previous %}
-            <a href="?page={{ link_list.previous_page_number }}&num_items={{num_items}}">Previous</a>
-        {% endif %}
-
-        {% if link_list.has_next %}
-            <a href="?page={{ link_list.next_page_number }}&num_items={{num_items}}">Next</a>
-        {% endif %}
+                {% if link_list.has_next %}
+                    <a href="?page={{ link_list.next_page_number }}&num_items={{num_items}}">Next</a>
+                {% endif %}
+            </div>
+        </div>
+        <div class="uk-card-footer"></div>
     </div>
 </div>
 {% endblock %}
