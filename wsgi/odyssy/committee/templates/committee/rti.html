@@ -5,25 +5,169 @@
 {% endblock %}
 {% block body %}
 <!-- Content wrapper -->
+{#    {% static 'basic/images/rti_standard_signature_eng_colour-copy.gif' %}#}
 <div class="uk-container">
     <!-- Contents starts here -->
-    <div class="content">
-        <h1 class="uk-text-center uk-margin-small-top">RTI Home</h1>
-        <img class=" responsive-img" src="{% static 'basic/images/rti_standard_signature_eng_colour-copy.gif' %}" align="right" style="width: 25%">
-        <p>Right to Information (RTI) is an Act of the Indian Parliament enforced from the year 2005, to provide for a
-            practical regime for citizens to secure access to information under the control of public authorities. This
-            aims to promote transparency and accountability in the working of every public authority. IIIT Vadodara is
-            covered under this act.</p><br>
-        <p>For RTI queries please write to</p>
-        <h3><p>Public Information Officer (PIO)</p></h3>
-        <p><b>Address:</b> IIIT Vadodara, Block No.9, Government Engineering College, Sector-28, Gandhinagar-382028.</p>
-        <p><b>Phone:</b> +91 (79) 2975 0281</p>
-        <p><b>E-mail:</b>
-            <span>registrar@iiitvadodara.ac.in</span>
-            <a uk-icon="mail" uk-tooltip="Mail your queries" class="uk-icon-button uk-button-secondary" href="mailto:registrar@iiitvadodara.ac.in"></a>
-        </p>
-        <p><a href="/committee/rti-section4.html">RTI Section 4</a></p>
-
+    <div class="uk-card uk-card-default uk-width-1-1@m uk-margin-medium-top">
+        <div class="uk-card-header">
+            <div class="uk-grid-small uk-flex-middle" uk-grid>
+                <div class="uk-width-auto">
+                    <img class="uk-border-circle" width="150" height="150" src=" {% static 'basic/images/rti_standard_signature_eng_colour-copy.gif' %}">
+                </div>
+                <div class="uk-width-expand">
+                    <h3 class="uk-card-title uk-margin-remove-bottom">RTI Home</h3>
+                </div>
+            </div>
+        </div>
+        <div class="uk-card-body">
+            <p>Right to Information (RTI) is an Act of the Indian Parliament enforced from the year 2005, to provide for a
+                practical regime for citizens to secure access to information under the control of public authorities. This
+                aims to promote transparency and accountability in the working of every public authority. IIIT Vadodara is
+                covered under this act.</p><br>
+            <p>For RTI queries please write to</p>
+            <h3><p>Public Information Officer (PIO)</p></h3>
+            <p><b>Address:</b> IIIT Vadodara, Block No.9, Government Engineering College, Sector-28, Gandhinagar-382028.</p>
+            <p><b>Phone:</b> +91 (79) 2975 0281</p>
+            <p><b>E-mail:</b>
+                <span>registrar@iiitvadodara.ac.in</span>
+                <a uk-icon="mail" uk-tooltip="Click to mail your queries" class="uk-icon-button uk-button-secondary" href="mailto:registrar@iiitvadodara.ac.in"></a>
+            </p>
+        </div>
+        <div class="uk-card-footer">
+            <a href="#modal-rti-sec4" class="uk-button uk-button-text" uk-toggle>Read more about RTI Section 4</a>
+        </div>
+    </div>
+    <div id="modal-rti-sec4" class="uk-modal-container" uk-modal>
+        <div class="uk-modal-dialog" uk-scrollspy="cls: uk-animation-slide-bottom-small; target: > div, div > div, table; delay: 150; repeat: true">
+            <button class="uk-modal-close-full uk-close-medium" type="button" uk-close></button>
+            <div class="uk-padding-small">
+                <h2 class="uk-text-center uk-margin-small-top">RTI Section 4
+                    <br/><br/>
+                </h2>
+                <table class="uk-table uk-box-shadow-small uk-text-left uk-table-hover uk-table-responsive uk-table-divider">
+                    <tr>
+                        <td>i</td>
+                        <td>Particulars of organization, Functions and duties</td>
+                        <td><a href="/committee/about.html">About the Institute</a></td>
+                    </tr>
+                    <tr>
+                        <td>ii</td>
+                        <td>Powers and duties of officers and employees</td>
+                        <td>As per the <a href="{% static 'basic/pdf/MOA.pdf' %}" target="_blank">Memorandum Of Association</a> and <a
+                                href="{% static 'basic/pdf/MOA-RULES-ND-REG.pdf' %}" target="_blank">Rules and regulations</a> of IIITV Society
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>iii</td>
+                        <td>Procedures followed in the decision making process, including channels of supervision and
+                            accountability
+                        </td>
+                        <td>As per the <a href="{% static 'basic/pdf/MOA.pdf' %}" target="_blank">Memorandum Of Association</a> and <a
+                                href="{% static 'basic/pdf/MOA-RULES-ND-REG.pdf' %}" target="_blank">Rules and regulations</a> of IIITV Society
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>iv</td>
+                        <td>Norms set by it for the discharge of its functions;</td>
+                        <td>As per the <a href="{% static 'basic/pdf/MOA.pdf' %}" target="_blank">Memorandum Of Association</a> and <a
+                                href="{% static 'basic/pdf/MOA-RULES-ND-REG.pdf' %}" target="_blank">Rules and regulations</a> of IIITV Society
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>v</td>
+                        <td>The rules, regulations, instructions, manuals and records, held by it or under its control or used
+                            by its employees for discharging its functions;
+                        </td>
+                        <td>As per the <a href="{% static 'basic/pdf/MOA.pdf' %}" target="_blank">Memorandum Of Association</a> and <a
+                                href="{% static 'basic/pdf/MOA-RULES-ND-REG.pdf' %}" target="_blank">Rules and regulations</a> of IIITV Society
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>vi</td>
+                        <td>Statement of the categories of documents that are held by it or under its control</td>
+                        <td style="list-style: none;">
+                            <li>Annual Report</li>
+                            <li>Administrative Office Orders/ Decisions and Guidelines as approved by Institutes’ <a
+                                    href="/committee/bog.html">Board of Governors (BOG)</a></li>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>vii</td>
+                        <td>Particulars of arrangement that exists for consultation with, or representation by, the members of
+                            the public in relation to the formulation and its policy or implementation thereof;
+                        </td>
+                        <td>--None--</td>
+                    </tr>
+                    <tr>
+                        <td>viii</td>
+                        <td>Statement of the boards, councils, committees and other bodies consisting of two or more persons
+                            constituted as its part or for the purpose of its advice, and as to whether meetings of those
+                            boards, councils, committees and other bodies are open to the public, or the minutes of such
+                            meetings are accessible for public;
+                        </td>
+                        <td style="list-style: none;">Following are the Main Statutory Committees/ Governing bodies of the Institute:<br/>
+                            <li><a href="/committee/bog.html">Board of Governors</a></li>
+                            <li><a href="{% url 'committee:committee-single' 'finance' %}">Finance Committee</a></li>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>ix</td>
+                        <td>Directory of its officers and employees;</td>
+                        <td>Institute Telephone Directory</td>
+                    </tr>
+                    <tr>
+                        <td>x</td>
+                        <td>The monthly remuneration received by each of its officers and employees, including the system of
+                            compensation as provided in its regulations;
+                        </td>
+                        <td>Provided in Monthly Remuneration</td>
+                    </tr>
+                    <tr>
+                        <td>xi</td>
+                        <td>Budget allocated to each of its agency, indicating the particulars of all plans, proposed
+                            expenditures and reports on disbursements made;
+                        </td>
+                        <td>Being updated</td>
+                    </tr>
+                    <tr>
+                        <td>xii</td>
+                        <td>The manner of execution of subsidy programmes, including the amounts allocated and the details of
+                            beneficiaries of such programmes;
+                        </td>
+                        <td>Being updated</td>
+                    </tr>
+                    <tr>
+                        <td>xiii</td>
+                        <td>Particulars of recipients of concessions, permits or authorizations granted by it;</td>
+                        <td>--</td>
+                    </tr>
+                    <tr>
+                        <td>xiv</td>
+                        <td>Details in respect of the information, available to or held by it reduces in an electronic form;
+                        </td>
+                        <td>This website</td>
+                    </tr>
+                    <tr>
+                        <td>xv</td>
+                        <td>The particulars of facilities available to citizens for obtaining information, including the working
+                            hours of a library or reading room, if maintained for public use;
+                        </td>
+                        <td>Library is not available for public use.</td>
+                    </tr>
+                    <tr>
+                        <td>xvi</td>
+                        <td>The name, designation and other particulars of the Public Information Officers;</td>
+                        <td>Col Ravi Chugh, Registrar, IIIT Vadodara</td>
+                    </tr>
+                    <tr>
+                        <td>xvii</td>
+                        <td>Such other information as may be prescribed; and thereafter update these publications every year;
+                        </td>
+                        <td>This website</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
     </div>
 </div>
 {% endblock %}
