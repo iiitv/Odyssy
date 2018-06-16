@@ -36,28 +36,19 @@
                 <div class="uk-navbar-right">
                     <ul class="uk-navbar-nav">
                         <li>
-                            <a class="nav-a" href="{% url 'index-view' %}">Home</a>
+                            <a class="nav-a" href="{% url 'index-view' %}">Institute</a>
                             <div uk-dropdown="animation: uk-animation-slide-top-small; duration: 300">
                                  <div class="uk-dropdown-grid uk-child-width-1-1@m" uk-grid>
                                         <ul class="uk-nav uk-dropdown-nav">
                                             <li class="uk-button-text"><a href="/committee/about.html">About</a></li>
                                             <li class="uk-button-text"><a href="/committee/directors_message.html">Director's message</a></li>
-                                            <li class="uk-button-text"><a href="/committee/rti.html">RTI</a></li>
-                                            <li class="uk-button-text"><a target="_blank" href="{% static 'basic/pdf/MOU.pdf' %}">MOU</a></li>
-                                        </ul>
-                                 </div>
-                            </div>
-                        </li>
-                        <li>
-                            <a class="nav-a" href="#">Institute</a>
-                            <div uk-dropdown="animation: uk-animation-slide-top-small; duration: 300">
-                                 <div class="uk-dropdown-grid uk-child-width-1-1@m" uk-grid>
-                                        <ul class="uk-nav uk-dropdown-nav">
                                             <li class="uk-button-text"><a href="/committee/bog.html">Board of governors</a></li>
                                             <li class="uk-button-text"><a href="/committee/society_members.html">Society Members</a></li>
                                             <li class="uk-button-text"><a href="/committee/senate.html">Senate</a></li>
                                             <li class="uk-button-text"><a href="{% url 'committee:all-committee' %}">Committees</a></li>
                                             <li class="uk-button-text"><a href="{% url 'linkages:linkage-all' %}">Linkages</a></li>
+                                            <li class="uk-button-text"><a href="/committee/rti.html">RTI</a></li>
+                                            <li class="uk-button-text"><a target="_blank" href="{% static 'basic/pdf/MOU.pdf' %}">MOU</a></li>
                                         </ul>
                                  </div>
                             </div>
@@ -156,23 +147,18 @@
                                 <li><a href="{% url 'logout' %}"><span class="uk-margin-small-right" uk-icon="icon: sign-out"></span>Logout</a></li>
                             {% endif %}
                             <li class="uk-nav-divider"></li>
-                            <li class="uk-active"><a href="{% url 'index-view' %}">Home</a></li>
+                            <li class="uk-active"><a href="{% url 'index-view' %}">Institute</a></li>
                             <li class="uk-parent">
                                 <ul class="uk-nav-sub">
                                     <li><a href="/committee/about.html">About</a></li>
                                     <li><a href="/committee/directors_message.html">Director's message</a></li>
-                                    <li><a href="/committee/rti.html">RTI</a></li>
-                                    <li><a href="{% static 'basic/pdf/MOU.pdf' %}">MOU</a></li>
-                                </ul>
-                            </li>
-                            <li class="uk-active"><a href="#">Institute</a></li>
-                            <li class="uk-parent">
-                                <ul class="uk-nav-sub">
                                     <li><a href="/committee/bog.html">Board of governors</a></li>
                                     <li><a href="/committee/senate.html">Senate</a></li>
                                     <li><a href="/committee/society_members.html">Society Members</a></li>
                                     <li><a href="{% url 'linkages:linkage-all' %}">Linkages</a></li>
                                     <li class="uk-active"><a href="{% url 'committee:all-committee' %}">Committees</a></li>
+                                    <li><a href="/committee/rti.html">RTI</a></li>
+                                    <li><a href="{% static 'basic/pdf/MOU.pdf' %}">MOU</a></li>
                                 </ul>
                             </li>
                             <li class="uk-active"><a href="{% url 'academic:all-programme' %}">Academics</a></li>
