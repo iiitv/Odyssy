@@ -22,22 +22,22 @@
 
                 </div>
                 <div class="uk-padding-small-right uk-text-center uk-box-shadow-small uk-box-shadow-hover-large uk-padding-small">
-                    {% if person.link_fb != '#' %}
+                    {% if person.link_fb %}
                         <a href="{{ person.link_fb }}" target="_blank" uk-tooltip="connect on facebook"><span uk-icon="facebook" ratio="1.5"></span></a>
                     {% endif %}
-                    {% if person.link_tw != '#' %}
+                    {% if person.link_tw %}
                         <a href="{{ person.link_tw }}" target="_blank" uk-tooltip="follow on twitter"><span uk-icon="twitter" ratio="1.5"></span></a>
                     {% endif %}
-                    {% if person.link_gh != '#' %}
+                    {% if person.link_gh %}
                         <a href="{{ person.link_gh}}" target="_blank" uk-tooltip="Find on Github"><span uk-icon="github" ratio="1.5"></span></a>
                     {% endif %}
-                    {% if person.link_ln != '#' %}
+                    {% if person.link_ln %}
                         <a href="{{ person.link_ln }}" target="_blank" uk-tooltip="connect on LinkedIn"><span uk-icon="linkedin" ratio="1.5"></span></a>
                     {% endif %}
-                    {% if person.link_gs != '#' %}
+                    {% if person.link_gs %}
                         <a href="{{ person.link_gs }}" target="_blank" uk-tooltip="find on Google Scholars"><span uk-icon="google" ratio="1.5"></span></a>
                     {% endif %}
-                    {% if person.email != '#' %}
+                    {% if person.email %}
                         <a href="mailto:{{ person.email }}" target="_blank" uk-tooltip="{{ person.email }}"><span uk-icon="mail" ratio="1.5"></span></a>
                     {% endif %}
 {#                                        <a href="{{ person.get_url }}" uk-tooltip="Full profile"><span uk-icon="desktop" ratio="1.5"></span></a>#}

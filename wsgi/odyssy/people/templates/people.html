@@ -9,7 +9,7 @@
             <div class="uk-width-1-1@l" uk-grid>
                 {% for people in people_list %}
                     <div class="uk-width-1-2@m">
-                        <div class="uk-card people-card uk-card-default uk-margin-medium-top uk-margin uk-padding-remove uk-card-body">
+                        <div class="uk-card people-card uk-card-default uk-margin-small-top uk-padding-remove uk-card-body">
                              <div class="uk-padding-remove-left uk-card-header">
                                 <div class="uk-grid-small uk-flex-middle" uk-grid="masonry: true">
                                     <img class="uk-border-rounded" width="150" src="{% static people.photo %}">
@@ -20,14 +20,14 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="uk-card-body" style="display: inline-flex;">
+                            <div class="uk-card-body uk-padding-small" style="display: inline-flex;">
                                 <div class="profile-card-dashboard-details" style="margin-left: 5px;">
                                     <h5 style="margin: 0;">{{ people.academic_highlights }}</h5>
                                     <h5 style="margin: 0;">Office : {{ people.office }}</h5>
                                     <h5 style="margin: 0;">E-mail : {{ people.email }}</h5>
                                  </div>
                             </div>
-                            <div class="uk-card-footer">
+                            <div class="uk-card-footer uk-padding-small">
                                 <a href="#modal-people-{{ people.slug }}" class="uk-button uk-button-text" uk-toggle>Read more</a>
                             </div>
                         </div>
@@ -51,22 +51,22 @@
 
                                     </div>
                                     <div class="uk-padding-small-right uk-text-center uk-box-shadow-small uk-box-shadow-hover-large uk-padding-small">
-                                        {% if people.link_fb != '#' %}
+                                        {% if people.link_fb %}
                                             <a href="{{ people.link_fb }}" target="_blank" uk-tooltip="connect on facebook"><span uk-icon="facebook" ratio="1.5"></span></a>
                                         {% endif %}
-                                        {% if people.link_tw != '#' %}
+                                        {% if people.link_tw %}
                                             <a href="{{ people.link_tw }}" target="_blank" uk-tooltip="follow on twitter"><span uk-icon="twitter" ratio="1.5"></span></a>
                                         {% endif %}
-                                        {% if people.link_gh != '#' %}
+                                        {% if people.link_gh %}
                                             <a href="{{ people.link_gh}}" target="_blank" uk-tooltip="Find on Github"><span uk-icon="github" ratio="1.5"></span></a>
                                         {% endif %}
-                                        {% if people.link_ln != '#' %}
+                                        {% if people.link_ln %}
                                             <a href="{{ people.link_ln }}" target="_blank" uk-tooltip="connect on LinkedIn"><span uk-icon="linkedin" ratio="1.5"></span></a>
                                         {% endif %}
-                                        {% if people.link_gs != '#' %}
+                                        {% if people.link_gs %}
                                             <a href="{{ people.link_gs }}" target="_blank" uk-tooltip="find on Google Scholars"><span uk-icon="google" ratio="1.5"></span></a>
                                         {% endif %}
-                                        {% if people.email != '#' %}
+                                        {% if people.email %}
                                             <a href="mailto:{{ people.email }}" target="_blank" uk-tooltip="{{ people.email }}"></a>
                                         {% endif %}
 {#                                        <a href="{{ people.get_url }}" uk-tooltip="Full profile"><span uk-icon="desktop" ratio="1.5"></span></a>#}

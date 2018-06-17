@@ -5,7 +5,13 @@ from .models import People
 
 def faculty(request):
     faculty_list = People.objects.filter(status='faculty')
-    context = {'people_list': faculty_list, 'status': 'Faculties'}
+    visiting_faculty_list = People.objects.filter(status='visiting_faculty')
+    former_faculty_list = People.objects.filter(status='former_faculty')
+    people = []
+    people.extend(faculty_list)
+    people.extend(visiting_faculty_list)
+    people.extend(former_faculty_list)
+    context = {'people_list': people, 'status': 'Faculties'}
     return render(request, 'people.html', context=context)
 
 
