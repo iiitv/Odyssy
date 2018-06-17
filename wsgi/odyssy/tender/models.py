@@ -1,4 +1,7 @@
+import datetime
+
 from django.db import models
+from django.db.models import Q
 from django.db.models.signals import post_save
 from django.utils import timezone
 from django.core.exceptions import ValidationError
@@ -29,12 +32,30 @@ class Tender(models.Model):
             raise ValidationError('Start date has to be before End date')
 
     def __str__(self):
-        return self.title
+        return str(self.title) + str(self.start_date) + '-' + str(self.end_date)
 
     @staticmethod
     def get_all_tender():
         """ Get all the Tenders """
         return Tender.objects.all().order_by('-start_date')
+
+    @staticmethod
+    def get_all_active_tenders():
+        """
+        Get all active tenders
+        :return: Iterable containing all tenders
+        """
+        today = datetime.datetime.today()
+        return Tender.objects.filter(start_date__lt=today, end_date__gt=today).order_by('-start_date')
+
+    @staticmethod
+    def get_archives():
+        """
+        Get all archived tenders
+        :return: Iterable containing all archived tenders
+        """
+        today = datetime.datetime.today()
+        return Tender.objects.all().exclude(start_date__lt=today, end_date__gt=today).order_by('-start_date')
 
 
 def set_default_tag(sender, instance, **kwargs):

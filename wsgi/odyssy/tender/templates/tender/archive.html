@@ -1,7 +1,7 @@
 {% extends 'basic/base.html' %}
 {% load static %}
 {% block title %}
-    IIITV | Tenders
+    IIITV | Archives
 {% endblock %}
 
 {% block body %}
@@ -9,7 +9,7 @@
         <div class="contents-wrapper">
             <!-- Contents starts here -->
             <div class="content career">
-                <h2>Tenders</h2>
+                <h2>Archives</h2>
                 <hr>
                 <br>
                 {% if tenders %}
@@ -21,11 +21,8 @@
                     {% endfor %}
                 </ul>
                 {% else %}
-                   <center><h4>No new tenders available.</h4></center>
+                   <center><h4>No Archived tenders available.</h4></center>
                 {% endif %}
-            </div>
-            <div>
-                View the archives <a href="{% url 'tender:archive-tender' %}">here</a>
             </div>
         </div>
 {% endblock %}

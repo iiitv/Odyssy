@@ -120,7 +120,7 @@
                                 <div class="uk-dropdown-grid uk-child-width-1-1@m" uk-grid>
                                     <div>
                                         <ul class="uk-nav uk-dropdown-nav">
-                                            <li class="uk-active uk-button-text"><a href="#">Tenders</a></li>
+                                            <li class="uk-active uk-button-text"><a href="{% url 'tender:active-tender' %}">Tenders</a></li>
                                             <li class="uk-active uk-button-text"><a href="#">Office orders</a></li>
                                         </ul>
                                     </div>
@@ -202,7 +202,7 @@
                             <li class="uk-active"><a href="#">Notices</a></li>
                             <li class="uk-parent">
                                 <ul class="uk-nav-sub">
-                                    <li><a href="#">Tenders</a></li>
+                                    <li><a href="{% url 'tender:active-tender' %}">Tenders</a></li>
                                     <li><a href="#">Office orders</a></li>
                                 </ul>
                             </li>
