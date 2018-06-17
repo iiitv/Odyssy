@@ -6,16 +6,17 @@
 {% block body %}
     <div class="uk-container">
         <div class="contents-wrapper">
-            <div class="content faculty-list">
-                <ul>
-                    {% for people in people_list %}
-                        <div class="uk-card people-card uk-card-default uk-margin-medium-top uk-padding-remove uk-card-body">
+            <div class="uk-width-1-1@l" uk-grid>
+                {% for people in people_list %}
+                    <div class="uk-width-1-2@m">
+                        <div class="uk-card people-card uk-card-default uk-margin-medium-top uk-margin uk-padding-remove uk-card-body">
                              <div class="uk-padding-remove-left uk-card-header">
-                                <div class="uk-grid-small uk-flex-middle" uk-grid>
-                                    <img class="uk-border-circle" width="200" src="{% static people.photo %}">
+                                <div class="uk-grid-small uk-flex-middle" uk-grid="masonry: true">
+                                    <img class="uk-border-rounded" width="150" src="{% static people.photo %}">
                                     <div class="uk-width-expand">
                                         <h3 class="uk-card-title uk-margin-remove-bottom">{{ people }}</h3>
-                                        <p class="uk-text-meta uk-margin-remove-top">{{ people.post }}</p>
+                                        <p class="uk-text-meta uk-margin-remove-top uk-padding-remove">{{ people.get_status_display }}</p>
+                                        <p class="uk-text-meta uk-margin-remove-top uk-padding-remove">{{ people.post }}</p>
                                     </div>
                                 </div>
                             </div>
@@ -120,8 +121,8 @@
                                 </div>
                             </div>
                         </div>
-                    {% endfor %}
-                </ul>
+                    </div>
+                {% endfor %}
             </div>
         </div>
     </div>
