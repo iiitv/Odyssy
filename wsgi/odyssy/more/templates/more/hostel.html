@@ -6,26 +6,27 @@
 {% load static %}
 {% block body %}
 
-    <div class="uk-container">
-        <div class="uk-margin-small-top">
+    <div class="uk-margin-small-top uk-card-default uk-card uk-padding-large uk-margin-medium-top uk-container">
+        <div>
             <ul class="uk-thumbnav" uk-margin>
-                <div uk-lightbox>
-                    <a href="{% static 'basic/images/hostel1.jpg' %}">
+                <div class="uk-active" uk-lightbox>
+                    <a uk-tooltip="title: Click to expand; pos: bottom" href="{% static 'basic/images/hostel1.jpg' %}">
                         <img src="{% static 'basic/images/hostel1.jpg' %}" width="180" alt="">
                     </a>
                 </div>
-                <div uk-lightbox>
-                    <a href="{% static 'basic/images/hostel2.jpg' %}">
+                <div class="uk-active" uk-lightbox>
+                    <a uk-tooltip="title: Click to expand; pos: bottom" href="{% static 'basic/images/hostel2.jpg' %}">
                         <img src="{% static 'basic/images/hostel2.jpg' %}" width="180" alt="">
                     </a>
                 </div>
-                <div uk-lightbox>
-                    <a href="{% static 'basic/images/hostel3.jpg' %}">
+                <div class="uk-active" uk-lightbox>
+                    <a uk-tooltip="title: Click to expand; pos: bottom" href="{% static 'basic/images/hostel3.jpg' %}">
                         <img src="{% static 'basic/images/hostel3.jpg' %}" width="180" alt="">
                     </a>
                 </div>
             </ul>
         </div>
+        <hr>
         <div class="content">
 		        <h2>Hostel Amenities</h2><br/>
                 <li><b>Hostel Room:</b> Semi-furnished. (Each student is provided with a Cot, Cupboard, Study-Table, Bookshelf and Chair)</li>

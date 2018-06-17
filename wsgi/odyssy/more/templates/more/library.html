@@ -5,20 +5,20 @@
 {% endblock %}
 {% load static %}
 {% block body %}
-    <div class="uk-container">
+    <div  class="uk-margin-small-top uk-card-default uk-card uk-padding-small uk-margin-medium-top uk-container">
 
         <ul class="uk-thumbnav uk-margin-small-top" uk-margin>
-            <div uk-lightbox>
+            <div class="uk-active" uk-lightbox>
                 <a href="{% static 'basic/images/L1.jpg' %}">
                     <img src="{% static 'basic/images/L1.jpg' %}" width="180" alt="">
                 </a>
             </div>
-            <div uk-lightbox>
+            <div class="uk-active" uk-lightbox>
                 <a href="{% static 'basic/images/L2.jpg' %}">
                     <img src="{% static 'basic/images/L2.jpg' %}" width="180" alt="">
                 </a>
             </div>
-            <div uk-lightbox>
+            <div class="uk-active" uk-lightbox>
                 <a href="{% static 'basic/images/L3.jpg' %}">
                     <img src="{% static 'basic/images/L3.jpg' %}" width="180" alt="">
                 </a>
@@ -26,12 +26,13 @@
         </ul>
         <div class="content">
 			<br/><br/>
-            <p style="text-align:center">
+            <p class="uk-text-justify">
                 The primary aim of IIIT Vadodara Library is to support research, teaching and learning of the institute community. The Library is one of the central support services of IIIT Vadodara. The mission of the Library is to provide information services and access to full text digital and printed resources to support the scholarly and informational needs of faculty, students and staff. The Library is in fast growing stage. In March 2016 Library subscribed online <a href="http://dl.acm.org/" target="_blank">ACM Digital library</a> database. The library has a good collection of books on Computer Science, Information Technology, Physics, Mathematics, Humanities & Social Sciences and also technical and general print magazines. The collection includes reference books, text books, CDs etc. We are constantly in a process of increasing our collection of books further.
             </p>
-            <p style="text-align:center">
-                <a href="http://iiitvadodara.ac.in/pdf/library-circulation.pdf" target="_blank">Library Rules and Regulations</a> <br/>
-                <a href="http://library.iiitv.ac.in/" target="_blank"><font color="red">Library Catalogue OPAC</font></a></p>
+            <p>
+                <a href="{% static 'basic/pdf/library-circulation.pdf' %}" target="_blank">Library Rules and Regulations</a> <br/>
+                <a href="http://library.iiitv.ac.in/" target="_blank"><font color="red">Library Catalogue OPAC</font></a>
+            </p>
 
         </div>
     </div>
