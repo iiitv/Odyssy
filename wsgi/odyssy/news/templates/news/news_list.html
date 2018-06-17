@@ -5,13 +5,12 @@
 
 {% block body %}
   <div class="uk-container">
-    <div>
-        <h2>News List</h2>
-            {% if news_list %}
-                <ul class="uk-list uk-list-large">
-                    {% for news in news_list %}
-                        <div class="uk-card uk-card-default uk-margin-small uk-card-hover">
-                            <a class="uk-link-heading" href="{{ news.get_url }}">
+    <div class="uk-margin-medium-top">
+        {% if news_list %}
+            <ul class="uk-list uk-list-large">
+                {% for news in news_list %}
+                    <div class="uk-card uk-card-default uk-margin-small uk-card-hover">
+                        <a class="uk-link-heading" href="{{ news.get_url }}">
                             <div class="uk-card-body">
                                 <div class="uk-grid-small uk-child-width-1-2@l uk-flex-middle" uk-grid>
                                     <div class="uk-width-expand">
@@ -22,21 +21,21 @@
                                     </div>
                                 </div>
                             </div>
-                            </a>
-                        </div>
-                    {% endfor %}
-                </ul>
-            {% else %}
-            <p>No News to display</p>
-            {% endif %}
+                        </a>
+                    </div>
+                {% endfor %}
+            </ul>
+        {% else %}
+        <p>No News to display</p>
+        {% endif %}
     
-    {% if news_list.has_previous %}
-        <a href="?page={{ news_list.previous_page_number }}&num_items={{num_items}}">Previous</a>
-    {% endif %}
+        {% if news_list.has_previous %}
+            <a href="?page={{ news_list.previous_page_number }}&num_items={{num_items}}">Previous</a>
+        {% endif %}
 
-    {% if news_list.has_next %}
-        <a href="?page={{ news_list.next_page_number }}&num_items={{num_items}}">Next</a>
-    {% endif %}
+        {% if news_list.has_next %}
+            <a href="?page={{ news_list.next_page_number }}&num_items={{num_items}}">Next</a>
+        {% endif %}
     </div>
 </div>
 {% endblock %}
