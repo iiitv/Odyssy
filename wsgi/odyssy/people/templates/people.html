@@ -6,8 +6,254 @@
 {% block body %}
     <div class="uk-container">
         <div class="contents-wrapper">
+            <div class="uk-margin-medium-top">
+                <h3 class="uk-text-center" style="color: white;">Faculties</h3>
+            </div>
             <div class="uk-width-1-1@l" uk-grid>
-                {% for people in people_list %}
+                {% for people in faculty_list %}
+                    <div class="uk-width-1-2@m">
+                        <div class="uk-card people-card uk-card-default uk-margin-small-top uk-padding-remove uk-card-body">
+                             <div class="uk-padding-remove-left uk-card-header">
+                                <div class="uk-grid-small uk-flex-middle" uk-grid="masonry: true">
+                                    <img class="uk-border-rounded" width="150" src="{% static people.photo %}">
+                                    <div class="uk-width-expand">
+                                        <h3 class="uk-card-title uk-margin-remove-bottom">{{ people }}</h3>
+                                        <p class="uk-text-meta uk-margin-remove-top uk-padding-remove">{{ people.get_status_display }}</p>
+                                        <p class="uk-text-meta uk-margin-remove-top uk-padding-remove">{{ people.post }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="uk-card-body uk-padding-small" style="display: inline-flex;">
+                                <div class="profile-card-dashboard-details" style="margin-left: 5px;">
+                                    <h5 style="margin: 0;">{{ people.academic_highlights }}</h5>
+                                    <h5 style="margin: 0;">Office : {{ people.office }}</h5>
+                                    <h5 style="margin: 0;">E-mail : {{ people.email }}</h5>
+                                 </div>
+                            </div>
+                            <div class="uk-card-footer uk-padding-small">
+                                <a href="#modal-people-{{ people.slug }}" class="uk-button uk-button-text" uk-toggle>Read more</a>
+                            </div>
+                        </div>
+                        <div id="modal-people-{{ people.slug }}" class="uk-modal-container" uk-modal>
+                            <div class="uk-modal-dialog" uk-scrollspy="cls: uk-animation-slide-bottom-small; target: > div, div > div; delay: 150; repeat: true">
+                                <button class="uk-modal-close-full uk-close-medium" type="button" uk-close></button>
+                                <div class="uk-grid-collapse uk-child-width-1-2@m uk-container uk-flex-middle" uk-grid>
+                                    <div>
+                                        <div class="uk-padding-large uk-margin-medium-top uk-padding-remove-right">
+                                            <img class="uk-border-rounded" width="200px" src="{% static people.photo %}" alt="">
+                                            <br>
+                                            <br>
+                                            <p class="uk-text-meta">
+                                                {{ people.post }}
+                                            </p>
+                                            <br>
+                                            {% if people.user == user %}
+                                                <a href="{% url 'dashboard:update_profile' %}" target="_blank"><span uk-icon="file-edit" ratio="1.5"></span> Edit profile</a>
+                                            {% endif %}
+                                        </div>
+
+                                    </div>
+                                    <div class="uk-padding-small-right uk-text-center uk-box-shadow-small uk-box-shadow-hover-large uk-padding-small">
+                                        {% if people.link_fb %}
+                                            <a href="{{ people.link_fb }}" target="_blank" uk-tooltip="connect on facebook"><span uk-icon="facebook" ratio="1.5"></span></a>
+                                        {% endif %}
+                                        {% if people.link_tw %}
+                                            <a href="{{ people.link_tw }}" target="_blank" uk-tooltip="follow on twitter"><span uk-icon="twitter" ratio="1.5"></span></a>
+                                        {% endif %}
+                                        {% if people.link_gh %}
+                                            <a href="{{ people.link_gh}}" target="_blank" uk-tooltip="Find on Github"><span uk-icon="github" ratio="1.5"></span></a>
+                                        {% endif %}
+                                        {% if people.link_ln %}
+                                            <a href="{{ people.link_ln }}" target="_blank" uk-tooltip="connect on LinkedIn"><span uk-icon="linkedin" ratio="1.5"></span></a>
+                                        {% endif %}
+                                        {% if people.link_gs %}
+                                            <a href="{{ people.link_gs }}" target="_blank" uk-tooltip="find on Google Scholars"><span uk-icon="google" ratio="1.5"></span></a>
+                                        {% endif %}
+                                        {% if people.email %}
+                                            <a href="mailto:{{ people.email }}" target="_blank" uk-tooltip="{{ people.email }}"></a>
+                                        {% endif %}
+{#                                        <a href="{{ people.get_url }}" uk-tooltip="Full profile"><span uk-icon="desktop" ratio="1.5"></span></a>#}
+                                        <br>
+                                        {% if people.office %}
+                                            <h5>Office: {{ people.office }}</h5>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                                <div class="uk-padding-large uk-padding-remove-top">
+                                    {% if people.academic_qualifications %}
+                                        <hr>
+                                        <h2>Academic Qualifications</h2>
+                                        <p>{{ people.academic_qualifications | safe }}</p>
+                                    {% endif %}
+                                    {% if people.professional_memberships %}
+                                        <hr>
+                                        <h2>Member of Professional bodies</h2>
+                                        <p>{{ people.professional_memberships | safe }}</p>
+                                    {% endif %}
+                                    {% if people.area_of_interest %}
+                                        <hr>
+                                        <h2>Areas of interest</h2>
+                                        <p>{{ people.area_of_interest | safe }}</p>
+                                    {% endif %}
+                                    {% if people.work_experience %}
+                                        <hr>
+                                        <h2>Work experience</h2>
+                                        <p>{{ people.work_experience | safe }}</p>
+                                    {% endif %}
+                                    {% if  people.administrative_experience %}
+                                        <hr>
+                                        <h2>Administrative experience</h2>
+                                        <p>{{ people.administrative_experience | safe }}</p>
+                                    {% endif %}
+                                    {% if people.publications %}
+                                        <hr>
+                                        <h2>Publications</h2>
+                                        <p>{{ people.publications | safe }}</p>
+                                    {% endif %}
+                                    {% if people.teaching %}
+                                        <hr>
+                                        <h2>Teaching</h2>
+                                        <p>{{ people.teaching | safe }}</p>
+                                    {% endif %}
+                                    {% if people.other %}
+                                        <hr>
+                                        <h2>Other</h2>
+                                        <p>{{ people.other | safe }}</p>
+                                    {% endif %}
+                                    <hr>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+
+            <div class="uk-margin-medium-top">
+                <h3 class="uk-text-center" style="color: white;">Visiting Faculties</h3>
+            </div>
+            <div class="uk-width-1-1@l" uk-grid>
+                {% for people in visiting_faculty_list %}
+                    <div class="uk-width-1-2@m">
+                        <div class="uk-card people-card uk-card-default uk-margin-small-top uk-padding-remove uk-card-body">
+                             <div class="uk-padding-remove-left uk-card-header">
+                                <div class="uk-grid-small uk-flex-middle" uk-grid="masonry: true">
+                                    <img class="uk-border-rounded" width="150" src="{% static people.photo %}">
+                                    <div class="uk-width-expand">
+                                        <h3 class="uk-card-title uk-margin-remove-bottom">{{ people }}</h3>
+                                        <p class="uk-text-meta uk-margin-remove-top uk-padding-remove">{{ people.get_status_display }}</p>
+                                        <p class="uk-text-meta uk-margin-remove-top uk-padding-remove">{{ people.post }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="uk-card-body uk-padding-small" style="display: inline-flex;">
+                                <div class="profile-card-dashboard-details" style="margin-left: 5px;">
+                                    <h5 style="margin: 0;">{{ people.academic_highlights }}</h5>
+                                    <h5 style="margin: 0;">Office : {{ people.office }}</h5>
+                                    <h5 style="margin: 0;">E-mail : {{ people.email }}</h5>
+                                 </div>
+                            </div>
+                            <div class="uk-card-footer uk-padding-small">
+                                <a href="#modal-people-{{ people.slug }}" class="uk-button uk-button-text" uk-toggle>Read more</a>
+                            </div>
+                        </div>
+                        <div id="modal-people-{{ people.slug }}" class="uk-modal-container" uk-modal>
+                            <div class="uk-modal-dialog" uk-scrollspy="cls: uk-animation-slide-bottom-small; target: > div, div > div; delay: 150; repeat: true">
+                                <button class="uk-modal-close-full uk-close-medium" type="button" uk-close></button>
+                                <div class="uk-grid-collapse uk-child-width-1-2@m uk-container uk-flex-middle" uk-grid>
+                                    <div>
+                                        <div class="uk-padding-large uk-margin-medium-top uk-padding-remove-right">
+                                            <img class="uk-border-rounded" width="200px" src="{% static people.photo %}" alt="">
+                                            <br>
+                                            <br>
+                                            <p class="uk-text-meta">
+                                                {{ people.post }}
+                                            </p>
+                                            <br>
+                                            {% if people.user == user %}
+                                                <a href="{% url 'dashboard:update_profile' %}" target="_blank"><span uk-icon="file-edit" ratio="1.5"></span> Edit profile</a>
+                                            {% endif %}
+                                        </div>
+
+                                    </div>
+                                    <div class="uk-padding-small-right uk-text-center uk-box-shadow-small uk-box-shadow-hover-large uk-padding-small">
+                                        {% if people.link_fb %}
+                                            <a href="{{ people.link_fb }}" target="_blank" uk-tooltip="connect on facebook"><span uk-icon="facebook" ratio="1.5"></span></a>
+                                        {% endif %}
+                                        {% if people.link_tw %}
+                                            <a href="{{ people.link_tw }}" target="_blank" uk-tooltip="follow on twitter"><span uk-icon="twitter" ratio="1.5"></span></a>
+                                        {% endif %}
+                                        {% if people.link_gh %}
+                                            <a href="{{ people.link_gh}}" target="_blank" uk-tooltip="Find on Github"><span uk-icon="github" ratio="1.5"></span></a>
+                                        {% endif %}
+                                        {% if people.link_ln %}
+                                            <a href="{{ people.link_ln }}" target="_blank" uk-tooltip="connect on LinkedIn"><span uk-icon="linkedin" ratio="1.5"></span></a>
+                                        {% endif %}
+                                        {% if people.link_gs %}
+                                            <a href="{{ people.link_gs }}" target="_blank" uk-tooltip="find on Google Scholars"><span uk-icon="google" ratio="1.5"></span></a>
+                                        {% endif %}
+                                        {% if people.email %}
+                                            <a href="mailto:{{ people.email }}" target="_blank" uk-tooltip="{{ people.email }}"></a>
+                                        {% endif %}
+{#                                        <a href="{{ people.get_url }}" uk-tooltip="Full profile"><span uk-icon="desktop" ratio="1.5"></span></a>#}
+                                        <br>
+                                        {% if people.office %}
+                                            <h5>Office: {{ people.office }}</h5>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                                <div class="uk-padding-large uk-padding-remove-top">
+                                    {% if people.academic_qualifications %}
+                                        <hr>
+                                        <h2>Academic Qualifications</h2>
+                                        <p>{{ people.academic_qualifications | safe }}</p>
+                                    {% endif %}
+                                    {% if people.professional_memberships %}
+                                        <hr>
+                                        <h2>Member of Professional bodies</h2>
+                                        <p>{{ people.professional_memberships | safe }}</p>
+                                    {% endif %}
+                                    {% if people.area_of_interest %}
+                                        <hr>
+                                        <h2>Areas of interest</h2>
+                                        <p>{{ people.area_of_interest | safe }}</p>
+                                    {% endif %}
+                                    {% if people.work_experience %}
+                                        <hr>
+                                        <h2>Work experience</h2>
+                                        <p>{{ people.work_experience | safe }}</p>
+                                    {% endif %}
+                                    {% if  people.administrative_experience %}
+                                        <hr>
+                                        <h2>Administrative experience</h2>
+                                        <p>{{ people.administrative_experience | safe }}</p>
+                                    {% endif %}
+                                    {% if people.publications %}
+                                        <hr>
+                                        <h2>Publications</h2>
+                                        <p>{{ people.publications | safe }}</p>
+                                    {% endif %}
+                                    {% if people.teaching %}
+                                        <hr>
+                                        <h2>Teaching</h2>
+                                        <p>{{ people.teaching | safe }}</p>
+                                    {% endif %}
+                                    {% if people.other %}
+                                        <hr>
+                                        <h2>Other</h2>
+                                        <p>{{ people.other | safe }}</p>
+                                    {% endif %}
+                                    <hr>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="uk-margin-medium-top">
+                <h3 class="uk-text-center" style="color: white;">Formar Faculties</h3>
+            </div>
+            <div class="uk-width-1-1@l" uk-grid>
+                {% for people in former_faculty_list %}
                     <div class="uk-width-1-2@m">
                         <div class="uk-card people-card uk-card-default uk-margin-small-top uk-padding-remove uk-card-body">
                              <div class="uk-padding-remove-left uk-card-header">

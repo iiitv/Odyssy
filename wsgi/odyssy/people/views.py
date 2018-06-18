@@ -11,7 +11,11 @@ def faculty(request):
     people.extend(faculty_list)
     people.extend(visiting_faculty_list)
     people.extend(former_faculty_list)
-    context = {'people_list': people, 'status': 'Faculties'}
+    context = {'people_list': people,
+               'status': 'Faculties',
+               'faculty_list': faculty_list,
+               'visiting_faculty_list': visiting_faculty_list,
+               'former_faculty_list': former_faculty_list}
     return render(request, 'people.html', context=context)
 
 
