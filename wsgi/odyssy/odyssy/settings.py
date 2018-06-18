@@ -54,6 +54,7 @@ INSTALLED_APPS = (
     'dashboard.apps.DashboardConfig',
     'people.apps.PeopleConfig',
     'committee.apps.CommitteeConfig',
+    'office_orders.apps.OfficeOrdersConfig',
     'linkages',
     'photologue',
     'sortedm2m',

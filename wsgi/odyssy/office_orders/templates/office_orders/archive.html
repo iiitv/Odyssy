@@ -1,0 +1,28 @@
+{% extends 'basic/base.html' %}
+{% load static %}
+{% block title %}
+    IIITV | Archives
+{% endblock %}
+
+{% block body %}
+<!-- Content wrapper -->
+        <div class="contents-wrapper">
+            <!-- Contents starts here -->
+            <div class="content career">
+                <h2>Archives</h2>
+                <hr>
+                <br>
+                {% if orders %}
+                <ul class="list-group">
+                    {% for order in orders %}
+		            <li class="list-group-item">
+                        <a href="{% static order.order %}" target="_blank">{{ order.title }}</a>
+           	        </li>
+                    {% endfor %}
+                </ul>
+                {% else %}
+                   <center><h4>No Archived office orders available.</h4></center>
+                {% endif %}
+            </div>
+        </div>
+{% endblock %}

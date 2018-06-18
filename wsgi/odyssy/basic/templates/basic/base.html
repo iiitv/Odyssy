@@ -121,7 +121,7 @@
                                     <div>
                                         <ul class="uk-nav uk-dropdown-nav">
                                             <li class="uk-active uk-button-text"><a href="{% url 'tender:active-tender' %}">Tenders</a></li>
-                                            <li class="uk-active uk-button-text"><a href="#">Office orders</a></li>
+                                            <li class="uk-active uk-button-text"><a href="{% url 'office-orders:active-orders' %}">Office orders</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -203,7 +203,7 @@
                             <li class="uk-parent">
                                 <ul class="uk-nav-sub">
                                     <li><a href="{% url 'tender:active-tender' %}">Tenders</a></li>
-                                    <li><a href="#">Office orders</a></li>
+                                    <li><a href="{% url 'office-orders:active-orders' %}">Office orders</a></li>
                                 </ul>
                             </li>
                         </ul>

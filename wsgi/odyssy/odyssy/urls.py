@@ -45,6 +45,7 @@ urlpatterns = [
     url(r'^admission/', include('admission.urls', namespace='admission')),
     url(r'^gallery/', include('gallery.urls')),
     url(r'^tender/', include('tender.urls', namespace='tender')),
+    url(r'^office-orders/', include('office_orders.urls', namespace='office-orders')),
     url(r'^', include('basic.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) \
   + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
