@@ -4,28 +4,30 @@
 {% endblock %}
 
 {% block body %}
-    <div class="contents-wrapper">
-        <div class="content">
-            <h2>Gallery</h2>
+    <div class="uk-container">
+        <div class="uk-card uk-margin-medium-top uk-card-default uk-card-hover uk-padding-small">
+            <h2>Galleries</h2>
             <hr>
-                {% if object_list %}
-                    {% for gallery in object_list %}
-                            {% for photo in gallery.sample %}
-                                {% if photo.extended.imageGallery %}
-                                    {% if forloop.first %}
-                                        <div class="gallery-thumbnail">
-                                            <a href="/gallery/{{gallery.id}}">
-                                            <img src="{{ photo.get_thumbnail_url }}" alt="{{ gallery.id }}" class="image-thumbnail">
-                                            {{ gallery.title }}
-                                            </a>
+            {% if object_list %}
+                {% for gallery in object_list %}
+                        {% for photo in gallery.sample %}
+                            {% if photo.extended.imageGallery %}
+                                {% if forloop.first %}
+                                    <a class="uk-padding-small uk-link-heading" href="/gallery/{{gallery.id}}">
+                                         <div class="uk-inline">
+                                            <img width="300"  src="{{ photo.image.url }}" alt="{{ gallery.id }}">
+                                            <div class="uk-overlay uk-overlay-primary uk-position-bottom">
+                                                <p>{{ gallery.title }}</p>
+                                            </div>
                                         </div>
-                                        {% endif %}
-                                    {%endif%}
-                                {% endfor %}
-                    {% endfor %}
-                {% else %}
-                <div>"No galleries were found".</div>
-                {% endif %}
+                                    </a>
+                                {% endif %}
+                            {%endif%}
+                        {% endfor %}
+                {% endfor %}
+            {% else %}
+            <div>"No galleries were found".</div>
+            {% endif %}
         </div>
     </div>
     
