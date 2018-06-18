@@ -6,25 +6,38 @@
 
 {% block body %}
 <!-- Content wrapper -->
-        <div class="contents-wrapper">
+        <div class="uk-container">
             <!-- Contents starts here -->
-            <div class="content career">
+            <div class="uk-card uk-card-default uk-padding-small uk-margin-medium-top">
                 <h2>Office Orders</h2>
                 <hr>
                 <br>
                 {% if orders %}
-                <ul class="list-group">
                     {% for order in orders %}
-		            <li class="list-group-item">
-                        <a href="{% static order.order %}" target="_blank">{{ order.title }}</a>
-           	        </li>
+                        <div class="uk-card uk-card-default uk-margin-small uk-card-hover">
+                        <a class="uk-link-heading" href="{% static order.order %}" target="_blank">
+                        <div class="uk-card-body">
+                            <div class="uk-flex-middle" uk-grid>
+                                <div class="uk-width-1-6@m">
+                                    <span uk-icon="cloud-download" ratio="2"></span>
+                                </div>
+                                <div class="uk-grid-small uk-width-5-6@m uk-child-width-1-2@l uk-flex-middle" uk-grid>
+                                    <div class="uk-width-expand">
+                                        <h4 class="uk-card-title uk-margin-remove-bottom">{{ order.title }}</h4>
+                                    </div>
+                                    <div class="uk-text-right">
+                                        {{ order.start_date }} to {{ order.end_date }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        </a>
+                    </div>
                     {% endfor %}
-                </ul>
                 {% else %}
-                   <center><h4>No new Office Orders available.</h4></center>
+                   <center><h4>No new office orders available.</h4></center>
                 {% endif %}
-            </div>
-            <div>
+                <hr>
                 View the archives <a href="{% url 'office-orders:archive-orders' %}">here</a>
             </div>
         </div>
