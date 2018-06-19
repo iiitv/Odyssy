@@ -7,24 +7,35 @@
 {% block body %}
 
 	<div class="uk-container">
-        <div class="gallery-content">
-        	<h2>{{ gallery.title }}</h2><br>
-			<div>
-                {{ gallery.description|safe }}
-            </div>
-            <br>
+        <div class="uk-card uk-margin-medium-top uk-card-default uk-padding-small">
+        	<h2>{{ gallery.title }}</h2>
+            <hr>
         	<div class="gallery-wrapper">
-	    		{% for photo in gallery.public %}
-	    			{% if photo.extended.studentGallery %}
-	    				<div class="gallery-thumbnail">
-	    					<a href="{{ photo.image.url }}" data-lightbox="full-image-set" data-title="{{ photo.title }}">
-	             				<img src="{{ photo.get_thumbnail_url }}" alt="{{ photo.title }}" class="image-thumbnail">
-	             			</a>
-	            	 	</div>
-	            	 {% endif %}
-	    		{% endfor %}
-	    	</div> 
-	    </div>
+                <div class="uk-child-width-1-3@m" uk-grid uk-lightbox="animation: scale">
+                    {% for photo in gallery.public %}
+                        {% if photo.extended.studentGallery %}
+                            <div>
+                                <a class="uk-inline" href="{{ photo.image.url }}" data-caption="{{ photo.title }}">
+                                    <img src="{{ photo.image.url }}" alt="">
+                                </a>
+                            </div>
+                         {% endif %}
+                    {% endfor %}
+                </div>
+                <hr>
+                <div>
+	    		    {% if gallery.description %}{{ gallery.description|safe }}{% endif %}
+                </div>
+	    	</div>
+            <hr>
+            <div class="contents-wrapper">
+                <div class="gallery-bottom-section">
+                    Published:
+                    <div id="gallery-published-date"> {{ gallery.date_added }}</div>
+                </div>
+                <div><a href="{% url 'more:student_corner' %}"  class="button">View All</a></div>
+            </div>
+        </div>
 	</div>
 
 {% endblock %}
