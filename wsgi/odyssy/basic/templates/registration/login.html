@@ -1,12 +1,23 @@
-{% extends 'basic/base.html' %}
-{% block title %}
-    IIITV | Login
-{% endblock %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login to dashboard</title>
+    {% load staticfiles %}
+    <link rel="icon" type="image/png" href="{% static 'basic/images/Logo.jpg' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'basic/css/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'basic/css/uikit.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'basic/css/uikit-rtl.min.css' %}">
 
-{% block body %}
-    <div style="margin-bottom: 100px; width: 70%; margin-left: 15%; margin-right: 15%;">
-        <div class="uk-card uk-card-default uk-card-body uk-margin-auto-right uk-margin-medium-top uk-margin-auto-bottom uk-margin-auto-left">
-            <h2 class="uk-text-center">Login</h2>
+</head>
+<script type="text/javascript" src="{% static 'basic/js/uikit.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'basic/js/uikit-icons.min.js' %}"></script>
+<script src="{% static 'basic/js/secret.js' %}"></script>
+<body style="background: linear-gradient(135deg,  #cd2e2e,#cecdcd,#20710f)">
+    <div class="uk-container uk-padding-large">
+        <div style="background: linear-gradient(45deg, #35394a 0%, #1f222e 100%)" class="uk-card uk-box-shadow-hover-large uk-card-body uk-margin-auto-right uk-margin-large-top uk-margin-auto-bottom uk-margin-auto-left">
+            <img class="uk-align-center" width="120px" src="{% static 'basic/images/Logo.jpg' %}" alt="logo">
             <form class="uk-align-center uk-text-center" method="post">
                 {% csrf_token %}
                 {{ form.as_p }}
@@ -19,7 +30,7 @@
         document.getElementById("id_password").className = "uk-input uk-form-width-medium";
         var labels = document.getElementsByTagName("label");
         console.log(labels);
-        labels[0].className = "uk-label";
-        labels[1].className = "uk-label";
+        labels[0].className = "uk-label uk-margin-small-right uk-margin-small-bottom";
+        labels[1].className = "uk-label uk-margin-small-right uk-margin-small-bottom";
     </script>
-{% endblock %}
+</body>
