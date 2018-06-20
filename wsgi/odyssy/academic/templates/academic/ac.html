@@ -7,7 +7,7 @@
 <div class="uk-container uk-margin-small-top">
     {% for cal in calenders %}
         <div class="uk-card uk-card-default uk-margin-small uk-card-hover">
-            <a class="uk-link-heading" target="_blank" href="{{ cal.get_url }}">
+            <a class="uk-link-heading" target="_blank" href="{% static cal.file %}">
             <div class="uk-card-body">
                 <div class="uk-flex-middle" uk-grid>
                     <div class="uk-width-1-6@m">
