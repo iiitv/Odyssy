@@ -4,18 +4,28 @@
 {% endblock %}
 
 {% block body %}
-	<div class="contents-wrapper">
- 		<div class="content">
+	<div class="uk-container">
+ 		<div class="uk-card uk-card-default uk-margin-medium-top uk-card-hover">
   			{% if info %}
-    			<h2>{{ info.title }}</h2>
-    			{% if info.description is not None %}
-    				<div class="item-description">
-      					<p>{{ info.description | safe }}</p>
-                    </div>
-    			{% endif %}
+                <div class="uk-card-header">
+    			    <h2 class="uk-card-title uk-margin-remove-bottom">{{ info.title }}</h2>
+                    <p class="uk-text-meta uk-margin-remove-top uk-text-right"><time datetime="2016-04-01T19:00">{{ info.get_start_date }}</time></p>
+                </div>
+                <div class="uk-card-body">
+                    {% if info.description is not None %}
+                        <div class="item-description">
+                            <p>{{ info.description | safe }}</p>
+                        </div>
+                    {% endif %}
+                </div>
   			{% else %}
-    			<h1> No such Announcement </h1>
+                <div class="uk-card-body">
+                    <h1> No such Announcement </h1>
+                </div>
   			{% endif %}
+        <div class="uk-card-footer">
+            <a class="uk-button uk-button-primary" href="{% url 'announcement:all_announcements' %}">View all announcements</a>
+        </div>
   		</div>
   	</div>
 {% endblock %}

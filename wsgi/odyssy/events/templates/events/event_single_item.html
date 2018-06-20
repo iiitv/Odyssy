@@ -4,29 +4,36 @@
 {% endblock %}
 
 {% block body %}
-	<div class="contents-wrapper">
- 		<div class="content">
+	<div class="uk-container">
+ 		<div class="uk-card uk-card-default uk-margin-medium-top uk-card-hover">
  		{% if event %}
- 			<h2>{{ event.title }}</h2>
-        	{% if event.description is not None %}
-        		<div class="item-description">
-        			<p>{{ event.description|safe }}</p>
-                </div>
-        	{% endif %}
+            <div class="uk-card-header">
+                <h2 class="uk-card-title uk-margin-remove-bottom">{{ event.title }}</h2>
+                <p class="uk-text-meta uk-margin-remove-top uk-text-right"><time datetime="2016-04-01T19:00">{{ event.get_start_date }}</time></p>
+            </div>
+            <div class="uk-card-body">
+                {% if event.description is not None %}
+                    <div class="item-description">
+                        <p>{{ event.description|safe }}</p>
+                    </div>
+                {% endif %}
+            </div>
+            <div class="uk-card-footer">
+                {% if event.place is not None %}
+                    <div class="event-place">
+                       Venue: {{ event.place }}
+                    </div>
+                {% endif %}
 
-        	{% if event.place is not None %}
-        		Venue: 
-        		<div class="event-place">
-            		{{ event.place }}
-            	</div>
-        	{% endif %}
+                {% if event.start_date is not None %}
+                    <p class="uk-comment-meta">
+                        From {{ event.get_start_date }} to {{ event.get_end_date }}
+                    </p>
+                {% endif %}
+                <br>
+                <a class="uk-button uk-button-primary" href="{% url 'event:event-view' %}">View all events</a>
+            </div>
 
-        	{% if event.start_date is not None %}
-        		<p></p> Time:
-        		<div class="event-time">
-        			{{ event.start_date }}
-        		</div>
-        	{% endif %}
         {% endif %}
         </div>
     </div>
