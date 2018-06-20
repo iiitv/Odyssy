@@ -24,10 +24,10 @@ class News(models.Model):
 
     start_date = models.DateTimeField(default=timezone.now)
     end_date = models.DateTimeField(default=timezone.now)
-    title = models.CharField(max_length=50)
+    title = models.CharField(max_length=5000)
     tags = TaggableManager(blank=True)
-    description = models.TextField(max_length=500)
-    slug = models.SlugField(max_length=100, unique=True, blank=True, null=True)
+    description = models.TextField(max_length=50000)
+    slug = models.SlugField(max_length=1000, unique=True, blank=True, null=True)
 
     def __str__(self):
         return str(self.pk) + ': ' + str(self.title)

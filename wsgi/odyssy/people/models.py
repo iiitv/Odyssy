@@ -26,28 +26,28 @@ class People(models.Model):
         ('phd', 'PhD Scholars'),
     )
     user = models.OneToOneField(User, on_delete=models.CASCADE, null=True)
-    name = models.CharField(max_length=50, blank=True, null=True)
-    slug = models.SlugField(max_length=100, unique=True, blank=True, null=True)
+    name = models.CharField(max_length=500, blank=True, null=True)
+    slug = models.SlugField(max_length=1000, unique=True, blank=True, null=True)
     photo = models.ImageField(upload_to='people_images/', blank=True, null=True)
     post = models.CharField(max_length=2000, blank=True, null=True)
     tags = TaggableManager(blank=True)
     academic_highlights = models.CharField(
         max_length=20000, blank=True, null=True)
-    institute = models.CharField(max_length=500, blank=True, null=True)
+    institute = models.CharField(max_length=5000, blank=True, null=True)
     area_of_interest = models.CharField(max_length=50000, blank=True, null=True)
-    office = models.CharField(max_length=1000, blank=True, null=True)
+    office = models.CharField(max_length=10000, blank=True, null=True)
     email = models.CharField(max_length=500, blank=True, null=True)
     status = models.CharField(
         max_length=16, choices=STATUS_CHOICES, default='staff', blank=True, null=True)
     # Description page
     academic_qualifications = models.TextField(
-        max_length=50000, blank=True, null=True)
+        max_length=300000, blank=True, null=True)
     professional_memberships = models.TextField(
-        max_length=50000, blank=True, null=True)
+        max_length=300000, blank=True, null=True)
     work_experience = models.TextField(max_length=50000, blank=True, null=True)
     administrative_experience = models.TextField(
         max_length=20000, blank=True, null=True)
-    publications = models.TextField(max_length=100000, blank=True, null=True)
+    publications = models.TextField(max_length=300000, blank=True, null=True)
     teaching = models.TextField(max_length=20000, blank=True, null=True)
     other = models.TextField(max_length=20000, blank=True, null=True)
     link_fb = models.URLField(blank=True, null=True, max_length=400)
