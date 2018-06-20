@@ -16,8 +16,10 @@
 <script src="{% static 'basic/js/secret.js' %}"></script>
 <body style="background: linear-gradient(135deg,  #cd2e2e,#cecdcd,#20710f)">
     <div class="uk-container uk-padding-large">
-        <div style="background: linear-gradient(45deg, #35394a 0%, #1f222e 100%)" class="uk-card uk-box-shadow-hover-large uk-card-body uk-margin-auto-right uk-margin-large-top uk-margin-auto-bottom uk-margin-auto-left">
-            <img class="uk-align-center" width="120px" src="{% static 'basic/images/Logo.jpg' %}" alt="logo">
+        <div style="background: linear-gradient(45deg, #35394a36 0%, #1f222e26 100%)" class="uk-card uk-box-shadow-xlarge uk-card-body uk-margin-auto-right uk-margin-large-top uk-margin-auto-bottom uk-margin-auto-left">
+            <a class="uk-padding-remove" href="{% url 'index-view' %}" uk-tooltip="Home">
+                <img class="uk-align-center" width="120px" src="{% static 'basic/images/Logo.jpg' %}" alt="logo">
+            </a>
             <form class="uk-align-center uk-text-center" method="post">
                 {% csrf_token %}
                 {{ form.as_p }}
