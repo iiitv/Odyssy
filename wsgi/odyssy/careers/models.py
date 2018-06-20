@@ -25,3 +25,8 @@ class Career(models.Model):
 
     def get_end_date(self):
         return self.end_date.date()
+
+    @staticmethod
+    def get_active_career():
+        today = datetime.datetime.today()
+        return Career.objects.filter(start_date__lt=today, end_date__gt=today).order_by('-start_date')

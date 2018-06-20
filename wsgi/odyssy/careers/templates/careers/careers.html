@@ -5,18 +5,43 @@
 {% load static %}
 {% block body %}
         <!-- Content wrapper -->
-        <div class="contents-wrapper">
+        <div class="uk-container">
             <!-- Contents starts here -->
-            <div class="content career">
-                <h2>Careers</h2>
-                <br>
-                <ul class="list-group">
-		   <li class="list-group-item">
-                        <h4>Faculty</h4> Presently the Indian Institute of Information Technology, Vadodara is being mentored by <a href="http://daiict.ac.in" target="_blank">DAIICT</a>, Gandhinagar. Being the academic mentor, faculty recruitment for IIITV is also managed by DAIICT. The institute invites applications from motivated candidates with research expertise in all areas of
-                        <b>Computer Science and Information Technology</b>. Suitable candidates must have a doctorate in a relevant discipline. We have openings at the levels of Assistant Professor, Associate Professor, and Professor. Visiting faculty positions are also available for short or long term visits. To apply, please submit <b>a curriculum vitae, a publication list, a one-page summary of research
-                    plans, a statement of teaching interests, and the names of three references</b> (with contact information) electronically to <b>facultysearch@iiitvadodara.ac.in</b>.
-                    </li>
-                </ul>
+            <div class="uk-card uk-card-default uk-padding-small uk-margin-medium-top">
+                <h2>Careers at IIITV</h2>
+                <hr>
+                <h2 class="uk-margin-small-left">Current recruitements</h2>
+                {% for career in careers %}
+                    <div class="uk-card uk-card-default uk-margin-medium-top uk-padding-remove uk-card-hover">
+                        <a class="uk-link-heading" target="_blank" href="#modal-course-{{ career.slug }}" uk-toggle>
+                            <div class="uk-card-body">
+                                <div class="uk-padding-remove uk-margin-remove-bottom">
+                                    <h4 class="uk-card-title uk-margin-remove-bottom">{{ career.title }}</h4>
+                                </div>
+                                <div class="uk-text-right uk-margin-remove uk-padding-remove">
+                                    {{ career.get_end_date }}
+                                </div>
+                            </div>
+                        </a>
+                        <div id="modal-course-{{ career.slug }}" class="uk-modal-container" uk-modal>
+                            <div class="uk-modal-dialog" uk-scrollspy="cls: uk-animation-slide-bottom-small; target: > div > div; delay: 100; repeat: true">
+                                <button class="uk-modal-close-full uk-close-medium" type="button" uk-close></button>
+                                <br>
+                                <br>
+                                <div class="uk-container">
+                                    <div class="uk-card uk-padding-large">
+                                        <h2>{{ career.title }}</h2>
+                                        <hr>
+                                        <h4>{{ career.description | safe }}</h4>
+                                        <hr>
+                                        <a href="{% static career.file %}" target="_blank">Related file</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+
             </div>
         </div>
 {% endblock %}
