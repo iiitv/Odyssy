@@ -7,7 +7,9 @@
     <div class="uk-container">
         <div class="contents-wrapper">
             <div class="uk-margin-medium-top">
-                <h3 class="uk-text-center" style="color: white;">Faculties</h3>
+                {% if status == 'Faculties' %}
+                    <h3 class="uk-text-center" style="color: white;">Faculties</h3>
+                {% endif %}
             </div>
             <div class="uk-width-1-1@l" uk-grid>
                 {% for people in faculty_list %}
@@ -129,7 +131,9 @@
             </div>
 
             <div class="uk-margin-medium-top">
-                <h3 class="uk-text-center" style="color: white;">Visiting Faculties</h3>
+                {% if status == 'Faculties' %}
+                    <h3 class="uk-text-center" style="color: white;">Visiting Faculties</h3>
+                {% endif %}
             </div>
             <div class="uk-width-1-1@l" uk-grid>
                 {% for people in visiting_faculty_list %}
@@ -250,7 +254,9 @@
                 {% endfor %}
             </div>
             <div class="uk-margin-medium-top">
-                <h3 class="uk-text-center" style="color: white;">Formar Faculties</h3>
+                {% if status == 'Faculties' %}
+                    <h3 class="uk-text-center" style="color: white;">Formar Faculties</h3>
+                {% endif %}
             </div>
             <div class="uk-width-1-1@l" uk-grid>
                 {% for people in former_faculty_list %}
