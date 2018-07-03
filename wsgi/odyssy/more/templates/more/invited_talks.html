@@ -20,7 +20,7 @@
                         {% if talk.description %}
                             <div class="uk-card-body">
                                 <p>
-                                    {{ talk.description }}
+                                    {{ talk.description | safe }}
                                 </p>
                             </div>
                         {% endif %}
