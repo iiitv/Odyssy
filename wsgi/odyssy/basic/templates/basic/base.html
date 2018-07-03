@@ -226,8 +226,12 @@
             <div class="uk-width-1-1@l uk-child-width-1-3@m uk-padding-small" uk-grid>
                 <div>
                     <p style="color: white" class="uk-text-left uk-text-lead">Quick Links</p>
-                    <a href="{% url 'careers' %}">Career</a>
                     <hr>
+                    <ul class="uk-list">
+                        <li class="uk-text-left"><a class="uk-button-text uk-link-text" href="{% url 'careers' %}">Career</a></li>
+                        <li class="uk-text-left"><a class="uk-button-text uk-link-text" href="{% url 'announcement:all_announcements' %}">Announcements</a></li>
+                        <li class="uk-text-left"><a class="uk-button-text uk-link-text" href="{% url 'event:event-view' %}">Events</a></li>
+                    </ul>
                 </div>
                 <div id="contact-us" class="uk-display-block">
                     <p style="color: white" class="uk-text-left uk-text-lead">Contact us</p>
