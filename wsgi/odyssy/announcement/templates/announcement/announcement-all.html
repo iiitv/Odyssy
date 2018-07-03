@@ -27,11 +27,11 @@
           </ul>
         
         {% if announcement_list.has_previous %}
-          <a href="?page={{ announcement_list.previous_page_number }}&num_items={{ num_items }}">Previous</a>
+          <a class="uk-button uk-button-primary" href="?page={{ announcement_list.previous_page_number }}&num_items={{ num_items }}">Previous page</a>
         {% endif %}
 
         {% if announcement_list.has_next %}
-        <a href="?page={{ announcement_list.next_page_number }}&num_items={{ num_items }}">Next</a>
+        <a class="uk-button uk-button-primary" href="?page={{ announcement_list.next_page_number }}&num_items={{ num_items }}">Next page</a>
         {% endif %}
 
         {% else %}

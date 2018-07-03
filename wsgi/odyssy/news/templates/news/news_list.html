@@ -30,11 +30,11 @@
         {% endif %}
     
         {% if news_list.has_previous %}
-            <a href="?page={{ news_list.previous_page_number }}&num_items={{num_items}}">Previous</a>
+            <a class="uk-button uk-button-primary" href="?page={{ news_list.previous_page_number }}&num_items={{num_items}}">Previous page</a>
         {% endif %}
 
         {% if news_list.has_next %}
-            <a href="?page={{ news_list.next_page_number }}&num_items={{num_items}}">Next</a>
+            <a class="uk-button uk-button-primary" href="?page={{ news_list.next_page_number }}&num_items={{num_items}}">Next page</a>
         {% endif %}
     </div>
 </div>

@@ -28,11 +28,11 @@
             {% endif %}
     
         {% if events.has_previous %}
-            <a href="?page={{ events.previous_page_number }}&num_items={{num_items}}">Previous</a>
+            <a class="uk-button uk-button-primary" href="?page={{ events.previous_page_number }}&num_items={{num_items}}">Previous page</a>
         {% endif %}
 
         {% if events.has_next %}
-            <a href="?page={{ events.next_page_number }}&num_items={{num_items}}">Next</a>
+            <a class="uk-button uk-button-primary" href="?page={{ events.next_page_number }}&num_items={{num_items}}">Next page</a>
         {% endif %}
         </div>
     </div>
