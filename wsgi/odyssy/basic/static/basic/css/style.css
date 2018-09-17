@@ -258,6 +258,14 @@ index-announcement-card a:hover, .index-3row-card a:hover {
 	.widget-card {
 		padding: 0 !important;
 	}
+
+	h3 {
+		font-size: 15px !important;
+	}
+
+	h5 {
+		font-size: 13px !important;
+	}
 }
 
 @media (max-width: 550px) {
