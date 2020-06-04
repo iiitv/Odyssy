@@ -1,4 +1,4 @@
-Django==1.10
+Django==1.11.28
 django-filter==1.0.4
 django-photologue==3.7
 django-sortedm2m==1.4.0
