@@ -10,7 +10,7 @@ setup(
     author_email='singh.pratyush96@gmail.com',
     url='http://www.python.org/sigs/distutils-sig/',
     install_requires=[
-        'Django==1.11.28'
+        'Django==1.11.29'
     ],
     dependency_links=[
         'https://pypi.python.org/simple/django/'
