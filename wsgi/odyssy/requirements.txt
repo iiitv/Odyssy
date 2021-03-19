@@ -4,7 +4,7 @@ django-photologue==3.7
 django-sortedm2m==1.4.0
 django-taggit==0.22.1
 django-taggit-serializer==0.1.5
-djangorestframework==3.9.1
+djangorestframework==3.11.2
 ExifRead==2.1.2
 Markdown==2.6.8
 olefile==0.44
