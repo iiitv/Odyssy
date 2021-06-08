@@ -8,7 +8,7 @@ djangorestframework==3.9.1
 ExifRead==2.1.2
 Markdown==2.6.8
 olefile==0.44
-Pillow==8.1.1
+Pillow==8.2.0
 psycopg2==2.7.1
 six==1.10.0
 django-autoslug==1.9.3
