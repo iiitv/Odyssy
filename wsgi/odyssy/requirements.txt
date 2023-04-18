@@ -1,5 +1,5 @@
 Django==2.2.24
-django-filter==1.0.4
+django-filter==2.4.0
 django-photologue==3.7
 django-sortedm2m==1.4.0
 django-taggit==0.22.1
